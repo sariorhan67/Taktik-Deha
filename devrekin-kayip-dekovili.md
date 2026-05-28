@@ -1,14 +1,20 @@
 # Devrek'in Kayıp Dekovili
 ### Trabzon'dan Filyos'a Bir Rayın İki Hayatı
 
-*Üç bölümlük anlatısal araştırma serisi*
+*Üç bölümlük anlatısal araştırma serisi — Sürüm 2*
 
 > **Yöntem ve teşekkür notu.** Bu seri, araştırmacı-yazar İbrahim Kekeç'in
 > *Devrek'in Kayıp Dekovili* (Zhaber, 2022) başlıklı yazısını çıkış noktası
 > alır; onun derlediği kaynak havzasını —TBMM tutanakları, dönem basını,
 > ormancılık literatürü ve yerel sözlü tanıklıklar— anlatısal bir bütün içinde
-> yeniden kurar. Doğrulanmamış noktalar metin içinde açıkça "açık soru" olarak
-> işaretlenmiştir. Tam kaynakça ve kronoloji, metnin sonundadır.
+> yeniden kurar. Sürüm 2, ayrıca *Devrek'in Kayıp Dekovili Üzerine Derin
+> Araştırma* (ChatGPT Deep Research, 2026) çıktısının getirdiği birincil
+> belgeleri (1925 tarihli 548 ve 648 sayılı kanunlar, 19 Kasım 1945 Ulus
+> haberi, 16 Nisan 1948 Anadolu Ajansı sel haberi, 1943 ve 1950 TBMM
+> tutanakları, *Türk Orman Devrimi*'nin ulusal istatistikleri) anlatıya
+> entegre eder. Her iddia, dayandığı kaynağa metin içinde işaretlenmiştir;
+> doğrulanmamış noktalar "açık soru" olarak ayrılmıştır. Tam güven haritası,
+> kronoloji ve kaynakça metnin sonundadır.
 
 ---
 
@@ -82,12 +88,16 @@ biriktirilen kereste, gemilerle İstanbul ve diğer limanlara sevk edilecekti.
 Hat döşenecek, iskele inşa edilecek, ırmak ağzı ıslah edilecekti. Ucu açık bir
 taahhüt değil, açıkça çizilmiş, sayısı verilmiş bir endüstriyel programdı bu.
 
-Bedeli **3,5 milyon Türk lirasıydı**. Bu rakamı bugünden okumak için bir
-karşılaştırma yeter: Karadere Projesi'nin bütçesi, **Cumhuriyet'in ilk genel
-bütçesinin yaklaşık yüzde üçüne** denk geliyordu ve **Sıhhiye Vekâleti'nin tüm
-bütçesinden büyüktü**. Bir ormancılık projesinin, ülkenin tüm sağlık
-harcamasından büyük olduğu bir an düşünün —bu, Cumhuriyet'in orman serveti
-karşısında nasıl bir iddia taşıdığının ölçüsüdür.
+Projenin toplam tahayyülü **3,5 milyon Türk lirasıydı** —Cumhuriyet'in ilk
+genel bütçesinin yaklaşık yüzde üçüne denk geliyordu ve Sıhhiye Vekâleti'nin
+tüm bütçesinden büyüktü. Ankara'nın yasayla bağladığı kısım ise daha mütevazı
+ama kesindi: **26 Ocak 1925 tarih ve 548 sayılı kanun**, Karadere ormanlarını
+işletmek üzere Ereğli–Karadere arasında **75 santimetre genişliğinde** bir hat
+kabul etti; aynı yılın **648 sayılı kanunu** ise bu inşaat ve işletme için
+**2.000.000 lira tahsisat** ayırdı. Yani 3,5 milyon liralık proje toplamının
+arkasında, iki milyon liralık somut bir yasal taahhüt vardı. Bir ormancılık
+projesinin, ülkenin tüm sağlık harcamasından büyük olduğu bir an düşünün —bu,
+Cumhuriyet'in orman serveti karşısında nasıl bir iddia taşıdığının ölçüsüdür.
 
 Projenin başına bir mühendis arandı. Ankara'nın eli kısaydı; Türkiye'de o
 yıllarda yetişmiş orman mühendisi parmakla sayılıyordu. Aranan adam **Çek
@@ -172,6 +182,14 @@ kompleksi ve —daha önemlisi— Devrek/Karadere'nin başlangıç noktasındaki
 düzlüklerde, **Trabzon'dan getirilmiş, hiç döşenmemiş, üzerine ot bürümüş raylar
 yığını**. Bu yığın, yirmi yıl daha bekleyecektir.
 
+Karadere'nin yasal kabuğu ise tamamen ölmedi: 548 sayılı kanunun çizdiği 75 cm
+genişlikteki dar hat fikri, sonraki yıllarda güzergâh ve açıklık değiştirilerek
+**Irmak–Filyos–Ereğli ekseninde standart genişlikte bir demiryolu** olarak
+yeniden doğacaktır —yani 1925'in Karadere fikri, küçük dekovilden ulusal
+demiryoluna doğru büyüyerek Türkiye'nin demiryolu tarihinde başka bir biçimde
+yer alacaktır. Karadere projesi, kelimenin tam anlamıyla "öldü" değil,
+"dönüştü" demek daha doğrudur.
+
 ---
 
 # Bölüm II — Tefen'e Giden Yol: Bir Hattın Yeniden Doğuşu (1944–1950)
@@ -182,13 +200,16 @@ yığını**. Bu yığın, yirmi yıl daha bekleyecektir.
 dönemidir. Trabzon Limanı'nda dokuz yıl, Karadere kıyısında yirmi yıl: bu
 raylar, döşenmek için döşenmemekten daha çok zaman harcayacaklardır.
 
-Ama bu yirmi yıl tamamen sessiz değildir. **1935 yılında Irmak–Filyos
-demiryolu hattı tam hizmete girdi.** Yirmi yedi istasyonu, bin üç yüz altmış
+Ama bu yirmi yıl tamamen sessiz değildir. Irmak–Filyos demiryolu hattı, parça
+parça hayata geçti: **Filyos–Balıkısık kesimi 1930'da işletmeye alındı**, tam
+çevrim ise **1935'e kadar tamamlandı**. Yirmi yedi istasyonu, bin üç yüz altmış
 sekiz menfez ve köprüsü, otuz yedi tüneli olan bu hat, Ankara'yı Karadeniz
 kıyısına bağlayan ve Filyos ovasını ulusal demiryolu ağına oturtan ana eksendi.
 Hattın üzerinde, Çaycuma'nın güneyinde, küçük ama stratejik bir istasyon vardı:
 **Tefen**. Tefen, Devrek'in ormanlarından çıkacak kerestenin ulusal ağa
-girebileceği en yakın noktaydı.
+girebileceği en yakın noktaydı; ve onun çevresinde, demiryolunun gelişiyle
+birlikte yeni bir yerleşme oluştu —bugünkü Gökçebey, büyük ölçüde bu istasyonun
+çevresinde şekillendi.
 
 Bu durum, Karadere malzemesinin akıbetiyle ilgili bir hesabı sessizce değiştirdi.
 1924'te 130 kilometrelik bir dekovili Ereğli'ye uzatmak gerekiyordu; 1935
@@ -235,10 +256,12 @@ vardı.
 
 Hatipoğlu, Manisa'nın Menemen'inde 1898'de doğmuş, ziraat eğitimini Avrupa'da
 almış, on üçüncü, on dördüncü ve on beşinci hükümetlerde Tarım Bakanlığı yapmış
-bir teknisyendi. Kürsüye çıktığında dile getirdiği sözlerin tutanağı elimizde
-değildir —Bölüm III'te döneceğimiz açık sorulardan biridir— ama o günün anlamı
-bellidir: Cumhuriyet'in **yirmi bir yıl önce** Karadere'de yarım bıraktığı bir
-hayal, küçültülmüş ama gerçek bir hat olarak nihayet ray üstüne oturmuştu.
+bir teknisyendi. Kürsüye çıktığında dile getirdiği sözlerin birebir tutanağı
+elimizde değildir —Bölüm III'te döneceğimiz açık sorulardan biridir— ama açılış
+**ertesi gün, 19 Kasım 1945 tarihli Ulus gazetesinde** ulusal haber olarak yer
+buldu. O günün anlamı bellidir: Cumhuriyet'in **yirmi bir yıl önce** Karadere'de
+yarım bıraktığı bir hayal, küçültülmüş ama gerçek bir hat olarak nihayet ray
+üstüne oturmuştu.
 
 ## Yirmi kilometrelik hat: güzergâh ve yapılar
 
@@ -253,10 +276,12 @@ Hattın belirleyici iki yapısı vardı.
 yapıydı. Hat boyunca tek "istasyon" sayılabilecek nokta burasıydı; gerçek
 anlamıyla bir yolcu istasyonu değildi —Devrek–Tefen Dekovili insan değil, ağaç
 taşıyordu— ama hattın işletme bürosu, vagon yönlendirmesi, basit bir ardiye ve
-şehirden gelen yetkililerin ağırlanması için merkez olarak kullanıldı.
-Çaydeğirmeni–Kemerler mahallesinin yıllar sonra yaşlanmış sakinleri, dönem
-fotoğraflarındaki beyaz binayı doğrudan teşhis ettiler: "Bu, Kemerler
-İstasyonu'dur."
+şehirden gelen yetkililerin ağırlanması için merkez olarak kullanıldı. Bu
+binanın işlevine ve mimarisine ilişkin en ayrıntılı tanıklık, *Sözlü Ormancılık
+Tarihi* derlemesinde **Osman Savaşal**'ın anlattıklarına dayanıyor; aynı
+anılar, Çaydeğirmeni–Kemerler mahallesinin yıllar sonra yaşlanmış sakinlerinin
+dönem fotoğraflarındaki beyaz binayı doğrudan teşhis etmesiyle pekişti: "Bu,
+Kemerler İstasyonu'dur."
 
 **Filyos Irmağı üzerindeki ahşap köprü** ise hattın en kırılgan,
 anıt-niteliğindeki yapısıydı. Ahşap iskelet üzerine, dekovil yüküne uygun, dar
@@ -301,16 +326,61 @@ Filyos Irmağı, yaz ortasında bir adamı belden çekmeyen sakin bir sudur;
 ilkbaharda, Köroğlu ve Bolu dağlarının karları çözüldüğünde, on günde bir başka
 ırmak olur. Su yükselir, yatağını yıkar, kıyıdaki tarlaları yer, ahşaba sarılır.
 
-Hattın ilk ilkbaharında —1946 baharında— Filyos taştı; ahşap köprünün ayakları
-ilk yarayı aldı. Yapı yıkılmadı ama sallandı. Bakım ekibi tamir etti; gelecek
-ilkbahar yine taştı; yine tamir edildi. Hattın kısa ömrü boyunca tekrarlanan
-döngü buydu: kış sevkiyatı, ilkbahar yarası, yaz tamiri, sonbahar yeniden
-sevkiyat. Bu döngü hattı ekonomik olarak yıprattı; her yıl yapılan tamir, küçük
-bir bütçe kalemiyle karşılanması zor bir harcamaydı. Hat fiziksel olarak hâlâ
-ayaktaydı; ama mali olarak yıllar içinde sessizce eridi.
+Yıldan yıla tekrarlanan örüntü buydu: kış sevkiyatı, ilkbahar yarası, yaz
+tamiri, sonbahar yeniden sevkiyat. Bu örüntünün **somut belgesel zirvesi**
+1948 baharında geldi. **16 Nisan 1948 tarihli Anadolu Ajansı haberi**, Devrek
+ile Tefen istasyonu arasındaki **Aloğlu Köprüsü**'nün yıkıldığını ve orman
+işletmesine ait dekovil hattında **50 metrelik bir toprak imlanın yarıldığını**
+bildirdi. Aloğlu Köprüsü'nün, Filyos üzerindeki ana ahşap dekovil köprüsü ile
+mi yoksa hattın başka bir noktasındaki ikinci bir yapıyla mı aynı şey olduğu
+henüz tam berraklaşmamış bir açık sorudur; ama hat üzerinde köprü ve altyapı
+hassasiyetinin —tek olay değil, süregelen bir kırılganlık olarak— gerçek
+olduğunu kuvvetle gösteren bir belgedir. Bu örüntü hattı ekonomik olarak
+yıprattı; her yıl yapılan tamir, küçük bir bütçe kalemiyle karşılanması zor bir
+harcamaydı. Hat fiziksel olarak hâlâ ayaktaydı; ama mali olarak yıllar içinde
+sessizce eridi.
 
 Bu sessiz erime, 1950'ye gelindiğinde Ankara'nın gündemine taşınacak kadar
-büyümüştü.
+büyümüştü. Ama o gündeme çıkmadan önce, bir başka süreç de aynı koridorda
+sessizce yürüyordu.
+
+## Paralel yarış: dekovile karşı karayolu
+
+Bu seride Devrek–Tefen Dekovili'ni anlatırken sıkça unutulan bir gerçek var: o
+hat hiçbir zaman koridorun tek nakliyat seçeneği olarak tasarlanmadı. Aksine,
+dekovilin açılışından önce de, sonra da, **aynı koridorda bir karayolu** kurma
+çabası sürdü; ve bu iki süreç, on yıl boyunca yan yana yarıştı.
+
+Yarışın ilk somut belgesi, **21 Mayıs 1943 tarihli TBMM birleşimidir**: kürsüde
+"Devrek'le Tefen arasında yol yoktur" denilerek bu eksikliğin kömür ve yük
+taşımacılığı açısından maliyet doğurduğu vurgulanmıştır. Bu söz, dekovil
+açılışından sadece iki buçuk yıl önce, koridorun "yolsuz" olduğunun ulusal
+düzeyde resmen kabulüdür.
+
+Yarışın ikinci adımı, dekovilin açılışından **dokuz ay önce**, **1945 başında**
+geldi: Devrek–Tefen yolunun 0–19,6 km'lik şose inşaatı için **karayolu ihalesi**
+açıldı. Yani devlet, aynı koridorda hem 20 km'lik dekovili döşerken, hem de 19,6
+km'lik şoseyi ihaleye çıkardı. İki teknoloji birbirine paralel olarak başladı.
+
+Yarışın üçüncü ve belirleyici adımı **1950**'de geldi: aynı koridorda, "mevcut
+bozuk servis yolu"nun genişletilmesi, çakıl ve kum serilmesi için **yeni bir
+ihale ilanı** yayımlandı. Bu, koridorun teknik geleceğine ilişkin bürokratik
+kararın hangi yöne döndüğünün açık göstergesidir: dekovilin bakımı için ek
+bütçe akmıyor, ama karayolu için akıyor.
+
+Türk Orman Devrimi kaynaklarının ulusal ölçekteki rakamları bu yerel manzarayı
+doğruluyor. 1945 sonuna kadar Türkiye genelinde **toplam 150 km dekovil hattı**
+yapılmış ya da satın alınmıştır; aynı sürede **1.731 km kamyon yolu** ve
+**1.500 km'den fazla araba yolu** açılmıştır. Devrek Orman İşletmesi için 1945
+yılında özel olarak **20 km dekovil ve 130 km yol** birlikte yapılmıştır. Yani
+dekovilin yanında, neredeyse yedi kat uzunluğunda bir yol şebekesi de aynı
+işletme sahasında döşeniyordu. Devrek–Tefen Dekovili kuruluş anında modern bir
+çözümdü; ama birkaç yıl içinde, yükselen karayolu rejimi karşısında —ülke
+genelinde olduğu gibi— hızla **"geçiş teknolojisi"** durumuna düştü.
+
+Bu nedenle 1950'de TBMM kürsüsünden dile getirilen "bakımsızlık" şikâyeti, tek
+başına bir sorumluluk paylaşımı sorunu değildir; arkasında, koridorun teknik
+hafızasının hangi yöne çağrıldığına dair bürokratik bir tercih durmaktadır.
 
 ## 21 Şubat 1950: Hat kürsüye çıkıyor
 
@@ -354,9 +424,12 @@ köprünün ayaklarına sarıldı. Ama bu sefer, ırmak çekildiğinde köprüy�
 el uzanmadı. Çünkü Ankara'da, beş yıl önce kürsüden adı "bakımsız" diye anılan
 bu hattın artık bir geleceği olmadığına karar verilmişti.
 
-O yıl, Filyos Irmağı üzerindeki **ahşap dekovil köprüsü yıkıldı** ve yerini
-bugün hâlâ ayakta duran **betonarme karayolu köprüsüne** bıraktı. Bu basit bir
-köprü değişimi değildir; bir çağın bir başka çağa devridir. Ahşap köprü
+O yıllarda —yerel tarih kaynaklarının verdiği aralıkla **1954–1955 arasında**—
+Filyos Irmağı üzerindeki **ahşap dekovil köprüsü yıkıldı** ve yerini bugün hâlâ
+ayakta duran **betonarme karayolu köprüsüne** bıraktı (uygulamayı doğrulayan
+resmi inşaat dosyası bu araştırmada henüz görülemedi; tarih yerel tarih
+yazılarına dayanıyor). Bu basit bir köprü değişimi değildir; bir çağın bir
+başka çağa devridir. Ahşap köprü
 dekovili, yani rayı, yani kerestenin demir üstünde aktığı sistemi taşıyordu.
 Betonarme köprü ise lastiği, yani kamyonu, yani kerestenin artık karayolu
 üzerinde aktığı yeni sistemi taşıyacaktı. Aynı ırmağın aynı noktasında, on yıl
@@ -373,12 +446,15 @@ kalmamıştı. Filyos'un iki yakası birbirinden koptuğu an, Devrek ormanından
 kereste Tefen istasyonuna dekoville ulaşamaz hâle geldi; ve bir orman dekovili,
 vardığı istasyona ulaşamıyorsa, sadece paslanan bir demir yığınıdır.
 
-Hat söküldü. Ray, lokomotif ve vagonlar **hurda olarak satıldı**. Bu, dönemin
-Türkiye'sinde istisnai değil, neredeyse kural olan bir akıbetti; aynı yıllarda
-ülkenin başka orman ve sanayi dekovilleri de —Sinop–Ayancık, Yenice ve daha
-niceleri— karayolu çağına geçişle birlikte sökülüp eritildi. Demir, o yıllarda
-kıymetli bir hammaddeydi; sökülen bir hattın çeliği, yeni bir fabrikanın, yeni
-bir köprünün, yeni bir makinenin içinde yeniden doğabilirdi.
+Hat söküldü. Ray, lokomotif ve vagonlar **hurda olarak satıldı**. Bu hükmün
+birincil dayanağı, *Sözlü Ormancılık Tarihi* içinde **Nurettin Elbir**'in
+değerlendirmesi ve Kekeç'in 2022'de yaptığı özel görüşmedir; doğrudan bir açık
+ihale kaydı, envanter çıkışı ya da Resmî Gazete satış ilanı henüz tespit
+edilememiştir. Yine de hattın akıbetinin Türkiye'deki diğer orman ve sanayi
+dekovillerine uyumlu olduğunu eklemek gerekir: aynı yıllarda Sinop–Ayancık,
+Yenice ve daha niceleri, karayolu çağına geçişle birlikte sökülüp eritildi.
+Demir, o yıllarda kıymetli bir hammaddeydi; sökülen bir hattın çeliği, yeni bir
+fabrikanın, yeni bir köprünün, yeni bir makinenin içinde yeniden doğabilirdi.
 
 İşte burada bu serinin en kışkırtıcı **açık sorusu** durur: Devrek–Tefen
 Dekovili'nin hurdası nereye gitti? Eğer bu çelik, çevredeki en büyük demir-çelik
@@ -564,13 +640,20 @@ değildir.
 | 1916 | Rus ilerleyişi Trabzon'a ulaşır. |
 | 1923 | Cumhuriyet ilan edilir; Karadere Projesi dosyası Ziraat Vekâleti'ne sunulur. |
 | 1924 | Franz Stöger (İbrahim Kutsi) proje müşaviri atanır; Trabzon malzemesi Karadere'ye taşınır; Gülüç ağzında 2 km'lik kanal açılır. |
-| 1925 | Şantiye fiilen durur; proje yarım kalır. |
-| 1930 | Irmak–Filyos hattının Filyos–Yenice kesimi sefere açılır (1 Temmuz). |
+| 26 Ocak 1925 | **548 sayılı kanun**: Ereğli–Karadere arasında 75 cm genişliğinde dar hat kabul edilir. |
+| 1925 | **648 sayılı kanun**: Ereğli–Karadere inşaat ve işletmesi için 2.000.000 lira tahsisat ayrılır. |
+| 1925 sonu | Şantiye fiilen durur; proje yarım kalır. Karadere'nin yasal kabuğu sonradan Irmak–Filyos–Ereğli ekseninde standart hatta evrilir. |
+| 1 Temmuz 1930 | Irmak–Filyos hattının Filyos–Yenice / Filyos–Balıkısık kesimi sefere açılır. |
 | 1935 | Irmak–Filyos demiryolu tam hizmete girer (27 istasyon, 1.368 menfez/köprü, 37 tünel). |
-| 1945 | Devrek–Tefen Dekovili (~20 km) inşa edilir; 18 Kasım'da Tarım Bakanı Şevket Raşit Hatipoğlu törenle açar. |
-| 1946–1954 | Hat çalışır; her ilkbahar Filyos taşkınında köprü zarar görür ve tamir edilir. |
-| 1950 | 21 Şubat TBMM birleşiminde hattın 1,5 milyon liralık maliyeti ve bakımsızlığı gündeme gelir. |
-| 1955 | Filyos üzerindeki ahşap dekovil köprüsü yıkılır, yerine betonarme karayolu köprüsü yapılır; hat sökülür, ray/lokomotif/vagon hurdaya satılır. |
+| 21 Mayıs 1943 | TBMM'de "Devrek'le Tefen arasında yol yoktur" tartışması; koridorun yolsuzluğu resmen tescillenir. |
+| 1945 başı | Devrek–Tefen yolunun 0–19,6 km'lik şose inşaat **karayolu ihalesi** açılır. |
+| 18 Kasım 1945 | Devrek–Tefen Dekovili (~20 km) Tarım Bakanı Şevket Raşit Hatipoğlu tarafından törenle açılır. |
+| 19 Kasım 1945 | Açılış, **Ulus** gazetesinde ulusal haber olarak yer alır. |
+| 1945 (yıl içi) | *Türk Orman Devrimi* kaydı: Devrek Orman İşletmesi için 20 km dekovile ek olarak 130 km yol açılır; ülke geneli toplamları 150 km dekovil, 1.731 km kamyon yolu, 1.500+ km araba yolu. |
+| 16 Nisan 1948 | **Anadolu Ajansı haberi**: Devrek–Tefen arasında **Aloğlu Köprüsü** yıkılır; dekovil hattında 50 metrelik toprak imla yarılır. |
+| 21 Şubat 1950 | TBMM birleşiminde Zonguldak milletvekili kürsüden 1,5 milyon liralık maliyeti ve bakımsızlığı eleştirir. |
+| 1950 (yıl içi) | Devrek–Tefen koridorunda "mevcut bozuk servis yolu"nun genişletilmesi için yeni karayolu ihale ilanı. |
+| 1954–1955 | Filyos üzerindeki ahşap dekovil köprüsü yıkılır, yerine betonarme karayolu köprüsü yapılır; hat sökülür, ray/lokomotif/vagon hurdaya satılır (sözlü tanıklığa dayanır; resmi inşaat ve hurda dosyası henüz tespit edilememiştir). |
 | Sonrası | Kemerler İstasyonu binası (kesin tarihi belirsiz) yıkılır. |
 
 ---
@@ -578,31 +661,69 @@ değildir.
 # Ek B — Kaynakça
 
 ## Kitaplar
-- Cantürk Gümüş, *Türk Orman Devrimi*, Türkiye Ormancılar Derneği Yayını.
+- Cantürk Gümüş, *Türk Orman Devrimi*, Türkiye Ormancılar Derneği Yayını. —
+  ormancilardernegi.org/Documents/0d8f68d7-6405-434f-b86d-ce508b88c94f.pdf
+- Cantürk Gümüş, *Devlet Ormancılığına Geçiş Sürecinde Karadere Serüveni*. —
+  researchgate.net/profile/Cantuerk-Guemues/publication/
+  322508373_Devlet_Ormanciligina_Gecis_Surecinde_KARADERE_SERUVENI
+- (Sözlü tarih cildi) *Sözlü Ormancılık Tarihi* — Osman Savaşal ve Nurettin
+  Elbir'in Devrek–Tefen dekoviline ilişkin anlatıları.
 
 ## Süreli yayınlar ve gazeteler
 - İbrahim Kekeç, "Devrek'in Kayıp Dekovili", **Zhaber** (Zonguldak Haber),
-  2022. *(Serinin çıkış metni.)*
+  2022. *(Serinin çıkış metni.)* — zhaber.com.tr/devrekin-kayip-dekovili-1
 - İbrahim Kekeç, "Hızardan Fabrikaya Kereste Endüstrimiz", Zhaber.
 - İbrahim Kekeç, "İhsan Öztürk Hoca ile Mukim Tahir'e dair", Zhaber.
 - "İbrahim Kekeç Kimdir?" (biyografi), Zhaber.
+- **Ulus**, 19 Kasım 1945 — Devrek–Tefen Dekovili açılış haberi. —
+  gastearsivi.com/gazete/ulus/1945-11-19/1
+- **Cumhuriyet** — Devrek–Tefen dekoviline ilişkin dönem haberi (Kekeç'in
+  kaynakçasında atıf var).
+- **Anadolu Ajansı, 16 Nisan 1948** — Devrek–Tefen arasındaki Aloğlu
+  Köprüsü'nün yıkılması ve dekovil hattında 50 m'lik toprak imlanın yarılması
+  haberi.
+- "tefen67" yerel yayını — Tefen istasyonu ve çevresine ilişkin yerel tarih
+  yazısı (Kekeç'in atıfı).
+- **Pusula Gazetesi**, "Zonguldak–Gökçebey Tarih Araştırmaları Dizisi". —
+  pusulagazetesi.com.tr/zonguldak-gokcebey-tarih-arastirmalari-dizisi
 - "Türkiye'nin İlk Ormancılık Projesi, Karadere ve Gülüç Irmağı", **Deha20
   Gazetesi**, 22 Ekim 2020.
 - "Atatürk Döneminde Türkiye'de Orman ve Ormancılık Politikası (1920–1938)",
   **Atatürk Araştırma Merkezi Dergisi**, Cilt XXXIX, Sayı 107, Mayıs 2023.
 - "Manisa Milletvekillerinden Şevket Raşit Hatipoğlu (1898–1973)", **Manisa
   Celal Bayar Üniversitesi Sosyal Bilimler Dergisi**.
+- Cumhuriyet dönemi Karadeniz demiryolu siyaseti üzerine akademik makale,
+  **DergiPark** (article-file/3013630). — dergipark.org.tr/tr/download/article-
+  file/3013630
 - "Zonguldak Demiryolu Hattı: Karabük (İsmetpaşa)", DergiPark.
 
-## TBMM tutanakları ve resmî kaynaklar
-- TBMM Zabıt Ceridesi, 8. Dönem 4. Yasama Yılı, **21 Şubat 1950** birleşimi
-  (Tarım Bakanlığı bütçe müzakereleri). — *www5.tbmm.gov.tr/tutanaklar*
+## TBMM tutanakları ve kanun metinleri
+- **26 Ocak 1925 tarih ve 548 sayılı kanun** — Ereğli–Karadere arasında 75 cm
+  genişliğinde dar hat kabulü. — www5.tbmm.gov.tr/tutanaklar/KANUNLAR_KARARLAR/
+  kanuntbmmc003/kanuntbmmc003/kanuntbmmc00300548.pdf
+- **1925 tarih ve 648 sayılı kanun** — Ereğli–Karadere inşaat ve işletmesi
+  için 2.000.000 lira tahsisat.
+- **TBMM Zabıt Ceridesi, 21 Mayıs 1943** — Devrek–Tefen arası yolsuzluğu
+  tartışması. — www5.tbmm.gov.tr/tutanaklar/TUTANAK/TBMM/d07/c002/
+  tbmm07002025.pdf
+- **TBMM Tutanak Dergisi, 21 Şubat 1950**, 8. Dönem 4. Yasama Yılı —
+  Devrek–Tefen dekovilinin 1,5 milyon liralık maliyeti ve bakımsızlığı. —
+  tbmm.gov.tr/tutanaklar/TUTANAK/TBMM/d08/c024/tbmm08024052.pdf
 - Orman Genel Müdürlüğü, Karadeniz Ereğli Orman İşletme Müdürlüğü Kuruluş
   Tarihçesi.
 - Orman Genel Müdürlüğü, Dirgine Orman İşletme Müdürlüğü Kuruluş Tarihçesi.
+- Gökçebey Kaymakamlığı, ilçe tarihçesi (Tefen istasyonunun gelişimi).
 - Devrek Kaymakamlığı, "Devrek İlçesi Tarihçesi".
 - (Önerilen birincil kaynak) Cumhurbaşkanlığı Devlet Arşivleri — Karadere
-  Projesi tahsisatı ve Stöger/Kutsi ataması belgeleri.
+  Projesi tahsisatı, Stöger/Kutsi ataması belgeleri ve 1955 dönemi hurda
+  ihaleleri.
+- (Önerilen birincil kaynak) Resmî Gazete, 1955–1960 hurda ve köprü inşaat
+  ilanları.
+
+## Tematik / metodolojik kaynak
+- *Devrek'in Kayıp Dekovili Üzerine Derin Araştırma*, ChatGPT Deep Research,
+  2026. — Bu seride v2'ye entegre edilen birincil belgesel tabakanın derleyici
+  raporu.
 
 ## Web siteleri ve görsel arşivler
 - "Irmak–Zonguldak demiryolu", Vikipedi.
@@ -613,6 +734,11 @@ değildir.
 - BAKKA Kütüphane, "Kömüre Giden Demiryolu" broşürü.
 
 ## Özel görüşmeler / sözlü tarih
+- Osman Savaşal — Kemerler İstasyonu ve Filyos ahşap dekovil köprüsüne
+  ilişkin anılar (*Sözlü Ormancılık Tarihi* içinde).
+- Nurettin Elbir — hattın sökümü ve hurda akıbetine ilişkin değerlendirme
+  (*Sözlü Ormancılık Tarihi* içinde).
+- Kekeç'in 2022'de gerçekleştirdiği iki özel görüşme (kaynak metinde atıf).
 - Çaydeğirmeni–Kemerler mahallesinin yaşlı sakinleri (Kemerler İstasyonu
   binasının teşhisi).
 - *(Önerilen, yapılacak görüşmeler)* Devrek Orman İşletmesi emeklileri; Tefen
@@ -620,16 +746,71 @@ değildir.
 
 ---
 
-# Ek C — Açık Sorular (gelecek araştırmacılara çağrı)
+# Ek C — Güven Haritası
+
+Bu seride sunulan iddiaları üç güven düzeyinde sınıflamak, hem okur için bir
+yol haritası verir hem de gelecek araştırmacıya hangi alanların belge
+beklediğini gösterir.
+
+## Yüksek güven (birden çok bağımsız belgeyle)
+- Devrek–Tefen Dekovili'nin **18 Kasım 1945**'te Tarım Bakanı Şevket Raşit
+  Hatipoğlu tarafından törenle açıldığı *(Ulus, 19 Kasım 1945)*.
+- Hattın uzunluğunun **yaklaşık 20 km** olduğu *(Türk Orman Devrimi'nin
+  Devrek Orman İşletmesi kaydı)*.
+- Hattın Devrek ormanından çıkan emvali **Tefen İstasyonu**'na bağlayan
+  besleme hattı olarak işlediği *(Gökçebey/Tefen yerel tarihçesi + Irmak–Filyos
+  hattı kayıtları)*.
+- Hat üzerinde **16 Nisan 1948** tarihinde **Aloğlu Köprüsü**'nün yıkıldığı
+  ve 50 m'lik toprak imlanın yarıldığı *(Anadolu Ajansı, 1948)*.
+- Hattın **21 Şubat 1950** TBMM birleşiminde 1,5 milyon liralık maliyeti ve
+  bakımsızlığı nedeniyle eleştirildiği *(TBMM Tutanak Dergisi)*.
+- Karadere Projesi'nin 1925'te **548 sayılı kanunla** 75 cm gauge'lı dar hat
+  olarak yasalaştığı ve **648 sayılı kanunla** 2.000.000 lira tahsisat aldığı
+  *(TBMM kanun derlemesi)*.
+
+## Orta güven (literatür + tanıklık var, birincil belge tam değil)
+- **Kemerler İstasyonu** binasının işlevi ve mimarisi *(Osman Savaşal'ın
+  *Sözlü Ormancılık Tarihi*'ndeki anıları + Kemerler sakinlerinin teşhisi)*.
+- Filyos üzerindeki **ahşap dekovil köprüsünün** tam konfigürasyonu *(yerel
+  tanıklık + dönem fotoğrafları; mühendislik planı yok)*.
+- Ahşap köprünün **1954–1955 arasında** sökülüp yerine betonarme karayolu
+  köprüsünün yapılması *(yerel tarih yazıları; resmi inşaat dosyası
+  görülemedi)*.
+- Trabzon/Hamsiköy malzemesinin 1924–25'te Karadere'ye taşındığı ve **1945'te
+  Devrek–Tefen hattında yeniden kullanıldığı** *(Gümüş'ün ormancılık tarihi
+  çalışması güçlü çıkarım kuruyor; doğrudan teslim-tesellüm defteri yok)*.
+- Karadere'nin yasal kabuğunun sonradan **Irmak–Filyos–Ereğli ekseninde
+  standart hatta evrildiği** *(Cumhuriyet demiryolu siyaseti literatürü)*.
+
+## Düşük güven (ek belge gerektiriyor)
+- Hatta çalışan lokomotiflerin **sayısı, markası ve modeli** (Henschel,
+  Decauville, Orenstein & Koppel ihtimalleri var, belge yok).
+- Hattın **kesin söküm yılı** ve süreci (1955 sonrası tarihler tahmin
+  düzeyinde; resmi karar görülemedi).
+- Sökülen ray, lokomotif ve vagonların **hurda satışının idari dosyası**
+  (Resmî Gazete ilanı, alıcı kimliği, satış bedeli).
+- Hamsiköy ve Karadere'den Devrek–Tefen'e devredilen malzemenin **birebir
+  envanteri** (hangi kalemler, hangi miktar, hangi tarihte).
+- **Stöger/Kutsi'nin** 1925 sonrası akıbeti (Türkiye'de kaldı mı, döndü mü,
+  mezarı nerede).
+- Kemerler İstasyonu binasının **kesin yıkım tarihi**.
+
+---
+
+# Ek D — Açık Sorular (gelecek araştırmacılara çağrı)
 
 1. **Stöger/Kutsi'nin akıbeti.** 1925 sonrası nerede? Türkiye'de mi kaldı,
    döndü mü? Mezarı nerede?
 2. **Trabzon → Karadere nakliyesinin belgesi.** Malzeme hangi yolla (deniz,
    karayolu, nehir) ve hangi tarihlerde taşındı?
 3. **Lokomotif kimliği.** Devrek–Tefen'in lokomotifleri hangi marka/modeldi?
-   (Henschel, Decauville, Orenstein & Koppel ihtimalleri.)
-4. **Hurdanın son durağı.** Sökülen demir Karabük Demir-Çelik'e mi gitti? 1955–60
-   hurda ihale kayıtları ne diyor?
+4. **Hurdanın son durağı.** Sökülen demir Karabük Demir-Çelik'e mi gitti?
+   1955–60 dönemi Resmî Gazete hurda ihale ilanları ne diyor?
 5. **Kemerler İstasyonu'nun yıkım tarihi.**
-6. **18 Kasım 1945 açılış konuşması.** Hatipoğlu'nun sözlerinin tutanağı / yerel
-   basın yansıması var mı?
+6. **18 Kasım 1945 açılış konuşması.** *Ulus* 19 Kasım 1945 sayısı temel belge;
+   Hatipoğlu'nun konuşma metninin yerel basında daha geniş yansıması var mı?
+7. **Aloğlu Köprüsü meselesi.** 16 Nisan 1948 AA haberindeki bu köprü, Filyos
+   üzerindeki ana ahşap dekovil köprüsü ile aynı yapı mıdır, yoksa hattın
+   farklı bir noktasındaki ikincil bir köprü müdür?
+8. **648 sayılı kanunun fiilen ne kadarı harcandı?** 2 milyon liralık
+   tahsisatın bütçe akışı ve hesap kayıtları nerede?
