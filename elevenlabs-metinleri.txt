@@ -1,0 +1,344 @@
+ELEVENLABS — SAHNE SAHNE SES ÜRETİM METİNLERİ
+Devrek'in Kayıp Dekovili Belgeseli
+
+KULLANIM:
+- Her sahnenin başlığını, dosya adını ve karakter sayısını okuyun.
+- ÇİZGİLER ARASINDAKİ METNİ olduğu gibi seçip kopyalayın.
+- ElevenLabs 'Text to Speech' kutusuna yapıştırın, 'Generate' deyin.
+- İndirilen MP3'ü önerilen dosya adıyla telefonunuza kaydedin.
+
+TOPLAM SAHNE SAYISI: 25
+TOPLAM KARAKTER: 22,048 (Creator planının 100.000/ay sınırı içinde)
+
+ÖNERİLEN ELEVENLABS AYARLARI:
+- Voice: Türkçe — 'Cem' (erkek, derin) veya 'Defne' (kadın, vakar)
+- Model: Eleven Multilingual v2
+- Stability: 55-60   (vakar, ama düz değil)
+- Similarity: 75     (ses kimliği korunur)
+- Style: 20-30       (belgesel imalı; cold open + kapanış için 35-40)
+- Speaker Boost: ON
+
+======================================================================
+
+SAHNE 1 — Filyos kıyısında bir demir parçası
+Dosya adı önerisi: s01_filyos_kiyisinda_bir_demi.mp3
+Karakter sayısı: 821
+Ton ipucu: Cold open — yavaş, mesafeli, çağrı yapar gibi. Style 35.
+
+──────────────────────────────────────────────────────────────────────
+Filyos Irmağı'nın kasım soğuğunda yüksek aktığı bir sabah, Çaydeğirmeni'ne inip betonarme karayolu köprüsünün ayaklarının dibine yaklaşırsanız, suyun çekildiği yerde, ıslak kumun içinde, siyaha çalan bir demir parçası görürsünüz. Çoğu yerli onun ne olduğunu bilmez; bilenler de yıllar içinde anlatmaktan vazgeçmiştir. Oysa bu kıyıda bir zamanlar ahşap bir köprü vardı. O köprünün üzerinden, 1945'ten 1955'e kadar, yavaşça, dumanını Filyos'un üstüne salarak bir tren geçerdi. Trenin adı dekovildi.
+
+Bu film, bir trenin değil, onun raylarının hikâyesini anlatıyor. Çünkü o raylar bu kıyıya gelmeden önce bir savaş gördü, yirmi bir yıl bekledi, bir hayalin yarımından doğdu ve nihayet on yıllık bir hayat yaşadıktan sonra, hurda olarak satılıp tarihten silindi. Bir hattın değil, bir ulusun maddi hafızasının hikâyesidir bu.
+──────────────────────────────────────────────────────────────────────
+
+
+SAHNE 2 — Trabzon Limanı, 1914
+Dosya adı önerisi: s02_trabzon_limani_1914.mp3
+Karakter sayısı: 820
+
+──────────────────────────────────────────────────────────────────────
+1914 sonbaharında Osmanlı Devleti dünya savaşına girdiğinde, Doğu Karadeniz, Rus ilerleyişinin nefesini ensesinde hisseden uzun, dağlı, lojistiği imkânsız bir cephe haline gelmişti. Trabzon'dan iç bölgeye ulaşmak katır kervanlarına emanetti; ve katırlar bir orduyu beslemeye yetmiyordu. Çare, dar hat denilen, taşınabilir, çabuk döşenebilen ve gerektiğinde sökülüp başka cepheye götürülebilen tip raylardı. Bu sistemin Avrupa'daki adı Decauville'di; Türkçe ağzımıza dekovil olarak yapışmıştı.
+
+Almanya, müttefiki olarak Osmanlı'ya bu malzemeyi sağladı. Trabzon Limanı'na yığınla Alman menşeli ray ve aksam indirildi. Bir kısmı hızla döşenmeye başlandı; geri kalan ray, traverslik kereste, vagonlar ve küçük lokomotifler ise Trabzon'da, liman gerisindeki depolarda istiflendi. Plan, hat bittiğinde bunları da kullanmaktı.
+──────────────────────────────────────────────────────────────────────
+
+
+SAHNE 3 — Hamsiköy yamaçları
+Dosya adı önerisi: s03_hamsikoy_yamaclari.mp3
+Karakter sayısı: 519
+
+──────────────────────────────────────────────────────────────────────
+Hat, sahil şeridinden iç yamaçlara, Maçka istikametinde tırmanırken Hamsiköy civarına kadar uzandı. 1915 başında bir kısmı tamamlanmıştı. Ama plan tutmadı. 1916'da Rus ilerleyişi Trabzon'a girdi; ateşkes 1918'de geldi; bağımsızlık savaşı, Cumhuriyet ve nihayet 1923. Aradan dokuz yıl geçti ve Hamsiköy'ün üstündeki o yarım kalmış hat —çayırlara karışmış, paslı, ot bürümüş— kimsenin aklına gelmedi.
+
+Trabzon depolarındaki istif ise, üzerine tuzlu Karadeniz rüzgârı yağarken, yeni bir devletin doğuşunu sessizce bekledi.
+──────────────────────────────────────────────────────────────────────
+
+
+SAHNE 4 — Ankara, 1923–1924
+Dosya adı önerisi: s04_ankara_1923–1924.mp3
+Karakter sayısı: 1225
+
+──────────────────────────────────────────────────────────────────────
+Yeni Türkiye'nin kasası boştu, ama hayalleri ölçekliydi. Ankara'da, 1923'ün son aylarında, Ziraat Vekâleti'nin masasına bir dosya geldi. Batı Karadeniz'de, Devrek'in iç kesimlerinde, Dirgine Orman İşletmesi sahasında yatan bir orman vardı; envanteri altı milyon metreküptü ve neredeyse el değmemişti. Bu ormanın adı Karadere'ydi.
+
+Tasarı şuydu: Bu envanterden yılda yüz bin metreküp kereste işlenecek; kereste, ormanın içinden Ereğli'nin yanı başındaki Gülüç İskelesi'ne kadar yaklaşık 130 kilometrelik bir dekovil hattı ile taşınacak; iskelede biriktirilen kereste, gemilerle İstanbul ve diğer limanlara sevk edilecekti. Bu, ucu açık bir taahhüt değil, açıkça çizilmiş, sayısı verilmiş bir endüstriyel programdı.
+
+26 Ocak 1925 tarihli ve 548 sayılı kanun, Karadere ormanlarını işletmek üzere Ereğli–Karadere arasında 75 santimetre genişliğinde bir dar hat kabul etti. Aynı yılın 648 sayılı kanunu ise bu inşaat ve işletme için iki milyon lira tahsisat ayırdı. Projenin toplam tahayyülü ise üç buçuk milyon liraydı — Cumhuriyet'in ilk genel bütçesinin yaklaşık yüzde üçüne denk geliyordu ve Sıhhiye Vekâleti'nin tüm bütçesinden büyüktü. Bir ormancılık projesinin, ülkenin tüm sağlık harcamasından büyük olduğu bir an düşünün.
+──────────────────────────────────────────────────────────────────────
+
+
+SAHNE 5 — Bir Çek mühendis
+Dosya adı önerisi: s05_bir_cek_muhendis.mp3
+Karakter sayısı: 727
+
+──────────────────────────────────────────────────────────────────────
+Projenin başına bir mühendis arandı. Ankara'nın eli kısaydı; Türkiye'de o yıllarda yetişmiş orman mühendisi parmakla sayılıyordu. Aranan adam Çek asıllı, Avusturya-Macaristan ekolünden gelmiş Franz Stöger oldu. Türkiye'ye geldiğinde adını Türkçeleştirdi; resmî yazışmalarda artık İbrahim Kutsi olarak imza atacaktı.
+
+Kutsi'ye verilen yetki, dönemine göre alışılmadık derecede geniştir. Tam yetkili müşavir, yani projenin teknik direktörü, satın almacısı, saha müfettişi ve gerektiğinde Ankara'nın muhatabı, tek bir kişide birleştirildi. Masasına yatırılan ilk büyük lojistik sorun, malzemeydi. Türkiye, 1924'te 130 kilometrelik dar hat döşeyecek rayı içeriden üretemezdi; dışarıdan almak ise hem zaman hem döviz gerektiriyordu.
+──────────────────────────────────────────────────────────────────────
+
+
+SAHNE 6 — Trabzon'dan Karadere'ye
+Dosya adı önerisi: s06_trabzondan_karadereye.mp3
+Karakter sayısı: 598
+
+──────────────────────────────────────────────────────────────────────
+Kutsi'nin nasıl haberdar olduğunu kesin bilmiyoruz; ama 1924 yılı içinde şahsen Trabzon'a gittiği, dokuz yıldır liman depolarında bekleyen Alman menşeli dekovil malzemesini gördüğü ve Hamsiköy yamaçlarındaki yarım hattan sökülebilecekleri de envantere eklediği biliniyor. Hepsi Devrek'e taşınacaktı.
+
+Bu nakliye başlı başına bir destandı. Trabzon'dan Devrek'e doğrudan ve düzenli bir deniz yolu yoktu. Raylar, traversler, küçük buhar lokomotifleri ve vagon aksamları parça parça yüklenip Karadeniz boyunca batıya, oradan iç kesime, atlı ve katırlı kollarla Karadere'nin başlangıç noktasına taşındı.
+──────────────────────────────────────────────────────────────────────
+
+
+SAHNE 7 — Gülüç Irmağı ağzı
+Dosya adı önerisi: s07_guluc_irmagi_agzi.mp3
+Karakter sayısı: 750
+
+──────────────────────────────────────────────────────────────────────
+Karadere ormanlarının başlangıcına Trabzon malzemesi yığıldıkça, hattın diğer ucunda — Ereğli'nin batısında, Gülüç Irmağı'nın Karadeniz'e döküldüğü yerde — başka bir şantiye kuruluyordu. Burada Gülüç Kereste İskelesi inşa edilecek, kerestenin gemiye yüklenebilmesi için ırmak ağzı derinleştirilecekti. 1924 yılı içinde, Gülüç ağzından iç tarafa doğru iki kilometre uzunluğunda, altmış metre genişliğinde ve üç metre derinliğinde bir kanal açıldı.
+
+Bu rakamları okuyup bir an durmak gerekir. 1924'ün Türkiye'sinde, devletin kaynaklarının kıt olduğu bir anda, Batı Karadeniz'in bir köşesinde, kerestenin denize dökülebilmesi için bir nehir ağzının iki kilometresi yeniden çiziliyordu. Bu, yerel ölçek değildir; bu, ulusal bir endüstri kurma iradesidir.
+──────────────────────────────────────────────────────────────────────
+
+
+SAHNE 8 — 1925: Şantiyeyi saran sessizlik
+Dosya adı önerisi: s08_1925_santiyeyi_saran_sess.mp3
+Karakter sayısı: 1225
+Ton ipucu: Bölüm I finali — yorgun, ağır. Style 25.
+
+──────────────────────────────────────────────────────────────────────
+1925 yılı boyunca şantiye çalıştı. Karadere'nin yamaçlarında ağaç sayım heyetleri dolaştı; Gülüç iskelesinde duvarlar yükseldi; Trabzon'dan gelen ilk ray partileri ormanın eteğindeki düzlüklere indirildi. Sonra, sessizce ama geri dönülmez biçimde, durdu.
+
+Neden? Cumhuriyet, eş zamanlı olarak Doğu'da demiryolu, Anadolu içinde sanayi tesisleri, başkentin imarı ve ordu modernizasyonu için para arıyordu. Stöger tek başınaydı; emrine verilen mühendis ve teknik personel ya yoktu ya çok azdı. Projenin maliyetini kapatması için en az on yıl gerekiyordu — 1924–25 Türkiye'sinde on yıl, siyasi sabrı aşan bir süreydi. Ve nihayet, Ankara'nın kürsülerinde başka bir hayal yükseliyordu: Ereğli'yi doğrudan başkentin standart demiryolu ağına bağlamak. Karadere'nin dar hattı, bu büyük tasarımın yanında küçük kaldı.
+
+Kararı resmî bir oylama belirlemedi. Karadere Projesi belirgin bir tarihte iptal edilmedi. Sadece bütçe akmadı; saha sustu. 1925'in sonbaharında şantiye fiilen donmuştu. Geride iki şey kaldı: Gülüç'te yarım kalmış bir iskele kompleksi, ve daha önemlisi, Karadere'nin başlangıç noktasındaki düzlüklerde, Trabzon'dan getirilmiş, hiç döşenmemiş, üzerine ot bürümüş raylar yığını.
+
+Bu yığın, yirmi yıl daha bekleyecekti.
+──────────────────────────────────────────────────────────────────────
+
+
+SAHNE 9 — Yirmi yıllık bekleyiş
+Dosya adı önerisi: s09_yirmi_yillik_bekleyis.mp3
+Karakter sayısı: 263
+
+──────────────────────────────────────────────────────────────────────
+Trabzon Limanı'nda dokuz yıl, Karadere kıyısında yirmi yıl. Bu raylar, döşenmek için döşenmemekten daha çok zaman harcayacaklardı. Ama bu yirmi yıl tamamen sessiz değildi. Türkiye'nin demiryolu haritası, raylar Karadere'de beklerken, sessizce yeniden çiziliyordu.
+──────────────────────────────────────────────────────────────────────
+
+
+SAHNE 10 — Tefen istasyonu sahneye çıkıyor
+Dosya adı önerisi: s10_tefen_istasyonu_sahneye_c.mp3
+Karakter sayısı: 783
+
+──────────────────────────────────────────────────────────────────────
+Irmak–Filyos demiryolu hattı parça parça hayata geçti. Filyos–Balıkısık kesimi 1930'da işletmeye alındı; tam çevrim 1935'e kadar tamamlandı. Yirmi yedi istasyonu, bin üç yüz altmış sekiz menfez ve köprüsü, otuz yedi tüneli olan bu hat, Ankara'yı Karadeniz kıyısına bağlıyor, Filyos ovasını ulusal demiryolu ağına oturtuyordu. Hattın üzerinde, Çaycuma'nın güneyinde, küçük ama stratejik bir istasyon vardı: Tefen.
+
+Tefen, Devrek'in ormanlarından çıkacak kerestenin ulusal ağa girebileceği en yakın noktaydı. Çevresinde, demiryolunun gelişiyle birlikte yeni bir yerleşme oluştu — bugünkü Gökçebey, büyük ölçüde bu istasyonun çevresinde şekillendi. Devrek'in ormanından Tefen'e küçük bir hat çekmek artık Ereğli'nin 130 kilometresine değil, yalnızca yirmi kilometreye ihtiyaç duyuyordu.
+──────────────────────────────────────────────────────────────────────
+
+
+SAHNE 11 — 1943 TBMM kürsüsü
+Dosya adı önerisi: s11_1943_tbmm_kursusu.mp3
+Karakter sayısı: 462
+Ton ipucu: Tutanak okuması — düz, resmi. Stability 70, Style 15.
+
+──────────────────────────────────────────────────────────────────────
+21 Mayıs 1943. TBMM kürsüsünde, kömür ve yük taşımacılığı tartışılırken bir cümle dile gelir: 'Devrek'le Tefen arasında yol yoktur.' Bu söz, bir şikâyetten daha fazlasıdır. Devrek'in ormanına ulaşan, oradan kerestenin çıktığı koridorun yolsuzluğunun ulusal düzeyde resmen tescilidir.
+
+Cevap, iki yıl içinde gelecektir. Ama gelen cevap, beklenenden farklı bir biçimde gelir. Çünkü aynı koridorda, aynı yıllarda, iki ayrı teknoloji birbirine paralel olarak başlar.
+──────────────────────────────────────────────────────────────────────
+
+
+SAHNE 12 — Paralel ihale
+Dosya adı önerisi: s12_paralel_ihale.mp3
+Karakter sayısı: 423
+
+──────────────────────────────────────────────────────────────────────
+1945 başında, Devrek–Tefen yolunun 0–19,6 km'lik şose inşaatı için karayolu ihalesi açıldı. Yani devlet, aynı koridorda hem 20 kilometrelik dekovili döşemeye hazırlanıyor, hem de neredeyse aynı uzunlukta bir şoseyi ihaleye çıkarıyordu. İki teknoloji, ilk anından itibaren yan yana yarışa başladı.
+
+Bu yarış, bu belgeselin sonuna kadar arka planda akacak ve hattın akıbetini belirleyecek olan gerçek hikâyenin ta kendisidir.
+──────────────────────────────────────────────────────────────────────
+
+
+SAHNE 13 — Kemerler'de bir kasım sabahı
+Dosya adı önerisi: s13_kemerlerde_bir_kasim_saba.mp3
+Karakter sayısı: 882
+
+──────────────────────────────────────────────────────────────────────
+Tarihler 18 Kasım 1945'i gösterdiğinde, Çaydeğirmeni'nin Kemerler mahallesi, kendine ait olmayan bir gürültüyle uyandı. Bayraklar gerilmişti; orman amelesi günlük tulumlarının üstüne en temiz ceketlerini giymiş, yol kenarına dizilmişti. Devrek Kaymakamı, Orman İşletme Müdürü, Filyos ovasının ileri gelenleri ve Ankara'dan gelen heyet, henüz son rötuşu yapılmış küçük istasyon binasının önünde toplanmıştı. Heyetin başında Tarım Bakanı Şevket Raşit Hatipoğlu vardı.
+
+Hatipoğlu, Menemen doğumlu, ziraat eğitimini Avrupa'da almış bir teknisyendi. Kürsüye çıktığında dile getirdiği sözlerin birebir tutanağı elimizde değildir. Ama açılış, ertesi gün 19 Kasım 1945 tarihli Ulus gazetesinde ulusal haber olarak yer buldu. O günün anlamı bellidir: Cumhuriyet'in yirmi bir yıl önce Karadere'de yarım bıraktığı bir hayal, küçültülmüş ama gerçek bir hat olarak, nihayet ray üstüne oturmuştu.
+──────────────────────────────────────────────────────────────────────
+
+
+SAHNE 14 — Kemerler İstasyonu'nun portresi
+Dosya adı önerisi: s14_kemerler_i̇stasyonunun_po.mp3
+Karakter sayısı: 704
+
+──────────────────────────────────────────────────────────────────────
+Beyaz badanalı, dikdörtgen planlı, tek katlı küçük bir yapıydı Kemerler İstasyonu. Hat boyunca tek istasyon sayılabilecek nokta burasıydı. Gerçek anlamıyla bir yolcu istasyonu değildi — Devrek–Tefen Dekovili insan değil, ağaç taşıyordu — ama hattın işletme bürosu, vagon yönlendirmesi, basit bir ardiye ve şehirden gelen yetkililerin ağırlanması için merkez olarak kullanıldı.
+
+Bu binanın işlevine ve mimarisine ilişkin en ayrıntılı tanıklık, Sözlü Ormancılık Tarihi içinde Osman Savaşal'ın anlattıklarına dayanıyor. Onlarca yıl sonra, Kekeç hattın izini sürerken aynı binayı dönem fotoğrafından Kemerler'in en yaşlı sakinlerine gösterdiğinde, hepsi tereddütsüz teşhis etti: 'Bu, Kemerler İstasyonu'dur.'
+──────────────────────────────────────────────────────────────────────
+
+
+SAHNE 15 — Filyos üzerindeki ahşap köprü
+Dosya adı önerisi: s15_filyos_uzerindeki_ahsap_k.mp3
+Karakter sayısı: 440
+
+──────────────────────────────────────────────────────────────────────
+Hattın belirleyici ikinci yapısı, Filyos Irmağı üzerindeki ahşap köprüydü. Ahşap iskelet üzerine, dekovil yüküne uygun, dar açıklıklı, çok ayaklı bir köprü; ırmağın yaz alçak debisi düşünülerek tasarlanmış, ilkbahar yüksek debisini ise — sonradan acı biçimde görüleceği gibi — hiçbir zaman tam karşılayamayan bir köprü. Ahşaptı, daracıktı, ve üzerinde küçük bir buhar lokomotifi kerestesini ve vagonlarını yavaş yavaş, sallanarak geçirirdi.
+──────────────────────────────────────────────────────────────────────
+
+
+SAHNE 16 — Hattın gündelik hayatı
+Dosya adı önerisi: s16_hattin_gundelik_hayati.mp3
+Karakter sayısı: 998
+
+──────────────────────────────────────────────────────────────────────
+Bir dekovil hattının gündelik hayatı, ulusal demiryolu hatlarının gürültülü, takvimli, mühürlü hayatından çok farklıdır. Devrek–Tefen Dekovili, gün başında düdük çalıp gün sonunda son seferini yapan bir hat değildi. Mevsime, ormanın hangi tarafında kesim yapıldığına, kerestenin Tefen'den hangi ulusal hat seferine yetiştirileceğine göre dalgalı çalışan bir hattı.
+
+Hat boyunca çalışanlar üç ana gruptu. Bir veya iki makinist, bir ateşçi, birkaç hat bekçisi ve tamirci — teknik personel. Kerestenin kesildiği yerden yükleme rampalarına taşınmasından sorumlu, mevsimlik, köy kökenli orman amelesi. Ve Kemerler İstasyonu'nda oturan, defterleri tutan, Tefen'deki TCDD istasyonu ile Devrek'teki Orman İşletme Müdürlüğü ile yazışan birkaç idari memur.
+
+Hattın taşıdığı şey neredeyse tamamen orman emvaliydi: yontulmuş tomruklar, biçilmiş kalas, traverslik kereste. Ritmi mevsime bağlıydı. Sonbahar ve kış, kerestenin yoğun aktığı dönemdi. İlkbahar ise hattın en korkulu mevsimiydi. Çünkü Filyos taşardı.
+──────────────────────────────────────────────────────────────────────
+
+
+SAHNE 17 — 16 Nisan 1948: Aloğlu Köprüsü
+Dosya adı önerisi: s17_16_nisan_1948_aloglu_kopr.mp3
+Karakter sayısı: 820
+Ton ipucu: Felaket sahnesi — soğuk, bildirim tonu. Style 20.
+
+──────────────────────────────────────────────────────────────────────
+Filyos Irmağı, yaz ortasında bir adamı belden çekmeyen sakin bir sudur; ilkbaharda, Köroğlu ve Bolu dağlarının karları çözüldüğünde, on günde bir başka ırmak olur. Hat, kısa ömrü boyunca her ilkbahar yara aldı, her yaz tamir edildi.
+
+Bu yıpranmanın belgesel zirvesi 16 Nisan 1948'de geldi. O gün Anadolu Ajansı, Devrek ile Tefen istasyonu arasındaki Aloğlu Köprüsü'nün yıkıldığını ve orman işletmesine ait dekovil hattında elli metrelik bir toprak imlanın yarıldığını bildirdi. Bu haber, hattın üzerinde köprü ve altyapı hassasiyetinin tek bir olay değil, süregelen bir kırılganlık olduğunun resmî kaydıdır.
+
+Hat yine tamir edildi. Ama her yıl yapılan tamir, küçük bir bütçe kalemiyle karşılanması zor bir harcamaydı. Devrek–Tefen Dekovili fiziksel olarak hâlâ ayaktaydı; ama mali olarak yıllar içinde sessizce eriyordu.
+──────────────────────────────────────────────────────────────────────
+
+
+SAHNE 18 — 21 Şubat 1950: Hat kürsüye çıkıyor
+Dosya adı önerisi: s18_21_subat_1950_hat_kursuye.mp3
+Karakter sayısı: 1471
+Ton ipucu: TBMM kürsü pasajı — vakarlı, ağırbaşlı. Stability 65.
+
+──────────────────────────────────────────────────────────────────────
+Büyük Millet Meclisi'nin sekizinci döneminin dördüncü yasama yılı, 21 Şubat 1950 birleşimi. Daha üç ay sonra, çok partili tarihin gerçek dönüm noktası olan 14 Mayıs seçimleri yapılacaktır. O günün bütçe müzakerelerinin tonu, muhalefet baskısının soğukluğu, her bütçe kaleminin sıkı sorgulanması, dönem tutanaklarında okunabilir.
+
+İşte o birleşimde, Tarım Bakanlığı bütçesi sırasında, Devrek–Tefen Dekovili adıyla kürsüye çağrılır. Zonguldak milletvekili kürsüden şu sözleri söyler: 'Tarım Bakanlığı Devrek–Tefen dekovili için bir milyon beş yüz bin lira harcamıştır. Ancak bakımsızlık yüzünden köprüler bozulmuş, raylar kırılmıştır. Özel idare gereken bakımı yapmamıştır. Yatırım heba olmuştur.'
+
+Burada bir paragraf durup düşünmek gerekir. 1924'te Karadere için ayrılan üç buçuk milyon lira bir hayal içindi. 1945'te Devrek–Tefen için harcanan bir buçuk milyon lira ise bir tamamlama içindi. Hayalin ve tamamlamanın aynı meclis çatısı altında, yirmi beş yıl arayla, kendi sayısal ağırlıklarıyla sınanmış olması, Türkiye'nin orman politikası tarihindeki belki de en az incelenmiş kıyaslamadır.
+
+1950 şubatında kürsüden Devrek–Tefen'in adı geçtiğinde, hat fiziksel olarak hâlâ Filyos kıyısındaydı; lokomotifi hâlâ kerestesini taşıyordu; Kemerler'in beyaz binası hâlâ yerinde duruyordu. Ama bürokratik ölümün ilk sözcüğü söylenmişti. Bir hattın ölümü, raylarının sökülmesiyle değil, mecliste adının 'bakımsız' sıfatıyla anılmasıyla başlar. Hattın aslında beş yılı kalmıştı.
+──────────────────────────────────────────────────────────────────────
+
+
+SAHNE 19 — 1954–1955: Köprünün son baharı
+Dosya adı önerisi: s19_1954–1955_koprunun_son_ba.mp3
+Karakter sayısı: 865
+
+──────────────────────────────────────────────────────────────────────
+1955 ilkbaharında Filyos yine taştı. Bu, hattın gördüğü onuncu ilkbahardı; öncekilerden farkı yoktu. Ama bu sefer, ırmak çekildiğinde köprüyü onaracak el uzanmadı. Çünkü Ankara'da, beş yıl önce kürsüden adı 'bakımsız' diye anılan bu hattın artık bir geleceği olmadığına karar verilmişti.
+
+O yıllarda — yerel tarih kaynaklarının verdiği aralıkla 1954 ile 1955 arasında — Filyos Irmağı üzerindeki ahşap dekovil köprüsü yıkıldı ve yerini bugün hâlâ ayakta duran betonarme karayolu köprüsüne bıraktı.
+
+Bu basit bir köprü değişimi değildir; bir çağın bir başka çağa devridir. Ahşap köprü dekovili, yani rayı, yani kerestenin demir üstünde aktığı sistemi taşıyordu. Betonarme köprü ise lastiği, yani kamyonu, yani kerestenin artık karayolu üzerinde aktığı yeni sistemi taşıyacaktı. Aynı ırmağın aynı noktasında, on yıl arayla, Türkiye'nin taşımacılık aklı baştan yazıldı.
+──────────────────────────────────────────────────────────────────────
+
+
+SAHNE 20 — Hurda ve Karabük döngüsü
+Dosya adı önerisi: s20_hurda_ve_karabuk_dongusu.mp3
+Karakter sayısı: 1558
+Ton ipucu: Karabük döngüsü — büyülü, tarihi sentez. Style 35.
+
+──────────────────────────────────────────────────────────────────────
+Köprü yıkıldıktan sonra hattın geri kalanının ayakta kalması için bir neden kalmamıştı. Filyos'un iki yakası birbirinden koptuğu an, Devrek ormanından çıkan kereste Tefen istasyonuna dekoville ulaşamaz hâle geldi; ve bir orman dekovili, vardığı istasyona ulaşamıyorsa, sadece paslanan bir demir yığınıdır.
+
+Hat söküldü. Ray, lokomotif ve vagonlar hurda olarak satıldı. Bu hükmün birincil dayanağı, Sözlü Ormancılık Tarihi içinde Nurettin Elbir'in değerlendirmesidir; doğrudan bir açık ihale kaydı, envanter çıkışı ya da Resmî Gazete satış ilanı henüz tespit edilebilmiş değildir. Yine de hattın akıbeti, Türkiye'deki diğer orman ve sanayi dekovillerine uyumludur.
+
+İşte burada bir varsayım belirir. Eğer bu çelik, çevredeki en büyük demir- çelik tesisine — Karabük Demir ve Çelik Fabrikaları'na — gittiyse, tarih şaşırtıcı bir döngü tamamlamış olur. Çünkü o raylar 1914'te Almanya'da dökülmüş, savaş için Trabzon'a getirilmiş, Cumhuriyet'in ilk hayali için Karadere'ye taşınmış, sonra Devrek–Tefen'de çalışmış ve nihayet, Cumhuriyet'in kendi ürettiği ilk demir-çelik tesisinin ocağında eriyerek yerli çeliğe dönüşmüş olabilir.
+
+Yabancı demirin yerli demire karıştığı bir an. Bu varsayım henüz belgesel olarak doğrulanmış değildir; 1955–60 dönemi hurda ihale ilanları, Resmî Gazete kayıtları ve Karabük'ün hammadde defterleri taranmayı bekliyor. İronik bir not: Bu belgeselin kaynaklandığı araştırmayı yapan İbrahim Kekeç, hayatının önemli bir kısmını Karabük'te TCDD teknik şefi olarak çalışmış bir demiryolcudur. Tarih bazen kendi tanıklarını kendisi seçer.
+──────────────────────────────────────────────────────────────────────
+
+
+SAHNE 21 — Kemerler binasının sessiz kayboluşu
+Dosya adı önerisi: s21_kemerler_binasinin_sessiz.mp3
+Karakter sayısı: 1066
+
+──────────────────────────────────────────────────────────────────────
+Hat söküldükten sonra geriye kalan tek yapı, Kemerler'deki beyaz badanalı istasyon binasıydı. Köprü gitmiş, ray gitmiş, lokomotif gitmişti; ama bina bir süre daha ayakta kaldı. Çünkü bir bina, bir raydan farklı olarak, hemen hurda değildir; bir süre depo olur, bir süre ev olur, bir süre sadece 'şu eski yapı' olur.
+
+Kemerler İstasyonu da öyle oldu. Hat sökümünden sonra bir süre ayakta durdu; sonra, kesin tarihi henüz tespit edilememiş bir zamanda yıkıldı. Bugün yerinde bir şey yoktur. Onun bir zamanlar var olduğunu kanıtlayan tek şey, mahallenin en yaşlı sakinlerinin hafızası ve birkaç dönem fotoğrafıdır.
+
+Resmî arşiv bir binanın var olduğunu kaydeder, ama nasıl hatırlandığını kaydetmez. Bir binanın nerede durduğunu, hangi renkte olduğunu, çocukların önünde nasıl oynadığını, trenin önünden nasıl geçtiğini yalnızca insan hafızası taşır. Ve insan hafızası ölümlüdür. Kemerler'in o binayı hatırlayan son sakinleri öldüğünde, binanın nasıl hatırlandığı da onlarla birlikte ölecektir. Sözlü tarih, işte tam bu yüzden, bir lükse değil, bir aciliyete denk düşer.
+──────────────────────────────────────────────────────────────────────
+
+
+SAHNE 22 — Bugün hattın izinde
+Dosya adı önerisi: s22_bugun_hattin_izinde.mp3
+Karakter sayısı: 1250
+Ton ipucu: Bugün hattın izinde — düşünceli, yavaş. Style 30.
+
+──────────────────────────────────────────────────────────────────────
+Bugün, Devrek–Tefen Dekovili'nin güzergâhında yürümek isteyen biri ne bulur?
+
+Filyos kıyısında, betonarme karayolu köprüsünün dibinde, ırmağın alçak debili olduğu yaz aylarında, eski ahşap köprünün izlerini — taş ya da beton ayak kalıntılarını, suya gömülü demir parçalarını — arayabilir. Bunlar henüz sistematik olarak belgelenmiş, ölçülmüş, koordinatlanmış değildir; ama yerel hafıza onların varlığına işaret eder.
+
+Vadi boyunca, hattın yirmi kilometrelik güzergâhının bir kısmı bugün muhtemelen tarla, bir kısmı yol, bir kısmı ev avlusudur. Hattın set ve yarmaları — demiryolunun geçmesi için açılmış toprak işleri — arazide hâlâ okunabilir. Bir tarlanın ortasındaki açıklanamaz düz bir şerit, çoğu zaman sökülmüş bir hattın hayaletidir.
+
+Ve ev avlularında bazen, sökümden arta kalan bir ray parçası bulunur — bir bahçe kapısının sövesi, bir merdivenin korkuluğu, bir damın direği olmuş. Hat hurdaya satılırken köylüler birkaç parçayı alıkoydu; o parçalar, demir-çelik fabrikasında erimek yerine bir avluda yeni bir hayata başladı.
+
+Bu fiziksel izlerin hiçbiri tek başına bir anıt sayılmaz. Ama bir araya getirildiklerinde — köprü ayağı, vadi seti, avlu rayı ve yaşlı tanığın anlattığı — Devrek–Tefen Dekovili yeniden, haritada, hafızada var olur.
+──────────────────────────────────────────────────────────────────────
+
+
+SAHNE 23 — Stöger'in kayıp izi
+Dosya adı önerisi: s23_stogerin_kayip_izi.mp3
+Karakter sayısı: 654
+Ton ipucu: Açık soru — yarı-itiraf tonu. Style 35.
+
+──────────────────────────────────────────────────────────────────────
+Bu belgeselin başından beri taşıdığımız bir borç var. Karadere Projesi'nin başına geçen, Trabzon'dan rayları getiren, Gülüç ağzında kanal açtıran Çek asıllı orman mühendisi Franz Stöger — Türkçe adıyla İbrahim Kutsi — projenin durmasından sonra ne oldu?
+
+Dürüst cevap: Kesin olarak bilmiyoruz. Türkiye'de mi kaldı, ülkesine mi döndü, başka projelerde mi çalıştı, mezarı nerede — hiçbiri belgelenmiş değildir. Bu, bu belgeselin kapatamadığı en önemli düğümdür.
+
+Bir mühendisin mezarının nerede olduğunu bulmak, bazen bir hattın nereye gittiğini bulmaktan daha çok şey anlatır. Bu çağrıyı, bu filmin izleyicisine ve gelecekteki araştırmacılara bırakıyoruz.
+──────────────────────────────────────────────────────────────────────
+
+
+SAHNE 24 — Bir rayın anlattığı Türkiye
+Dosya adı önerisi: s24_bir_rayin_anlattigi_turki.mp3
+Karakter sayısı: 1685
+Ton ipucu: Üçlü sentez — toparlayıcı, edebi. Stability 60, Style 30.
+
+──────────────────────────────────────────────────────────────────────
+Bir buçuk saat boyunca tek bir nesnenin — bir parti çeliğin — peşinden gittik. Şimdi geri çekilip resmin tamamına bakalım. Bu çelik üç ayrı Türkiye gördü.
+
+Birincisi, 1914'ün imparatorluk Türkiye'siydi: savaşta, müttefikinden malzeme alan, doğu cephesinde katırla savaşan, rayları Trabzon Limanı'na indirip kullanamadan bırakan bir devlet.
+
+İkincisi, 1924'ün genç Cumhuriyet'iydi: kasası boş ama hayali ölçekli; sağlık bütçesinden büyük bir ormancılık projesini göze alan; Çek bir mühendise tam yetki verip Trabzon'un atıl demirini Batı Karadeniz'e taşıtan; ama o hayali tamamlayacak insan, para ve sabra henüz sahip olamayan bir ülke.
+
+Üçüncüsü, 1945'in olgunlaşan devletçi Türkiye'siydi: büyük hayali küçültüp gerçekleştiren; yirmi yıl bekleyen demiri yirmi kilometrelik bir hatta diriltebilen; ama o hattın da bakımını sürdüremeyip on yıl sonra karayolu çağına teslim eden bir ülke.
+
+Bu üç dönemin ortak öyküsü tek kelimeyle özetlenebilir: niyet ve süreklilik arasındaki açık. Türkiye, üç dönemde de doğru şeyi istedi — ormanı değerlendirmek, taşımacılığı kurmak, üretimi artırmak. Ama her seferinde, niyetin önüne kaynak kıtlığı, uzman yokluğu ve siyasi sabırsızlık çıktı. Karadere'nin 130 kilometresi, Devrek–Tefen'in 20 kilometresine küçüldü; o 20 kilometre de on yılda söküldü.
+
+Peki bu bir başarısızlık öyküsü müdür? Bir bakıma evet. Ama başka bir bakıma, Karadere–Gülüç Projesi, Cumhuriyet'in orman aklının doğum sancısıydı. Türkiye'nin bugünkü ormancılık kurumları, orman mühendisliği eğitimi, devlet orman işletmeciliği — hepsi, 1924'te Karadere'de yapılan o hatadan, o yarım kalmış hayalden ders çıkararak kuruldu. Başarısız projeler, bazen, başarılı kurumların atalarıdır.
+──────────────────────────────────────────────────────────────────────
+
+
+SAHNE 25 — Köprü ayağının dibinde
+Dosya adı önerisi: s25_kopru_ayaginin_dibinde.mp3
+Karakter sayısı: 1039
+Ton ipucu: Kapanış — şiirsel, ölçülü. Style 40.
+
+──────────────────────────────────────────────────────────────────────
+Bu belgeselin ilk dakikasında, Filyos kıyısında, betonarme köprünün dibinde, ıslak kumun içinde siyaha çalan bir demir parçasından söz etmiştik. Şimdi, yaklaşık kırk dakika sonra, o demir parçasının kim olduğunu biliyoruz.
+
+O, 1914'te bir Alman dökümhanesinde dövülen rayın bir kardeşidir. Trabzon Limanı'nda dokuz yıl bekledi. Karadere'nin kıyısında yirmi yıl bekledi. Devrek ile Tefen arasında on yıl çalıştı, kerestesini taşıdı, her ilkbahar Filyos'un taşkınında titredi. 1955'te köprüsü yıkıldığında söküldü, hurdaya satıldı — belki Karabük'ün ocağında eridi, belki bir köylünün bahçesinde kaldı, belki de oracıkta, ırmağın dibinde, herkesçe unutuldu.
+
+Ama bir şey eridi diye yok olmaz. O demirin taşıdığı niyet — bir ormanı değerlendirmek, bir ülkeyi ayağa kaldırmak, uzağı yakın etmek — hâlâ orada, Filyos'un kıyısında, kumun içinde duruyor. Onu yok olmaktan kurtaracak tek şey, hatırlamaktır. Bu film de, küçük bir hatırlama denemesinden başka bir şey değildir.
+
+Kayıp dekovil, kaybolmadı. Sadece, kendisini arayacak birini bekledi.
+──────────────────────────────────────────────────────────────────────
+
