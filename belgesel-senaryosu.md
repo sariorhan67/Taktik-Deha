@@ -479,26 +479,49 @@ Kemerler'in en yaşlı sakinlerine gösterdiğinde, hepsi tereddütsüz teşhis 
 **GEÇİŞ:** Filyos köprüsüne.
 
 ## SAHNE 15 — Filyos üzerindeki ahşap köprü
-*1945–1955. Filyos Irmağı.*
+*1945–1955. Filyos Irmağı. Bugünkü Gökçebey köprüsünün yerinde.*
 
-**MÜZİK:** Ahşap ses imaları, hafif gerilim.
+**MÜZİK:** Ahşap ses imaları, hafif gerilim. Önce sal sesi (kürek, su), sonra
+ahşap köprünün hışırtısı, sonra raylarda hafif metalik tıkırtı — üç katmanın
+işitsel imzası.
 
 **GÖRSEL:**
-- Üretken görsel: ahşap iskeletli, çok ayaklı, dekovil yüküne uygun bir
-  köprü, yaz alçak debisinde Filyos üzerinden.
-- Şematik çizim: köprünün rekonstrüksiyonu (ayak aralıkları, ahşap kiriş
-  düzeni).
+- Üretken görsel: 1900'lerin başında Filyos'u sallarla geçen köylüler, kıyıdan
+  kıyıya kereste ve hayvan taşınıyor (kısa, sepia).
+- Üretken görsel: ahşap iskeletli, çok ayaklı, dar açıklıklı ahşap köprü;
+  üzerinden at arabası ve dekovil rayları birlikte geçiyor.
+- Şematik çizim: köprünün üst görünüm planı — bir tarafta dekovil rayları,
+  öbür tarafta yaya/araba geçidi.
+- Gökçebeyliler arşivinden bugünkü Gökçebey köprüsü, sel suları altında —
+  bu köprünün ahşap selefinin neyle karşılaştığını gösteren imge.
 - Su sesi.
 
 **VO:**
-"Hattın belirleyici ikinci yapısı, Filyos Irmağı üzerindeki ahşap köprüydü.
-Ahşap iskelet üzerine, dekovil yüküne uygun, dar açıklıklı, çok ayaklı bir
-köprü; ırmağın yaz alçak debisi düşünülerek tasarlanmış, ilkbahar yüksek
-debisini ise — sonradan acı biçimde görüleceği gibi — hiçbir zaman tam
-karşılayamayan bir köprü. Ahşaptı, daracıktı, ve üzerinde küçük bir buhar
-lokomotifi kerestesini ve vagonlarını yavaş yavaş, sallanarak geçirirdi."
+"Hattın geçtiği en kırılgan yapı, Filyos Irmağı üzerindeki ahşap köprüydü.
+Ama bu köprü dekovile özel yapılmamıştı. Filyos'un iki yakasını birbirine
+bağlayan bu ahşap yapı, dekovilden çok daha önce vardı; köylüyü, hayvanı, at
+arabasını taşıyordu. Daha da öncesinde ise köprü bile yoktu. Halk Filyos'u
+sallarla geçer, bir yakadan öbürüne ot, kereste, insan, ne varsa sal üstünde
+aktarılırdı."
 
-**ALT-YAZI:** *Filyos Irmağı üzerindeki ahşap dekovil köprüsü*
+**ALT-YAZI:** *Filyos geçişi — sal döneminden ahşap köprüye, oradan dekovile*
+
+**VO (devamı):**
+"1940'lı yıllarda, mevcut ahşap köprünün üzerine, Devrek Orman İşletmesi
+tarafından dar dekovil rayları döşendi. Böylece köprü çift fonksiyonlu hâle
+geldi: hem köylünün at arabası, hem buharlı küçük lokomotifin orman emvali.
+Aynı ahşap iskelet, aynı dar açıklık, aynı çok ayaklı yapı — şimdi iki dünyaya
+birden hizmet ediyordu."
+
+**ALT-YAZI:** *Yerel arşiv: Gökçebeyliler (Sadi Uyar, Yiğit Uslu, Tuncer
+Gençoğlu koleksiyonu)*
+
+**VO (devamı):**
+"Köprü ırmağın yaz alçak debisi düşünülerek yapılmıştı; ilkbahar yüksek
+debisini ise — sonradan acı biçimde görüleceği gibi — hiçbir zaman tam
+karşılayamayacaktı. Ahşaptı, daracıktı, ve üzerinde küçük bir buhar lokomotifi
+kerestesini ve vagonlarını yavaş yavaş, sallanarak geçirirdi. Aynı köprü, bir
+saat sonra, bir köy çocuğunun atının nallarını taşırdı."
 
 **GEÇİŞ:** Hattın gündelik hayatına.
 

@@ -8,7 +8,7 @@ KULLANIM:
 - İndirilen MP3'ü önerilen dosya adıyla telefonunuza kaydedin.
 
 TOPLAM SAHNE SAYISI: 25
-TOPLAM KARAKTER: 22,048 (Creator planının 100.000/ay sınırı içinde)
+TOPLAM KARAKTER: 22,681 (Creator planının 100.000/ay sınırı içinde)
 
 ÖNERİLEN ELEVENLABS AYARLARI:
 - Voice: Türkçe — 'Cem' (erkek, derin) veya 'Defne' (kadın, vakar)
@@ -183,10 +183,14 @@ Bu binanın işlevine ve mimarisine ilişkin en ayrıntılı tanıklık, Sözlü
 
 SAHNE 15 — Filyos üzerindeki ahşap köprü
 Dosya adı önerisi: s15_filyos_uzerindeki_ahsap_k.mp3
-Karakter sayısı: 440
+Karakter sayısı: 1073
 
 ──────────────────────────────────────────────────────────────────────
-Hattın belirleyici ikinci yapısı, Filyos Irmağı üzerindeki ahşap köprüydü. Ahşap iskelet üzerine, dekovil yüküne uygun, dar açıklıklı, çok ayaklı bir köprü; ırmağın yaz alçak debisi düşünülerek tasarlanmış, ilkbahar yüksek debisini ise — sonradan acı biçimde görüleceği gibi — hiçbir zaman tam karşılayamayan bir köprü. Ahşaptı, daracıktı, ve üzerinde küçük bir buhar lokomotifi kerestesini ve vagonlarını yavaş yavaş, sallanarak geçirirdi.
+Hattın geçtiği en kırılgan yapı, Filyos Irmağı üzerindeki ahşap köprüydü. Ama bu köprü dekovile özel yapılmamıştı. Filyos'un iki yakasını birbirine bağlayan bu ahşap yapı, dekovilden çok daha önce vardı; köylüyü, hayvanı, at arabasını taşıyordu. Daha da öncesinde ise köprü bile yoktu. Halk Filyos'u sallarla geçer, bir yakadan öbürüne ot, kereste, insan, ne varsa sal üstünde aktarılırdı.
+
+1940'lı yıllarda, mevcut ahşap köprünün üzerine, Devrek Orman İşletmesi tarafından dar dekovil rayları döşendi. Böylece köprü çift fonksiyonlu hâle geldi: hem köylünün at arabası, hem buharlı küçük lokomotifin orman emvali. Aynı ahşap iskelet, aynı dar açıklık, aynı çok ayaklı yapı — şimdi iki dünyaya birden hizmet ediyordu.
+
+Köprü ırmağın yaz alçak debisi düşünülerek yapılmıştı; ilkbahar yüksek debisini ise — sonradan acı biçimde görüleceği gibi — hiçbir zaman tam karşılayamayacaktı. Ahşaptı, daracıktı, ve üzerinde küçük bir buhar lokomotifi kerestesini ve vagonlarını yavaş yavaş, sallanarak geçirirdi. Aynı köprü, bir saat sonra, bir köy çocuğunun atının nallarını taşırdı.
 ──────────────────────────────────────────────────────────────────────
 
 
