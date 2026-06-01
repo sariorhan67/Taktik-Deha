@@ -1,5 +1,26 @@
 # Devrek'in Kayıp Dekovili — Belgesel Çekim Senaryosu
 
+## Sürüm 2.3 (Karadere kitapları senkronu — Haziran 2026)
+
+> Bu sürüm, Sürüm 2.2'nin üzerine, Cantürk Gümüş'ün iki kitabının tam
+> metinlerinin getirdiği belirleyici düzeltmeyi ekler:
+> **(1)** *Devlet Ormancılığına Geçiş Sürecinde Karadere Serüveni*, Türkiye
+> Ormancılar Derneği, TOD Yayın No 32, Ankara 2017 (124 s.) — Karadere
+> projesine adanmış tek kitap;
+> **(2)** *Atatürk Dönemi Ormancılığı*, TOD Yayın No 75, Ankara 2025 (442 s.).
+>
+> **En önemli kazanım:** Belgeselin en büyük açık sorusu — Franz Stöger'in
+> akıbeti — **kapandı**. Stöger 1859 Budejovice doğumlu, 1882 Viyana mezunu,
+> 1889'da (Prens Rudolf bağlantısı şüphesiyle) Türkiye'ye gelmiş, 1917 orman
+> kanununu Veith ile yazmış, Karadere kararını veren Yüksek Orman Meclisi'nin
+> üyesiymiş (yani Karadere onun kendi projesi), ve **1935'te İstanbul'da
+> ölmüş** (Kutluk 1960). İkinci yabancı uzman **Macar Wiktor Çeti** de
+> projede çalışmış.
+>
+> **S23 tümüyle yeniden yazıldı** (4 yeni VO bloğu). S26 jeneriğe iki kitap
+> eklendi. 442 sayfalık 2025 kitabı, Stöger'in Yüksek Orman Meclisi üyeliğini
+> ve 1917 kanununun Veith-Stöger imzasını da doğruladı.
+
 ## Sürüm 2.2 (5 yeni birincil kaynak senkronu — Haziran 2026)
 
 > Bu sürüm, Sürüm 2.1'in üzerine, 5 yeni birincil/ikincil kaynağın getirdiği
@@ -635,27 +656,44 @@ Sahne formatı:
 
 **GEÇİŞ:** Stöger'in izine.
 
-## SAHNE 23 — Stöger'in kayıp izi
+## SAHNE 23 — Stöger'in izi: çözülen gizem [BÜYÜK REVIZE v2.3]
 
-*Belirsiz zaman ve mekân.*
+*Belirsiz zaman ve mekân. Budejovice'den İstanbul'a.*
 
-**MÜZİK:** Orta Avrupa imalı çello, mesafeli.
+**MÜZİK:** Orta Avrupa imalı çello, mesafeli; sonda yumuşayan, kapanışa hazırlayan.
 
 **GÖRSEL:**
 - Karadere döneminin Stöger silüeti (S5 ile aynı; yüz net değil).
-- Çek arşiv görüntüleri, eski diplomalar (temsilî).
-- KTÜ Orman Fakültesi binası.
-- Soru işareti silüeti, sönerek.
+- Üretken görsel: 1880'ler Viyana, Hochschule für Bodenkultur (Toprak Kültürleri Yüksek Okulu).
+- Üretken görsel: Avusturya-Macaristan veliahtı Prens Rudolf'un dönem fotoğrafı / Mayerling.
+- Eski mühendislik diploması, dönem belgeleri (temsilî).
+- Bugünkü İstanbul, sepia'ya kayan bir mezar / huzurlu kapanış imgesi.
 
-**VO:** "Bu belgeselin başından beri taşıdığımız bir borç var. Karadere Projesi'nin başına geçen, Trabzon'dan rayları getiren, Gülüç ağzında kanal açtıran Çek asıllı orman mühendisi Franz Stöger — Türkçe adıyla İbrahim Kutsi — projenin durmasından sonra ne oldu?"
+**VO (Blok 1 — YENİ):** "Bu belgeselin başından beri bir adamın peşindeydik. Karadere Projesi'nin yaratıcısı, Trabzon'dan rayları getiren, projenin başına geçen Çek asıllı orman mühendisi Franz Stöger. Uzun süre onun akıbetinin bilinmediği yazıldı. Ama biliyoruz. Ve hikâyesi, taşıdığı raylardan bile şaşırtıcı."
 
-**VO (devamı):** "Dürüst cevap: Kesin olarak bilmiyoruz. Türkiye'de mi kaldı, ülkesine mi döndü, başka projelerde mi çalıştı, mezarı nerede — hiçbiri belgelenmiş değildir. Bu, bu belgeselin kapatamadığı en önemli düğümdür."
+**ALT-YAZI:** *Franz Stöger (İbrahim Kutsi) — 1859, Budejovice*
 
-**VO (devamı):** "Bir mühendisin mezarının nerede olduğunu bulmak, bazen bir hattın nereye gittiğini bulmaktan daha çok şey anlatır. Bu çağrıyı, bu filmin izleyicisine ve gelecekteki araştırmacılara bırakıyoruz."
+**VO (Blok 2 — YENİ):** "1859'da, bugünkü Çekya'nın Budejovice kentinde doğdu. 1882'de Viyana'da, Avrupa'nın en köklü ormancılık okulunda eğitimini tamamladı. Sonra, 1889'da, ülkesini terk etti. Sebebi karanlıktır: Avusturya-Macaristan veliahtı Prens Rudolf'un o yıl esrarengiz ölümüyle bir bağlantısı olduğu şüphesi. Stöger ülkesinden ayrıldı ve bir daha hiç dönmedi. Türkiye'ye geldi, adını İbrahim Kutsi olarak değiştirdi."
 
-**ALT-YAZI:** *Açık soru: Franz Stöger / İbrahim Kutsi — 1925 sonrası akıbet*
+**ALT-YAZI:** *Viyana, Hochschule für Bodenkultur — 1882*
+
+**VO (Blok 3 — YENİ):** "Ve Türkiye onun ikinci vatanı oldu. 1917'de, daha Osmanlı zamanında, ülkenin ilk modern orman kanununu Avusturyalı meslektaşı Veith ile birlikte o kaleme aldı. Eskişehir'de kereste fabrikası ve dekovil kurdu. İstiklal Savaşı sırasında Ankara'da orman müşaviri oldu. 1924'te, Karadere kararını veren Yüksek Orman Meclisi'nin üyesiydi — yani Karadere, başkasının ona verdiği bir görev değil, bizzat onun kendi projesiydi. Antalya Çığlıkara'da orman komiseri olarak çalıştı; dönemin uzmanları onu 'Türkiye ormanlarını en iyi tanıyan kişi' diye andı. Ciddi, dürüst, tatlı şiveli bir Türkçesi olan bir ormancıydı."
+
+**ALT-YAZI:** *"Türkiye ormanlarını en iyi tanıyan kişi" — Prof. Bernhard, 1931*
+
+**VO (Blok 4 — YENİ):** "Franz Stöger — İbrahim Kutsi — 1935 yılında, İstanbul'da öldü. Karadere'nin raylarının Devrek'te beklediği, henüz sökülmediği bir yılda. Bir mühendisin mezarının nerede olduğunu bulmak, bazen bir hattın nereye gittiğini bulmaktan daha çok şey anlatır. Karadere'nin kayıp dekoviliyle birlikte, onu hayal eden adam da kaybolmuştu. Ama artık ikisi de kayıp değil."
+
+**ALT-YAZI:** *Franz Stöger / İbrahim Kutsi — öl. 1935, İstanbul*
 
 **GEÇİŞ:** Sentez sahnesine.
+
+> **v2.3 NOTU:** Bu sahne tümüyle yeniden yazıldı. Cantürk Gümüş'ün *Karadere
+> Serüveni* (2017) ve *Atatürk Dönemi Ormancılığı* (2025) kitapları Stöger'in
+> tam biyografisini veriyor — doğum (1859 Budejovice), eğitim (1882 Viyana),
+> Türkiye'ye geliş (1889, Prens Rudolf bağlantısı), 1917 orman kanunu
+> (Veith ile), Yüksek Orman Meclisi üyeliği, ve ölümü (1935 İstanbul, Kutluk
+> 1960). Önceki "akıbeti bilinmiyor" anlatımı artık olgusal olarak yanlış
+> olurdu. **4 yeni VO bloğu yeniden seslendirilecek.**
 
 ## SAHNE 24 — Bir rayın anlattığı Türkiye
 
@@ -737,6 +775,8 @@ Sahne formatı:
 - Sadi Uyar, "Tefen Köprüleri — Bildiklerimiz Bilmediklerimiz" (Facebook, 12 Ocak 2026)
 
 **Literatür**
+- **Cantürk Gümüş, *Devlet Ormancılığına Geçiş Sürecinde Karadere Serüveni*, Türkiye Ormancılar Derneği, TOD Yayın No 32, Ankara 2017** ← v2.3 (Stöger biyografisi, Karadere'ye adanmış tek kitap)
+- **Cantürk Gümüş, *Atatürk Dönemi Ormancılığı*, Türkiye Ormancılar Derneği, TOD Yayın No 75, Ankara 2025** ← v2.3
 - Cantürk Gümüş, *Türk Orman Devrimi*
 - Cantürk Gümüş, "Osmanlıdan Günümüze Ormancılık Politikalarının Ormancılık Örgütlenmesi Üzerine Etkileri ve Güncel Sorunlar", II. Ulusal Akdeniz Orman ve Çevre Sempozyumu, Isparta, 22-24 Ekim 2014, s.477-489 ← v2.2
 - *Sözlü Ormancılık Tarihi* (Osman Savaşal, Nurettin Elbir)
@@ -744,6 +784,7 @@ Sahne formatı:
 
 **Karşılaştırma**
 - Kaya & Yılmaz, "1930-1960 Yılları Arası Demiryolu Ulaşımının Ayancık Yöresinde Sosyo Ekonomik Hayat Üzerine Etkileri", *Türk Coğrafya Dergisi* 75, 2020 — Türkiye dar hat tarihi içindeki Devrek-Tefen konumlanması için karşılaştırma kaynağı ← v2.2
+- Mehtap Çınar, *1878-1950 Yılları Kars'ta Demiryolu (Dekovil Hattı) Çalışmaları*, Kafkas Üniversitesi YL tezi, 2021 — dekovil teknolojisi karşılaştırması ← v2.3
 
 **Çıkış metni**
 - İbrahim Kekeç, "Devrek'in Kayıp Dekovili", Zhaber, 2022

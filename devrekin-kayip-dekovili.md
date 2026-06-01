@@ -1,7 +1,7 @@
 # Devrek'in Kayıp Dekovili
 ### Trabzon'dan Filyos'a Bir Rayın İki Hayatı
 
-*Üç bölümlük anlatısal araştırma serisi — Sürüm 2.2*
+*Üç bölümlük anlatısal araştırma serisi — Sürüm 2.3*
 
 > **Yöntem ve teşekkür notu.** Bu seri, araştırmacı-yazar İbrahim Kekeç'in
 > *Devrek'in Kayıp Dekovili* (Zhaber, 2022) başlıklı yazısını çıkış noktası
@@ -132,14 +132,19 @@ kanunla verildi. Bkz. 548 sayılı Kanun, RC 23.II.1341 Sayı 84.)*
 Projenin başına bir mühendis arandı. Ankara'nın eli kısaydı; Türkiye'de o
 yıllarda yetişmiş orman mühendisi parmakla sayılıyordu. Ama bir başka neden
 de bir **kuraldı**. Orman Yüksek Meclisi'nin 1924 kararı, açık bir şart
-koşmuştu: **işletme müdürü yabancı bir uzman olacak, yardımcısı Türk
-olacaktı**. Rastgele değil, sistemli bir tercihti bu. Aranan adam **Çek
-asıllı, Avusturya-Macaristan ekolünden gelmiş Franz Stöger** oldu. Türkiye'ye
-geldiğinde adını Türkçeleştirdi; resmî yazışmalarda artık **İbrahim Kutsi**
-olarak imza atacaktı. Kutsi'ye verilen yetki, dönemine göre alışılmadık
-derecede geniştir: tam yetkili müşavir —yani projenin teknik direktörü, satın
-almacısı, saha müfettişi ve gerektiğinde Ankara'nın muhatabı, tek bir kişide
-birleştirilmiştir.
+koşmuştu (Bolu-Karadere İşletme Projesi'nin 10. maddesi): **idare, ecnebi
+mütehassıslardan, makamı Vekâlete karşı mesul bir işletme müdürüne tevdi
+edilecek; refakatinde Türk olarak bir muavin bulunacaktı**. Rastgele değil,
+sistemli bir tercihti bu. Aranan adam **Çek asıllı, Avusturya-Macaristan
+ekolünden gelmiş Franz Stöger** oldu — ki kendisi zaten o kararı veren Yüksek
+Orman Meclisi'nin asli üyesiydi; yani Karadere, başkasının ona verdiği bir
+görev değil, bizzat onun tasarladığı projeydi. Türkiye'ye geldiğinde adını
+Türkçeleştirdi; resmî yazışmalarda artık **İbrahim Kutsi** olarak imza
+atacaktı. Kutsi'ye verilen yetki, dönemine göre alışılmadık derecede geniştir:
+tam yetkili müşavir —yani projenin teknik direktörü, satın almacısı, saha
+müfettişi ve gerektiğinde Ankara'nın muhatabı, tek bir kişide
+birleştirilmiştir. (Stöger'in tam biyografisi ve akıbeti için Bölüm III'teki
+"Çözülen düğüm" bölümüne bakınız.)
 
 Kutsi'nin masasına yatırılan ilk büyük lojistik sorun, malzemeydi. Türkiye,
 1924'te 130 kilometrelik dar hat döşeyecek rayı içeriden üretemezdi; dışarıdan
@@ -600,29 +605,48 @@ anlattığı— Devrek–Tefen Dekovili yeniden, haritada, hafızada **var** olu
 serinin amacı da budur: sökülmüş bir hattı fiziksel olarak diriltmek değil —bu
 imkânsızdır— onu **hatırlanabilir** kılmak.
 
-## Çözülmemiş düğüm: Stöger/Kutsi nereye gitti?
+## Çözülen düğüm: Franz Stöger kimdi, ne oldu?
 
-Bu serinin başından beri taşıdığımız bir borç var: Karadere Projesi'nin başına
-geçen, Trabzon'dan rayları getiren, Gülüç ağzında kanal açtıran Çek asıllı orman
-mühendisi Franz Stöger —Türkçe adıyla İbrahim Kutsi— projenin durmasından sonra
-ne oldu?
+Bu serinin uzun süre taşıdığı bir borç vardı: Karadere Projesi'nin başına
+geçen, Trabzon'dan rayları getiren, Gülüç ağzında kanal açtıran Çek asıllı
+orman mühendisi Franz Stöger —Türkçe adıyla İbrahim Kutsi— projenin durmasından
+sonra ne oldu? Önceki sürümlerde bu soruyu açık bırakmıştık. **Sürüm 2.3'te,
+Cantürk Gümüş'ün iki kitabı (*Karadere Serüveni*, 2017; *Atatürk Dönemi
+Ormancılığı*, 2025) sayesinde artık tam cevabı biliyoruz.**
 
-Dürüst cevap: **Kesin olarak bilmiyoruz.** Birkaç olasılık vardır ve her biri
-ayrı bir araştırma kapısıdır:
+**Franz Stöger, 1859'da bugünkü Çekya'nın Budejovice kentinde doğdu.** 1882'de
+Viyana'daki Toprak Kültürleri Yüksek Okulu'nda (Hochschule für Bodenkultur)
+ormancılık eğitimini tamamladı. **1889'da ülkesini terk etti** — Avusturya-
+Macaristan veliahtı Prens Rudolf'un o yıl gerçekleşen esrarengiz ölümüyle
+bağlantısı olduğu şüphesi nedeniyle. Türkiye'ye geldi, bir daha hiç dönmedi,
+adını **İbrahim Kutsi** olarak değiştirdi.
 
-- **Türkiye'de kaldı ve ormancılığa hizmete devam etti.** O dönemde Türkiye'ye
-  gelen yabancı orman uzmanları (özellikle Orta Avrupa ekolünden) ülkenin
-  ormancılık kurumlarının ve eğitiminin temelini attı; Stöger bu kuşağın bir
-  üyesi olarak başka projelerde yer almış olabilir.
-- **Ülkesine ya da Orta Avrupa'ya döndü.** Proje durunca sözleşmesi sona ermiş
-  olabilir.
-- **İzini Türk ormancılık tarihi kaynakları taşıyor olabilir.** Cantürk Gümüş'ün
-  *Türk Orman Devrimi* eseri ve Cumhuriyet dönemi yabancı uzmanlar üzerine
-  yapılacak bir tarama bu adı yeniden ortaya çıkarabilir.
+Türkiye onun ikinci vatanı oldu. **1917'de**, daha Osmanlı döneminde, ülkenin
+ilk modern orman kanununu Avusturyalı meslektaşı **Oberforstrat Veith** ile
+birlikte kaleme aldı (24 Nisan 1917 tarihli "Ormanların Usulü İdaresi
+Fenniyeleri" kanunu). Birinci Dünya Savaşı yıllarında Eskişehir Somdöken
+ormanlarında kereste fabrikası, havai hat ve dekovil kurdu. İstiklal Savaşı
+sırasında İktisat Bakanlığı'nda Orman Müşaviri oldu. **1924'te, Karadere
+kararını veren Yüksek Orman Meclisi'nin (Orman Meclisi Alisi) asli üyesiydi**
+— Orman Fen Müşaviri sıfatıyla. Yani Karadere, başkasının ona verdiği bir
+görev değil, **bizzat onun kendi projesiydi**. Sonraki yıllarda Antalya
+Çığlıkara'da orman komiseri olarak çalıştı; Prof. Robert Bernhard 1931'de onu
+"Türkiye ormanlarını en iyi tanıyan kişi" diye andı. Çağdaşları onu "ciddi,
+görevine bağlı ve dürüst, tatlı şiveli bir Türkçesi olan bir ormancı" olarak
+hatırlar.
 
-Bu düğümü çözmeyi, okura ve gelecekteki araştırmacılara bir çağrı olarak
-bırakıyoruz. Bir mühendisin mezarının nerede olduğunu bulmak, bazen bir hattın
-nereye gittiğini bulmaktan daha çok şey anlatır.
+**Franz Stöger — İbrahim Kutsi — 1935'te İstanbul'da öldü** (Halil Kutluk,
+1960). Karadere'nin rayları henüz Devrek'te bekliyordu; Devrek–Tefen Dekovili
+daha kurulmamıştı bile. Onu hayal eden adam, hayalinin gerçekleşmiş küçük
+versiyonunu göremeden gitti.
+
+Bir not daha: Stöger tek yabancı uzman değildi. Macar **Wiktor Çeti** de —
+Avusturya'da ormancılık eğitimi almış— Karadere'ye özel sözleşmeyle gönderilip
+kesim ve nakliyat işlerinde "revizör ve kontrolör" olarak çalıştırıldı.
+
+Bir mühendisin mezarının nerede olduğunu bulmak, bazen bir hattın nereye
+gittiğini bulmaktan daha çok şey anlatır. Karadere'nin kayıp dekoviliyle
+birlikte, onu hayal eden adam da uzun süre kayıptı. Artık ikisi de değil.
 
 Bir de ikinci bir açık not: Kekeç'in başka bir çalışmasında izini sürdüğü ressam
 **Mukim Tahir**'in Karabük–Yenice'de orman dekovili üzerinde ölüp bir Yenice
@@ -712,9 +736,13 @@ değildir.
 
 | Tarih | Olay |
 |---|---|
+| 1859 | **Franz Stöger**, Budejovice'de (bugünkü Çekya) doğar. |
 | 3 Ocak 1865 | Bolu sancağı mazbatası: **Kethüdazade (Kahyaoğlu) Süleyman**, Devrek–Tefen arası nehri kebir üzerinde köprü için 14.000 kuruş taahhüt eder. Meclis-i Vâla'ya gönderilir. (Gaziler–Karahatipler hattı, **Alaoğlu mevkii** — Filyos köprüsünden farklı yer.) |
+| 1882 | Stöger, Viyana Toprak Kültürleri Yüksek Okulu'ndan (Hochschule für Bodenkultur) mezun olur. |
+| 1889 | Stöger ülkesini terk eder (Prens Rudolf'un ölümüyle bağlantı şüphesi); Türkiye'ye gelir, adını İbrahim Kutsi yapar, bir daha dönmez. |
 | 1914–1915 | I. Dünya Savaşı'nda Alman menşeli dekovil malzemesi Trabzon Limanı'na indirilir; bir kısmı Hamsiköy'e kadar döşenir, kalanı depolanır. |
 | 1916 | Rus ilerleyişi Trabzon'a ulaşır. |
+| 24 Nisan 1917 | Stöger ve Avusturyalı Veith, ilk modern orman kanununu ("Ormanların Usulü İdaresi Fenniyeleri") kaleme alır. |
 | 1923 | Cumhuriyet ilan edilir; Karadere Projesi dosyası Ziraat Vekâleti'ne sunulur. |
 | **7 Şubat 1924** | **Orman Yüksek Meclisi (Orman Meclisi Alisi) kurulur** — İktisat Bakanlığı Müsteşarı başkanlığında, 76 gün görev yapar. |
 | **27 Şubat 1924** | OYM'nin **ilk kararı**: Bolu-Karadere ormanlarının devlet eliyle işletilmesi. Yıllık 111.000 m³ üretim hedefi; İzmir Göknar + Zonguldak travers + maden direği. Yabancı uzman müdür + Türk yardımcı kuralı. |
@@ -727,7 +755,7 @@ değildir.
 | 1 Temmuz 1930 | Irmak–Filyos hattının Filyos–Yenice / Filyos–Balıkısık kesimi sefere açılır. |
 | 1931 | Alaoğlu köprüsü ahşaba dönüştürülür. |
 | Temmuz 1933 | **Zonguldak ve ilçelerinde büyük sel felaketi**; bölgedeki köprüler ağır hasar görür. |
-| 1935 | Irmak–Filyos demiryolu tam hizmete girer (27 istasyon, 1.368 menfez/köprü, 37 tünel). |
+| 1935 | Irmak–Filyos demiryolu tam hizmete girer (27 istasyon, 1.368 menfez/köprü, 37 tünel). **Aynı yıl Franz Stöger (İbrahim Kutsi) İstanbul'da ölür** (Kutluk, 1960). |
 | 1936 | Alaoğlu köprüsünün ahşap sürümü yeniden inşa edilir. |
 | 1937 | **Sadi Uyar arşivinde fotoğraflı belge**: Filyos üzerinde sal taşımacılığı hâlâ devam etmektedir (dekovil köprüsü henüz yoktur). |
 | 1939 | **Zonguldak Bayındırlık Müdürlüğü raporu**: "Zonguldak kömür havzasının zaruri, iktisadi, askeri yol şebekeleri" — bölgesel yol ve köprü ağı için kapsamlı plan. |
@@ -748,10 +776,21 @@ değildir.
 # Ek B — Kaynakça
 
 ## Kitaplar ve tezler
+- **Cantürk Gümüş**, *Devlet Ormancılığına Geçiş Sürecinde Karadere Serüveni*,
+  Türkiye Ormancılar Derneği, TOD Yayın No 32, Ankara 2017 (124 s.).
+  *(Karadere projesine adanmış tek kitap; Stöger'in tam biyografisi ve
+  ölümü [1935 İstanbul], Wiktor Çeti, Bolu-Karadere İşletme Projesi'nin
+  23 maddesi, Orman Meclisi Alisi Talimatnamesi burada. Sürüm 2.3 temel
+  kaynağı.)* — Tam metin elimizde (PDF).
+- **Cantürk Gümüş**, *Atatürk Dönemi Ormancılığı*, Türkiye Ormancılar
+  Derneği, TOD Yayın No 75, Ankara 2025 (442 s.). ISBN 978-625-97519-5-5.
+  *(Stöger'in Yüksek Orman Meclisi üyeliği, 1917 Veith-Stöger orman kanunu,
+  Karadere'nin Stöger'in kendi projesi olduğu. Sürüm 2.3.)* — Tam metin
+  elimizde (PDF).
 - Cantürk Gümüş, *Türk Orman Devrimi*, Türkiye Ormancılar Derneği Yayını. —
   ormancilardernegi.org/Documents/0d8f68d7-6405-434f-b86d-ce508b88c94f.pdf
-- Cantürk Gümüş, *Devlet Ormancılığına Geçiş Sürecinde Karadere Serüveni*. —
-  researchgate.net/profile/Cantuerk-Guemues/publication/
+- Cantürk Gümüş, *Devlet Ormancılığına Geçiş Sürecinde Karadere Serüveni*
+  (makale sürümü). — researchgate.net/profile/Cantuerk-Guemues/publication/
   322508373_Devlet_Ormanciligina_Gecis_Surecinde_KARADERE_SERUVENI
 - **Cantürk Gümüş**, *"Osmanlıdan Günümüze Ormancılık Politikalarının
   Ormancılık Örgütlenmesi Üzerine Etkileri ve Güncel Sorunlar"*, II. Ulusal
@@ -765,7 +804,12 @@ değildir.
 - **Mutlu Kaya & Cevdet Yılmaz**, *"1930-1960 Yılları Arası Demiryolu
   Ulaşımının Ayancık Yöresinde Sosyo Ekonomik Hayat Üzerine Etkileri"*,
   Türk Coğrafya Dergisi 75, 2020, s.95-106. DOI: 10.17211/tcd.727048.
-  *(Türkiye dar hat ailesi içinde karşılaştırma kaynağı.)*
+  *(Türkiye dar hat ailesi içinde karşılaştırma kaynağı — Ayancık-Zingal.)*
+- **Mehtap Çınar**, *1878-1950 Yılları Kars'ta Demiryolu (Dekovil Hattı)
+  Çalışmaları*, Yüksek Lisans Tezi, Kafkas Üniversitesi Sosyal Bilimler
+  Enstitüsü, Kars 2021. Danışman: Doç. Dr. Nurhan Aydın. *(Dekovil
+  teknolojisi ve genel dar hat tarihi karşılaştırması.)* — Tam metin
+  elimizde (PDF).
 - (Sözlü tarih cildi) *Sözlü Ormancılık Tarihi* — Osman Savaşal ve Nurettin
   Elbir'in Devrek–Tefen dekoviline ilişkin anlatıları.
 
@@ -901,6 +945,13 @@ beklediğini gösterir.
   (1943 ihale) *(Sadi Uyar, 2026)*.
 - **Mükelliyet dönemi**: dekovilin Gökçebey kısmında kadın işçiler çalıştı;
   başçavuş Üçburgu Sezer ailesinden *(Sadi Uyar, 2026)*.
+- **Franz Stöger'in (İbrahim Kutsi) yaşam öyküsü ve ölümü**: 1859 Budejovice
+  doğumu, 1882 Viyana mezuniyeti, 1889'da Türkiye'ye gelişi, 1917 orman
+  kanununu Veith ile yazması, Yüksek Orman Meclisi üyeliği, ve **1935'te
+  İstanbul'da ölümü** *(Cantürk Gümüş, Karadere Serüveni 2017 ve Atatürk
+  Dönemi Ormancılığı 2025; Kutluk 1960)*.
+- **Karadere'nin Stöger'in kendi projesi olduğu**: Karadere kararını veren
+  Yüksek Orman Meclisi'nin asli üyesiydi *(Gümüş, 2025)*.
 
 ## Orta güven (literatür + tanıklık var, birincil belge tam değil)
 - **Kemerler İstasyonu** binasının işlevi ve mimarisi *(Osman Savaşal'ın
@@ -932,8 +983,8 @@ beklediğini gösterir.
   (Resmî Gazete ilanı, alıcı kimliği, satış bedeli).
 - Hamsiköy ve Karadere'den Devrek–Tefen'e devredilen malzemenin **birebir
   envanteri** (hangi kalemler, hangi miktar, hangi tarihte).
-- **Stöger/Kutsi'nin** 1925 sonrası akıbeti (Türkiye'de kaldı mı, döndü mü,
-  mezarı nerede).
+- **Stöger'in İstanbul'daki mezarının yeri** (ölüm yılı 1935 ve şehri belli;
+  mezarının tam yeri henüz tespit edilebilmiş değil).
 - Kemerler İstasyonu binasının **kesin yıkım tarihi**.
 - **Kadın işçi başçavuşunun** kimliği (Üçburgu Sezer ailesinden — sözlü tarih;
   şahsın adı henüz tespit edilebilmiş değil).
@@ -945,8 +996,9 @@ beklediğini gösterir.
 
 # Ek D — Açık Sorular (gelecek araştırmacılara çağrı)
 
-1. **Stöger/Kutsi'nin akıbeti.** 1925 sonrası nerede? Türkiye'de mi kaldı,
-   döndü mü? Mezarı nerede?
+1. **Stöger'in mezarının yeri.** Akıbeti artık biliniyor (1935, İstanbul'da
+   öldü); ama İstanbul'da hangi mezarlıkta yattığı henüz tespit edilebilmiş
+   değil. *(Sürüm 2.3'te bu sorunun büyük kısmı kapandı.)*
 2. **Trabzon → Karadere nakliyesinin belgesi.** Malzeme hangi yolla (deniz,
    karayolu, nehir) ve hangi tarihlerde taşındı?
 3. **Lokomotif kimliği.** Devrek–Tefen'in lokomotifleri hangi marka/modeldi?
@@ -995,3 +1047,13 @@ beklediğini gösterir.
 >   1924, Orman Yüksek Meclisi (Gümüş 2014).
 > - "TBMM 21 Şubat 1950'de konuşan milletvekili kimdi?" sorusu **kapandı**:
 >   Ali Rıza İncealemdaroğlu (Zonguldak).
+>
+> **Not — Sürüm 2.3'te kapanan en büyük soru:**
+> - "Franz Stöger / İbrahim Kutsi'nin akıbeti ne oldu?" — serinin en uzun
+>   süre açık kalan sorusu — **kapandı**. Cantürk Gümüş'ün iki kitabı tam
+>   biyografiyi veriyor: 1859 Budejovice doğumu, 1882 Viyana, 1889 Türkiye'ye
+>   geliş (Prens Rudolf bağlantısı), 1917 Veith ile orman kanunu, Yüksek
+>   Orman Meclisi üyeliği (Karadere onun kendi projesi), **1935 İstanbul'da
+>   ölüm** (Kutluk 1960). Geriye sadece mezarının tam yeri açık kaldı.
+> - İkinci yabancı uzman **Macar Wiktor Çeti**'nin varlığı da bu sürümde
+>   eklendi.

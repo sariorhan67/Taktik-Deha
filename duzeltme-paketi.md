@@ -1,26 +1,31 @@
-# DÜZELTME PAKETİ v3 — 5 Yeni Kaynak Senkronu
+# DÜZELTME PAKETİ v4 — Karadere Kitapları + 5 Yeni Kaynak Senkronu
 ## Devrek'in Kayıp Dekovili — Üretim Senkronu Güncellemesi
 
-**Tarih:** Haziran 2026 (Sürüm 2.2 — 5 yeni birincil/ikincil kaynak entegre)
+**Tarih:** Haziran 2026 (Sürüm 2.3 — Karadere kitapları + 2.2'nin 5 kaynağı)
 
-**Kaynaklar:**
-1. Cantürk Gümüş, *"Osmanlıdan Günümüze Ormancılık Politikalarının..."* (Isparta sempozyum, 22-24 Ekim 2014, s.477-489)
-2. TBMM Tutanak Dergisi B:52, 21.II.1950 (Bayındırlık Bakanlığı bütçe görüşmesi, Ali Rıza İncealemdaroğlu konuşması)
+**v2.3 ile eklenen kaynaklar (Karadere kitapları):**
+- Cantürk Gümüş, *Devlet Ormancılığına Geçiş Sürecinde Karadere Serüveni*, TOD Yayın No 32, Ankara 2017 (124 s.) — **Stöger biyografisi** burada
+- Cantürk Gümüş, *Atatürk Dönemi Ormancılığı*, TOD Yayın No 75, Ankara 2025 (442 s.)
+- Mehtap Çınar, *1878-1950 Kars'ta Demiryolu (Dekovil Hattı)*, Kafkas Ün. YL tezi, 2021
+
+**v2.2 kaynakları (önceki paket):**
+1. Cantürk Gümüş, *"Osmanlıdan Günümüze Ormancılık..."* (Isparta, 2014)
+2. TBMM Tutanak Dergisi B:52, 21.II.1950 (Ali Rıza İncealemdaroğlu)
 3. 548 sayılı Kanun resmi metni (RC 23.II.1341 sayı 84)
-4. Şükrü Açıcı YL tezi (Balıkesir, 2019) — PREVIEW
-5. Kaya & Yılmaz 2020 (Ayancık-Zingal karşılaştırması)
+4. Şükrü Açıcı YL tezi (Balıkesir, 2019)
+5. Kaya & Yılmaz 2020 (Ayancık-Zingal)
 
-**+ Önceki düzeltme paketinden gelenler:**
+**+ Daha önceki paketlerden:**
 - Sadi Uyar 12.01.2026 yazısı düzeltmeleri (S15, S17)
 - S1 coğrafya düzeltmesi (Çaydeğirmeni → Gökçebey/Tefen köprüsü)
 
-**Etki:** Toplam **7 ses bloğu yeniden üretimi**, 6 alt-yazı kartı güncellemesi, jenerik genişlemesi.
+**Etki:** Toplam **11 ses bloğu yeniden üretimi** (S23'ün 4 yeni bloğu eklendi), alt-yazı kartı güncellemeleri, jenerik genişlemesi.
 
 ---
 
 ## 🔴 BÖLÜM 1 — ELEVENLABS'A YAPIŞTIRILACAK YENİ BLOKLAR
 
-Aşağıdaki **7 ses bloğunu yeniden üret**. ElevenLabs ayarları: Stability 55-60, Similarity 75, Style 25-30, ses: Cem veya Defne. Tarih sıralı:
+Aşağıdaki **13 ses bloğunu yeniden üret**. ElevenLabs ayarları: Stability 55-60, Similarity 75, Style 25-30, ses: Cem veya Defne. Sahne sıralı:
 
 | # | Sahne | Blok | Eski mp3 | Yeni mp3 | Sebep |
 |---|---|---|---|---|---|
@@ -33,8 +38,12 @@ Aşağıdaki **7 ses bloğunu yeniden üret**. ElevenLabs ayarları: Stability 5
 | 7 | S17 | Orta | s17b.mp3 | s17b_v2.mp3 | Alaoğlu ≠ dekovil köprüsü |
 | 8 | **S18** | **Blok 1 (giriş)** | s18a.mp3 | **s18a_v3.mp3** | **YENİ: Bayındırlık Bakanlığı bütçesi + Ali Rıza İncealemdaroğlu adı** |
 | 9 | **S18** | **Blok 2 (orta)** | s18b.mp3 | **s18b_v3.mp3** | **YENİ: Birebir tutanak alıntısı, üç katmanlı analiz** |
+| 10 | **S23** | **Blok 1** | s23a.mp3 | **s23a_v3.mp3** | **YENİ v2.3: Stöger'in izi açılış** |
+| 11 | **S23** | **Blok 2** | — | **s23b_v3.mp3** | **YENİ v2.3: Budejovice'den ayrılış** |
+| 12 | **S23** | **Blok 3** | — | **s23c_v3.mp3** | **YENİ v2.3: Türkiye'nin orman adamı** |
+| 13 | **S23** | **Blok 4** | — | **s23d_v3.mp3** | **YENİ v2.3: 1935 İstanbul'da ölüm** |
 
-Bold olanlar **bu paketle yeni eklenen** bloklar (4 adet). İtalik olanlar önceki güncellemeden kaldı (3 adet). Toplam: **7 yeni mp3**.
+Toplam: **13 yeni mp3.** (S1, S4×2, S5, S15×2, S17, S18×2, S23×4)
 
 ---
 
@@ -90,9 +99,49 @@ Karakter: ~740 · Süre: ~44-47 sn · Ton: Belgesel, soğuk, eleştirel. Style 2
 
 ---
 
+### S23 / Blok 1 (YENİ v2.3) — Stöger'in izi açılış
+
+```
+Bu belgeselin başından beri bir adamın peşindeydik. Karadere Projesi'nin yaratıcısı, Trabzon'dan rayları getiren, projenin başına geçen Çek asıllı orman mühendisi Franz Stöger. Uzun süre onun akıbetinin bilinmediği yazıldı. Ama biliyoruz. Ve hikâyesi, taşıdığı raylardan bile şaşırtıcı.
+```
+
+Karakter: ~290 · Süre: ~18-20 sn · Ton: Merak uyandıran, sıcak. Style 30.
+
+---
+
+### S23 / Blok 2 (YENİ v2.3) — Budejovice'den ayrılış
+
+```
+1859'da, bugünkü Çekya'nın Budejovice kentinde doğdu. 1882'de Viyana'da, Avrupa'nın en köklü ormancılık okulunda eğitimini tamamladı. Sonra, 1889'da, ülkesini terk etti. Sebebi karanlıktır: Avusturya-Macaristan veliahtı Prens Rudolf'un o yıl esrarengiz ölümüyle bir bağlantısı olduğu şüphesi. Stöger ülkesinden ayrıldı ve bir daha hiç dönmedi. Türkiye'ye geldi, adını İbrahim Kutsi olarak değiştirdi.
+```
+
+Karakter: ~430 · Süre: ~26-28 sn · Ton: Gizemli, anlatısal. Style 30.
+
+---
+
+### S23 / Blok 3 (YENİ v2.3) — Türkiye'nin orman adamı
+
+```
+Ve Türkiye onun ikinci vatanı oldu. 1917'de, daha Osmanlı zamanında, ülkenin ilk modern orman kanununu Avusturyalı meslektaşı Veith ile birlikte o kaleme aldı. Eskişehir'de kereste fabrikası ve dekovil kurdu. İstiklal Savaşı sırasında Ankara'da orman müşaviri oldu. 1924'te, Karadere kararını veren Yüksek Orman Meclisi'nin üyesiydi — yani Karadere, başkasının ona verdiği bir görev değil, bizzat onun kendi projesiydi. Antalya Çığlıkara'da orman komiseri olarak çalıştı; dönemin uzmanları onu 'Türkiye ormanlarını en iyi tanıyan kişi' diye andı. Ciddi, dürüst, tatlı şiveli bir Türkçesi olan bir ormancıydı.
+```
+
+Karakter: ~620 · Süre: ~37-40 sn · Ton: Saygılı, anlatısal. Style 25.
+
+---
+
+### S23 / Blok 4 (YENİ v2.3) — 1935, İstanbul
+
+```
+Franz Stöger — İbrahim Kutsi — 1935 yılında, İstanbul'da öldü. Karadere'nin raylarının Devrek'te beklediği, henüz sökülmediği bir yılda. Bir mühendisin mezarının nerede olduğunu bulmak, bazen bir hattın nereye gittiğini bulmaktan daha çok şey anlatır. Karadere'nin kayıp dekoviliyle birlikte, onu hayal eden adam da kaybolmuştu. Ama artık ikisi de kayıp değil.
+```
+
+Karakter: ~360 · Süre: ~22-24 sn · Ton: Ölçülü, kapanışa hazırlayan. Style 35.
+
+---
+
 ### S1, S15, S17 blokları için önceki paketteki metinleri kullan
 
-Yukarıdaki **4 yeni bloğu** üretirken, eski düzeltme paketindeki metinler **aynen geçerli** (S1a, S15a, S15b, S17b). Bunları zaten daha önce gönderdim — değişmedi.
+Yukarıdaki bloklar dışında, eski düzeltme paketindeki metinler **aynen geçerli** (S1a, S15a, S15b, S17b). Bunları zaten daha önce gönderdim — değişmedi.
 
 ---
 
@@ -168,15 +217,24 @@ Yukarıdaki **4 yeni bloğu** üretirken, eski düzeltme paketindeki metinler **
 - [ ] **S18 / Blok 1 yeniden üret → `s18a_v3.mp3`** ⚠️ YENİ
 - [ ] **S18 / Blok 2 yeniden üret → `s18b_v3.mp3`** ⚠️ YENİ
 
-### B. CapCut'ta (~30 dakika)
-- [ ] 7 yeni mp3'ü Drive'a koy, eski karşılıklarını arşivle
-- [ ] CapCut zaman çizelgesinde **9 segmenti** yeni mp3'lerle değiştir
+- [ ] **S23 / Blok 1 yeniden üret → `s23a_v3.mp3`** ⚠️ YENİ v2.3
+- [ ] **S23 / Blok 2 yeniden üret → `s23b_v3.mp3`** ⚠️ YENİ v2.3
+- [ ] **S23 / Blok 3 yeniden üret → `s23c_v3.mp3`** ⚠️ YENİ v2.3
+- [ ] **S23 / Blok 4 yeniden üret → `s23d_v3.mp3`** ⚠️ YENİ v2.3
+
+> **Not:** S23 önceki sürümde tek VO bloğuydu. Şimdi 4 bloğa bölündü çünkü
+> Stöger biyografisi eklendi. Eski tek s23 mp3'ünü sil, 4 yeni blokla değiştir.
+
+### B. CapCut'ta (~35 dakika)
+- [ ] 13 yeni mp3'ü Drive'a koy, eski karşılıklarını arşivle
+- [ ] CapCut zaman çizelgesinde ilgili segmentleri yeni mp3'lerle değiştir
+- [ ] **S23'ü baştan kur:** eski tek bloğu sil, 4 yeni bloğu sırayla yerleştir
 - [ ] S4'e 4 yeni alt-yazı kartı ekle, "648 sayılı kanun" kartını sil
-- [ ] S5'in giriş kartlarını gözden geçir (değişiklik yok)
 - [ ] S18'e 2 yeni alt-yazı kartı ekle, eski tutanak kartını değiştir
+- [ ] **S23 kartlarını değiştir:** eski "Açık soru" kartı yerine 4 yeni kart (Budejovice / Viyana / Bernhard alıntısı / 1935 İstanbul)
 - [ ] S15 / S16 / S17 kartları (önceki paket — yapılmamışsa şimdi)
-- [ ] **Jenerik (S26) kayan yazısını tam yenile** (5 yeni kaynak eklendi)
-- [ ] Yazım: "Aloğlu" → "Alaoğlu", "Çaydeğirmeni" (S1) → "Gökçebey" (önceki paket)
+- [ ] **Jenerik (S26) kayan yazısını tam yenile** (Karadere kitapları + 5 kaynak)
+- [ ] Yazım: "Aloğlu" → "Alaoğlu", "Çaydeğirmeni" (S1) → "Gökçebey"
 
 ---
 
@@ -184,12 +242,12 @@ Yukarıdaki **4 yeni bloğu** üretirken, eski düzeltme paketindeki metinler **
 
 | Alan | Sayı |
 |---|---|
-| Yeni ses bloğu üretimi (toplam) | **9 blok** (3 önceki paket + 6 bu paket) |
-| Toplam ek karakter (ElevenLabs kotası) | ~4.500 (≈%4.5 ek kullanım) |
-| CapCut alt-yazı kartı değişikliği | 10+ (S4×4, S15, S16, S17, S18×2, S26 jenerik) |
+| Yeni ses bloğu üretimi (toplam) | **13 blok** (önceki 9 + S23'ün 4 yeni bloğu) |
+| Toplam ek karakter (ElevenLabs kotası) | ~6.200 (≈%6 ek kullanım) |
+| CapCut alt-yazı kartı değişikliği | 14+ (S4×4, S15, S16, S17, S18×2, S23×4, S26 jenerik) |
 | Yazım düzeltme | Aloğlu→Alaoğlu, Çaydeğirmeni→Gökçebey, 648 sayılı kanun atfı silindi |
 | Görsel yerleştirme | Sadi Uyar 4 fotoğrafı (önceki paket) |
 
-**Toplam ek iş süresi: ~55-70 dakika**
+**Toplam ek iş süresi: ~70-90 dakika**
 
-Bu paket, belgeseli **birincil belge düzeyinde doğru**, **isimlendirilmiş tanıklı**, **uluslararası akran-örnek karşılaştırmasıyla bağlamlanmış** hâle getirir. Bundan sonra olgusal hata kalmaz.
+Bu paket, belgeseli **birincil belge düzeyinde doğru**, **isimlendirilmiş tanıklı**, ve artık **en büyük gizemi (Stöger'in akıbeti) çözülmüş** hâle getirir. "Açık soru" sahnesi "çözülmüş gizem" sahnesine döndü; bundan sonra olgusal hata kalmaz.

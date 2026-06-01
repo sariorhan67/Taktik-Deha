@@ -1,5 +1,9 @@
 # ALT-YAZI KARTLARI — Devrek'in Kayıp Dekovili
-## CapCut için sahne sıralı liste — **Sürüm 2.2** (5 yeni kaynak senkronu — Haziran 2026)
+## CapCut için sahne sıralı liste — **Sürüm 2.3** (Karadere kitapları senkronu — Haziran 2026)
+
+> v2.3: S23 (Stöger izi) tek "açık soru" kartından **4 yeni karta** dönüştü —
+> Stöger'in biyografisi artık biliniyor (1935 İstanbul'da öldü). Jenerikte
+> Karadere kitapları eklendi. Aşağıda v2.2 işaretleri de korunmuştur.
 
 > Bu sürüm, belgesel-senaryosu.pdf v2.2 ile **birebir senkrondur**. Önceki
 > sürümden değişen kartlar başlığında [REVIZE v2.2] veya [YENİ v2.2] etiketi
@@ -53,7 +57,10 @@
 | **24** | **S18 1950 TBMM [REVIZE v2.2]** | **TBMM Tutanak Dergisi, 8. Dönem 4. Yasama Yılı, B:52, 21.II.1950 (Bayındırlık Bakanlığı bütçe görüşmesi)** | **KAYNAK/BELGE** |
 | 25 | S19 Köprünün son baharı | Filyos köprüsü: ahşaptan betonarmeye — 1954-1955 | YER/TARİH |
 | 26 | S20 Hurda ve Karabük | Tanıklık: Nurettin Elbir, Sözlü Ormancılık Tarihi | TANIKLIK |
-| 27 | S23 Stöger izi | Açık soru: Franz Stöger / İbrahim Kutsi — 1925 sonrası akıbet | AÇIK SORU |
+| 27a | S23 Stöger izi [YENİ v2.3] | Franz Stöger (İbrahim Kutsi) — 1859, Budejovice | KİŞİ |
+| 27b | S23 Stöger izi [YENİ v2.3] | Viyana, Hochschule für Bodenkultur — 1882 | YER/TARİH |
+| 27c | S23 Stöger izi [YENİ v2.3] | "Türkiye ormanlarını en iyi tanıyan kişi" — Prof. Bernhard, 1931 | ALINTI |
+| 27d | S23 Stöger izi [YENİ v2.3] | Franz Stöger / İbrahim Kutsi — öl. 1935, İstanbul | KİŞİ |
 | 28 | Kapanış (S25 sonu) | Bu belgesel, araştırmacı-yazar İbrahim Kekeç'in *Devrek'in Kayıp Dekovili* (Zhaber, 2022) yazısına ve onun derlediği kaynak havzasına minnetle ithaf edilmiştir. | İTHAF |
 
 **v2.2 değişiklik özeti:** 8 yeni/revize kart (S4'te 3 yeni + 1 revize; S15'te 1 revize; S16'da 1 yeni; S17'de 1 revize; S18'de 1 yeni + 1 revize). Eski "648 sayılı Kanun" kartı kaldırıldı. Eski "Yerel arşiv: Gökçebeyliler" kartı **"Sadi Uyar koleksiyonu"** olarak düzeltildi (bisikletli adam fotoğrafının gerçek kaynağı).
@@ -105,13 +112,16 @@ Sırasıyla başlıklandır (kayan/scroll):
 - Sadi Uyar, *"Tefen Köprüleri — Bildiklerimiz Bilmediklerimiz"* (Facebook, 12 Ocak 2026)
 
 ### 2. Kaynaklar — Literatür
+- **Cantürk Gümüş, *Devlet Ormancılığına Geçiş Sürecinde Karadere Serüveni*, TOD Yayın No 32, Ankara 2017** ← v2.3
+- **Cantürk Gümüş, *Atatürk Dönemi Ormancılığı*, TOD Yayın No 75, Ankara 2025** ← v2.3
 - Cantürk Gümüş, *Türk Orman Devrimi*
 - **Cantürk Gümüş, *"Osmanlıdan Günümüze Ormancılık Politikalarının Ormancılık Örgütlenmesi Üzerine Etkileri ve Güncel Sorunlar"*, II. Ulusal Akdeniz Orman ve Çevre Sempozyumu, Isparta, 22-24 Ekim 2014, s.477-489** ← v2.2
 - *Sözlü Ormancılık Tarihi* (Osman Savaşal, Nurettin Elbir)
 - **Şükrü Açıcı, *Devlet Orman İşletmeleri Tarafından Gerçekleştirilen Orman Emvali Satışları*, Balıkesir Üniversitesi YL tezi, 2019** ← v2.2
 
 ### 3. Kaynaklar — Karşılaştırma
-- **Kaya & Yılmaz, *"1930-1960 Yılları Arası Demiryolu Ulaşımının Ayancık Yöresinde Sosyo Ekonomik Hayat Üzerine Etkileri"*, Türk Coğrafya Dergisi 75, 2020** ← v2.2 (Türkiye dar hat tarihi içindeki konumlanma için karşılaştırma kaynağı)
+- **Kaya & Yılmaz, *"...Ayancık Yöresinde..."*, Türk Coğrafya Dergisi 75, 2020** ← v2.2 (Ayancık-Zingal karşılaştırması)
+- **Mehtap Çınar, *1878-1950 Kars'ta Demiryolu (Dekovil Hattı)*, Kafkas Ün. YL tezi, 2021** ← v2.3 (dekovil teknolojisi)
 
 ### 4. Çıkış metni
 - İbrahim Kekeç, "Devrek'in Kayıp Dekovili", Zhaber, 2022
