@@ -1,20 +1,38 @@
-# DÜZELTME PAKETİ — Paket Tam
+# DÜZELTME PAKETİ — Paket Tam (Haziran 2026 güncellemesi)
 ## Devrek'in Kayıp Dekovili — Üretim Senkronu Güncellemesi
 
-**Tarih:** Mayıs 2026
+**Tarih:** Haziran 2026 (Sürüm 2.1 — coğrafya düzeltmesi eklendi)
 **Kaynak:** Sadi Uyar, *"Tefen Köprüleri — Bildiklerimiz Bilmediklerimiz"* (Facebook, 12 Ocak 2026) + 4 arşiv fotoğrafı
-**Etki:** 2 sahnenin VO metni güncellenir (toplam 3 blok yeniden ses), 2 kart düzeltilir, jenerik genişler, yazım düzeltilir.
+**Etki:** 3 sahnenin VO metni güncellenir (toplam 4 blok yeniden ses), 2 kart düzeltilir, jenerik genişler, yazım düzeltilir.
 
 ---
 
 ## 🔴 BÖLÜM 1 — ELEVENLABS'A YAPIŞTIRILACAK YENİ BLOKLAR
 
-Aşağıdaki **3 ses bloğunu yeniden üret**. ElevenLabs ayarları aynı (Stability 55-60, Similarity 75, Style 25-30, ses: Cem veya Defne).
+Aşağıdaki **4 ses bloğunu yeniden üret**. ElevenLabs ayarları aynı (Stability 55-60, Similarity 75, Style 25-30, ses: Cem veya Defne).
 
 Eski mp3 dosyalarını silme — yeniden adlandır:
+- `s01a_acilis_v2.mp3` (yeni) ← **Haziran düzeltmesi: coğrafya**
 - `s15a_filyos_kopru_v2.mp3` (yeni)
 - `s15b_filyos_kopru_v2.mp3` (yeni)
 - `s17b_alogluv2.mp3` (yeni)
+
+---
+
+### S1 / İlk blok (yeni) — Filyos kıyısı + Tefen köprüsü
+
+> **Düzeltme nedeni:** Eski kayıt "Çaydeğirmeni'ne inip" diyordu. Köprü
+> aslında Gökçebey'in güney girişinde, Filyos üzerinden Çaydeğirmeni'ne
+> bağlanan **Tefen (Gökçebey) köprüsü**dür. Belgeselin **ilk cümlesi**
+> olduğu için bu düzeltme kritiktir.
+
+```
+Filyos Irmağı'nın kasım soğuğunda yüksek aktığı bir sabah, Gökçebey'e inip Tefen köprüsünün ayaklarının dibine yaklaşırsanız, suyun çekildiği yerde, ıslak kumun içinde, siyaha çalan bir demir parçası görürsünüz. Çoğu yerli onun ne olduğunu bilmez; bilenler de yıllar içinde anlatmaktan vazgeçmiştir. Oysa bu kıyıda bir zamanlar ahşap bir köprü vardı. O köprünün üzerinden, 1945'ten 1955'e kadar, yavaşça, dumanını Filyos'un üstüne salarak bir tren geçerdi. Trenin adı dekovildi.
+```
+
+Karakter: ~600 · Süre tahmini: ~35-40 sn · Ton: Cold open — yavaş, mesafeli, çağrı yapar gibi. Style 35.
+
+**Not:** S1'in ikinci VO bloğu ("Bu film, bir trenin değil...") **değişmiyor**, mevcut s01b mp3'ünü koru.
 
 ---
 
@@ -133,13 +151,16 @@ Etkilenen yerler:
 
 ## 📋 BÖLÜM 5 — ÖZET YAPILACAKLAR LİSTESİ
 
-### A. ElevenLabs (~10 dakika)
+### A. ElevenLabs (~12 dakika)
+- [ ] **S1 / İlk blok yeniden üret** → `s01a_v2.mp3` ⚠️ Haziran düzeltmesi: coğrafya (Çaydeğirmeni → Gökçebey/Tefen köprüsü)
 - [ ] S15 / Blok 1 yeniden üret → `s15a_v2.mp3`
 - [ ] S15 / Blok 2 yeniden üret → `s15b_v2.mp3`
 - [ ] S17 / Orta blok yeniden üret → `s17b_v2.mp3`
-- [ ] Drive'da yeni dosyaları **aynı klasöre** koy (eski s15a, s15b, s17b mp3'lerini eski isimlerinde bırakabilirsin; CapCut'a sadece yenileri sürükle)
+- [ ] Drive'da yeni dosyaları **aynı klasöre** koy (eski s01a, s15a, s15b, s17b mp3'lerini eski isimlerinde bırakabilirsin; CapCut'a sadece yenileri sürükle)
 
-### B. CapCut'ta (~15 dakika)
+### B. CapCut'ta (~17 dakika)
+- [ ] **S1 / İlk blok mp3 → eski s01a yerine yeni `s01a_v2.mp3` yerleştir** ⚠️ Haziran
+- [ ] S1'in ikinci bloğu (s01b — "Bu film...") AYNI KALIR
 - [ ] S15 / Blok 1 mp3 → eski s15a yerine yeni `s15a_v2.mp3` yerleştir
 - [ ] S15 / Blok 2 mp3 → eski s15b yerine yeni `s15b_v2.mp3` yerleştir
 - [ ] S15'in 3. bloğu (s15c) AYNI KALIR
@@ -164,12 +185,12 @@ Etkilenen yerler:
 
 | Alan | Sayı |
 |---|---|
-| Yeni ses bloğu üretimi | 3 (S15a, S15b, S17b) |
-| Toplam ek karakter (ElevenLabs kotası) | ~1.345 (≈%1.3 ek kullanım) |
+| Yeni ses bloğu üretimi | 4 (S1a, S15a, S15b, S17b) |
+| Toplam ek karakter (ElevenLabs kotası) | ~1.945 (≈%2 ek kullanım) |
 | CapCut alt-yazı kartı değişikliği | 4 (S15 yeni, S16 yeni, S17 değişti, S26 jenerik) |
-| Yazım düzeltme | "Aloğlu" → "Alaoğlu" (tüm geçtiği yerlerde) |
+| Yazım düzeltme | "Aloğlu" → "Alaoğlu" + "Çaydeğirmeni" → "Gökçebey/Tefen köprüsü" (S1) |
 | Görsel yerleştirme | 4 Sadi Uyar fotoğrafı eklendi |
 
-**Toplam ek iş süresi: ~35-45 dakika**
+**Toplam ek iş süresi: ~40-50 dakika**
 
 Bu paket, belgeseli **olgusal olarak tam doğru, sosyal tarih boyutu zengin, görsel olarak güçlü** hale getirir.

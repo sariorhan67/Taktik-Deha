@@ -10,6 +10,12 @@
 
 ### SÜRÜM 2.1 DEĞİŞİKLİK NOTLARI (changelog)
 
+0. **S1 VO — coğrafya düzeltmesi** — "Çaydeğirmeni'ne inip betonarme karayolu
+   köprüsünün" → "Gökçebey'e inip Tefen köprüsünün". Köprü, Devrek beldesi
+   Çaydeğirmeni ile Çaycuma ilçesi Gökçebey beldesi arasındaki Filyos
+   üzerindedir; resmî adı Tefen (Gökçebey) Köprüsü'dür. **S1 ilk VO bloğu
+   yeniden seslendirilecek** — belgeselin ilk cümlesi olduğu için kritik.
+
 1. **S15 VO** — Eski anlatım ("köprü dekovilden önce vardı, üzerine ray
    döşendi") **kapsamlı revize**. Yeni anlatım: köprü 1945'te dekovil için
    inşa edildi; daha önce o noktada sal taşımacılığı vardı. Blok 1 ve Blok 2
@@ -76,7 +82,7 @@ Sahne formatı:
 
 ## SAHNE 1 — Filyos kıyısında bir demir parçası
 
-*Şimdi. Bir kasım sabahı. Filyos Irmağı kıyısı, Çaydeğirmeni civarı.*
+*Şimdi. Bir kasım sabahı. Filyos Irmağı kıyısı, Gökçebey'in güney girişi — Tefen köprüsünün ayakları.*
 
 **MÜZİK:** Tek bir keman notası, çok kısık; sonra sessizlik.
 
@@ -86,7 +92,7 @@ Sahne formatı:
 - Yakın plan: kumda siyaha çalan paslı bir demir parçası, su akıyor.
 - **El, çıplak (eldivensiz)**, demir parçasını kaldırıyor. *(v2: önceki "eldivenli" → çıplak; S25 ile aynı el.)*
 
-**VO:** "Filyos Irmağı'nın kasım soğuğunda yüksek aktığı bir sabah, Çaydeğirmeni'ne inip betonarme karayolu köprüsünün ayaklarının dibine yaklaşırsanız, suyun çekildiği yerde, ıslak kumun içinde, siyaha çalan bir demir parçası görürsünüz. Çoğu yerli onun ne olduğunu bilmez; bilenler de yıllar içinde anlatmaktan vazgeçmiştir. Oysa bu kıyıda bir zamanlar ahşap bir köprü vardı. O köprünün üzerinden, 1945'ten 1955'e kadar, yavaşça, dumanını Filyos'un üstüne salarak bir tren geçerdi. Trenin adı dekovildi."
+**VO:** "Filyos Irmağı'nın kasım soğuğunda yüksek aktığı bir sabah, Gökçebey'e inip Tefen köprüsünün ayaklarının dibine yaklaşırsanız, suyun çekildiği yerde, ıslak kumun içinde, siyaha çalan bir demir parçası görürsünüz. Çoğu yerli onun ne olduğunu bilmez; bilenler de yıllar içinde anlatmaktan vazgeçmiştir. Oysa bu kıyıda bir zamanlar ahşap bir köprü vardı. O köprünün üzerinden, 1945'ten 1955'e kadar, yavaşça, dumanını Filyos'un üstüne salarak bir tren geçerdi. Trenin adı dekovildi."
 
 **GÖRSEL:** Eski siyah-beyaz fotoğraf belirir — Kemerler İstasyonu ve dekovil lokomotifi (Sadi Uyar koleksiyonu / Kekeç arşivi). Sepia tonuna kayma.
 
