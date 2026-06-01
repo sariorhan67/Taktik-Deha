@@ -1,25 +1,37 @@
 # Devrek'in Kayıp Dekovili
 ### Trabzon'dan Filyos'a Bir Rayın İki Hayatı
 
-*Üç bölümlük anlatısal araştırma serisi — Sürüm 2.1*
+*Üç bölümlük anlatısal araştırma serisi — Sürüm 2.2*
 
 > **Yöntem ve teşekkür notu.** Bu seri, araştırmacı-yazar İbrahim Kekeç'in
 > *Devrek'in Kayıp Dekovili* (Zhaber, 2022) başlıklı yazısını çıkış noktası
-> alır; onun derlediği kaynak havzasını —TBMM tutanakları, dönem basını,
-> ormancılık literatürü ve yerel sözlü tanıklıklar— anlatısal bir bütün içinde
-> yeniden kurar. Sürüm 2, *Devrek'in Kayıp Dekovili Üzerine Derin Araştırma*
-> (ChatGPT Deep Research, 2026) çıktısının getirdiği birincil belgeleri
-> (1925 tarihli 548 ve 648 sayılı kanunlar, 19 Kasım 1945 Ulus haberi, 16 Nisan
-> 1948 Anadolu Ajansı sel haberi, 1943 ve 1950 TBMM tutanakları, *Türk Orman
-> Devrimi*'nin ulusal istatistikleri) anlatıya entegre etti. Sürüm 2.1,
-> **Sadi Uyar'ın 12 Ocak 2026 tarihli *"Tefen Köprüleri"*** yazısının ve dört
-> arşiv fotoğrafının getirdiği belirleyici düzeltmeleri kapsar: Alaoğlu
-> Köprüsü ile dekovil köprüsünün **farklı** köprüler olduğu, 1948 selinde
-> dekovil köprüsünün **sağlam kaldığı**, köprünün 1945'te dekovil için yapılıp
-> ondan önce o noktada sal taşımacılığı yapıldığı, ve mükelliyet dönemi
-> **kadın işçileri** dahil. Her iddia, dayandığı kaynağa metin içinde
-> işaretlenmiştir; doğrulanmamış noktalar "açık soru" olarak ayrılmıştır.
-> Tam güven haritası, kronoloji ve kaynakça metnin sonundadır.
+> alır. **Sürüm 2.2** beş yeni birincil/ikincil kaynağın getirdiği
+> belirleyici düzeltmeleri içerir:
+> **(1)** Cantürk Gümüş, *"Osmanlıdan Günümüze Ormancılık Politikalarının
+> Ormancılık Örgütlenmesi Üzerine Etkileri ve Güncel Sorunlar"* (II. Ulusal
+> Akdeniz Orman ve Çevre Sempozyumu, Isparta, 22-24 Ekim 2014, s.477-489) —
+> Karadere kararının kesin tarihi (27 Şubat 1924, Orman Yüksek Meclisi),
+> yıllık üretim hedefi 111.000 m³, ürün spesifikasyonu (Göknar, travers,
+> maden direği), 150 km hat ve "yabancı uzman + Türk yardımcı" kuralı;
+> **(2)** TBMM Tutanak Dergisi B:52, 21.II.1950 (Bayındırlık Bakanlığı
+> bütçe görüşmesi) — konuşmacı **Ali Rıza İncealemdaroğlu (Zonguldak)**, ve
+> "Tarım Bakanlığı bütçesi" yanlışının düzeltilmesi;
+> **(3)** 548 sayılı Kanun'un resmi metni (RC 23.II.1341 sayı 84) —
+> "648 sayılı kanun" diye atıf yaptığımız ayrı bir mevzuat olmadığının,
+> 2.000.000 lira tahsisatın 548'de verildiğinin, ve 23 Mart 1924 tarih ve
+> 450 sayılı kanunun Karadere'ye uygulanan ilk yasal adım olduğunun
+> doğrulanması;
+> **(4)** Şükrü Açıcı YL tezi (Balıkesir Üniversitesi, 2019) — tam metin
+> kilitli; tezin var olduğu kaynakçaya not düşülür;
+> **(5)** Kaya & Yılmaz 2020 (Türk Coğrafya Dergisi 75) — Ayancık-Zingal
+> dekovili (1930-1963) karşılaştırma çerçevesi.
+>
+> Daha önce **Sürüm 2.1**'in dayandığı kaynaklar (Sadi Uyar 12 Ocak 2026
+> yazısı + 4 arşiv fotoğrafı), **Sürüm 2**'nin Deep Research (ChatGPT, 2026)
+> çıktısı, ve çıkış metni Kekeç (Zhaber, 2022) korunur. Her iddia,
+> dayandığı kaynağa metin içinde işaretlenmiştir; doğrulanmamış noktalar
+> "açık soru" olarak ayrılmıştır. Tam güven haritası, kronoloji ve
+> kaynakça metnin sonundadır.
 
 ---
 
@@ -80,32 +92,48 @@ ormancılık projesi, neredeyse bütün malzemesini bu yığından çıkaracakt�
 
 ## Cumhuriyet'in iddiası: Karadere Projesi
 
-Yeni Türkiye'nin kasası boştu, ama hayalleri ölçekliydi. Ankara'da, 1923'ün
-son aylarında, Ziraat Vekâleti'nin masasına bir dosya geldi: Batı Karadeniz'de,
-Devrek'in iç kesimlerinde, **Dirgine Orman İşletmesi** sahasında yatan bir
-orman vardı; envanteri **altı milyon metreküp**'tü ve neredeyse el değmemişti.
-Bu ormanın adı **Karadere**'ydi.
+Yeni Türkiye'nin kasası boştu, ama hayalleri ölçekliydi. **7 Şubat 1924'te**
+Ankara'da yeni bir kurum doğdu: **Orman Yüksek Meclisi** —yahut o günkü adıyla
+**Orman Meclisi Alisi**. İktisat Bakanlığı Müsteşarı başkanlığındaki bu kurul,
+yalnızca yetmiş altı gün görev yapabilecekti. Ama o yetmiş altı günde,
+**27 Şubat 1924**'te, yeni Cumhuriyet'in orman ekonomisi için ilk büyük
+kararını verdi: **Bolu-Karadere ormanlarının devlet eliyle işletilmesi**. Batı
+Karadeniz'de, Devrek'in iç kesimlerinde, **Dirgine Orman İşletmesi** sahasında
+yatan bir orman vardı; envanteri **altı milyon metreküp**'tü ve neredeyse el
+değmemişti. Bu ormanın adı **Karadere**'ydi.
 
-Tasarı şuydu: Bu envanterden **yılda yüz bin metreküp** kereste işlenecek;
-kereste, ormanın içinden Ereğli'nin yanı başındaki **Gülüç İskelesi**'ne kadar
-**yaklaşık 130 kilometrelik bir dekovil hattı** ile taşınacak; iskelede
-biriktirilen kereste, gemilerle İstanbul ve diğer limanlara sevk edilecekti.
-Hat döşenecek, iskele inşa edilecek, ırmak ağzı ıslah edilecekti. Ucu açık bir
-taahhüt değil, açıkça çizilmiş, sayısı verilmiş bir endüstriyel programdı bu.
+Tasarı şuydu: Bu envanterden **yılda 111.000 metreküp** kereste çıkarılacak.
+Ama bu sıradan bir kereste değildi. Üç çok spesifik hedefi vardı: **İzmir
+piyasasının üzüm ve incir ihracatı için reçinesiz Göknar kerestesi**;
+**Zonguldak demiryolu için travers**; ve **Zonguldak madenleri için maden
+direği**. O yıllarda Türkiye, İzmir tüccarının istediği reçinesiz Göknar
+kerestesini **İsveç ve Romanya'dan ithal ediyordu**; Karadere bu ithalatın
+yerine geçecekti. Kereste, ormanın içinden Ereğli ya da Zonguldak yönünde bir
+dar hat ile taşınacaktı.
 
-Projenin toplam tahayyülü **3,5 milyon Türk lirasıydı** —Cumhuriyet'in ilk
-genel bütçesinin yaklaşık yüzde üçüne denk geliyordu ve Sıhhiye Vekâleti'nin
-tüm bütçesinden büyüktü. Ankara'nın yasayla bağladığı kısım ise daha mütevazı
-ama kesindi: **26 Ocak 1925 tarih ve 548 sayılı kanun**, Karadere ormanlarını
-işletmek üzere Ereğli–Karadere arasında **75 santimetre genişliğinde** bir hat
-kabul etti; aynı yılın **648 sayılı kanunu** ise bu inşaat ve işletme için
-**2.000.000 lira tahsisat** ayırdı. Yani 3,5 milyon liralık proje toplamının
-arkasında, iki milyon liralık somut bir yasal taahhüt vardı. Bir ormancılık
+Hattın genişliği **75 santimetreyle** planlandı. Uzunluğu için kaynaklarda iki
+ayrı sayı dolaşır: bazı kayıtlarda **130 kilometre** Ereğli/Gülüç hattı, Cantürk
+Gümüş'ün araştırmasına göre **Zonguldak'a kadar 150 kilometre**. İki sayı
+arasındaki fark muhtemelen güzergâhın iki ayrı planlama aşamasını
+yansıtıyordur — ya da iki kaynağın farklı belgelere dayanmasından doğuyor.
+
+Yasal zemin **iki adımda** kuruldu. **23 Mart 1924 tarih ve 450 sayılı kanun**,
+Ankara-Sivas ve Samsun-Sivas demiryollarına daha önce verilmiş tüm
+müsaadeleri Ereğli-Karadere'ye uyguladı. Ardından **26 Ocak 1925 tarih ve
+548 sayılı kanun** geldi: inşaat ve işletme için **iki milyon lira tahsisat**.
+Bu rakam, Cumhuriyet'in ilk genel bütçesinin yaklaşık **yüzde üçüne** denk
+geliyordu ve **Sıhhiye Vekâleti'nin tüm bütçesinden büyüktü**. Bir ormancılık
 projesinin, ülkenin tüm sağlık harcamasından büyük olduğu bir an düşünün —bu,
 Cumhuriyet'in orman serveti karşısında nasıl bir iddia taşıdığının ölçüsüdür.
+*(Önceki sürümlerde "648 sayılı kanun" diye anılan ayrı bir mevzuat aslında
+yoktur; bu, **Sürüm 2.2**'de düzeltildi. Tahsisat doğrudan 548 sayılı
+kanunla verildi. Bkz. 548 sayılı Kanun, RC 23.II.1341 Sayı 84.)*
 
 Projenin başına bir mühendis arandı. Ankara'nın eli kısaydı; Türkiye'de o
-yıllarda yetişmiş orman mühendisi parmakla sayılıyordu. Aranan adam **Çek
+yıllarda yetişmiş orman mühendisi parmakla sayılıyordu. Ama bir başka neden
+de bir **kuraldı**. Orman Yüksek Meclisi'nin 1924 kararı, açık bir şart
+koşmuştu: **işletme müdürü yabancı bir uzman olacak, yardımcısı Türk
+olacaktı**. Rastgele değil, sistemli bir tercihti bu. Aranan adam **Çek
 asıllı, Avusturya-Macaristan ekolünden gelmiş Franz Stöger** oldu. Türkiye'ye
 geldiğinde adını Türkçeleştirdi; resmî yazışmalarda artık **İbrahim Kutsi**
 olarak imza atacaktı. Kutsi'ye verilen yetki, dönemine göre alışılmadık
@@ -164,8 +192,8 @@ tesisleri, başkentin imarı ve ordu modernizasyonu için para arıyordu. Karade
 ayrılan 3,5 milyon liranın dahi az olduğu sonradan anlaşıldı.
 
 **İkincisi**, uzman insan eksikliğidir. Stöger/Kutsi tek başınaydı; emrine
-verilen mühendis ve teknik personel ya yoktu ya çok azdı. 130 kilometrelik bir
-hat, yılda yüz bin metreküp işleyen bir kereste fabrikası ve bir iskele
+verilen mühendis ve teknik personel ya yoktu ya çok azdı. 130-150 kilometrelik
+bir hat, yılda 111.000 metreküp işleyen bir kereste fabrikası ve bir iskele
 kompleksi, bir adamın denetiminde yürüyemezdi.
 
 **Üçüncüsü**, ekonomik dönüş süresidir. Projenin maliyetini kapatması için en az
@@ -421,12 +449,30 @@ sona erecektir. O ay yapılan bütçe görüşmelerinin tonu, muhalefet baskıs�
 soğukluğu ve her bütçe kaleminin sıkı sorgulanması, dönemin tutanaklarında
 okunabilir.
 
-İşte o birleşimde, Tarım Bakanlığı bütçesi sırasında, Devrek–Tefen Dekovili
-gündeme geldi. Kürsüden dile getirilen şey özetle şuydu: Tarım Bakanlığı,
-Devrek–Tefen dekovili için **1,5 milyon lira** harcamıştı. Ancak hat
-bakımsızlıktan zarar görmekteydi; köprüler çürümüş, raylar kırılmış, hat boyunca
-yapılması gereken bağlantı yolları tamamlanmamıştı; bakım sorumluluğu olması
-beklenen vilayet idaresi bunu yerine getirmemişti.
+İşte o birleşimde — gündem maddesi aslında **Tarım Bakanlığı bütçesi değildi**;
+**Bayındırlık Bakanlığı bütçesiydi** (yol, şose, demiryolu) — söz alan Zonguldak
+milletvekili **Ali Rıza İncealemdaroğlu**, kürsüden Ereğli-Zonguldak hattı
+üzerindeki **Tefen istasyonunun** önemine değindi. Tefen'den bir kolun
+Devrek'e, Devrek'ten Ereğli'ye uzatılması gerektiğini söyledi —sanayi gelişsin,
+kömür çıksın, kereste yürüsün diye. Sonra dekovilin akıbetine geldi. Tutanak
+metniyle birebir aktarıyoruz (TBMM Dönem VIII Cilt 24 Birleşim 52, sayfa 942):
+
+> *"Tarım Bakanlığı bir buçuk milyon lira sarfederek bir dekovil hattı yaptı.
+> Fakat bakımsızlık yüzünden köprüler bozuldu, raylar kırıldı. Bu işi özel
+> idare bakacak dediler, bakmadı, bu yüzden yol ve şoseler natamam kaldı.
+> Tarım Bakanlığının sarfettiği bir buçuk milyon lira tamamen mahvolup
+> gitmiştir."*
+
+Bu birkaç cümlenin **üç katmanı** vardır: hattın fiziksel olarak çürüdüğü;
+idari sorumluluğun Tarım Bakanlığı'ndan il özel idaresine devredildiği ama
+yerine getirilmediği; ve aynı koridorda **1945'te ihale edilen şosenin de hâlâ
+bitirilmediği**. Üç ayrı başarısızlık, tek bir kürsü konuşmasında üst üste
+binmişti. Para Tarım Bakanlığı'ndandı; ama eleştiriyi Bayındırlık Bakanlığı
+bütçesi görüşülürken yapan milletvekili, koridorun bir bütün olarak fiyaskosu
+olduğunu söylüyordu.
+
+*(Önceki sürümlerimizde bu birleşimin Tarım Bakanlığı bütçesi sırasında geçtiği
+yazılıydı. Doğrusu Bayındırlık Bakanlığı bütçesidir; **Sürüm 2.2**'de düzeltildi.)*
 
 Bu birkaç cümlelik soru, hattın resmî düzeyde **bir başarısızlık olarak
 adlandırıldığı ilk an**dır. Burada bir paragraf durup düşünmek gerekir: 1924'te
@@ -666,13 +712,16 @@ değildir.
 
 | Tarih | Olay |
 |---|---|
+| 3 Ocak 1865 | Bolu sancağı mazbatası: **Kethüdazade (Kahyaoğlu) Süleyman**, Devrek–Tefen arası nehri kebir üzerinde köprü için 14.000 kuruş taahhüt eder. Meclis-i Vâla'ya gönderilir. (Gaziler–Karahatipler hattı, **Alaoğlu mevkii** — Filyos köprüsünden farklı yer.) |
 | 1914–1915 | I. Dünya Savaşı'nda Alman menşeli dekovil malzemesi Trabzon Limanı'na indirilir; bir kısmı Hamsiköy'e kadar döşenir, kalanı depolanır. |
 | 1916 | Rus ilerleyişi Trabzon'a ulaşır. |
-| 3 Ocak 1865 | Bolu sancağı mazbatası: **Kethüdazade (Kahyaoğlu) Süleyman**, Devrek–Tefen arası nehri kebir üzerinde köprü için 14.000 kuruş taahhüt eder. Meclis-i Vâla'ya gönderilir. (Gaziler–Karahatipler hattı, **Alaoğlu mevkii** — Filyos köprüsünden farklı yer.) |
 | 1923 | Cumhuriyet ilan edilir; Karadere Projesi dosyası Ziraat Vekâleti'ne sunulur. |
+| **7 Şubat 1924** | **Orman Yüksek Meclisi (Orman Meclisi Alisi) kurulur** — İktisat Bakanlığı Müsteşarı başkanlığında, 76 gün görev yapar. |
+| **27 Şubat 1924** | OYM'nin **ilk kararı**: Bolu-Karadere ormanlarının devlet eliyle işletilmesi. Yıllık 111.000 m³ üretim hedefi; İzmir Göknar + Zonguldak travers + maden direği. Yabancı uzman müdür + Türk yardımcı kuralı. |
+| **23 Mart 1924** | **450 sayılı Kanun**: Ankara-Sivas/Samsun-Sivas demiryolu müsaadelerinin Ereğli-Karadere'ye uygulanması. |
 | 1924 | Franz Stöger (İbrahim Kutsi) proje müşaviri atanır; Trabzon malzemesi Karadere'ye taşınır; Gülüç ağzında 2 km'lik kanal açılır. |
-| 26 Ocak 1925 | **548 sayılı kanun**: Ereğli–Karadere arasında 75 cm genişliğinde dar hat kabul edilir. |
-| 1925 | **648 sayılı kanun**: Ereğli–Karadere inşaat ve işletmesi için 2.000.000 lira tahsisat ayrılır. |
+| **26 Ocak 1925** | **548 sayılı Kanun**: Ereğli-Karadere şimendiferleri inşaat ve işletmesi için **2.000.000 lira tahsisat** (resmi metin). |
+| **23 Şubat 1925** | 548 sayılı Kanun, Resmi Ceride'de Sayı 84'te neşredilir. |
 | 1925 sonu | Şantiye fiilen durur; proje yarım kalır. Karadere'nin yasal kabuğu sonradan Irmak–Filyos–Ereğli ekseninde standart hatta evrilir. |
 | 1927 | **Alaoğlu mahallesi–Karahatipler arası ip köprü** kurulur (dekovil köprüsünden farklı koridor). |
 | 1 Temmuz 1930 | Irmak–Filyos hattının Filyos–Yenice / Filyos–Balıkısık kesimi sefere açılır. |
@@ -689,7 +738,7 @@ değildir.
 | 19 Kasım 1945 | Açılış *Ulus* gazetesinde ulusal haber olur; hat fiilen **hizmete girer**. |
 | 1945 (yıl içi) | *Türk Orman Devrimi* kaydı: Devrek Orman İşletmesi için 20 km dekovile ek olarak 130 km yol açılır; ülke geneli toplamları 150 km dekovil, 1.731 km kamyon yolu, 1.500+ km araba yolu. |
 | 16 Nisan 1948 | **Anadolu Ajansı haberi**: Devrek–Tefen arasında **Alaoğlu Köprüsü** ırmak taşmasıyla yıkılır. Aynı sel, ayrı noktada dekovil hattının 50 metrelik toprak imlasını yarar; ama **dekovil köprüsü sağlam kalır**. |
-| 21 Şubat 1950 | TBMM birleşiminde Zonguldak milletvekili kürsüden 1,5 milyon liralık maliyeti ve bakımsızlığı eleştirir. |
+| 21 Şubat 1950 | TBMM B:52 (8. Dönem 4. Yasama Yılı) **Bayındırlık Bakanlığı bütçe görüşmesi** — Zonguldak milletvekili **Ali Rıza İncealemdaroğlu** kürsüden 1,5 milyon liralık dekovil maliyetinin "tamamen mahvolup gittiğini" söyler; özel idare bakım sorumluluğu yerine getirmemiş, yol ve şoseler natamam. |
 | 1950 (yıl içi) | Devrek–Tefen koridorunda "mevcut bozuk servis yolu"nun genişletilmesi için yeni karayolu ihale ilanı. |
 | 1954–1955 | Filyos üzerindeki ahşap dekovil köprüsü yıkılır, yerine betonarme karayolu köprüsü yapılır; hat sökülür, ray/lokomotif/vagon hurdaya satılır (sözlü tanıklığa dayanır; resmi inşaat ve hurda dosyası henüz tespit edilememiştir). |
 | Sonrası | Kemerler İstasyonu binası (kesin tarihi belirsiz) yıkılır. |
@@ -698,12 +747,25 @@ değildir.
 
 # Ek B — Kaynakça
 
-## Kitaplar
+## Kitaplar ve tezler
 - Cantürk Gümüş, *Türk Orman Devrimi*, Türkiye Ormancılar Derneği Yayını. —
   ormancilardernegi.org/Documents/0d8f68d7-6405-434f-b86d-ce508b88c94f.pdf
 - Cantürk Gümüş, *Devlet Ormancılığına Geçiş Sürecinde Karadere Serüveni*. —
   researchgate.net/profile/Cantuerk-Guemues/publication/
   322508373_Devlet_Ormanciligina_Gecis_Surecinde_KARADERE_SERUVENI
+- **Cantürk Gümüş**, *"Osmanlıdan Günümüze Ormancılık Politikalarının
+  Ormancılık Örgütlenmesi Üzerine Etkileri ve Güncel Sorunlar"*, II. Ulusal
+  Akdeniz Orman ve Çevre Sempozyumu Bildiri Kitabı, Isparta, 22-24 Ekim 2014,
+  s.477-489. *(Karadere kararının tarihi 27 Şubat 1924, OYM, 111.000 m³,
+  ürün hedefleri, 150 km hat — Sürüm 2.2 için temel kaynak.)*
+- **Şükrü Açıcı**, *Devlet Orman İşletmeleri Tarafından Gerçekleştirilen
+  Orman Emvali Satışları*, Yüksek Lisans Tezi, Balıkesir Üniversitesi Sosyal
+  Bilimler Enstitüsü, 2019, 177 s. Danışman: Doç. Dr. Ertan Demirkapı. *(Tam
+  metin için ProQuest dışında YÖK Ulusal Tez Merkezi'ne başvurulmalıdır.)*
+- **Mutlu Kaya & Cevdet Yılmaz**, *"1930-1960 Yılları Arası Demiryolu
+  Ulaşımının Ayancık Yöresinde Sosyo Ekonomik Hayat Üzerine Etkileri"*,
+  Türk Coğrafya Dergisi 75, 2020, s.95-106. DOI: 10.17211/tcd.727048.
+  *(Türkiye dar hat ailesi içinde karşılaştırma kaynağı.)*
 - (Sözlü tarih cildi) *Sözlü Ormancılık Tarihi* — Osman Savaşal ve Nurettin
   Elbir'in Devrek–Tefen dekoviline ilişkin anlatıları.
 
@@ -743,16 +805,20 @@ değildir.
 - "Zonguldak Demiryolu Hattı: Karabük (İsmetpaşa)", DergiPark.
 
 ## TBMM tutanakları ve kanun metinleri
-- **26 Ocak 1925 tarih ve 548 sayılı kanun** — Ereğli–Karadere arasında 75 cm
-  genişliğinde dar hat kabulü. — www5.tbmm.gov.tr/tutanaklar/KANUNLAR_KARARLAR/
-  kanuntbmmc003/kanuntbmmc003/kanuntbmmc00300548.pdf
-- **1925 tarih ve 648 sayılı kanun** — Ereğli–Karadere inşaat ve işletmesi
-  için 2.000.000 lira tahsisat.
+- **23 Mart 1924 tarih ve 450 sayılı kanun** — Ankara-Sivas ve Samsun-Sivas
+  demiryolu müsaadelerinin Ereğli-Karadere'ye uygulanması.
+- **26 Ocak 1925 tarih ve 548 sayılı kanun** — Ereğli-Karadere şimendiferleri
+  inşaat ve işletmesi için 2.000.000 lira tahsisat. *(Önceki sürümlerimizde
+  "648 sayılı kanun" diye anılan ayrı bir mevzuat aslında yoktur; tahsisat
+  doğrudan 548 ile verilmiştir.)* Resmi Ceride 23.II.1341 Sayı 84. —
+  www5.tbmm.gov.tr/tutanaklar/KANUNLAR_KARARLAR/kanuntbmmc003/kanuntbmmc003/
+  kanuntbmmc00300548.pdf
 - **TBMM Zabıt Ceridesi, 21 Mayıs 1943** — Devrek–Tefen arası yolsuzluğu
   tartışması. — www5.tbmm.gov.tr/tutanaklar/TUTANAK/TBMM/d07/c002/
   tbmm07002025.pdf
-- **TBMM Tutanak Dergisi, 21 Şubat 1950**, 8. Dönem 4. Yasama Yılı —
-  Devrek–Tefen dekovilinin 1,5 milyon liralık maliyeti ve bakımsızlığı. —
+- **TBMM Tutanak Dergisi, 21 Şubat 1950 (B:52, D:VIII C:024)** —
+  **Bayındırlık Bakanlığı bütçe görüşmesi**. Zonguldak milletvekili
+  **Ali Rıza İncealemdaroğlu**'nun konuşması, sayfa 942. —
   tbmm.gov.tr/tutanaklar/TUTANAK/TBMM/d08/c024/tbmm08024052.pdf
 - Orman Genel Müdürlüğü, Karadeniz Ereğli Orman İşletme Müdürlüğü Kuruluş
   Tarihçesi.
@@ -817,11 +883,19 @@ beklediğini gösterir.
 - Dekovil köprüsünün yerinde önce **sal taşımacılığı** vardı; salcılar
   Gökçebey'den Sarıkaş kayıkbaşına yolcuyu götürür, Tepan hanında konaklatır,
   sabah Devrek'e yürütürlerdi *(Sadi Uyar; 1937 fotoğrafı belgeli)*.
-- Hattın **21 Şubat 1950** TBMM birleşiminde 1,5 milyon liralık maliyeti ve
-  bakımsızlığı nedeniyle eleştirildiği *(TBMM Tutanak Dergisi)*.
-- Karadere Projesi'nin 1925'te **548 sayılı kanunla** 75 cm gauge'lı dar hat
-  olarak yasalaştığı ve **648 sayılı kanunla** 2.000.000 lira tahsisat aldığı
-  *(TBMM kanun derlemesi)*.
+- Hattın **21 Şubat 1950 B:52** TBMM birleşiminde — **Bayındırlık Bakanlığı
+  bütçe görüşmesi** sırasında — Zonguldak milletvekili **Ali Rıza
+  İncealemdaroğlu** tarafından 1,5 milyon liralık maliyeti ve bakımsızlığı
+  nedeniyle eleştirildiği *(TBMM Tutanak Dergisi B:52, s.942)*.
+- Karadere Projesi'nin yasal zemininin **iki kanunla** kurulduğu: **23 Mart
+  1924 tarih ve 450 sayılı kanun** (Ankara-Sivas/Samsun-Sivas müsaadelerinin
+  uygulanması) + **26 Ocak 1925 tarih ve 548 sayılı kanun** (2.000.000 lira
+  tahsisat) *(548 sayılı Kanun resmi metni, RC 23.II.1341 sayı 84)*.
+- Karadere'nin yıllık üretim hedefinin **111.000 m³** olduğu; ürün
+  spesifikasyonunun **İzmir üzüm/incir kutuları için reçinesiz Göknar +
+  Zonguldak demiryolu için travers + maden direği** olduğu; **yabancı uzman
+  müdür + Türk yardımcı** kuralının resmen şart koşulduğu — tümü Orman
+  Yüksek Meclisi'nin **27 Şubat 1924** kararıyla *(Cantürk Gümüş, 2014)*.
 - Ahşap dekovil köprüsünün **1954–1955 arasında** sökülüp yerine betonarme
   Tefen köprüsünün yapıldığı; müteahhit **Agah Çağlar ve Arslan Şenay**
   (1943 ihale) *(Sadi Uyar, 2026)*.
@@ -841,7 +915,17 @@ beklediğini gösterir.
 
 ## Düşük güven (ek belge gerektiriyor)
 - Hatta çalışan lokomotiflerin **sayısı, markası ve modeli** (Henschel,
-  Decauville, Orenstein & Koppel ihtimalleri var, belge yok).
+  Decauville, Orenstein & Koppel ihtimalleri var; belge yok). Ayancık'taki
+  kardeş Zingal hattının 3 lokomotifinden biri Rahmi Koç Müzesi'nde —
+  Devrek-Tefen'in lokomotifleri bir müzede mi?
+- **Karadere hat uzunluğu**: 130 km mi (Ereğli/Gülüç) — 150 km mi (Zonguldak,
+  Gümüş 2014)? İki kaynak iki farklı sayı veriyor.
+- **75 cm gauge** spesifikasyonu hangi resmi mevzuatta yer alıyor? 548 sayılı
+  Kanun'un metninde geçmiyor; Cantürk Gümüş bu bilgiyi Kutluk 1967'den
+  alıyor. İlk yasal kaynak hangisi? (450 sayılı Kanun? İlgili Talimatname?
+  OYM kararının tam metni?)
+- **490 sayılı Kanun**'un içeriği (548 sayılı Kanun ile bağlantısı belirtilen
+  ama içeriği bilinmeyen mevzuat).
 - Hattın **kesin söküm yılı** ve süreci (1955 sonrası tarihler hâlâ tahmin
   düzeyinde; resmi karar görülemedi).
 - Sökülen ray, lokomotif ve vagonların **hurda satışının idari dosyası**
@@ -853,6 +937,9 @@ beklediğini gösterir.
 - Kemerler İstasyonu binasının **kesin yıkım tarihi**.
 - **Kadın işçi başçavuşunun** kimliği (Üçburgu Sezer ailesinden — sözlü tarih;
   şahsın adı henüz tespit edilebilmiş değil).
+- **Devrek Orman İşletmesi'nin kesin kuruluş tarihi**: Açıcı YL tezi (2019)
+  Tablo 3'te "1937-1945 arası kurulan Devlet Orman İşletmeleri"ni listeliyor;
+  tam tez erişilebildiğinde Devrek için kesin tarih çıkar.
 
 ---
 
@@ -868,19 +955,28 @@ beklediğini gösterir.
 5. **Kemerler İstasyonu'nun yıkım tarihi.**
 6. **18 Kasım 1945 açılış konuşması.** *Ulus* 19 Kasım 1945 sayısı temel belge;
    Hatipoğlu'nun konuşma metninin yerel basında daha geniş yansıması var mı?
-7. **648 sayılı kanunun fiilen ne kadarı harcandı?** 2 milyon liralık
-   tahsisatın bütçe akışı ve hesap kayıtları nerede?
-8. **Alaoğlu Köprüsü'nün tam mimari tarihi.** 1865 Kethüdazade Süleyman taş
-   köprüsü → 1927 ip → 1931 ahşap → 1936 yenileme zincirinin Karayolları /
-   Bayındırlık arşivindeki belgeleri.
-9. **Mükelliyet dönemi kadın işçileri.** Üçburgu Sezer ailesinden başçavuşun
-   adı; dekovil hattının Gökçebey kısmında çalışan kadınların sözlü tarihi —
-   hayatta olanları kimler?
-10. **1933 Temmuz Zonguldak seli.** Bölgedeki köprülere etkisi ne oldu? Devrek
+7. **548 sayılı Kanun'un 2 milyon lira tahsisatının fiili sarfı.** Bütçe
+   akışı ve hesap kayıtları Maliye Bakanlığı arşivinde aranabilir.
+8. **490 sayılı Kanun'un içeriği.** 548 sayılı Kanun'un atıfta bulunduğu
+   ama içeriği bilinmeyen ilgili mevzuat.
+9. **Karadere hat uzunluğu çelişkisi.** 130 km (Ereğli/Gülüç) mi 150 km
+   (Zonguldak, Gümüş 2014) mi? Hangi belge hangisini söylüyor?
+10. **75 cm gauge'ın yasal kaynağı.** Spesifikasyon hangi mevzuatta resmen
+    kabul edilmiştir? (548'de yok.)
+11. **Alaoğlu Köprüsü'nün tam mimari tarihi.** 1865 Kethüdazade Süleyman taş
+    köprüsü → 1927 ip → 1931 ahşap → 1936 yenileme zincirinin Karayolları /
+    Bayındırlık arşivindeki belgeleri.
+12. **Mükelliyet dönemi kadın işçileri.** Üçburgu Sezer ailesinden başçavuşun
+    adı; dekovil hattının Gökçebey kısmında çalışan kadınların sözlü tarihi —
+    hayatta olanları kimler?
+13. **1933 Temmuz Zonguldak seli.** Bölgedeki köprülere etkisi ne oldu? Devrek
     yolu nasıl etkilendi? *(Sadi Uyar atfı; ayrıntı belgesi yok.)*
-11. **Tefen köprüsü ihale dosyası (1943).** Müteahhit Agah Çağlar ve Arslan
+14. **Tefen köprüsü ihale dosyası (1943).** Müteahhit Agah Çağlar ve Arslan
     Şenay'ın ihale sözleşmesi ve değişiklik maddelerinin Karayolları
     Genel Müdürlüğü arşivinde aranması.
+15. **Devrek-Tefen lokomotiflerinin akıbeti.** Ayancık-Zingal hattının
+    3 lokomotifinden biri Rahmi Koç Müzesi'nde sergileniyor. Devrek-Tefen'in
+    lokomotifleri Türkiye'de bir müzede mi, ya da hepsi hurda mı oldu?
 
 > **Not — Sürüm 2.1'de kapanan iki soru:**
 > - Eski Soru 7 (*Alaoğlu Köprüsü meselesi: aynı mı, farklı mı?*) Sadi Uyar
@@ -890,3 +986,12 @@ beklediğini gösterir.
 > - 1948'de hangisinin yıkıldığı sorusu da **kapandı**: Alaoğlu Köprüsü
 >   tamamen yıkıldı; dekovil köprüsü sağlam kaldı, sadece 50 m'lik toprak
 >   imla yarıldı.
+>
+> **Not — Sürüm 2.2'de kapanan üç soru:**
+> - "648 sayılı kanunun fiilen ne kadarı harcandı?" sorusu **yanlış soru**
+>   olarak kapandı: 648 sayılı bir kanun yoktur, tahsisat 548 sayılı
+>   kanunla verildi.
+> - "Karadere kararı hangi yılda alındı?" sorusu **kapandı**: 27 Şubat
+>   1924, Orman Yüksek Meclisi (Gümüş 2014).
+> - "TBMM 21 Şubat 1950'de konuşan milletvekili kimdi?" sorusu **kapandı**:
+>   Ali Rıza İncealemdaroğlu (Zonguldak).

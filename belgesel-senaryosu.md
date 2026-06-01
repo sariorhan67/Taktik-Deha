@@ -1,6 +1,69 @@
 # Devrek'in Kayıp Dekovili — Belgesel Çekim Senaryosu
 
-## Sürüm 2.1 (Sadi Uyar senkronu — Haziran 2026)
+## Sürüm 2.2 (5 yeni birincil kaynak senkronu — Haziran 2026)
+
+> Bu sürüm, Sürüm 2.1'in üzerine, 5 yeni birincil/ikincil kaynağın getirdiği
+> belirleyici düzeltmeleri ekler:
+> **(1)** Cantürk Gümüş, *"Osmanlıdan Günümüze Ormancılık Politikalarının
+> Ormancılık Örgütlenmesi Üzerine Etkileri ve Güncel Sorunlar"*, II. Ulusal
+> Akdeniz Orman ve Çevre Sempozyumu, Isparta, 22-24 Ekim 2014, s.477-489;
+> **(2)** TBMM Tutanak Dergisi, Dönem VIII Cilt 24, 52. Birleşim, 21 Şubat
+> 1950 (Bayındırlık Bakanlığı bütçe görüşmeleri);
+> **(3)** Resmi Ceride'de 23 Şubat 1925 Sayı 84'te neşredilen 548 sayılı
+> "Ereğli-Karadere Şimendiferleri İnşaat ve İşletmesi Hakkında Kanun"un
+> orijinal metni;
+> **(4)** Şükrü Açıcı, *Devlet Orman İşletmeleri Tarafından Gerçekleştirilen
+> Orman Emvali Satışları*, Balıkesir Üniversitesi YL tezi, 2019 (PREVIEW —
+> tam metin kilitli);
+> **(5)** Kaya & Yılmaz, *"1930-1960 Yılları Arası Demiryolu Ulaşımının
+> Ayancık Yöresinde Sosyo Ekonomik Hayat Üzerine Etkileri"*, Türk Coğrafya
+> Dergisi 75, 2020.
+>
+> Üç sahnenin VO metni güncellenir; jenerik (S26) genişler.
+
+### SÜRÜM 2.2 DEĞİŞİKLİK NOTLARI (changelog)
+
+1. **S4 VO — büyük revize** — (a) "Ziraat Vekâleti'ne dosya geldi" yerine
+   **7 Şubat 1924'te kurulan Orman Yüksek Meclisi'nin (Orman Meclisi Alisi)
+   27 Şubat 1924 ilk kararı** anlatımı; (b) "yılda 100 bin m³" → **111.000 m³**;
+   (c) ürün hedefi spesifikleştirildi — **İzmir üzüm/incir kutuları için
+   reçinesiz Göknar kerestesi + Zonguldak demiryolu için travers + Zonguldak
+   madenleri için maden direği** (İsveç ve Romanya'dan ithale alternatif);
+   (d) "548 sayılı kanun 75 cm dar hat kabul + 648 sayılı kanun 2 milyon"
+   kurgusu **DOĞRU OLAN**la değiştirildi: **23 Mart 1924 tarih ve 450 sayılı
+   kanun** (Ankara-Sivas/Samsun-Sivas müsaadelerini Karadere'ye uygular) +
+   **26 Ocak 1925 tarih ve 548 sayılı kanun** (2.000.000 lira tahsisat).
+   "648 sayılı kanun" iddiası kaldırıldı (kaynak hatasıydı). 75 cm gauge
+   tarihsel olarak doğrudur ama 548'de geçmez — "1925 mevzuatı" olarak
+   gevşetildi. Hat uzunluğu için 130-150 km çelişkisi metinde açıkça not
+   edildi. **VO Blok 2 ve Blok 3 yeniden seslendirilecek.**
+
+2. **S5 VO — giriş bloğu revize** — Stöger atamasına "**Yabancı uzman müdür +
+   Türk yardımcı kuralı**" çerçevesi eklendi: Orman Yüksek Meclisi'nin 1924
+   kararının bir parçasıydı bu kural; rastgele değil sistemli bir tercihti.
+   **VO Blok 1 yeniden seslendirilecek.**
+
+3. **S18 VO — büyük revize** — (a) **"Tarım Bakanlığı bütçesi" yanlışı
+   düzeltildi**: 21 Şubat 1950 birleşimi **Bayındırlık Bakanlığı bütçe
+   görüşmesi** idi. Para Tarım Bakanlığı'ndandı, ama konuşma Bayındırlık
+   bütçesinde geçti. (b) Konuşmacı **adıyla**: **Ali Rıza İncealemdaroğlu
+   (Zonguldak milletvekili)**. (c) Alıntı genişledi: milletvekilinin asıl
+   talebi dekovil yerine **Tefen-Devrek-Ereğli geniş hat** yapımıydı.
+   **VO Blok 1 (giriş) ve Blok 2 (orta) yeniden seslendirilecek.**
+
+4. **S26 (jenerik) — kaynakça genişler** — Cantürk Gümüş 2014 bildirisi;
+   Şükrü Açıcı 2019 tezi; TBMM B:52 21.II.1950 doğrudan URL atfı; 548 sayılı
+   Kanun resmî metni (RC 23.II.1341 Sayı 84); Kaya & Yılmaz 2020 (Ayancık
+   karşılaştırması).
+
+5. **Açık sorular netleşti** — (a) 130 km mı 150 km mi (Karadere hattı
+   uzunluğu); (b) 75 cm gauge hangi mevzuatta resmen kabul edildi (548'de
+   yok); (c) 490 sayılı kanun içeriği; (d) Devrek-Tefen lokomotiflerinin
+   modeli ve akıbeti (Ayancık'taki gibi bir müzede mi?).
+
+---
+
+## Sürüm 2.1 (Sadi Uyar senkronu — Mayıs 2026)
 
 > Bu sürüm, Sürüm 2'nin (üretim senkronu) üzerine, Sadi Uyar'ın 12 Ocak 2026
 > tarihli **"Tefen Köprüleri — Bildiklerimiz Bilmediklerimiz"** yazısının ve
@@ -146,30 +209,36 @@ Sahne formatı:
 
 **GEÇİŞ:** Karaya. Ankara'ya doğru harita kayması.
 
-## SAHNE 4 — Ankara, 1923–1924
+## SAHNE 4 — Ankara, 1923–1924 [REVIZE v2.2]
 
-*Yeni Türkiye'nin başkenti. Ziraat Vekâleti binası.*
+*Yeni Türkiye'nin başkenti. Orman Yüksek Meclisi (Orman Meclisi Alisi) toplantı odası — 1924.*
 
 **MÜZİK:** Piyano arpejleri, hafif gerilim.
 
 **GÖRSEL:**
-- Ankara'nın 1923 fotoğrafları (Ulus Meydanı, Birinci Meclis binası).
-- Üretken görsel: bir bakanlık masasında açık duran kalın bir dosya, üzerinde "Karadere". *(v2: 1924 → yazı Osmanlı/Arap harfli ya da okunaksız; Latin harf anakronik.)*
+- Ankara'nın 1923-24 fotoğrafları (Ulus Meydanı, Birinci Meclis binası).
+- Üretken görsel: bir bakanlık odasında toplantı masası, açık duran kalın bir dosya, üzerinde "Karadere". *(v2: 1924 → yazı Osmanlı/Arap harfli ya da okunaksız; Latin harf anakronik.)*
 - Harita: Batı Karadeniz, Devrek ve Dirgine Orman İşletmesi sahası.
 
-**VO:** "Yeni Türkiye'nin kasası boştu, ama hayalleri ölçekliydi. Ankara'da, 1923'ün son aylarında, Ziraat Vekâleti'nin masasına bir dosya geldi. Batı Karadeniz'de, Devrek'in iç kesimlerinde, Dirgine Orman İşletmesi sahasında yatan bir orman vardı; envanteri altı milyon metreküptü ve neredeyse el değmemişti. Bu ormanın adı Karadere'ydi."
+**VO (Blok 1 — KORUNUR, hafif düzenleme):** "Yeni Türkiye'nin kasası boştu, ama hayalleri ölçekliydi. Ankara'da, 7 Şubat 1924'te yeni bir kurum kuruldu: Orman Yüksek Meclisi — yahut o günkü adıyla Orman Meclisi Alisi. İktisat Bakanlığı Müsteşarı başkanlığındaki bu kurul, sadece yetmiş altı gün görev yapacaktı. Ama o yetmiş altı gün içinde, 27 Şubat 1924'te, yeni Cumhuriyet'in orman ekonomisi için ilk büyük kararını verdi: Bolu-Karadere ormanlarının devlet eliyle işletilmesi. Batı Karadeniz'de, Devrek'in iç kesimlerinde, Dirgine Orman İşletmesi sahasında yatan bir orman vardı; envanteri altı milyon metreküptü ve neredeyse el değmemişti. Bu ormanın adı Karadere'ydi."
+
+**ALT-YAZI:** *Orman Yüksek Meclisi (Orman Meclisi Alisi) — 7 Şubat 1924*
 
 **ALT-YAZI:** *Karadere ormanları — 6 milyon m³ envanter*
 
-**VO (devamı):** "Tasarı şuydu: Bu envanterden yılda yüz bin metreküp kereste işlenecek; kereste, ormanın içinden Ereğli'nin yanı başındaki Gülüç İskelesi'ne kadar yaklaşık 130 kilometrelik bir dekovil hattı ile taşınacak; iskelede biriktirilen kereste, gemilerle İstanbul ve diğer limanlara sevk edilecekti. Bu, ucu açık bir taahhüt değil, açıkça çizilmiş, sayısı verilmiş bir endüstriyel programdı."
+**VO (Blok 2 — YENİDEN YAZILDI):** "Tasarı şuydu: Bu envanterden yılda yüz on bir bin metreküp kereste çıkarılacak. Ama bu sıradan bir kereste değildi. Üç çok spesifik hedefi vardı: İzmir piyasasının üzüm ve incir ihracatı için reçinesiz Göknar kerestesi, Zonguldak demiryolu için travers ve Zonguldak madenleri için maden direği. O yıllarda Türkiye, İzmir tüccarının istediği reçinesiz Göknar kerestesini İsveç ve Romanya'dan ithal ediyordu. Karadere bu ithalatın yerine geçecekti."
 
-**GÖRSEL:** TBMM kanun derlemesinden 548 sayılı kanunun gerçek taraması (www5.tbmm.gov.tr arşivi).
+**ALT-YAZI:** *Karadere üretim hedefi: 111.000 m³/yıl — Göknar, travers, maden direği*
 
-**VO (devamı):** "26 Ocak 1925 tarihli ve 548 sayılı kanun, Karadere ormanlarını işletmek üzere Ereğli–Karadere arasında 75 santimetre genişliğinde bir dar hat kabul etti. Aynı yılın 648 sayılı kanunu ise bu inşaat ve işletme için iki milyon lira tahsisat ayırdı. Projenin toplam tahayyülü ise üç buçuk milyon liraydı — Cumhuriyet'in ilk genel bütçesinin yaklaşık yüzde üçüne denk geliyordu ve Sıhhiye Vekâleti'nin tüm bütçesinden büyüktü. Bir ormancılık projesinin, ülkenin tüm sağlık harcamasından büyük olduğu bir an düşünün."
+**GÖRSEL:** TBMM kanun derlemesinden 548 sayılı kanunun gerçek taraması (www5.tbmm.gov.tr arşivi); yan görsel olarak 23 Şubat 1925 tarihli Resmi Ceride sayfası.
 
-**ALT-YAZI:** *548 sayılı Kanun (26 Ocak 1925) — 648 sayılı Kanun (1925)*
+**VO (Blok 3 — YENİDEN YAZILDI):** "Kereste, ormanın içinden Ereğli ya da Zonguldak yönünde bir dar hat ile taşınacaktı. Hattın genişliği 75 santimetreyle planlandı. Uzunluğu için kaynaklarda iki ayrı sayı dolaşır: bazı kayıtlarda 130 kilometre, ormancılık tarihçisi Cantürk Gümüş'ün araştırmasına göre 150 kilometre. Yasal zemin iki adımda kuruldu: 23 Mart 1924 tarih ve 450 sayılı kanun, Ankara-Sivas ve Samsun-Sivas demiryollarına verilen tüm müsaadeleri Ereğli-Karadere'ye uyguladı. 26 Ocak 1925 tarih ve 548 sayılı kanun ise inşaat ve işletme için iki milyon lira tahsisat ayırdı. Bu rakam, Cumhuriyet'in ilk genel bütçesinin yaklaşık yüzde üçüne denk geliyordu ve Sıhhiye Vekâleti'nin tüm bütçesinden büyüktü. Bir ormancılık projesinin, ülkenin tüm sağlık harcamasından büyük olduğu bir an düşünün."
+
+**ALT-YAZI:** *450 sayılı Kanun (23 Mart 1924) — 548 sayılı Kanun (26 Ocak 1925) — 2.000.000 lira*
 
 **GEÇİŞ:** Stöger sahnesine.
+
+> **v2.2 NOTU:** Önceki "548 sayılı kanun 75 cm dar hat kabul etti + 648 sayılı kanun 2 milyon lira" kurgusu **olgusal hataydı**. 548 sayılı kanunun resmî metni (RC 23.II.1341 sayı 84) bizzat 2.000.000 lira tahsisatı veriyor; "648 sayılı kanun" diye atıf yaptığımız ayrı bir mevzuat **yok**. 75 cm gauge tarihsel olarak doğrudur (Cantürk Gümüş üzerinden Kutluk 1967) ama 548'de geçmez. **Blok 2 ve Blok 3 yeniden seslendirilecek.**
 
 ## SAHNE 5 — Bir Çek mühendis
 
@@ -182,13 +251,15 @@ Sahne formatı:
 - Belge fotoğrafı: dönem resmî yazı. *(v2: 1924 → Osmanlı harfli/okunaksız; temsilî.)*
 - Bohemya/Çek bayrağı kısa flaş.
 
-**VO:** "Projenin başına bir mühendis arandı. Ankara'nın eli kısaydı; Türkiye'de o yıllarda yetişmiş orman mühendisi parmakla sayılıyordu. Aranan adam Çek asıllı, Avusturya-Macaristan ekolünden gelmiş Franz Stöger oldu. Türkiye'ye geldiğinde adını Türkçeleştirdi; resmî yazışmalarda artık İbrahim Kutsi olarak imza atacaktı."
+**VO (Blok 1 — YENİDEN YAZILDI):** "Projenin başına bir mühendis arandı. Ankara'nın eli kısaydı; Türkiye'de o yıllarda yetişmiş orman mühendisi parmakla sayılıyordu. Ama bir başka neden de bir kuraldı. Orman Yüksek Meclisi'nin 1924 kararı, açık bir şart koşmuştu: işletme müdürü yabancı bir uzman olacak, yardımcısı Türk olacaktı. Rastgele değil, sistemli bir tercihti bu. Aranan adam Çek asıllı, Avusturya-Macaristan ekolünden gelmiş Franz Stöger oldu. Türkiye'ye geldiğinde adını Türkçeleştirdi; resmî yazışmalarda artık İbrahim Kutsi olarak imza atacaktı."
 
 **ALT-YAZI:** *Franz Stöger / İbrahim Kutsi — Karadere Projesi Müşaviri*
 
-**VO (devamı):** "Kutsi'ye verilen yetki, dönemine göre alışılmadık derecede geniştir. Tam yetkili müşavir, yani projenin teknik direktörü, satın almacısı, saha müfettişi ve gerektiğinde Ankara'nın muhatabı, tek bir kişide birleştirildi. Masasına yatırılan ilk büyük lojistik sorun, malzemeydi. Türkiye, 1924'te 130 kilometrelik dar hat döşeyecek rayı içeriden üretemezdi; dışarıdan almak ise hem zaman hem döviz gerektiriyordu."
+**VO (devamı — korunur):** "Kutsi'ye verilen yetki, dönemine göre alışılmadık derecede geniştir. Tam yetkili müşavir, yani projenin teknik direktörü, satın almacısı, saha müfettişi ve gerektiğinde Ankara'nın muhatabı, tek bir kişide birleştirildi. Masasına yatırılan ilk büyük lojistik sorun, malzemeydi. Türkiye, 1924'te 130 kilometrelik dar hat döşeyecek rayı içeriden üretemezdi; dışarıdan almak ise hem zaman hem döviz gerektiriyordu."
 
 **GEÇİŞ:** Trabzon'a dönüş — harita batıdan doğuya.
+
+> **v2.2 NOTU:** S5'in giriş bloğu (Blok 1) yeniden seslendirilecek — Orman Yüksek Meclisi'nin "yabancı uzman + Türk yardımcı" kuralı çerçevesi eklendi. İkinci VO bloğu değişmiyor.
 
 ## SAHNE 6 — Trabzon'dan Karadere'ye
 
@@ -443,22 +514,24 @@ Sahne formatı:
 
 **GEÇİŞ:** Ankara'ya, 1950 şubatına.
 
-## SAHNE 18 — 21 Şubat 1950: Hat kürsüye çıkıyor
+## SAHNE 18 — 21 Şubat 1950: Hat kürsüye çıkıyor [REVIZE v2.2]
 
-*21 Şubat 1950. TBMM Genel Kurul Salonu. Tarım Bakanlığı bütçe görüşmeleri.*
+*21 Şubat 1950. TBMM Genel Kurul Salonu. **Bayındırlık Bakanlığı bütçe görüşmeleri.***
 
 **MÜZİK:** Sus; sadece tutanak okumasının tonu.
 
 **GÖRSEL:**
 - 1950 TBMM dönemine ait fotoğraflar. *(v2 YÖNETMEN NOTU: yine ikinci TBMM binası + İnönü portresi.)*
-- TBMM Tutanak Dergisi, 21 Şubat 1950 sayfası, pasaj vurgulu (gerçek tarama).
-- Kürsüde konuşan milletvekili (üretken; yüz temsilî).
+- TBMM Tutanak Dergisi, 21 Şubat 1950, sayfa 942, pasaj vurgulu (gerçek tarama).
+- Kürsüde konuşan milletvekili (üretken; yüz temsilî, kimliği belirgin değil).
 
-**VO:** "Büyük Millet Meclisi'nin sekizinci döneminin dördüncü yasama yılı, 21 Şubat 1950 birleşimi. Daha üç ay sonra, çok partili tarihin gerçek dönüm noktası olan 14 Mayıs seçimleri yapılacaktır. O günün bütçe müzakerelerinin tonu, muhalefet baskısının soğukluğu, her bütçe kaleminin sıkı sorgulanması, dönem tutanaklarında okunabilir."
+**VO (Blok 1 — YENİDEN YAZILDI):** "Büyük Millet Meclisi'nin sekizinci döneminin dördüncü yasama yılı, 21 Şubat 1950 birleşimi. Daha üç ay sonra, çok partili tarihin gerçek dönüm noktası olan 14 Mayıs seçimleri yapılacaktır. O günün gündemi Tarım Bakanlığı bütçesi değildi — Bayındırlık Bakanlığı bütçesiydi. Yol, şose, demiryolu... Söz alanlardan biri, Zonguldak milletvekili Ali Rıza İncealemdaroğlu, kürsüden önce bölgenin demiryolu ihtiyacından söz etti. Ereğli-Zonguldak hattı üzerindeki Tefen istasyonunun önemine değindi. Tefen'den bir kolun Devrek'e, Devrek'ten Ereğli'ye uzatılması gerektiğini söyledi — sanayi gelişsin, kömür çıksın, kereste yürüsün diye."
 
-**VO (devamı):** "İşte o birleşimde, Tarım Bakanlığı bütçesi sırasında, Devrek–Tefen Dekovili adıyla kürsüye çağrılır. Zonguldak milletvekili kürsüden şu sözleri söyler: 'Tarım Bakanlığı Devrek–Tefen dekovili için bir milyon beş yüz bin lira harcamıştır. Ancak bakımsızlık yüzünden köprüler bozulmuş, raylar kırılmıştır. Özel idare gereken bakımı yapmamıştır. Yatırım heba olmuştur.'"
+**ALT-YAZI:** *Ali Rıza İncealemdaroğlu — Zonguldak Milletvekili*
 
-**ALT-YAZI:** *TBMM Tutanak Dergisi, 8. Dönem 4. Yasama Yılı, 21 Şubat 1950*
+**ALT-YAZI:** *TBMM Tutanak Dergisi, 8. Dönem 4. Yasama Yılı, B:52, 21.II.1950*
+
+**VO (Blok 2 — YENİDEN YAZILDI):** "Sonra dekovilin akıbetine geldi. Şöyle söyledi: 'Tarım Bakanlığı bir buçuk milyon lira sarfederek bir dekovil hattı yaptı. Fakat bakımsızlık yüzünden köprüler bozuldu, raylar kırıldı. Bu işi özel idare bakacak dediler, bakmadı, bu yüzden yol ve şoseler natamam kaldı. Tarım Bakanlığının sarfettiği bir buçuk milyon lira tamamen mahvolup gitmiştir.' Bu birkaç cümlenin üç katmanı vardı: hattın fiziksel olarak çürüdüğü, idari sorumluluğun Tarım Bakanlığı'ndan il özel idaresine devredildiği ama yerine getirilmediği, ve aynı koridorda 1945'te ihale edilen şosenin de hâlâ bitirilmediği. Üç ayrı başarısızlık, tek bir kürsü konuşmasında üst üste binmişti."
 
 **VO (devamı):** "Burada bir paragraf durup düşünmek gerekir. 1924'te Karadere için ayrılan üç buçuk milyon lira bir hayal içindi. 1945'te Devrek–Tefen için harcanan bir buçuk milyon lira ise bir tamamlama içindi. Hayalin ve tamamlamanın aynı meclis çatısı altında, yirmi beş yıl arayla, kendi sayısal ağırlıklarıyla sınanmış olması, Türkiye'nin orman politikası tarihindeki belki de en az incelenmiş kıyaslamadır."
 
@@ -647,7 +720,7 @@ Sahne formatı:
 
 # END CARDS (jenerik)
 
-## SAHNE 26 — Kaynak ve teşekkür ⚠️ **GÜNCELLENDİ (Sürüm 2.1)**
+## SAHNE 26 — Kaynak ve teşekkür [GÜNCELLENDİ v2.2]
 
 *Siyah ekran. Kayan yazı.*
 
@@ -656,20 +729,27 @@ Sahne formatı:
 **GÖRSEL — sırasıyla:**
 
 **Kaynaklar — Birincil**
-- TBMM Zabıt Ceridesi (1943, 1950); 548 ve 648 sayılı Kanunlar (1925)
+- TBMM Zabıt Ceridesi: 21 Mayıs 1943 (D:VII C:002 B:25); 21 Şubat 1950 (D:VIII C:024 B:52, Bayındırlık Bakanlığı bütçe görüşmesi, Ali Rıza İncealemdaroğlu konuşması, s.942) ← v2.2
+- 450 sayılı Kanun (23 Mart 1924) — Ankara-Sivas/Samsun-Sivas müsaadelerinin Karadere'ye uygulanması ← v2.2
+- 548 sayılı Kanun (26 Ocak 1925, RC 23.II.1341 sayı 84) — Ereğli-Karadere şimendiferleri için 2.000.000 lira tahsisat ← v2.2
 - Ulus, 19 Kasım 1945
 - Anadolu Ajansı, 16 Nisan 1948
-- **Sadi Uyar, "Tefen Köprüleri — Bildiklerimiz Bilmediklerimiz" (Facebook, 12 Ocak 2026)** ← Sürüm 2.1
+- Sadi Uyar, "Tefen Köprüleri — Bildiklerimiz Bilmediklerimiz" (Facebook, 12 Ocak 2026)
 
 **Literatür**
 - Cantürk Gümüş, *Türk Orman Devrimi*
+- Cantürk Gümüş, "Osmanlıdan Günümüze Ormancılık Politikalarının Ormancılık Örgütlenmesi Üzerine Etkileri ve Güncel Sorunlar", II. Ulusal Akdeniz Orman ve Çevre Sempozyumu, Isparta, 22-24 Ekim 2014, s.477-489 ← v2.2
 - *Sözlü Ormancılık Tarihi* (Osman Savaşal, Nurettin Elbir)
+- Şükrü Açıcı, *Devlet Orman İşletmeleri Tarafından Gerçekleştirilen Orman Emvali Satışları*, Balıkesir Üniversitesi YL tezi, 2019 ← v2.2
+
+**Karşılaştırma**
+- Kaya & Yılmaz, "1930-1960 Yılları Arası Demiryolu Ulaşımının Ayancık Yöresinde Sosyo Ekonomik Hayat Üzerine Etkileri", *Türk Coğrafya Dergisi* 75, 2020 — Türkiye dar hat tarihi içindeki Devrek-Tefen konumlanması için karşılaştırma kaynağı ← v2.2
 
 **Çıkış metni**
 - İbrahim Kekeç, "Devrek'in Kayıp Dekovili", Zhaber, 2022
 
 **Görsel arşiv**
-- **Sadi Uyar koleksiyonu** (1937 sal taşımacılığı; 1945 dekovil köprüsü; 1955 köprünün açıldığı gün; günümüz Tefen köprüsü) ← Sürüm 2.1
+- Sadi Uyar koleksiyonu (1937 sal taşımacılığı; 1945 dekovil köprüsü; 1955 köprünün açıldığı gün; günümüz Tefen köprüsü)
 - Köprüler Daire Başkanlığı (1955 açılış fotoğrafı, Sadi Uyar üzerinden)
 - Gökçebeyliler arşivi
 - Kekeç arşivi

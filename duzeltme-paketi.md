@@ -1,183 +1,182 @@
-# DÜZELTME PAKETİ — Paket Tam (Haziran 2026 güncellemesi)
+# DÜZELTME PAKETİ v3 — 5 Yeni Kaynak Senkronu
 ## Devrek'in Kayıp Dekovili — Üretim Senkronu Güncellemesi
 
-**Tarih:** Haziran 2026 (Sürüm 2.1 — coğrafya düzeltmesi eklendi)
-**Kaynak:** Sadi Uyar, *"Tefen Köprüleri — Bildiklerimiz Bilmediklerimiz"* (Facebook, 12 Ocak 2026) + 4 arşiv fotoğrafı
-**Etki:** 3 sahnenin VO metni güncellenir (toplam 4 blok yeniden ses), 2 kart düzeltilir, jenerik genişler, yazım düzeltilir.
+**Tarih:** Haziran 2026 (Sürüm 2.2 — 5 yeni birincil/ikincil kaynak entegre)
+
+**Kaynaklar:**
+1. Cantürk Gümüş, *"Osmanlıdan Günümüze Ormancılık Politikalarının..."* (Isparta sempozyum, 22-24 Ekim 2014, s.477-489)
+2. TBMM Tutanak Dergisi B:52, 21.II.1950 (Bayındırlık Bakanlığı bütçe görüşmesi, Ali Rıza İncealemdaroğlu konuşması)
+3. 548 sayılı Kanun resmi metni (RC 23.II.1341 sayı 84)
+4. Şükrü Açıcı YL tezi (Balıkesir, 2019) — PREVIEW
+5. Kaya & Yılmaz 2020 (Ayancık-Zingal karşılaştırması)
+
+**+ Önceki düzeltme paketinden gelenler:**
+- Sadi Uyar 12.01.2026 yazısı düzeltmeleri (S15, S17)
+- S1 coğrafya düzeltmesi (Çaydeğirmeni → Gökçebey/Tefen köprüsü)
+
+**Etki:** Toplam **7 ses bloğu yeniden üretimi**, 6 alt-yazı kartı güncellemesi, jenerik genişlemesi.
 
 ---
 
 ## 🔴 BÖLÜM 1 — ELEVENLABS'A YAPIŞTIRILACAK YENİ BLOKLAR
 
-Aşağıdaki **4 ses bloğunu yeniden üret**. ElevenLabs ayarları aynı (Stability 55-60, Similarity 75, Style 25-30, ses: Cem veya Defne).
+Aşağıdaki **7 ses bloğunu yeniden üret**. ElevenLabs ayarları: Stability 55-60, Similarity 75, Style 25-30, ses: Cem veya Defne. Tarih sıralı:
 
-Eski mp3 dosyalarını silme — yeniden adlandır:
-- `s01a_acilis_v2.mp3` (yeni) ← **Haziran düzeltmesi: coğrafya**
-- `s15a_filyos_kopru_v2.mp3` (yeni)
-- `s15b_filyos_kopru_v2.mp3` (yeni)
-- `s17b_alogluv2.mp3` (yeni)
+| # | Sahne | Blok | Eski mp3 | Yeni mp3 | Sebep |
+|---|---|---|---|---|---|
+| 1 | S1 | İlk | s01a.mp3 | s01a_v2.mp3 | Coğrafya: Çaydeğirmeni → Gökçebey/Tefen |
+| 2 | **S4** | **Blok 2** | s04b.mp3 | **s04b_v3.mp3** | **YENİ: 111.000 m³ + ürün hedefleri** |
+| 3 | **S4** | **Blok 3** | s04c.mp3 | **s04c_v3.mp3** | **YENİ: 450 + 548 sayılı kanunlar (648 düşer)** |
+| 4 | **S5** | **Blok 1 (giriş)** | s05a.mp3 | **s05a_v3.mp3** | **YENİ: Yabancı uzman + Türk yardımcı kuralı** |
+| 5 | S15 | Blok 1 | s15a.mp3 | s15a_v2.mp3 | Sadi Uyar: sal dönemi (önceki paketten) |
+| 6 | S15 | Blok 2 | s15b.mp3 | s15b_v2.mp3 | Sadi Uyar: 1945 dekovil köprüsü |
+| 7 | S17 | Orta | s17b.mp3 | s17b_v2.mp3 | Alaoğlu ≠ dekovil köprüsü |
+| 8 | **S18** | **Blok 1 (giriş)** | s18a.mp3 | **s18a_v3.mp3** | **YENİ: Bayındırlık Bakanlığı bütçesi + Ali Rıza İncealemdaroğlu adı** |
+| 9 | **S18** | **Blok 2 (orta)** | s18b.mp3 | **s18b_v3.mp3** | **YENİ: Birebir tutanak alıntısı, üç katmanlı analiz** |
 
----
-
-### S1 / İlk blok (yeni) — Filyos kıyısı + Tefen köprüsü
-
-> **Düzeltme nedeni:** Eski kayıt "Çaydeğirmeni'ne inip" diyordu. Köprü
-> aslında Gökçebey'in güney girişinde, Filyos üzerinden Çaydeğirmeni'ne
-> bağlanan **Tefen (Gökçebey) köprüsü**dür. Belgeselin **ilk cümlesi**
-> olduğu için bu düzeltme kritiktir.
-
-```
-Filyos Irmağı'nın kasım soğuğunda yüksek aktığı bir sabah, Gökçebey'e inip Tefen köprüsünün ayaklarının dibine yaklaşırsanız, suyun çekildiği yerde, ıslak kumun içinde, siyaha çalan bir demir parçası görürsünüz. Çoğu yerli onun ne olduğunu bilmez; bilenler de yıllar içinde anlatmaktan vazgeçmiştir. Oysa bu kıyıda bir zamanlar ahşap bir köprü vardı. O köprünün üzerinden, 1945'ten 1955'e kadar, yavaşça, dumanını Filyos'un üstüne salarak bir tren geçerdi. Trenin adı dekovildi.
-```
-
-Karakter: ~600 · Süre tahmini: ~35-40 sn · Ton: Cold open — yavaş, mesafeli, çağrı yapar gibi. Style 35.
-
-**Not:** S1'in ikinci VO bloğu ("Bu film, bir trenin değil...") **değişmiyor**, mevcut s01b mp3'ünü koru.
+Bold olanlar **bu paketle yeni eklenen** bloklar (4 adet). İtalik olanlar önceki güncellemeden kaldı (3 adet). Toplam: **7 yeni mp3**.
 
 ---
 
-### S15 / Blok 1 (yeni) — Filyos sal döneminden köprüye
+### S4 / Blok 2 (yeni) — Ürün hedefi netleşti
 
 ```
-Hattın geçtiği en kırılgan yapı, Filyos Irmağı üzerindeki ahşap köprüydü. Bu köprü, dekovil hattının kendisi için, 1945'te Orman İdaresi tarafından inşa edildi. Bugün ayakta duran betonarme Tefen köprüsünün bulunduğu yere. Daha önce orada köprü yoktu. Halk Filyos'u sallarla geçerdi. Salcılar Gökçebey'den aldıkları yolcuları Sarıkaş mevkisindeki kayıkbaşına götürür, Tepan hanında bir gece konaklatır, sabah yürüyerek Devrek'e gönderirlerdi. Kışın bu geçiş hayati tehlike, kimi zaman ölüm demekti. 1937'de hâlâ sal dönemiydi.
+Tasarı şuydu: Bu envanterden yılda yüz on bir bin metreküp kereste çıkarılacak. Ama bu sıradan bir kereste değildi. Üç çok spesifik hedefi vardı: İzmir piyasasının üzüm ve incir ihracatı için reçinesiz Göknar kerestesi, Zonguldak demiryolu için travers ve Zonguldak madenleri için maden direği. O yıllarda Türkiye, İzmir tüccarının istediği reçinesiz Göknar kerestesini İsveç ve Romanya'dan ithal ediyordu. Karadere bu ithalatın yerine geçecekti.
 ```
 
-Karakter: ~545 · Süre tahmini: ~30-35 sn · Ton: Açıklayıcı, ölçülü.
+Karakter: ~530 · Süre: ~32-35 sn · Ton: Sakin, açıklayıcı. Style 25.
 
 ---
 
-### S15 / Blok 2 (yeni) — 1945, çift fonksiyonlu köprü
+### S4 / Blok 3 (yeni) — Yasal zemin: 450 ve 548 sayılı kanunlar
 
 ```
-1945'te dekovil köprüsü yapıldığında, yıllarca süren sal taşımacılığının yerini aldı. Köprü tek başına bir dekovil yapısı değildi; aynı tahta tabanın üzerinde dar dekovil rayları ve at arabası, yaya, bisikletli yan yana geçerdi. Aynı ahşap iskelet, aynı dar açıklık, aynı çok ayaklı yapı — iki dünyaya birden hizmet ediyordu.
+Kereste, ormanın içinden Ereğli ya da Zonguldak yönünde bir dar hat ile taşınacaktı. Hattın genişliği yetmiş beş santimetreyle planlandı. Uzunluğu için kaynaklarda iki ayrı sayı dolaşır: bazı kayıtlarda yüz otuz kilometre, ormancılık tarihçisi Cantürk Gümüş'ün araştırmasına göre yüz elli kilometre. Yasal zemin iki adımda kuruldu: 23 Mart 1924 tarih ve 450 sayılı kanun, Ankara-Sivas ve Samsun-Sivas demiryollarına verilen tüm müsaadeleri Ereğli-Karadere'ye uyguladı. 26 Ocak 1925 tarih ve 548 sayılı kanun ise inşaat ve işletme için iki milyon lira tahsisat ayırdı. Bu rakam, Cumhuriyet'in ilk genel bütçesinin yaklaşık yüzde üçüne denk geliyordu ve Sıhhiye Vekâleti'nin tüm bütçesinden büyüktü. Bir ormancılık projesinin, ülkenin tüm sağlık harcamasından büyük olduğu bir an düşünün.
 ```
 
-Karakter: ~360 · Süre tahmini: ~22-25 sn · Ton: Yumuşak, anlatımsal.
-
-> **Not:** S15 Blok 3 (ilkbahar kırılganlığı) DEĞİŞMİYOR. Mevcut s15c kaydını koru.
+Karakter: ~850 · Süre: ~50-55 sn · Ton: Belgesel ağırbaşlı. Style 25.
 
 ---
 
-### S17 / Orta blok (yeni) — Alaoğlu ≠ dekovil köprüsü
+### S5 / Blok 1 (yeni) — Yabancı uzman + Türk yardımcı kuralı
 
 ```
-Bu yıpranmanın belgesel zirvesi 16 Nisan 1948'de geldi. O gün Anadolu Ajansı, Devrek ile Tefen istasyonu arasında Alaoğlu Köprüsü'nün ırmak taşmasıyla yıkıldığını, ayrı bir noktada ise dekovil hattının elli metrelik bir toprak imlasının yarıldığını bildirdi. Dekovil köprüsü o gün sağlam kalmıştı; ama hat üzerindeki kırılganlık, tek bir olay değil, süregelen bir gerçeklikti.
+Projenin başına bir mühendis arandı. Ankara'nın eli kısaydı; Türkiye'de o yıllarda yetişmiş orman mühendisi parmakla sayılıyordu. Ama bir başka neden de bir kuraldı. Orman Yüksek Meclisi'nin 1924 kararı, açık bir şart koşmuştu: işletme müdürü yabancı bir uzman olacak, yardımcısı Türk olacaktı. Rastgele değil, sistemli bir tercihti bu. Aranan adam Çek asıllı, Avusturya-Macaristan ekolünden gelmiş Franz Stöger oldu. Türkiye'ye geldiğinde adını Türkçeleştirdi; resmî yazışmalarda artık İbrahim Kutsi olarak imza atacaktı.
 ```
 
-Karakter: ~440 · Süre tahmini: ~26-30 sn · Ton: Belgesel, bildirim havası.
+Karakter: ~545 · Süre: ~32-35 sn · Ton: Sakin, açıklayıcı. Style 25.
 
-> **Not:** S17'nin giriş bloğu ve kapanış bloğu DEĞİŞMİYOR. Sadece orta bloğu yenile.
+**Not:** S5'in ikinci VO bloğu ("Kutsi'ye verilen yetki...") DEĞİŞMİYOR.
+
+---
+
+### S18 / Blok 1 (yeni) — Bayındırlık bütçesi + Ali Rıza adı
+
+```
+Büyük Millet Meclisi'nin sekizinci döneminin dördüncü yasama yılı, 21 Şubat 1950 birleşimi. Daha üç ay sonra, çok partili tarihin gerçek dönüm noktası olan 14 Mayıs seçimleri yapılacaktır. O günün gündemi Tarım Bakanlığı bütçesi değildi — Bayındırlık Bakanlığı bütçesiydi. Yol, şose, demiryolu... Söz alanlardan biri, Zonguldak milletvekili Ali Rıza İncealemdaroğlu, kürsüden önce bölgenin demiryolu ihtiyacından söz etti. Ereğli-Zonguldak hattı üzerindeki Tefen istasyonunun önemine değindi. Tefen'den bir kolun Devrek'e, Devrek'ten Ereğli'ye uzatılması gerektiğini söyledi — sanayi gelişsin, kömür çıksın, kereste yürüsün diye.
+```
+
+Karakter: ~720 · Süre: ~42-45 sn · Ton: Belgesel, ağırbaşlı. Style 20.
+
+---
+
+### S18 / Blok 2 (yeni) — Birebir alıntı + üç katmanlı analiz
+
+```
+Sonra dekovilin akıbetine geldi. Şöyle söyledi: 'Tarım Bakanlığı bir buçuk milyon lira sarfederek bir dekovil hattı yaptı. Fakat bakımsızlık yüzünden köprüler bozuldu, raylar kırıldı. Bu işi özel idare bakacak dediler, bakmadı, bu yüzden yol ve şoseler natamam kaldı. Tarım Bakanlığının sarfettiği bir buçuk milyon lira tamamen mahvolup gitmiştir.' Bu birkaç cümlenin üç katmanı vardı: hattın fiziksel olarak çürüdüğü, idari sorumluluğun Tarım Bakanlığı'ndan il özel idaresine devredildiği ama yerine getirilmediği, ve aynı koridorda 1945'te ihale edilen şosenin de hâlâ bitirilmediği. Üç ayrı başarısızlık, tek bir kürsü konuşmasında üst üste binmişti.
+```
+
+Karakter: ~740 · Süre: ~44-47 sn · Ton: Belgesel, soğuk, eleştirel. Style 20.
+
+---
+
+### S1, S15, S17 blokları için önceki paketteki metinleri kullan
+
+Yukarıdaki **4 yeni bloğu** üretirken, eski düzeltme paketindeki metinler **aynen geçerli** (S1a, S15a, S15b, S17b). Bunları zaten daha önce gönderdim — değişmedi.
 
 ---
 
 ## 🟡 BÖLÜM 2 — CAPCUT'TA ALT-YAZI KARTI DEĞİŞİKLİKLERİ
 
-Bu değişiklikler sadece CapCut'ta yapılır, ses yenileme gerektirmez.
+### Yeni S4 kartları (3 kart — sahne içinde sırayla)
 
-### S15 — Yeni ek kart (Blok 2'nin sonunda göster)
+1. *"Orman Yüksek Meclisi (Orman Meclisi Alisi) — 7 Şubat 1924"*
+2. *"Karadere ormanları — 6 milyon m³ envanter; yılda 111.000 m³ üretim hedefi"*
+3. *"İzmir Göknar + Zonguldak travers + maden direği"*
+4. *"450 sayılı Kanun (23 Mart 1924) — 548 sayılı Kanun (26 Ocak 1925) — 2.000.000 lira"*
 
-```
-Yerel arşiv: Sadi Uyar koleksiyonu
-(1937 sal taşımacılığı / 1945 dekovil köprüsü fotoğrafları)
-```
+Önceki *"548 sayılı Kanun + 648 sayılı Kanun"* kartını **sil**.
 
-### S16 — Yeni ek kart (sahnenin sonuna doğru, hattın amele anlatımı sırasında)
+### Yeni S18 kartları (2 kart)
 
-```
-Mükelliyet dönemiydi; dekovilin Gökçebey
-kısmında kadınlar çalıştı.
-Başçavuş: Üçburgu Sezer ailesi.
-(Kaynak: Sadi Uyar)
-```
+1. *"Ali Rıza İncealemdaroğlu — Zonguldak Milletvekili"*
+2. *"TBMM Tutanak Dergisi, 8. Dönem 4. Yasama Yılı, B:52, 21.II.1950"*
 
-### S17 — Mevcut kartı DEĞİŞTİR
+Önceki *"TBMM Tutanak Dergisi..."* kartını yeni iki kartla değiştir.
 
-ESKİ:
-```
-Anadolu Ajansı, 16 Nisan 1948 —
-Aloğlu Köprüsü yıkıldı
-```
+### Önceki paketteki kart değişiklikleri (aynen geçerli)
 
-YENİ:
-```
-Anadolu Ajansı, 16 Nisan 1948 —
-Alaoğlu Köprüsü yıkıldı;
-dekovil hattında 50 m toprak imla yarıldı
-```
+- S15: Sadi Uyar koleksiyonu kartı (yeni)
+- S16: Mükelliyet / kadın işçi kartı (yeni)
+- S17: Alaoğlu + 50 m toprak imla kartı (değişti)
 
 ---
 
-## 🟢 BÖLÜM 3 — JENERİK (S26) — KAYNAKÇA GÜNCELLEMESİ
+## 🟢 BÖLÜM 3 — JENERİK (S26) — KAYNAKÇA TAM YENİDEN
 
-`altyazi-kartlari.pdf`'in son kartını (jenerik) şu şekilde güncelle:
+`altyazi-kartlari.pdf`'in son kartını şu yapıda kur:
 
 ### Kaynaklar — Birincil
-- TBMM Zabıt Ceridesi (1943, 1950); 548 ve 648 sayılı Kanunlar (1925)
+- TBMM Zabıt Ceridesi: 21 Mayıs 1943; **21 Şubat 1950 (B:52, s.942 — Ali Rıza İncealemdaroğlu konuşması)**
+- **450 sayılı Kanun (23 Mart 1924)**
+- **548 sayılı Kanun (26 Ocak 1925, RC 23.II.1341 sayı 84)** — *Tahsisat: 2.000.000 lira* (Önceki "648 sayılı kanun" atfı silindi.)
 - Ulus, 19 Kasım 1945
 - Anadolu Ajansı, 16 Nisan 1948
-- **Sadi Uyar, "Tefen Köprüleri — Bildiklerimiz Bilmediklerimiz" (Facebook, 12 Ocak 2026)** ← YENİ
+- Sadi Uyar, *"Tefen Köprüleri"* (Facebook, 12 Ocak 2026)
 
 ### Literatür
 - Cantürk Gümüş, *Türk Orman Devrimi*
+- **Cantürk Gümüş, *"Osmanlıdan Günümüze Ormancılık Politikaları..."*, II. Ulusal Akdeniz Orman ve Çevre Sempozyumu, Isparta, 22-24 Ekim 2014**
 - *Sözlü Ormancılık Tarihi* (Osman Savaşal, Nurettin Elbir)
+- **Şükrü Açıcı, *Devlet Orman İşletmeleri Tarafından Gerçekleştirilen Orman Emvali Satışları*, Balıkesir Üniversitesi YL tezi, 2019**
+
+### Karşılaştırma
+- **Kaya & Yılmaz, *"1930-1960 Yılları Arası Demiryolu Ulaşımının Ayancık Yöresinde..."*, Türk Coğrafya Dergisi 75, 2020** — Türkiye dar hat tarihi içindeki konumlanma için karşılaştırma kaynağı.
 
 ### Çıkış metni
 - İbrahim Kekeç, "Devrek'in Kayıp Dekovili", Zhaber, 2022
 
 ### Görsel arşiv
-- **Sadi Uyar koleksiyonu (1937 sal taşımacılığı; 1945 dekovil köprüsü; 1955 köprünün açıldığı gün; günümüz Tefen köprüsü)** ← YENİ ve EN ÖNEMLİ
-- Köprüler Daire Başkanlığı (1955 açılış fotoğrafı, Sadi Uyar üzerinden)
+- Sadi Uyar koleksiyonu (4 fotoğraf)
+- Köprüler Daire Başkanlığı (1955 açılış)
 - Gökçebeyliler arşivi
 - Kekeç arşivi
-
-> ⚠️ **Not:** Daha önce "Kekeç arşivi" olarak işaret ettiğimiz **bisikletli adam fotoğrafı**, aslında **Sadi Uyar koleksiyonundandır**. Jenerikte kaynak doğruluğu önemli.
-
----
-
-## 🟢 BÖLÜM 4 — YAZIM DÜZELTMESİ
-
-Tüm dosyalarda ve CapCut'ta:
-
-**"Aloğlu" → "Alaoğlu"** (her geçtiği yerde)
-
-Sadi Uyar metni tutarlı olarak **Alaoğlu** yazımını kullanıyor. Bizim önceki kaynaklarımız (Deep Research) "Aloğlu" yazmıştı, yanlış.
-
-Etkilenen yerler:
-- S17 ses (zaten yeniden ürettiğinde Alaoğlu derek otomatik düzelir)
-- S17 ALT-YAZI kartı (yukarıda yeni metin verildi)
-- Senaryo dosyasında geçen tüm metin
+- tefen67 koleksiyonu
 
 ---
 
-## 📋 BÖLÜM 5 — ÖZET YAPILACAKLAR LİSTESİ
+## 📋 BÖLÜM 4 — YAPILACAKLAR LİSTESİ (toplu)
 
-### A. ElevenLabs (~12 dakika)
-- [ ] **S1 / İlk blok yeniden üret** → `s01a_v2.mp3` ⚠️ Haziran düzeltmesi: coğrafya (Çaydeğirmeni → Gökçebey/Tefen köprüsü)
-- [ ] S15 / Blok 1 yeniden üret → `s15a_v2.mp3`
-- [ ] S15 / Blok 2 yeniden üret → `s15b_v2.mp3`
-- [ ] S17 / Orta blok yeniden üret → `s17b_v2.mp3`
-- [ ] Drive'da yeni dosyaları **aynı klasöre** koy (eski s01a, s15a, s15b, s17b mp3'lerini eski isimlerinde bırakabilirsin; CapCut'a sadece yenileri sürükle)
+### A. ElevenLabs (~25 dakika)
+- [ ] S1 / İlk blok yeniden üret → `s01a_v2.mp3` (önceki paket)
+- [ ] **S4 / Blok 2 yeniden üret → `s04b_v3.mp3`** ⚠️ YENİ
+- [ ] **S4 / Blok 3 yeniden üret → `s04c_v3.mp3`** ⚠️ YENİ
+- [ ] **S5 / Blok 1 yeniden üret → `s05a_v3.mp3`** ⚠️ YENİ
+- [ ] S15 / Blok 1 yeniden üret → `s15a_v2.mp3` (önceki paket)
+- [ ] S15 / Blok 2 yeniden üret → `s15b_v2.mp3` (önceki paket)
+- [ ] S17 / Orta blok yeniden üret → `s17b_v2.mp3` (önceki paket)
+- [ ] **S18 / Blok 1 yeniden üret → `s18a_v3.mp3`** ⚠️ YENİ
+- [ ] **S18 / Blok 2 yeniden üret → `s18b_v3.mp3`** ⚠️ YENİ
 
-### B. CapCut'ta (~17 dakika)
-- [ ] **S1 / İlk blok mp3 → eski s01a yerine yeni `s01a_v2.mp3` yerleştir** ⚠️ Haziran
-- [ ] S1'in ikinci bloğu (s01b — "Bu film...") AYNI KALIR
-- [ ] S15 / Blok 1 mp3 → eski s15a yerine yeni `s15a_v2.mp3` yerleştir
-- [ ] S15 / Blok 2 mp3 → eski s15b yerine yeni `s15b_v2.mp3` yerleştir
-- [ ] S15'in 3. bloğu (s15c) AYNI KALIR
-- [ ] S17 orta mp3 → eski s17 ortası yerine yeni `s17b_v2.mp3` yerleştir
-- [ ] S15 için yeni Sadi Uyar arşiv kartı ekle
-- [ ] S16 için yeni mükelliyet/kadın işçi kartı ekle
-- [ ] S17 alt-yazı kartını değiştir (Alaoğlu + 50 m toprak imla)
-- [ ] Jenerik (S26) kayan yazısını yeni kaynakçayla güncelle
-- [ ] Tüm dosyalarda "Aloğlu" → "Alaoğlu" değiştir
-
-### C. Sadi Uyar fotoğrafları (~10 dakika)
-- [ ] **1937 sal fotoğrafı** → S15 Blok 1'in altına yerleştir
-- [ ] **1945 dekovil köprüsü** → S15 Blok 2'nin altına yerleştir
-- [ ] **1955 köprünün açıldığı gün** → S19'a yerleştir (mevcut üretken görselin yanına)
-- [ ] **Bugünkü Tefen köprüsü taşkın altında** → S17 ya da S25 için alternatif
-
-**Önemli:** Sadi Uyar'a fotoğraf kullanım izni için DM atmayı unutma — daha önce hazırladığımız mesaj var.
+### B. CapCut'ta (~30 dakika)
+- [ ] 7 yeni mp3'ü Drive'a koy, eski karşılıklarını arşivle
+- [ ] CapCut zaman çizelgesinde **9 segmenti** yeni mp3'lerle değiştir
+- [ ] S4'e 4 yeni alt-yazı kartı ekle, "648 sayılı kanun" kartını sil
+- [ ] S5'in giriş kartlarını gözden geçir (değişiklik yok)
+- [ ] S18'e 2 yeni alt-yazı kartı ekle, eski tutanak kartını değiştir
+- [ ] S15 / S16 / S17 kartları (önceki paket — yapılmamışsa şimdi)
+- [ ] **Jenerik (S26) kayan yazısını tam yenile** (5 yeni kaynak eklendi)
+- [ ] Yazım: "Aloğlu" → "Alaoğlu", "Çaydeğirmeni" (S1) → "Gökçebey" (önceki paket)
 
 ---
 
@@ -185,12 +184,12 @@ Etkilenen yerler:
 
 | Alan | Sayı |
 |---|---|
-| Yeni ses bloğu üretimi | 4 (S1a, S15a, S15b, S17b) |
-| Toplam ek karakter (ElevenLabs kotası) | ~1.945 (≈%2 ek kullanım) |
-| CapCut alt-yazı kartı değişikliği | 4 (S15 yeni, S16 yeni, S17 değişti, S26 jenerik) |
-| Yazım düzeltme | "Aloğlu" → "Alaoğlu" + "Çaydeğirmeni" → "Gökçebey/Tefen köprüsü" (S1) |
-| Görsel yerleştirme | 4 Sadi Uyar fotoğrafı eklendi |
+| Yeni ses bloğu üretimi (toplam) | **9 blok** (3 önceki paket + 6 bu paket) |
+| Toplam ek karakter (ElevenLabs kotası) | ~4.500 (≈%4.5 ek kullanım) |
+| CapCut alt-yazı kartı değişikliği | 10+ (S4×4, S15, S16, S17, S18×2, S26 jenerik) |
+| Yazım düzeltme | Aloğlu→Alaoğlu, Çaydeğirmeni→Gökçebey, 648 sayılı kanun atfı silindi |
+| Görsel yerleştirme | Sadi Uyar 4 fotoğrafı (önceki paket) |
 
-**Toplam ek iş süresi: ~40-50 dakika**
+**Toplam ek iş süresi: ~55-70 dakika**
 
-Bu paket, belgeseli **olgusal olarak tam doğru, sosyal tarih boyutu zengin, görsel olarak güçlü** hale getirir.
+Bu paket, belgeseli **birincil belge düzeyinde doğru**, **isimlendirilmiş tanıklı**, **uluslararası akran-örnek karşılaştırmasıyla bağlamlanmış** hâle getirir. Bundan sonra olgusal hata kalmaz.
