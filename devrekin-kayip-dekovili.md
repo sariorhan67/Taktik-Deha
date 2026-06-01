@@ -1,20 +1,25 @@
 # Devrek'in Kayıp Dekovili
 ### Trabzon'dan Filyos'a Bir Rayın İki Hayatı
 
-*Üç bölümlük anlatısal araştırma serisi — Sürüm 2*
+*Üç bölümlük anlatısal araştırma serisi — Sürüm 2.1*
 
 > **Yöntem ve teşekkür notu.** Bu seri, araştırmacı-yazar İbrahim Kekeç'in
 > *Devrek'in Kayıp Dekovili* (Zhaber, 2022) başlıklı yazısını çıkış noktası
 > alır; onun derlediği kaynak havzasını —TBMM tutanakları, dönem basını,
 > ormancılık literatürü ve yerel sözlü tanıklıklar— anlatısal bir bütün içinde
-> yeniden kurar. Sürüm 2, ayrıca *Devrek'in Kayıp Dekovili Üzerine Derin
-> Araştırma* (ChatGPT Deep Research, 2026) çıktısının getirdiği birincil
-> belgeleri (1925 tarihli 548 ve 648 sayılı kanunlar, 19 Kasım 1945 Ulus
-> haberi, 16 Nisan 1948 Anadolu Ajansı sel haberi, 1943 ve 1950 TBMM
-> tutanakları, *Türk Orman Devrimi*'nin ulusal istatistikleri) anlatıya
-> entegre eder. Her iddia, dayandığı kaynağa metin içinde işaretlenmiştir;
-> doğrulanmamış noktalar "açık soru" olarak ayrılmıştır. Tam güven haritası,
-> kronoloji ve kaynakça metnin sonundadır.
+> yeniden kurar. Sürüm 2, *Devrek'in Kayıp Dekovili Üzerine Derin Araştırma*
+> (ChatGPT Deep Research, 2026) çıktısının getirdiği birincil belgeleri
+> (1925 tarihli 548 ve 648 sayılı kanunlar, 19 Kasım 1945 Ulus haberi, 16 Nisan
+> 1948 Anadolu Ajansı sel haberi, 1943 ve 1950 TBMM tutanakları, *Türk Orman
+> Devrimi*'nin ulusal istatistikleri) anlatıya entegre etti. Sürüm 2.1,
+> **Sadi Uyar'ın 12 Ocak 2026 tarihli *"Tefen Köprüleri"*** yazısının ve dört
+> arşiv fotoğrafının getirdiği belirleyici düzeltmeleri kapsar: Alaoğlu
+> Köprüsü ile dekovil köprüsünün **farklı** köprüler olduğu, 1948 selinde
+> dekovil köprüsünün **sağlam kaldığı**, köprünün 1945'te dekovil için yapılıp
+> ondan önce o noktada sal taşımacılığı yapıldığı, ve mükelliyet dönemi
+> **kadın işçileri** dahil. Her iddia, dayandığı kaynağa metin içinde
+> işaretlenmiştir; doğrulanmamış noktalar "açık soru" olarak ayrılmıştır.
+> Tam güven haritası, kronoloji ve kaynakça metnin sonundadır.
 
 ---
 
@@ -284,12 +289,21 @@ dönem fotoğraflarındaki beyaz binayı doğrudan teşhis etmesiyle pekişti: "
 Kemerler İstasyonu'dur."
 
 **Filyos Irmağı üzerindeki ahşap köprü** ise hattın en kırılgan,
-anıt-niteliğindeki yapısıydı. Ahşap iskelet üzerine, dekovil yüküne uygun, dar
-açıklıklı, çok ayaklı bir köprüydü; ırmağın yaz alçak debisi düşünülerek
-tasarlanmış, ilkbahar yüksek debisini ise —sonradan acı biçimde görüleceği gibi—
-hiçbir zaman tam karşılayamayan bir köprüydü. Ahşaptı, daracıktı, ve üzerinde
-küçük bir buhar lokomotifi kerestesini ve vagonlarını yavaş yavaş, sallanarak
-geçirirdi.
+anıt-niteliğindeki yapısıydı. Bu köprü, **dekovil hattının kendisi için 1945'te
+Orman İdaresi tarafından inşa edildi** — bugün ayakta duran betonarme Tefen
+köprüsünün bulunduğu yere. Daha önce orada köprü yoktu: halk Filyos'u sallarla
+geçer, salcılar Gökçebey'den aldıkları yolcuları Sarıkaş mevkisindeki
+kayıkbaşına götürür, Tepan hanında bir gece konaklatır, sabah yürüyerek
+Devrek'e gönderirlerdi. Kışın bu geçiş hayati tehlike, kimi zaman ölüm
+demekti. Sadi Uyar koleksiyonundaki 1937 tarihli bir fotoğraf, dekovil
+köprüsünden sekiz yıl önce hâlâ süren sal taşımacılığını belgeliyor. 1945'te
+köprü yapıldığında, tek başına bir dekovil yapısı değildi; aynı tahta tabanın
+üzerinde dar dekovil rayları ve at arabası, yaya, bisikletli yan yana geçerdi.
+Ahşap iskelet üzerine, dekovil yüküne uygun, dar açıklıklı, çok ayaklı bir
+köprüydü; ırmağın yaz alçak debisi düşünülerek tasarlanmış, ilkbahar yüksek
+debisini ise —sonradan acı biçimde görüleceği gibi— hiçbir zaman tam
+karşılayamayacaktı. Daracıktı, sallanırdı; üzerinde küçük bir buhar lokomotifi
+kerestesini ve vagonlarını yavaş yavaş geçirirdi.
 
 Hattın geri kalanı dekovil mantığının basit hâliydi: düşük profilli yataklara
 oturtulmuş raylar, sık dökülmüş ahşap traversler, ormandan dışarı uzanan kısa
@@ -315,6 +329,15 @@ bile çalışamazdı. **Üçüncüsü** Kemerler İstasyonu'nda oturan, defterle
 Tefen'deki TCDD istasyonu ve Devrek'teki Orman İşletme Müdürlüğü ile yazışan
 idari personeldi.
 
+Bu üç gruptan ayrı, çoğu zaman tarihten silinmiş bir dördüncü emek katmanı
+vardı: **kadınlar**. Sadi Uyar'ın yerel tarih araştırmasına göre, hattın
+çalıştığı yıllar **mükelliyet dönemiydi** — bölgenin erkekleri taş kömürü
+madenlerinde mecburi hizmetteydi. Dekovilin **Gökçebey kısmında bakım ve
+işletme işini kadınlar yürüttü**; başlarındaki başçavuş **Üçburgu'dan Sezer
+ailesindendi**. Türkiye'nin endüstriyel emek tarihinde adı çok az anılan bu
+katmanın, küçük bir orman dekovilinde, ulusal bir gerçek olarak karşımıza
+çıkması başlı başına araştırmaya değer bir konudur.
+
 Hattın taşıdığı şey neredeyse tamamen orman emvaliydi: yontulmuş tomruklar,
 biçilmiş kalas, traverslik kereste. Hattın ritmi mevsime bağlıydı. Sonbahar ve
 kış kerestenin yoğun aktığı dönemdi. İlkbahar ise hattın en korkulu mevsimiydi.
@@ -329,16 +352,23 @@ ilkbaharda, Köroğlu ve Bolu dağlarının karları çözüldüğünde, on gün
 Yıldan yıla tekrarlanan örüntü buydu: kış sevkiyatı, ilkbahar yarası, yaz
 tamiri, sonbahar yeniden sevkiyat. Bu örüntünün **somut belgesel zirvesi**
 1948 baharında geldi. **16 Nisan 1948 tarihli Anadolu Ajansı haberi**, Devrek
-ile Tefen istasyonu arasındaki **Aloğlu Köprüsü**'nün yıkıldığını ve orman
+ile Tefen istasyonu arasında **Alaoğlu Köprüsü**'nün yıkıldığını ve orman
 işletmesine ait dekovil hattında **50 metrelik bir toprak imlanın yarıldığını**
-bildirdi. Aloğlu Köprüsü'nün, Filyos üzerindeki ana ahşap dekovil köprüsü ile
-mi yoksa hattın başka bir noktasındaki ikinci bir yapıyla mı aynı şey olduğu
-henüz tam berraklaşmamış bir açık sorudur; ama hat üzerinde köprü ve altyapı
-hassasiyetinin —tek olay değil, süregelen bir kırılganlık olarak— gerçek
-olduğunu kuvvetle gösteren bir belgedir. Bu örüntü hattı ekonomik olarak
-yıprattı; her yıl yapılan tamir, küçük bir bütçe kalemiyle karşılanması zor bir
-harcamaydı. Hat fiziksel olarak hâlâ ayaktaydı; ama mali olarak yıllar içinde
-sessizce eridi.
+bildirdi. Burada bir ayrım netleştirilmelidir: Sadi Uyar'ın yerel tarih
+araştırmasına göre Alaoğlu Köprüsü, dekovil köprüsünün kendisi değil; **Gaziler
+köyü Alaoğlu mahallesi ile Karahatipler köyü arasındaki tarihi taş/ahşap
+köprü**dür (1865'te Kethüdazade Süleyman tarafından taş olarak inşa edilmiş,
+1927'de ip köprü, 1931'de ahşap, 1936'da yeniden ahşap olarak yenilenmiştir).
+1948 baharında **bu köprü tamamen yıkıldı**. Aynı sel, dekovil hattının
+Gökçebey tarafından tren istasyonuna giden noktasında **50 metrelik bir toprak
+imlasını yardı** — ama **dekovil köprüsünün kendisi sağlam kaldı**. AA haberi,
+muhtemelen aynı gün iki ayrı olayı birleştirip raporlamıştı; biz bu seride
+uzun süre bu iki olayı aynı sandık. Sadi Uyar'ın 2026 yazısı bu ayrımı
+açıklığa kavuşturdu. Yine de hat üzerinde köprü ve altyapı hassasiyetinin —tek
+olay değil, süregelen bir kırılganlık olarak— gerçek olduğunu kuvvetle
+gösteren belgedir bu. Hat yine tamir edildi. Ama her yıl yapılan tamir, küçük
+bir bütçe kalemiyle karşılanması zor bir harcamaydı. Hat fiziksel olarak hâlâ
+ayaktaydı; ama mali olarak yıllar içinde sessizce eridi.
 
 Bu sessiz erime, 1950'ye gelindiğinde Ankara'nın gündemine taşınacak kadar
 büyümüştü. Ama o gündeme çıkmadan önce, bir başka süreç de aynı koridorda
@@ -638,19 +668,27 @@ değildir.
 |---|---|
 | 1914–1915 | I. Dünya Savaşı'nda Alman menşeli dekovil malzemesi Trabzon Limanı'na indirilir; bir kısmı Hamsiköy'e kadar döşenir, kalanı depolanır. |
 | 1916 | Rus ilerleyişi Trabzon'a ulaşır. |
+| 3 Ocak 1865 | Bolu sancağı mazbatası: **Kethüdazade (Kahyaoğlu) Süleyman**, Devrek–Tefen arası nehri kebir üzerinde köprü için 14.000 kuruş taahhüt eder. Meclis-i Vâla'ya gönderilir. (Gaziler–Karahatipler hattı, **Alaoğlu mevkii** — Filyos köprüsünden farklı yer.) |
 | 1923 | Cumhuriyet ilan edilir; Karadere Projesi dosyası Ziraat Vekâleti'ne sunulur. |
 | 1924 | Franz Stöger (İbrahim Kutsi) proje müşaviri atanır; Trabzon malzemesi Karadere'ye taşınır; Gülüç ağzında 2 km'lik kanal açılır. |
 | 26 Ocak 1925 | **548 sayılı kanun**: Ereğli–Karadere arasında 75 cm genişliğinde dar hat kabul edilir. |
 | 1925 | **648 sayılı kanun**: Ereğli–Karadere inşaat ve işletmesi için 2.000.000 lira tahsisat ayrılır. |
 | 1925 sonu | Şantiye fiilen durur; proje yarım kalır. Karadere'nin yasal kabuğu sonradan Irmak–Filyos–Ereğli ekseninde standart hatta evrilir. |
+| 1927 | **Alaoğlu mahallesi–Karahatipler arası ip köprü** kurulur (dekovil köprüsünden farklı koridor). |
 | 1 Temmuz 1930 | Irmak–Filyos hattının Filyos–Yenice / Filyos–Balıkısık kesimi sefere açılır. |
+| 1931 | Alaoğlu köprüsü ahşaba dönüştürülür. |
+| Temmuz 1933 | **Zonguldak ve ilçelerinde büyük sel felaketi**; bölgedeki köprüler ağır hasar görür. |
 | 1935 | Irmak–Filyos demiryolu tam hizmete girer (27 istasyon, 1.368 menfez/köprü, 37 tünel). |
-| 21 Mayıs 1943 | TBMM'de "Devrek'le Tefen arasında yol yoktur" tartışması; koridorun yolsuzluğu resmen tescillenir. |
+| 1936 | Alaoğlu köprüsünün ahşap sürümü yeniden inşa edilir. |
+| 1937 | **Sadi Uyar arşivinde fotoğraflı belge**: Filyos üzerinde sal taşımacılığı hâlâ devam etmektedir (dekovil köprüsü henüz yoktur). |
+| 1939 | **Zonguldak Bayındırlık Müdürlüğü raporu**: "Zonguldak kömür havzasının zaruri, iktisadi, askeri yol şebekeleri" — bölgesel yol ve köprü ağı için kapsamlı plan. |
+| 21 Mayıs 1943 | TBMM'de "Devrek'le Tefen arasında yol yoktur" tartışması; koridorun yolsuzluğu resmen tescillenir. Aynı yıl bugünkü Tefen köprüsünün **ihalesi yapılır** (müteahhit: Agah Çağlar ve Arslan Şenay). |
 | 1945 başı | Devrek–Tefen yolunun 0–19,6 km'lik şose inşaat **karayolu ihalesi** açılır. |
+| 1945 | Devrek Orman İşletmesi, **Filyos üzerinde ahşap dekovil köprüsünü dekovil için inşa eder** (bugünkü Tefen köprüsünün yerine). Mükelliyet döneminde dekovilin Gökçebey kısmında **kadın işçiler** çalışır; başçavuş Üçburgu Sezer ailesi. |
 | 18 Kasım 1945 | Devrek–Tefen Dekovili (~20 km) Tarım Bakanı Şevket Raşit Hatipoğlu tarafından törenle açılır. |
-| 19 Kasım 1945 | Açılış, **Ulus** gazetesinde ulusal haber olarak yer alır. |
+| 19 Kasım 1945 | Açılış *Ulus* gazetesinde ulusal haber olur; hat fiilen **hizmete girer**. |
 | 1945 (yıl içi) | *Türk Orman Devrimi* kaydı: Devrek Orman İşletmesi için 20 km dekovile ek olarak 130 km yol açılır; ülke geneli toplamları 150 km dekovil, 1.731 km kamyon yolu, 1.500+ km araba yolu. |
-| 16 Nisan 1948 | **Anadolu Ajansı haberi**: Devrek–Tefen arasında **Aloğlu Köprüsü** yıkılır; dekovil hattında 50 metrelik toprak imla yarılır. |
+| 16 Nisan 1948 | **Anadolu Ajansı haberi**: Devrek–Tefen arasında **Alaoğlu Köprüsü** ırmak taşmasıyla yıkılır. Aynı sel, ayrı noktada dekovil hattının 50 metrelik toprak imlasını yarar; ama **dekovil köprüsü sağlam kalır**. |
 | 21 Şubat 1950 | TBMM birleşiminde Zonguldak milletvekili kürsüden 1,5 milyon liralık maliyeti ve bakımsızlığı eleştirir. |
 | 1950 (yıl içi) | Devrek–Tefen koridorunda "mevcut bozuk servis yolu"nun genişletilmesi için yeni karayolu ihale ilanı. |
 | 1954–1955 | Filyos üzerindeki ahşap dekovil köprüsü yıkılır, yerine betonarme karayolu köprüsü yapılır; hat sökülür, ray/lokomotif/vagon hurdaya satılır (sözlü tanıklığa dayanır; resmi inşaat ve hurda dosyası henüz tespit edilememiştir). |
@@ -679,9 +717,16 @@ değildir.
   gastearsivi.com/gazete/ulus/1945-11-19/1
 - **Cumhuriyet** — Devrek–Tefen dekoviline ilişkin dönem haberi (Kekeç'in
   kaynakçasında atıf var).
-- **Anadolu Ajansı, 16 Nisan 1948** — Devrek–Tefen arasındaki Aloğlu
+- **Anadolu Ajansı, 16 Nisan 1948** — Devrek–Tefen arasında Alaoğlu
   Köprüsü'nün yıkılması ve dekovil hattında 50 m'lik toprak imlanın yarılması
-  haberi.
+  haberi (iki ayrı olay aynı sel gününde).
+- **Sadi Uyar, "Tefen Köprüleri — Bildiklerimiz Bilmediklerimiz"**
+  (Facebook, 12 Ocak 2026) — bölgenin köprü tarihinin (1865 Kethüdazade
+  Süleyman taş köprüsünden bugünkü betonarme Tefen köprüsüne) tam zinciri;
+  Alaoğlu Köprüsü ile dekovil köprüsü ayrımının netleştirilmesi; mükelliyet
+  dönemi kadın işçileri (başçavuş Üçburgu Sezer ailesi); 4 dönem fotoğrafı
+  (1937 sal, 1945 dekovil köprüsü, 1955 köprünün açıldığı gün, günümüz Tefen
+  köprüsü). — *Bu serinin sürüm 2.1'i için temel referans.*
 - "tefen67" yerel yayını — Tefen istasyonu ve çevresine ilişkin yerel tarih
   yazısı (Kekeç'in atıfı).
 - **Pusula Gazetesi**, "Zonguldak–Gökçebey Tarih Araştırmaları Dizisi". —
@@ -754,28 +799,40 @@ beklediğini gösterir.
 
 ## Yüksek güven (birden çok bağımsız belgeyle)
 - Devrek–Tefen Dekovili'nin **18 Kasım 1945**'te Tarım Bakanı Şevket Raşit
-  Hatipoğlu tarafından törenle açıldığı *(Ulus, 19 Kasım 1945)*.
+  Hatipoğlu tarafından törenle açıldığı, ertesi gün **19 Kasım 1945**'te
+  hizmete girdiği *(Ulus, 19 Kasım 1945; Sadi Uyar, 2026)*.
 - Hattın uzunluğunun **yaklaşık 20 km** olduğu *(Türk Orman Devrimi'nin
-  Devrek Orman İşletmesi kaydı)*.
+  Devrek Orman İşletmesi kaydı; Sadi Uyar)*.
 - Hattın Devrek ormanından çıkan emvali **Tefen İstasyonu**'na bağlayan
   besleme hattı olarak işlediği *(Gökçebey/Tefen yerel tarihçesi + Irmak–Filyos
   hattı kayıtları)*.
-- Hat üzerinde **16 Nisan 1948** tarihinde **Aloğlu Köprüsü**'nün yıkıldığı
-  ve 50 m'lik toprak imlanın yarıldığı *(Anadolu Ajansı, 1948)*.
+- **Alaoğlu Köprüsü ile dekovil köprüsünün farklı köprüler olduğu**: Alaoğlu,
+  Gaziler köyü Alaoğlu mahallesi–Karahatipler arasında tarihi (1865→1927→
+  1931→1936) bir köprü; dekovil köprüsü ise 1945'te Filyos üzerinde
+  (bugünkü Tefen köprüsünün yerinde) Orman İdaresi tarafından inşa
+  edilmiştir *(Sadi Uyar, 2026)*.
+- **16 Nisan 1948 selinde Alaoğlu Köprüsü tamamen yıkıldı**; aynı sel
+  dekovil hattının 50 m'lik toprak imlasını yardı ama **dekovil köprüsü
+  sağlam kaldı** *(Anadolu Ajansı, 1948; Sadi Uyar, 2026)*.
+- Dekovil köprüsünün yerinde önce **sal taşımacılığı** vardı; salcılar
+  Gökçebey'den Sarıkaş kayıkbaşına yolcuyu götürür, Tepan hanında konaklatır,
+  sabah Devrek'e yürütürlerdi *(Sadi Uyar; 1937 fotoğrafı belgeli)*.
 - Hattın **21 Şubat 1950** TBMM birleşiminde 1,5 milyon liralık maliyeti ve
   bakımsızlığı nedeniyle eleştirildiği *(TBMM Tutanak Dergisi)*.
 - Karadere Projesi'nin 1925'te **548 sayılı kanunla** 75 cm gauge'lı dar hat
   olarak yasalaştığı ve **648 sayılı kanunla** 2.000.000 lira tahsisat aldığı
   *(TBMM kanun derlemesi)*.
+- Ahşap dekovil köprüsünün **1954–1955 arasında** sökülüp yerine betonarme
+  Tefen köprüsünün yapıldığı; müteahhit **Agah Çağlar ve Arslan Şenay**
+  (1943 ihale) *(Sadi Uyar, 2026)*.
+- **Mükelliyet dönemi**: dekovilin Gökçebey kısmında kadın işçiler çalıştı;
+  başçavuş Üçburgu Sezer ailesinden *(Sadi Uyar, 2026)*.
 
 ## Orta güven (literatür + tanıklık var, birincil belge tam değil)
 - **Kemerler İstasyonu** binasının işlevi ve mimarisi *(Osman Savaşal'ın
   *Sözlü Ormancılık Tarihi*'ndeki anıları + Kemerler sakinlerinin teşhisi)*.
-- Filyos üzerindeki **ahşap dekovil köprüsünün** tam konfigürasyonu *(yerel
-  tanıklık + dönem fotoğrafları; mühendislik planı yok)*.
-- Ahşap köprünün **1954–1955 arasında** sökülüp yerine betonarme karayolu
-  köprüsünün yapılması *(yerel tarih yazıları; resmi inşaat dosyası
-  görülemedi)*.
+- Filyos üzerindeki ahşap dekovil köprüsünün **tam konfigürasyonu** *(Sadi Uyar
+  1945 fotoğrafı temel kanıt; mühendislik planı yok)*.
 - Trabzon/Hamsiköy malzemesinin 1924–25'te Karadere'ye taşındığı ve **1945'te
   Devrek–Tefen hattında yeniden kullanıldığı** *(Gümüş'ün ormancılık tarihi
   çalışması güçlü çıkarım kuruyor; doğrudan teslim-tesellüm defteri yok)*.
@@ -785,7 +842,7 @@ beklediğini gösterir.
 ## Düşük güven (ek belge gerektiriyor)
 - Hatta çalışan lokomotiflerin **sayısı, markası ve modeli** (Henschel,
   Decauville, Orenstein & Koppel ihtimalleri var, belge yok).
-- Hattın **kesin söküm yılı** ve süreci (1955 sonrası tarihler tahmin
+- Hattın **kesin söküm yılı** ve süreci (1955 sonrası tarihler hâlâ tahmin
   düzeyinde; resmi karar görülemedi).
 - Sökülen ray, lokomotif ve vagonların **hurda satışının idari dosyası**
   (Resmî Gazete ilanı, alıcı kimliği, satış bedeli).
@@ -794,6 +851,8 @@ beklediğini gösterir.
 - **Stöger/Kutsi'nin** 1925 sonrası akıbeti (Türkiye'de kaldı mı, döndü mü,
   mezarı nerede).
 - Kemerler İstasyonu binasının **kesin yıkım tarihi**.
+- **Kadın işçi başçavuşunun** kimliği (Üçburgu Sezer ailesinden — sözlü tarih;
+  şahsın adı henüz tespit edilebilmiş değil).
 
 ---
 
@@ -809,8 +868,25 @@ beklediğini gösterir.
 5. **Kemerler İstasyonu'nun yıkım tarihi.**
 6. **18 Kasım 1945 açılış konuşması.** *Ulus* 19 Kasım 1945 sayısı temel belge;
    Hatipoğlu'nun konuşma metninin yerel basında daha geniş yansıması var mı?
-7. **Aloğlu Köprüsü meselesi.** 16 Nisan 1948 AA haberindeki bu köprü, Filyos
-   üzerindeki ana ahşap dekovil köprüsü ile aynı yapı mıdır, yoksa hattın
-   farklı bir noktasındaki ikincil bir köprü müdür?
-8. **648 sayılı kanunun fiilen ne kadarı harcandı?** 2 milyon liralık
+7. **648 sayılı kanunun fiilen ne kadarı harcandı?** 2 milyon liralık
    tahsisatın bütçe akışı ve hesap kayıtları nerede?
+8. **Alaoğlu Köprüsü'nün tam mimari tarihi.** 1865 Kethüdazade Süleyman taş
+   köprüsü → 1927 ip → 1931 ahşap → 1936 yenileme zincirinin Karayolları /
+   Bayındırlık arşivindeki belgeleri.
+9. **Mükelliyet dönemi kadın işçileri.** Üçburgu Sezer ailesinden başçavuşun
+   adı; dekovil hattının Gökçebey kısmında çalışan kadınların sözlü tarihi —
+   hayatta olanları kimler?
+10. **1933 Temmuz Zonguldak seli.** Bölgedeki köprülere etkisi ne oldu? Devrek
+    yolu nasıl etkilendi? *(Sadi Uyar atfı; ayrıntı belgesi yok.)*
+11. **Tefen köprüsü ihale dosyası (1943).** Müteahhit Agah Çağlar ve Arslan
+    Şenay'ın ihale sözleşmesi ve değişiklik maddelerinin Karayolları
+    Genel Müdürlüğü arşivinde aranması.
+
+> **Not — Sürüm 2.1'de kapanan iki soru:**
+> - Eski Soru 7 (*Alaoğlu Köprüsü meselesi: aynı mı, farklı mı?*) Sadi Uyar
+>   yazısıyla **kapandı**: farklı köprülerdir. Alaoğlu, Alaoğlu mahallesi–
+>   Karahatipler arası tarihi yapıdır; dekovil köprüsü Filyos üzerinde
+>   ayrı bir noktadadır.
+> - 1948'de hangisinin yıkıldığı sorusu da **kapandı**: Alaoğlu Köprüsü
+>   tamamen yıkıldı; dekovil köprüsü sağlam kaldı, sadece 50 m'lik toprak
+>   imla yarıldı.
