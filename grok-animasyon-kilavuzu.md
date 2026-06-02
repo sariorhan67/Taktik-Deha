@@ -1,6 +1,16 @@
 # GROK IMAGINE — ANİMASYON KILAVUZU
 ## Devrek'in Kayıp Dekovili Belgeseli
 
+**Sürüm 2.3 (Haziran 2026) — Karadere kitapları senkronu**
+
+> **v2.3 değişikliği:** S23 (Stöger sahnesi) tümüyle yeniden yazıldı. Önceki
+> "TÜMÜ SKIP — gizem/durağanlık" yönergesi **GEÇERSİZ**. Cantürk Gümüş'ün iki
+> kitabı Stöger'in tam biyografisini açtı: 1859 Budejovice → 1882 Viyana →
+> 1889 Türkiye → 1935 İstanbul. Sahnede artık üç yeni üretken görsel var
+> (Viyana Hochschule für Bodenkultur, Prens Rudolf / Mayerling, sepia İstanbul
+> kapanışı) — hepsi animasyona uygun. Portreler ve belgeler sabit kalmaya
+> devam ediyor. **3 yeni Öncelik 2 animasyonu eklendi** (S23a, S23b, S23d).
+
 **ARAÇ:** Grok Imagine (xAI) — görsel → ~10 sn video
 
 **EKLENECEK NOTLAR (her seferinde uygula)**
@@ -409,8 +419,46 @@ S15 tamamen sabit fotoğraf kalır. Bu kasıtlı bir seçim: belgesel "kanıt" s
 
 ---
 
-## ❌ S23 — Stöger silüet, Çek arşiv, KTÜ binası
-**TÜMÜ SKIP** — portre + belge. S23 sahnesi tamamen sabit ve gizemli kalmalı (bu sahne kasıtlı bir "açık soru" sahnesi, durağanlık anlamlı).
+## S23 — Stöger'in izi: çözülen gizem [v2.3 — TÜMÜYLE YENİDEN YAZILDI]
+
+**Önceki yönergeyi unut:** v2.3 öncesi "TÜMÜ SKIP — gizemli kalmalı" yazıyordu.
+Artık değil. Sahne biyografik bir çözüm sunuyor, üç yeni üretken görsele
+açılıyor; her biri ayrı animasyon adayı.
+
+### ❌ S23a — Karadere Stöger silüeti (S5 tekrarı)
+**SKIP** — portre/silüet. S5'te ne yaptıysan o.
+
+### 🟡 S23b — 1880'ler Viyana, Hochschule für Bodenkultur (Öncelik 2)
+**Stil:** Stöger'in eğitim yıllarının atmosferik açılışı. Akademik, ölçülü.
+
+🇹🇷 *"19. yüzyıl sonu Viyana, Toprak Kültürleri Yüksek Okulu binası önü; öğrenciler ve hocalar yavaş yavaş yürüyor, at arabaları sessizce geçiyor, sokak fenerlerinin ışığı titreşiyor, hafif sis. Sepia siyah-beyaz dönem fotoğrafı, hafif gren, akademik atmosfer."*
+
+🇬🇧 *"Late 19th-century Vienna, Hochschule für Bodenkultur facade; students and professors walking slowly, horse carriages passing quietly, gaslamp light shimmering, soft mist. Sepia black-and-white period photograph, slight grain, academic atmosphere."*
+
+---
+
+### 🟡 S23c — Prens Rudolf / Mayerling dönem fotoğrafı (Öncelik 2)
+**Stil:** Stöger'in Türkiye'ye geliş sebebine imada bulunan karanlık ima. Çok kısa kullanılacak — kasıtlı muğlak.
+
+🇹🇷 *"Avusturya-Macaristan veliahtı Prens Rudolf'un dönem portresinde çok hafif ışık titreşimi, gözlerde belirsiz bir gölge; arka planda Mayerling kasrının silüeti, kış puslu. Sepia, hafif gren, esrarengiz, kasıtlı muğlak."*
+
+🇬🇧 *"Very subtle light flicker on period portrait of Crown Prince Rudolf, faint shadow in eyes; Mayerling lodge silhouette in background, winter haze. Sepia, slight grain, mysterious, deliberately ambiguous."*
+
+> **NOT:** Portre yüz animasyonuna sokulmaz; sadece ışık/atmosfer titreşir. Gözleri/dudakları kıpırdatma — uncanny olur. Bu animasyon "ima" düzeyinde kalır; en fazla 4-5 saniyelik bir hareket. Eğer Grok yüzü deforme ederse → SABİT bırak, animasyondan vazgeç.
+
+---
+
+### ❌ S23d — Mühendislik diploması / dönem belgeleri
+**SKIP** — belge. Hareket katmaz.
+
+### 🟡 S23e — Bugünkü İstanbul, sepia'ya kayan kapanış imgesi (Öncelik 2)
+**Stil:** Sahnenin huzurlu kapanışı. Stöger'in 1935'teki ölümüne ölçülü, saygılı bir görsel taşıyıcı.
+
+🇹🇷 *"Bugünkü İstanbul'un sakin bir köşesi (eski bir mezarlık, kıyı veya sessiz bir avlu); sabah ışığı çok yavaş kayıyor, ağaç yaprakları hafifçe kıpırdıyor; renk yavaş yavaş sepia tonuna kayıyor — bugünden geçmişe sızan bir hissiyat. Sinematik, ölçülü, huzurlu, melankolik."*
+
+🇬🇧 *"A quiet corner of modern Istanbul (old cemetery, shoreline, or silent courtyard); morning light shifting very slowly, tree leaves gently moving; color very slowly drifting toward sepia — sense of present bleeding into past. Cinematic, restrained, peaceful, melancholic."*
+
+> **YÖNETMEN NOTU:** Bu kare belgeselin "Stöger'in akıbeti çözüldü, gizem kapandı" mesajının görsel mühürüdür. Hareket çok yavaş, neredeyse durmuş; renk geçişi (modern → sepia) CapCut'ta opacity blendiyle desteklenebilir.
 
 ---
 
@@ -464,7 +512,7 @@ S15 tamamen sabit fotoğraf kalır. Bu kasıtlı bir seçim: belgesel "kanıt" s
 12. **S22a** Bugünkü Devrek orman drone
 13. **S25c** Su demir üstünden akıyor (kapanış)
 
-## 🟡 Öncelik 2 (önerilir — 11 animasyon)
+## 🟡 Öncelik 2 (önerilir — 20 animasyon)
 14. **S1b** Köprü ayağı dibi, kum
 15. **S1d** El demir kaldırıyor
 16. **S2b** Sandıklar indirilen amele
@@ -481,7 +529,10 @@ S15 tamamen sabit fotoğraf kalır. Bu kasıtlı bir seçim: belgesel "kanıt" s
 27. **S20a** Hat sökülmesi
 28. **S22b** Köprü ayağı kalıntı + su
 29. **S22c** Tarla ortasında düz şerit drone
-30. **S25b** El demir bırakıyor
+30. **S23b** Viyana Hochschule für Bodenkultur 1880'ler **[v2.3 YENİ]**
+31. **S23c** Prens Rudolf / Mayerling **[v2.3 YENİ]**
+32. **S23e** Bugünkü İstanbul, sepia kapanış imgesi **[v2.3 YENİ]**
+33. **S25b** El demir bırakıyor
 
 ## 🟢 Öncelik 3 (vakit varsa — 7 animasyon)
 31. **S3b** Dar hat döşeyen amele 1915
@@ -522,11 +573,11 @@ S15 tamamen sabit fotoğraf kalır. Bu kasıtlı bir seçim: belgesel "kanıt" s
 
 Grok Imagine'ın günlük üretim sınırı var (X Premium planına göre değişir). Tahmini stratejisi:
 
-- **Gün 1:** Öncelik 1 — 12-13 animasyon
-- **Gün 2:** Öncelik 2 — 14-17 animasyon
+- **Gün 1:** Öncelik 1 — 13 animasyon
+- **Gün 2:** Öncelik 2 — 20 animasyon (v2.3 ile S23'ten 3 yeni eklendi)
 - **Gün 3:** Öncelik 3 + revizeler — 7 animasyon + başarısızların yeniden denemesi
 
-Üç günde toplam ~35 animasyon üretirsen belgeselin görsel omurgası **transformatif** olur.
+Üç günde toplam ~40 animasyon üretirsen belgeselin görsel omurgası **transformatif** olur.
 
 ---
 
