@@ -39,6 +39,89 @@
 
 ---
 
+## 0+. ACİL DURUM PLANI — 5.725 CREDIT PILOT BÜTÇESİ
+
+**Eldeki kredi:** 5.725 (≈ 4-5 dakika MagicLight çıktısı, belgeselin %12'si)
+**Strateji:** Tüm filmi üretmek imkansız → en kritik 3 sahneyi seç,
+SIRAYLA üret, her birinden sonra dur ve değerlendir.
+
+### Sahne uzunlukları (seslendirme-metinleri.md karakter sayılarından)
+
+Ortalama 15 karakter/sn Türkçe belgesel temposu varsayımıyla:
+
+| Sahne | Karakter | Süre | Tahmini kredi (1.200/dk) |
+|---|---|---|---|
+| S1 (cold open) | 803 | ~1:00 | ~1.200 |
+| S23 (Stöger v2.3) | 1.660 | ~1:50 | ~2.200 |
+| S24 (sentez) | 1.682 | ~1:55 | ~2.300 |
+| S25 (kapanış) | 1.039 | ~1:10 | ~1.400 |
+
+### Önerilen kombosu: **S1 + S23 + S25**
+
+| Sıra | Sahne | Neden bu? | Kredi |
+|---|---|---|---|
+| 1 | **S1 cold open** | Pilot. En kısa, en az risk. Sonucu beğenirsen devam et. | ~1.200 |
+| 2 | **S23 Stöger (v2.3 yeni)** | Hiç film olmamış, tezin en yeni cümlesi. Üç üretken görseli (Viyana 1880'ler, Prens Rudolf, sepia İstanbul) sergiler. | ~2.200 |
+| 3 | **S25 kapanış** | S1 ile simetri; "Kayıp dekovil, kaybolmadı" — belgeselin son cümlesi. | ~1.400 |
+| | **Toplam** | | **~4.800** |
+| | **Buffer (revize için)** | | **~925** |
+
+**Bu üçü = ~4 dakika kullanılabilir final montaj** → teaser veya
+"Belgeselden bir bölüm" ön gösterim yapmaya yeter.
+
+### Kritik kural: SIRAYLA üret, hep birden değil
+
+1. **Önce sadece S1**'i üret. Sonucu izle, 5 kriteri test et:
+   - MP3 ses senkronu ✓
+   - 16:9 + 1080p çıktı ✓
+   - Üretken Bing/Banana görselinden hareket ✓
+   - Tarihsel doğruluk (modern logo, anakronizm yok) ✓
+   - Watermark yok ✓
+2. S1 **başarısızsa → DUR**. 4.500 credit elinde kalır, MagicLight bizim
+   için uygun değil demektir; `grok-animasyon-kilavuzu.md`'ye dön.
+3. S1 **başarılıysa → S23**'ü üret. Sonra **S25**.
+
+### Engine seçimi → kredi bütçesini değiştirir
+
+MagicLight 4 engine sunuyor; kalite-fiyat farkı büyük:
+
+| Engine | Kalite | 1 dk maliyet (tahmini) | 5.725 ile ne çıkar |
+|---|---|---|---|
+| **Seedance 2.0** | En sinematik, belgesel için ideal | ~1.500 cr | ~3,8 dk |
+| Hailuo | Orta-yüksek | ~1.000 cr | ~5,7 dk |
+| Kling | İyi | ~800 cr | ~7,2 dk |
+| Pixverse | Düşük | ~500 cr | ~11 dk |
+
+**Önerim:** S1 pilotu için **Seedance 2.0** kullan (en yüksek bahis), eğer
+beğenirsen kararlı çalış. Eğer kredi tarafından sıkışırsan **Hailuo**'ya
+kay — sepia/dokümanter ton zaten yüksek hareketten kaçar, fark az olur.
+
+### S1 üretim parametreleri (pilot için tam ayar)
+
+- **Engine:** Seedance 2.0
+- **Aspect ratio:** 16:9
+- **Resolution:** 1080p
+- **Stil eki (prompt'a sabit yapıştır):** *"cinematic documentary style,
+  subtle motion, atmospheric, slow, sepia tones for archival sequences,
+  natural lighting for modern drone shots, no zoom, calm pacing"*
+- **Ses dosyası:** `s01_filyos_kiyisinda_bir_demi.mp3` (Custom audio upload)
+- **Referans görseller (sahne kasanda mevcutsa):**
+  - Filyos drone (modern) — Bing/Banana çıktısı veya drone klibin
+  - Yakın plan paslı demir + su — makro görsel
+  - El demir parçasını kaldırıyor — figüran görseli
+- **Beklenen çıktı süresi:** 60 sn (±5 sn tolerans)
+
+### Karar tablosu (S1 sonrası)
+
+| S1 sonucu | Sonraki adım |
+|---|---|
+| Mükemmel (5/5 kriter) | S23 → S25 sırasıyla üret. ~4 dk teaser çıkar. |
+| İyi ama küçük revizyon gerek | S23'e geç ama hangi parametrenin oynatıldığını not et |
+| Orta (3-4/5) | 1 kez S1'i revize et (~1.200 cr). İyileşmezse Hailuo'ya geç |
+| Kötü (≤2/5) | **DUR.** Kalan ~4.500 credit'i koru. `grok-animasyon-kilavuzu.md` ile devam et. |
+
+---
+
 ## 1. STRATEJİK KARAR — MagicLight'ın rolü ne olacak?
 
 Bizim belgeselin üç türde görseli var:
