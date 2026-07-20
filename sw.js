@@ -1,6 +1,9 @@
 /* Yönetici Adayı · Çalışma Defteri — service worker
-   Uygulama kabuğunu önbelleğe alır; ilk açılıştan sonra tamamen çevrimdışı çalışır. */
-const CACHE = "yd-cache-v1";
+   Strateji:
+   - HTML/gezinme: ÖNCE AĞ (internet varsa hep en güncel sürüm), yoksa önbellekten aç.
+   - Statik dosyalar (ikon/manifest): önbellekten hızlı aç, arka planda tazele.
+   Böylece uygulama çevrimdışı çalışır ama internet varken güncellemeleri anında alır. */
+const CACHE = "yd-cache-v2";
 const ASSETS = [
   "./",
   "./index.html",
@@ -28,19 +31,41 @@ self.addEventListener("activate", (e) => {
 self.addEventListener("fetch", (e) => {
   const req = e.request;
   if (req.method !== "GET") return;
-  e.respondWith(
-    caches.match(req).then((hit) => {
-      if (hit) return hit;
-      return fetch(req).then((res) => {
+
+  let url;
+  try { url = new URL(req.url); } catch (_) { return; }
+  const sameOrigin = url.origin === location.origin;
+  const isHTML = req.mode === "navigation" ||
+    (sameOrigin && (url.pathname.endsWith("/") || url.pathname.endsWith("index.html")));
+
+  // 1) HTML / gezinme → önce ağ, başarısızsa önbellek
+  if (isHTML) {
+    e.respondWith(
+      fetch(req).then((res) => {
         try {
-          const url = new URL(req.url);
-          if (url.origin === location.origin) {
-            const copy = res.clone();
-            caches.open(CACHE).then((c) => c.put(req, copy));
-          }
+          const copy = res.clone();
+          caches.open(CACHE).then((c) => { c.put("./index.html", copy); });
         } catch (_) {}
         return res;
-      }).catch(() => caches.match("./index.html"));
-    })
-  );
+      }).catch(() =>
+        caches.match(req).then((h) => h || caches.match("./index.html")).then((h) => h || caches.match("./"))
+      )
+    );
+    return;
+  }
+
+  // 2) Aynı köken statikleri → önbellekten aç, arka planda tazele (stale-while-revalidate)
+  if (sameOrigin) {
+    e.respondWith(
+      caches.match(req).then((hit) => {
+        const net = fetch(req).then((res) => {
+          try { const copy = res.clone(); caches.open(CACHE).then((c) => c.put(req, copy)); } catch (_) {}
+          return res;
+        }).catch(() => hit);
+        return hit || net;
+      })
+    );
+    return;
+  }
+  // 3) Çapraz köken (yazı tipleri vb.) → tarayıcının varsayılan davranışı
 });
