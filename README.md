@@ -53,10 +53,22 @@ start index.html
 python3 -m http.server 8000   # → http://localhost:8000
 ```
 
-## Yayınlama (GitHub Pages)
+## Yayınlama (GitHub Pages) ve telefona kurma (PWA)
 
-Dosya kök dizinde `index.html` olduğu için repo **Settings → Pages** kısmından doğrudan
-yayınlanabilir.
+Depoda `.github/workflows/pages.yml` iş akışı var; `claude/session-99v6q0` veya `main`
+dalına her push'ta siteyi otomatik olarak GitHub Pages'e yayınlar (Pages'i mümkünse
+kendisi etkinleştirir). Yayın adresi, Actions çalışmasının **Deploy** adımında ve
+repo **Settings → Pages** kısmında görünür.
+
+> İlk yayında Pages kapalıysa ve iş akışı otomatik etkinleştiremezse: **Settings → Pages →
+> Build and deployment → Source: GitHub Actions** seçip iş akışını yeniden çalıştırmak yeterlidir.
+
+Uygulama bir **PWA**'dır (`manifest.webmanifest` + `sw.js`). Yayınlanan adresi telefonda
+tarayıcıda açıp **"Ana ekrana ekle"** dediğinizde uygulama gibi kurulur, açılışta tam ekran
+olur ve ilk açılıştan sonra **çevrimdışı** çalışır.
+
+Tek dosya olarak indirip `file://` ile açtığınızda uygulama yine tam çalışır; PWA kurulumu
+ve service worker yalnızca bir adresten (http/https) sunulduğunda devreye girer.
 
 ## Veri ve gizlilik
 
