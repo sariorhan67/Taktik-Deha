@@ -273,14 +273,31 @@ const DENEME_FULL_TOTAL = 60;   /* tam sınav provası: resmî sınavla birebir 
 const DENEME_FULL_SECONDS = 4500; /* 75 dakika — resmî sınav süresi */
 
 /* ============================================================
-   STORAGE
+   STORAGE — kalıcı depolama; kullanılamıyorsa sessizce oturum-içi belleğe düşer.
+   Böylece indirilip açıldığında veya storage API hata verdiğinde uygulama çökmez,
+   kullanıcıya hata gösterilmez ve ilerleme oturum boyunca korunur.
    ============================================================ */
+const MEM_STORE = {};   /* oturum-içi yedek bellek */
+let STORAGE_OK = (typeof window !== 'undefined' && window.storage
+                  && typeof window.storage.get === 'function'
+                  && typeof window.storage.set === 'function');
+
 async function storeGet(key){
-  try{ const r = await window.storage.get(key); return r ? JSON.parse(r.value) : null; }
-  catch(e){ return null; }
+  if(STORAGE_OK){
+    try{
+      const r = await window.storage.get(key);
+      if(r && typeof r.value === 'string') return JSON.parse(r.value);
+      return (key in MEM_STORE) ? MEM_STORE[key] : null;
+    }catch(e){ STORAGE_OK = false; }   /* tek hatada dahi kalıcı olarak yedeğe geç */
+  }
+  return (key in MEM_STORE) ? MEM_STORE[key] : null;
 }
 async function storeSet(key, val){
-  try{ await window.storage.set(key, JSON.stringify(val)); }catch(e){ console.error('storage', e); }
+  MEM_STORE[key] = val;               /* her zaman belleğe yaz (oturum-içi kalıcılık) */
+  if(STORAGE_OK){
+    try{ await window.storage.set(key, JSON.stringify(val)); }
+    catch(e){ STORAGE_OK = false; }   /* hata olursa SESSİZCE yedeğe geç — kullanıcıya gösterme */
+  }
 }
 
 let PROGRESS = {};
