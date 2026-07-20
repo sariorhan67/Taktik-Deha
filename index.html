@@ -340,6 +340,36 @@ body.dark .btn-main{color:#10241D}
 .wq-card .src{font-family:'IBM Plex Mono',monospace;font-size:.58rem;color:var(--faint);display:block;margin-bottom:4px;text-transform:uppercase;letter-spacing:.1em}
 
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+/* ===== v4 EK ÖZELLİKLER: seri · hedef · radar · rozet · yedek ===== */
+.statline{display:flex;gap:10px;padding:0 20px;margin:2px 0 4px}
+.stat{flex:1;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 14px;display:flex;align-items:center;gap:12px;box-shadow:var(--shadow)}
+.stat .sic{font-size:1.5rem;line-height:1}
+.stat .sv{font-weight:700;font-size:1.2rem;color:var(--ink);line-height:1.1}
+.stat .sl{font-size:.7rem;color:var(--soft);letter-spacing:.02em}
+.ring{--p:0;width:44px;height:44px;border-radius:50%;flex:0 0 44px;background:conic-gradient(var(--accent) calc(var(--p)*1%),var(--line) 0);display:grid;place-items:center}
+.ring i{width:34px;height:34px;border-radius:50%;background:var(--card);display:grid;place-items:center;font-style:normal;font-weight:700;font-size:.78rem;color:var(--accent-ink)}
+.radar-sec,.badge-sec{padding:0 20px;margin-top:20px}
+.radar-grid{display:grid;grid-template-columns:repeat(10,1fr);gap:6px;margin-top:8px}
+.rcell{aspect-ratio:1;border-radius:8px;border:1px solid var(--line);font-size:.6rem;font-weight:700;color:#fff;display:grid;place-items:center;cursor:pointer;transition:transform .1s}
+.rcell:active{transform:scale(.9)}
+.rcell.r0{background:var(--line);color:var(--faint)}
+.rcell.r1{background:var(--red)}
+.rcell.r2{background:var(--gold)}
+.rcell.r3{background:var(--accent)}
+.radar-leg{display:flex;gap:12px;margin-top:9px;font-size:.66rem;color:var(--soft);flex-wrap:wrap}
+.radar-leg span{display:inline-flex;align-items:center;gap:5px}
+.radar-leg b{width:11px;height:11px;border-radius:3px;display:inline-block}
+.badge-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(76px,1fr));gap:8px;margin-top:8px}
+.bdg{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 6px;text-align:center;opacity:.42;filter:grayscale(1)}
+.bdg.on{opacity:1;filter:none;border-color:var(--gold);background:var(--gold-soft)}
+.bdg .be{font-size:1.5rem;line-height:1.1}
+.bdg .bn{font-size:.62rem;font-weight:700;color:var(--ink);margin-top:3px;line-height:1.2}
+.backup{display:flex;gap:8px;margin-top:12px}
+.backup .mini{flex:1;background:var(--card);border:1px solid var(--line);color:var(--ink);border-radius:12px;padding:9px;font-size:.78rem;font-weight:600;cursor:pointer;transition:transform .1s}
+.backup .mini:active{transform:scale(.97)}
+.bdg-toast{position:fixed;left:12px;right:12px;bottom:12px;z-index:1000;background:var(--gold-soft);border:1px solid var(--gold);color:var(--ink);border-radius:14px;padding:12px 14px;font-size:.82rem;line-height:1.4;box-shadow:0 8px 24px rgba(0,0,0,.18);display:flex;align-items:center;gap:10px;animation:bpop .3s}
+.bdg-toast .be{font-size:1.6rem}
+@keyframes bpop{from{transform:translateY(20px);opacity:0}to{transform:none;opacity:1}}
 </style>
 </head>
 <body>
@@ -367,6 +397,8 @@ body.dark .btn-main{color:#10241D}
       </div>
     </header>
 
+    <div class="statline" id="statline"></div>
+
     <div class="sec-label eyebrow">Bugün</div>
     <div class="today">
       <button class="act" id="actReview"></button>
@@ -375,9 +407,30 @@ body.dark .btn-main{color:#10241D}
     <button class="btn btn-main exam-start" id="actExam">⏱ Karma Deneme Başlat</button>
     <button class="btn btn-main full-start" id="actFull">🎓 TAM DENEME · 60 Soru · 75 dk</button>
 
+    <section class="radar-sec">
+      <div class="sec-label eyebrow">Hazırlık Radarı</div>
+      <div class="radar-grid" id="radarGrid"></div>
+      <div class="radar-leg">
+        <span><b style="background:var(--line)"></b>başlanmadı</span>
+        <span><b style="background:var(--red)"></b>zayıf</span>
+        <span><b style="background:var(--gold)"></b>orta</span>
+        <span><b style="background:var(--accent)"></b>hazır</span>
+      </div>
+    </section>
+
+    <section class="badge-sec">
+      <div class="sec-label eyebrow">Rozetler <span id="badgeCount" class="eyebrow"></span></div>
+      <div class="badge-grid" id="badgeGrid"></div>
+    </section>
+
     <section class="mods">
       <div class="sec-label eyebrow">Modüller</div>
       <div id="modList"></div>
+      <div class="backup">
+        <button class="mini" id="expBtn">⬇ Yedekle</button>
+        <button class="mini" id="impBtn">⬆ Geri yükle</button>
+        <input type="file" id="impFile" accept="application/json,.json" hidden>
+      </div>
       <button class="reset" id="resetBtn">İlerlemeyi sıfırla</button>
       <div class="foot">Modülleri birlikte işledikçe deftere eklenecek.</div>
     </section>
@@ -5493,7 +5546,7 @@ quiz:[
 /* ================= STATE / STORAGE ================= */
 const SKEY="meb-yonetici-defter-v1";
 const DAY=86400000, IV=[1,3,7];
-let state={cards:{},quiz:{},match:{},theme:"light",srs:{},wrongQ:{},examDate:null,exam:{best:-1,att:0},full:{best:-1,att:0}};
+let state={cards:{},quiz:{},match:{},theme:"light",srs:{},wrongQ:{},examDate:null,exam:{best:-1,att:0},full:{best:-1,att:0},streak:{n:0,last:null},daily:{date:null,n:0},badges:{},goal:15};
 const hasStore=typeof window!=="undefined"&&window.storage;
 
 /* ---- KATMANLI DEPOLAMA ----
@@ -5535,13 +5588,15 @@ async function loadState(){
     if(raw){
       const p=JSON.parse(raw);
       state={cards:p.cards||{},quiz:p.quiz||{},match:p.match||{},theme:p.theme3||"light",
-             srs:p.srs||{},wrongQ:p.wrongQ||{},examDate:p.examDate||null,exam:p.exam||{best:-1,att:0},full:p.full||{best:-1,att:0}};
+             srs:p.srs||{},wrongQ:p.wrongQ||{},examDate:p.examDate||null,exam:p.exam||{best:-1,att:0},full:p.full||{best:-1,att:0},
+             streak:p.streak||{n:0,last:null},daily:p.daily||{date:null,n:0},badges:p.badges||{},goal:p.goal||15};
     }
   }catch(e){/* ilk kullanım veya kayıt yok */}
 }
 function snapshot(){
   return JSON.stringify({cards:state.cards,quiz:state.quiz,match:state.match,
-    theme3:state.theme,srs:state.srs,wrongQ:state.wrongQ,examDate:state.examDate,exam:state.exam,full:state.full});
+    theme3:state.theme,srs:state.srs,wrongQ:state.wrongQ,examDate:state.examDate,exam:state.exam,full:state.full,
+    streak:state.streak,daily:state.daily,badges:state.badges,goal:state.goal});
 }
 /* Yazma temposu: her tıklamada değil, 900 ms sessizlikten sonra tek yazma */
 let saveTimer=null,noticeShown=false;
@@ -5589,6 +5644,112 @@ function nextDueDays(){
   const arr=Object.values(state.srs).map(v=>v.due);
   if(!arr.length)return null;
   return Math.max(1,Math.ceil((Math.min(...arr)-Date.now())/DAY));
+}
+
+/* ================= SERİ · GÜNLÜK HEDEF · ROZET ================= */
+function todayStr(){const d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");}
+function dayDiff(a,b){return Math.round((new Date(b+"T00:00:00")-new Date(a+"T00:00:00"))/DAY);}
+function recordStudy(){
+  const t=todayStr();
+  if(state.daily.date!==t)state.daily={date:t,n:0};
+  state.daily.n++;
+  const last=state.streak.last;
+  if(last!==t){
+    if(last&&dayDiff(last,t)===1)state.streak.n=(state.streak.n||0)+1;
+    else state.streak.n=1;
+    state.streak.last=t;
+  }
+  checkBadges();
+}
+function totalLearned(){let n=0;Object.keys(CONTENT).forEach(m=>{const cs=state.cards[m]||{};n+=Object.values(cs).filter(v=>v==="ok").length;});return n;}
+function readyModules(){return MODULES.filter(m=>{const p=modProgress(m.id);return p&&p.total>0&&p.learned>=p.total&&p.qTotal>0&&p.best>=p.qTotal;}).length;}
+function touchedModules(){return MODULES.filter(m=>{const p=modProgress(m.id);return p&&(p.learned>0||p.best>=0||p.mDone>0);}).length;}
+const BADGES=[
+  {id:"first",e:"🌱",n:"İlk Adım",t:()=>totalLearned()>=1},
+  {id:"c50",e:"📖",n:"50 Kart",t:()=>totalLearned()>=50},
+  {id:"c150",e:"📚",n:"150 Kart",t:()=>totalLearned()>=150},
+  {id:"s3",e:"🔥",n:"3 Gün Seri",t:()=>(state.streak.n||0)>=3},
+  {id:"s7",e:"⚡",n:"7 Gün Seri",t:()=>(state.streak.n||0)>=7},
+  {id:"ace",e:"🎯",n:"Tam İsabet",t:()=>MODULES.some(m=>{const p=modProgress(m.id);return p&&p.qTotal>0&&p.best>=p.qTotal;})},
+  {id:"exam",e:"⏱️",n:"Denemeci",t:()=>(state.exam&&state.exam.att>0)||(state.full&&state.full.att>0)},
+  {id:"pass",e:"🏅",n:"Barajı Geçtin",t:()=>state.full&&state.full.best>=36},
+  {id:"master",e:"👑",n:"Modül Ustası",t:()=>readyModules()>=1},
+  {id:"all",e:"🗺️",n:"Tüm Modüller",t:()=>touchedModules()>=MODULES.length}
+];
+function checkBadges(){
+  const newly=[];
+  BADGES.forEach(b=>{try{if(!state.badges[b.id]&&b.t()){state.badges[b.id]=todayStr();newly.push(b);}}catch(e){}});
+  if(newly.length)badgeToast(newly);
+  return newly;
+}
+function badgeToast(list){
+  const b=list[0],extra=list.length>1?" (+"+(list.length-1)+")":"";
+  const el=document.createElement("div");
+  el.className="bdg-toast";
+  el.innerHTML='<span class="be">'+b.e+'</span><div><b>Rozet kazandın'+extra+'!</b><br>'+b.n+'</div>';
+  document.body.appendChild(el);
+  setTimeout(()=>{el.style.transition="opacity .4s";el.style.opacity="0";setTimeout(()=>el.remove(),400);},2600);
+}
+function renderStatline(){
+  const el=$("#statline");if(!el)return;
+  let sn=state.streak.n||0;const last=state.streak.last;
+  if(last&&dayDiff(last,todayStr())>1)sn=0;
+  const dn=(state.daily.date===todayStr())?state.daily.n:0;
+  const goal=state.goal||15,pct=Math.min(100,Math.round(dn/goal*100));
+  el.innerHTML='<div class="stat"><span class="sic">🔥</span><div><div class="sv">'+sn+' gün</div><div class="sl">çalışma serisi</div></div></div>'+
+    '<div class="stat"><div class="ring" style="--p:'+pct+'"><i>'+dn+'/'+goal+'</i></div><div><div class="sv">'+(dn>=goal?"Hedef ✓":"Günün hedefi")+'</div><div class="sl">bugün çalışılan kart</div></div></div>';
+}
+function renderRadar(){
+  const g=$("#radarGrid");if(!g)return;g.innerHTML="";
+  MODULES.forEach(m=>{
+    const p=modProgress(m.id);let pc=0;
+    if(p){const c=p.total?p.learned/p.total:0,q=(p.best<0?0:(p.qTotal?p.best/p.qTotal:0)),mm=p.mTotal?p.mDone/p.mTotal:0;pc=(c+q+mm)/3;}
+    let cls="r0";
+    if(pc>=.67)cls="r3";else if(pc>=.34)cls="r2";else if(pc>0)cls="r1";
+    const cell=document.createElement("button");
+    cell.className="rcell "+cls;cell.textContent=m.no;
+    cell.title=m.title+" · %"+Math.round(pc*100);
+    if(m.ready)cell.addEventListener("click",()=>openModule(m.id));
+    g.appendChild(cell);
+  });
+}
+function renderBadges(){
+  const g=$("#badgeGrid");if(!g)return;g.innerHTML="";
+  const earned=BADGES.filter(b=>state.badges[b.id]).length;
+  const bc=$("#badgeCount");if(bc)bc.textContent=earned+"/"+BADGES.length;
+  BADGES.forEach(b=>{
+    const d=document.createElement("div");
+    d.className="bdg"+(state.badges[b.id]?" on":"");
+    d.innerHTML='<div class="be">'+b.e+'</div><div class="bn">'+b.n+'</div>';
+    g.appendChild(d);
+  });
+}
+/* ================= YEDEKLE · GERİ YÜKLE ================= */
+function doExport(){
+  try{
+    const payload={app:"yonetici-defteri",v:1,ts:new Date().toISOString(),data:JSON.parse(snapshot())};
+    const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"});
+    const url=URL.createObjectURL(blob),a=document.createElement("a");
+    a.href=url;a.download="yonetici-defteri-yedek-"+todayStr()+".json";
+    document.body.appendChild(a);a.click();a.remove();
+    setTimeout(()=>URL.revokeObjectURL(url),1000);
+  }catch(e){alert("Yedek oluşturulamadı.");}
+}
+function doImport(file){
+  const rd=new FileReader();
+  rd.onload=()=>{
+    try{
+      const obj=JSON.parse(rd.result),p=(obj&&obj.data)?obj.data:obj;
+      if(!p||typeof p!=="object"||!p.cards)throw 0;
+      if(!confirm("Yedekteki ilerleme yüklenecek ve mevcut ilerlemenin yerine geçecek. Devam edilsin mi?"))return;
+      state={cards:p.cards||{},quiz:p.quiz||{},match:p.match||{},theme:p.theme3||state.theme,
+        srs:p.srs||{},wrongQ:p.wrongQ||{},examDate:p.examDate||null,exam:p.exam||{best:-1,att:0},full:p.full||{best:-1,att:0},
+        streak:p.streak||{n:0,last:null},daily:p.daily||{date:null,n:0},badges:p.badges||{},goal:p.goal||15};
+      applyTheme();flushSave();renderHome();
+      alert("Yedek yüklendi ✓");
+    }catch(e){alert("Bu dosya okunamadı. Geçerli bir yedek dosyası (.json) seçtiğinden emin ol.");}
+  };
+  rd.readAsText(file);
 }
 
 /* ================= NAV ================= */
@@ -5690,11 +5851,16 @@ function renderHome(){
   const overall=Math.round(earned/MODULES.length*100);
   $("#overallPct").textContent="%"+overall;
   $("#overallFill").style.width=overall+"%";
+  const nb=checkBadges();if(nb.length)saveState();
+  renderStatline();renderRadar();renderBadges();
 }
 $("#actReview").addEventListener("click",()=>{startReview();});
 $("#actWrong").addEventListener("click",()=>{renderWrongHome();show("#scr-wrong");});
 $("#actExam").addEventListener("click",()=>{startExam();});
 $("#actFull").addEventListener("click",()=>{startFull();});
+$("#expBtn").addEventListener("click",doExport);
+$("#impBtn").addEventListener("click",()=>$("#impFile").click());
+$("#impFile").addEventListener("change",e=>{if(e.target.files&&e.target.files[0])doImport(e.target.files[0]);e.target.value="";});
 $("#fxBack").addEventListener("click",()=>{
   if(fx&&!fx.done&&!confirm("Deneme sürüyor. Çıkarsan cevapların silinir. Emin misin?"))return;
   fxStop();fx=null;renderHome();show("#scr-home");
@@ -5706,8 +5872,9 @@ $("#resetBtn").addEventListener("click",async()=>{
   const b=$("#resetBtn");
   if(!resetArmed){resetArmed=true;b.textContent="Emin misin? Silmek için tekrar dokun";b.classList.add("arm");
     setTimeout(()=>{resetArmed=false;b.textContent="İlerlemeyi sıfırla";b.classList.remove("arm");},3500);return;}
-  const th=state.theme,ed=state.examDate;
-  state={cards:{},quiz:{},match:{},theme:th,srs:{},wrongQ:{},examDate:ed,exam:{best:-1,att:0},full:{best:-1,att:0}};
+  const th=state.theme,ed=state.examDate,g=state.goal;
+  state={cards:{},quiz:{},match:{},theme:th,srs:{},wrongQ:{},examDate:ed,exam:{best:-1,att:0},full:{best:-1,att:0},
+    streak:{n:0,last:null},daily:{date:null,n:0},badges:{},goal:g};
   await flushSave();
   resetArmed=false;b.textContent="İlerlemeyi sıfırla";b.classList.remove("arm");
   renderHome();
@@ -5893,6 +6060,7 @@ function mark(idx,val){
   if(!state.cards[curMod])state.cards[curMod]={};
   state.cards[curMod][idx]=val;
   srsMark(curMod,idx,val);
+  recordStudy();
   saveState();refreshTicks();
   fc.i++;fc.flipped=false;renderCard();
 }
@@ -5934,6 +6102,7 @@ function rvMark(m,idx,val){
   if(!state.cards[m])state.cards[m]={};
   state.cards[m][idx]=val;
   srsMark(m,idx,val);
+  recordStudy();
   saveState();
   rv.i++;renderReview();
 }
@@ -6263,6 +6432,7 @@ function pick(x){
     const prev=state.quiz[curMod]||{best:0,attempts:0};
     state.quiz[curMod]={best:Math.max(prev.best||0,qz.score),attempts:(prev.attempts||0)+1};
   }
+  recordStudy();
   saveState();refreshTicks();
 }
 
