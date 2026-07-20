@@ -24,6 +24,8 @@ sistem yazı tipine düşer).
 - 📅 Sınav tarihi geri sayımı, genel ilerleme çubuğu
 
 **Bu sürümde eklenenler:**
+- 🎯 **Bugünkü Odağın** — akıllı çalışma planı: modülün sınav ağırlığını, mevcut
+  hazırlığını ve kalan gün sayısını birleştirip "bugün şu modüllere çalış" önerisi verir
 - 🔥 **Çalışma serisi (streak)** — ardışık çalışma günlerini takip eder
 - 🎯 **Günün hedefi** — günlük kart hedefi ve ilerleme halkası
 - 🏅 **Rozetler** — 10 kilometre taşı rozeti (kazanınca bildirim)

@@ -370,6 +370,16 @@ body.dark .btn-main{color:#10241D}
 .bdg-toast{position:fixed;left:12px;right:12px;bottom:12px;z-index:1000;background:var(--gold-soft);border:1px solid var(--gold);color:var(--ink);border-radius:14px;padding:12px 14px;font-size:.82rem;line-height:1.4;box-shadow:0 8px 24px rgba(0,0,0,.18);display:flex;align-items:center;gap:10px;animation:bpop .3s}
 .bdg-toast .be{font-size:1.6rem}
 @keyframes bpop{from{transform:translateY(20px);opacity:0}to{transform:none;opacity:1}}
+/* ===== BUGÜNKÜ ODAK (akıllı çalışma planı) ===== */
+.plan-sec{padding:0 20px;margin:14px 0 2px}
+.plan{background:var(--accent-soft);border:1px solid var(--accent);border-radius:16px;padding:14px 16px;box-shadow:var(--shadow)}
+.plan h4{font-size:.95rem;color:var(--accent-ink);margin:0 0 4px;display:flex;align-items:center;gap:6px}
+.plan .plan-sub{font-size:.72rem;color:var(--soft);line-height:1.45;margin-bottom:4px}
+.plan-item{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:9px 11px;margin-top:7px;cursor:pointer;text-align:left;width:100%;transition:transform .1s}
+.plan-item:active{transform:scale(.99)}
+.plan-item .pno{font-weight:700;color:var(--accent-ink);font-size:.92rem;min-width:22px}
+.plan-item .pt{flex:1;font-size:.82rem;font-weight:600;color:var(--ink);line-height:1.25}
+.plan-item .pm{font-size:.65rem;color:var(--soft);white-space:nowrap}
 </style>
 </head>
 <body>
@@ -398,6 +408,8 @@ body.dark .btn-main{color:#10241D}
     </header>
 
     <div class="statline" id="statline"></div>
+
+    <section class="plan-sec" id="planSec"></section>
 
     <div class="sec-label eyebrow">Bugün</div>
     <div class="today">
@@ -5699,11 +5711,46 @@ function renderStatline(){
   el.innerHTML='<div class="stat"><span class="sic">🔥</span><div><div class="sv">'+sn+' gün</div><div class="sl">çalışma serisi</div></div></div>'+
     '<div class="stat"><div class="ring" style="--p:'+pct+'"><i>'+dn+'/'+goal+'</i></div><div><div class="sv">'+(dn>=goal?"Hedef ✓":"Günün hedefi")+'</div><div class="sl">bugün çalışılan kart</div></div></div>';
 }
+function moduleReadiness(id){
+  const p=modProgress(id);if(!p)return 0;
+  const c=p.total?p.learned/p.total:0,q=(p.best<0?0:(p.qTotal?p.best/p.qTotal:0)),mm=p.mTotal?p.mDone/p.mTotal:0;
+  return (c+q+mm)/3;
+}
+function examDaysLeft(){
+  if(!state.examDate)return null;
+  return Math.ceil((new Date(state.examDate+"T00:00:00")-new Date())/DAY);
+}
+function renderPlan(){
+  const el=$("#planSec");if(!el)return;
+  const scored=MODULES.filter(m=>m.ready).map(m=>{const pc=moduleReadiness(m.id);return{m,pc,score:m.w*(1-pc)};});
+  const remaining=scored.filter(x=>x.pc<0.999).sort((a,b)=>b.score-a.score);
+  if(!remaining.length){
+    el.innerHTML='<div class="plan"><h4>🎉 Tüm modüller hazır</h4><div class="plan-sub">Artık Karma / Tam Deneme ve Günün Tekrarı ile pekiştirme zamanı.</div></div>';
+    return;
+  }
+  const nd=examDaysLeft();
+  const notReady=scored.filter(x=>x.pc<0.67).length;
+  let perDay;
+  if(nd!==null&&nd>0)perDay=Math.min(4,Math.max(1,Math.ceil(notReady/nd)));
+  else perDay=Math.min(3,remaining.length);
+  const pick=remaining.slice(0,perDay);
+  let sub;
+  if(nd!==null&&nd>0)sub='Sınava <b>'+nd+' gün</b> — ağırlık ve eksiğine göre bugünün önceliği:';
+  else if(nd===0)sub='Sınav bugün! Son tekrar için en zayıf konular:';
+  else sub='Sınavda en çok soru getiren ve en eksik olduğun konular:';
+  const due=dueList().length;
+  const items=pick.map(x=>{
+    const short=x.m.title.length>44?x.m.title.slice(0,42)+'…':x.m.title;
+    return '<button class="plan-item" data-mid="'+x.m.id+'"><span class="pno">'+x.m.no+'</span><span class="pt">'+short+'</span><span class="pm">'+x.m.w+' soru · %'+Math.round(x.pc*100)+'</span></button>';
+  }).join('');
+  el.innerHTML='<div class="plan"><h4>🎯 Bugünkü Odağın</h4><div class="plan-sub">'+
+    (due?'Önce Günün Tekrarı: <b>'+due+' kart</b>. Sonra 👇<br>':'')+sub+'</div>'+items+'</div>';
+  el.querySelectorAll('.plan-item').forEach(b=>b.addEventListener('click',()=>openModule(b.dataset.mid)));
+}
 function renderRadar(){
   const g=$("#radarGrid");if(!g)return;g.innerHTML="";
   MODULES.forEach(m=>{
-    const p=modProgress(m.id);let pc=0;
-    if(p){const c=p.total?p.learned/p.total:0,q=(p.best<0?0:(p.qTotal?p.best/p.qTotal:0)),mm=p.mTotal?p.mDone/p.mTotal:0;pc=(c+q+mm)/3;}
+    const pc=moduleReadiness(m.id);
     let cls="r0";
     if(pc>=.67)cls="r3";else if(pc>=.34)cls="r2";else if(pc>0)cls="r1";
     const cell=document.createElement("button");
@@ -5787,10 +5834,10 @@ $("#cdChip").addEventListener("click",()=>{
 });
 $("#cdSave").addEventListener("click",()=>{
   const v=$("#cdInput").value;
-  if(v){state.examDate=v;saveState();renderCountdown();$("#cdPanel").classList.remove("open");}
+  if(v){state.examDate=v;saveState();renderCountdown();renderPlan();$("#cdPanel").classList.remove("open");}
 });
 $("#cdDel").addEventListener("click",()=>{
-  state.examDate=null;saveState();renderCountdown();$("#cdPanel").classList.remove("open");
+  state.examDate=null;saveState();renderCountdown();renderPlan();$("#cdPanel").classList.remove("open");
 });
 
 /* ================= HOME ================= */
@@ -5852,7 +5899,7 @@ function renderHome(){
   $("#overallPct").textContent="%"+overall;
   $("#overallFill").style.width=overall+"%";
   const nb=checkBadges();if(nb.length)saveState();
-  renderStatline();renderRadar();renderBadges();
+  renderStatline();renderPlan();renderRadar();renderBadges();
 }
 $("#actReview").addEventListener("click",()=>{startReview();});
 $("#actWrong").addEventListener("click",()=>{renderWrongHome();show("#scr-wrong");});
