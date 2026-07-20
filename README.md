@@ -1,20 +1,22 @@
-# Yönetici Sınavı Koçu
+# Yönetici Adayı · Çalışma Defteri
 
 MEB **"İlk Defa Yönetici Görevlendirme — Yetiştirme Programı"** e-sınavına hazırlık için
-tek dosyalık, kendi kendine yeten bir web uygulaması.
+tek dosyalık, tamamen çevrimdışı çalışan bir çalışma defteri uygulaması. (v3.1 — indirilebilir)
 
 ## Nedir?
 
-- 20 modüllük ders içeriği (özet, zihin haritası, sorular) uygulamanın içine gömülüdür.
-- Önden üretilmiş **statik içerik** sayesinde modüller API beklemeden **anında** açılır.
-- Deneme sınavı (hızlı 10 soru / tam 60 soru · 75 dk), tekrar kutusu ve ilerleme takibi içerir.
-- Sınav geri sayımı ve günlük çalışma planı ana ekranda gösterilir.
+- 20 modüllük ders içeriği tek "defter" içinde toplanır.
+- **Günün Tekrarı** (aralıklı tekrar), **Yanlış Defteri**, ilerleme takibi.
+- **Karma Deneme** ve **Tam Deneme** (60 soru · 75 dk) sınavları.
+- İlerleme `localStorage`'da saklanır; içe/dışa aktarma ("indir") ile yedeklenebilir.
 
-Tüm uygulama tek bir `index.html` dosyasındadır — derleme, `npm install` veya sunucu gerektirmez.
+Tüm uygulama tek bir `index.html` dosyasındadır — **API, sunucu, derleme veya `npm install`
+gerektirmez**. İnternet olmadan da çalışır (yalnızca yazı tipleri çevrimiçi yüklenir; yoksa
+sistem yazı tipine düşer).
 
 ## Çalıştırma
 
-En basit yol — dosyayı tarayıcıda açın:
+Dosyayı tarayıcıda açmanız yeterli:
 
 ```bash
 # macOS
@@ -25,22 +27,18 @@ xdg-open index.html
 start index.html
 ```
 
-Ya da yerel bir sunucuyla:
+İsterseniz yerel sunucuyla:
 
 ```bash
-python3 -m http.server 8000
-# tarayıcıdan: http://localhost:8000
+python3 -m http.server 8000   # → http://localhost:8000
 ```
 
 ## Yayınlama (GitHub Pages)
 
-Dosya kök dizinde `index.html` olduğu için repo ayarlarından **Settings → Pages**
-ile doğrudan yayınlanabilir.
+Dosya kök dizinde `index.html` olduğu için repo **Settings → Pages** kısmından doğrudan
+yayınlanabilir.
 
-## Notlar
+## Veri ve gizlilik
 
-- Statik içeriği dolu modüller çevrimdışı da çalışır.
-- Statik içeriği boş modüllerde canlı üretim `api.anthropic.com` çağrısı yapar; bu özelliğin
-  çalışması için tarayıcıdan erişilebilir bir API anahtarı/proxy gerekir (kaynak kodda
-  `callClaude` fonksiyonu). Statik içerik dolu olduğu sürece uygulamanın çekirdeği bu
-  çağrıya ihtiyaç duymaz.
+İlerleme, tamamen kullanıcının tarayıcısındaki `localStorage`'da tutulur; hiçbir sunucuya
+veri gönderilmez. Farklı cihaza taşımak için uygulamadaki dışa/içe aktarma özelliği kullanılır.
