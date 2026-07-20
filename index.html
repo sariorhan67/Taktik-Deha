@@ -282,8 +282,10 @@ body.dark .po-pill.hot span{color:rgba(16,36,29,.8)}
 .dot.again{background:var(--red)}
 .dot.now{outline:1.5px solid var(--soft);outline-offset:2px}
 .fcard{perspective:1100px;min-height:240px;margin-bottom:14px}
-.fcard-in{position:relative;width:100%;min-height:240px;transform-style:preserve-3d;transition:transform .55s cubic-bezier(.2,.7,.3,1)}
+.fcard-in{position:relative;width:100%;min-height:240px;transform-style:preserve-3d;transition:transform .65s cubic-bezier(.25,.85,.3,1.02)}
 .fcard.flip .fcard-in{transform:rotateY(180deg)}
+.fcard:active .fcard-in{transform:scale(.985)}
+.fcard.flip:active .fcard-in{transform:rotateY(180deg) scale(.985)}
 .face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:var(--radius);padding:24px;display:flex;flex-direction:column;justify-content:center;box-shadow:var(--shadow)}
 .face .lab{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;position:absolute;top:16px;left:20px}
 .face-q{background:var(--card);border:1px solid var(--line)}
@@ -389,6 +391,24 @@ body.dark .btn-main{color:#10241D}
 .plan-item .pno{font-weight:700;color:var(--accent-ink);font-size:.92rem;min-width:22px}
 .plan-item .pt{flex:1;font-size:.82rem;font-weight:600;color:var(--ink);line-height:1.25}
 .plan-item .pm{font-size:.65rem;color:var(--soft);white-space:nowrap}
+/* ===== v6 GÖRSEL CİLA: parlama · konfeti · halka · sayaç kademesi ===== */
+@keyframes okflash{0%{box-shadow:0 0 0 0 rgba(65,161,132,.55)}100%{box-shadow:0 0 0 16px rgba(65,161,132,0)}}
+.opt.picked-ok{animation:okflash .65s ease-out}
+@keyframes tpulse{0%,100%{transform:scale(1)}50%{transform:scale(1.14)}}
+.timer.warn{color:var(--gold)}
+.timer-fill.warn{background:var(--gold)}
+.fx-clock.warn{color:var(--gold)}
+.fx-prog i.warn{background:var(--gold)}
+.timer.low,.fx-clock.low{animation:tpulse 1s infinite;display:inline-block}
+.cf{position:fixed;top:-14px;width:8px;height:13px;z-index:1200;border-radius:2px;pointer-events:none;animation:cfall linear forwards}
+@keyframes cfall{to{transform:translateY(106vh) rotate(720deg);opacity:.85}}
+.res-ring{--p:0;--rc:var(--accent);width:126px;height:126px;border-radius:50%;margin:8px auto 4px;background:conic-gradient(var(--rc) calc(var(--p)*1%),var(--line) 0);display:grid;place-items:center}
+.res-ring i{width:100px;height:100px;border-radius:50%;background:var(--card);display:grid;place-items:center;align-content:center;font-style:normal}
+.res-ring i b{font-family:'Fraunces',serif;font-weight:700;font-size:34px;line-height:1;color:var(--ink)}
+.res-ring i span{font-size:11px;color:var(--soft);font-weight:600;margin-top:2px}
+.res-ring.fail{--rc:var(--red)}
+.res-ring.fail i b{color:var(--red-ink)}
+.mic{margin-right:7px}
 </style>
 </head>
 <body>
@@ -555,6 +575,8 @@ const MODULES=[
  {id:"m19",no:"19",title:"Protokol ve Resmî Yazışma Kuralları",ready:true,w:2},
  {id:"m20",no:"20",title:"İkiz Dönüşüm: Eğitimde Teknoloji Yönetimi ve Çevre Bilinci",ready:true,w:4}
 ];
+const MICON={m1:"🧭",m2:"📖",m3:"🏛️",m4:"🤝",m5:"📚",m6:"🎯",m7:"🔄",m8:"💰",m9:"⚖️",m10:"🚨",
+ m11:"🏫",m12:"👥",m13:"🌍",m14:"🕊️",m15:"🌟",m16:"🧑‍🏫",m17:"🧘",m18:"🎤",m19:"📜",m20:"🌱"};
 
 const CONTENT={
 m1:{
@@ -5941,6 +5963,7 @@ function checkBadges(){
   return newly;
 }
 function badgeToast(list){
+  confettiBurst(30);
   const b=list[0],extra=list.length>1?" (+"+(list.length-1)+")":"";
   const el=document.createElement("div");
   el.className="bdg-toast";
@@ -5955,7 +5978,8 @@ function renderStatline(){
   const dn=(state.daily.date===todayStr())?state.daily.n:0;
   const goal=state.goal||15,pct=Math.min(100,Math.round(dn/goal*100));
   el.innerHTML='<div class="stat"><span class="sic">🔥</span><div><div class="sv">'+sn+' gün</div><div class="sl">çalışma serisi</div></div></div>'+
-    '<div class="stat"><div class="ring" style="--p:'+pct+'"><i>'+dn+'/'+goal+'</i></div><div><div class="sv">'+(dn>=goal?"Hedef ✓":"Günün hedefi")+'</div><div class="sl">bugün çalışılan kart</div></div></div>';
+    '<div class="stat"><div class="ring" style="--p:0"><i>'+dn+'/'+goal+'</i></div><div><div class="sv">'+(dn>=goal?"Hedef ✓":"Günün hedefi")+'</div><div class="sl">bugün çalışılan kart</div></div></div>';
+  animateRing(el.querySelector(".ring"),pct);
 }
 function moduleReadiness(id){
   const p=modProgress(id);if(!p)return 0;
@@ -6017,6 +6041,35 @@ function renderBadges(){
     g.appendChild(d);
   });
 }
+/* ===== v6: konfeti + halka animasyonu ===== */
+const REDUCED_MOTION=typeof matchMedia!=="undefined"&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+function confettiBurst(n){
+  if(REDUCED_MOTION)return;
+  n=n||28;
+  const colors=["#41A184","#BC9142","#C7746A","#3F5B78","#57BA9C","#D6B269"];
+  for(let i=0;i<n;i++){
+    const d=document.createElement("i");
+    d.className="cf";
+    d.style.left=(Math.random()*100)+"vw";
+    d.style.background=colors[i%colors.length];
+    d.style.animationDuration=(1.3+Math.random()*1.2)+"s";
+    d.style.animationDelay=(Math.random()*.3)+"s";
+    document.body.appendChild(d);
+    setTimeout(()=>{try{d.remove();}catch(_){}} ,3000);
+  }
+}
+function animateRing(el,target){
+  if(!el)return;
+  if(REDUCED_MOTION){el.style.setProperty("--p",target);return;}
+  const t0=performance.now(),dur=750;
+  function step(t){
+    const k=Math.min(1,(t-t0)/dur),e=1-Math.pow(1-k,3);
+    el.style.setProperty("--p",(target*e).toFixed(1));
+    if(k<1)requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
 /* ================= YEDEKLE · GERİ YÜKLE ================= */
 function doExport(){
   try{
@@ -6133,7 +6186,7 @@ function renderHome(){
       st=`<span class="${p.learned>=p.total?"ok":""}">kart ${p.learned}/${p.total}</span><br><span class="${p.mDone>=p.mTotal?"ok":""}">eş ${p.mDone}/${p.mTotal}</span> · <span class="${p.best>=p.qTotal?"ok":""}">sınav ${p.best<0?"—":p.best}/${p.qTotal}</span>`;
       btn.addEventListener("click",()=>openModule(m.id));
     }else{btn.disabled=true;}
-    btn.innerHTML=`<span class="no">${m.no}</span><span class="t">${m.title}<span class="wgt w${m.w}">${m.w} soru</span></span><span class="st">${st}</span>`;
+    btn.innerHTML=`<span class="no">${m.no}</span><span class="t"><span class="mic">${MICON[m.id]||""}</span>${m.title}<span class="wgt w${m.w}">${m.w} soru</span></span><span class="st">${st}</span>`;
     list.appendChild(btn);
   });
   let earned=0;
@@ -6177,7 +6230,7 @@ $("#resetBtn").addEventListener("click",async()=>{
 function openModule(id){
   curMod=id;
   const m=MODULES.find(x=>x.id===id),c=CONTENT[id];
-  $("#modNo").textContent="Modül "+m.no;
+  $("#modNo").textContent=(MICON[id]?MICON[id]+" ":"")+"Modül "+m.no;
   $("#modTitle").textContent=m.title;
   $("#pane-ozet").innerHTML=c.ozet;
   $("#pane-tablo").innerHTML=c.tablo;
@@ -6500,9 +6553,10 @@ function renderExam(){
     const isNew=ex.score>state.exam.best;
     state.exam={best:Math.max(state.exam.best,ex.score),att:state.exam.att+1};
     saveState();
+    const exPass=ex.score/n>=0.6;
     body.innerHTML=`<div class="blk q-done">
       ${state.exam.best>=0?`<span class="badge-best">En iyi ${state.exam.best}/${n} · ${state.exam.att}. deneme</span><br>`:""}
-      <div class="score"><span class="g">${ex.score}</span>/${n}</div>
+      <div class="res-ring${exPass?"":" fail"}" id="exRing"><i><b>${ex.score}</b><span>/ ${n} doğru</span></i></div>
       <p>${ex.score===n?"Tam isabet — süre baskısı seni yıldıramadı.":isNew?"Yeni rekor! Yanlışların Yanlış Defteri'ne eklendi.":"Yanlışlar Yanlış Defteri'ne eklendi; oradan temizle."}</p>
       <div class="stack">
         <button class="btn btn-main" id="exAgain">Yeni deneme başlat</button>
@@ -6511,6 +6565,8 @@ function renderExam(){
     </div>`;
     $("#exAgain").addEventListener("click",startExam);
     body.querySelector("[data-home]").addEventListener("click",()=>{renderHome();show("#scr-home");});
+    animateRing($("#exRing"),Math.round(ex.score/n*100));
+    if(ex.score===n)confettiBurst(36);
     return;
   }
   const item=ex.list[ex.i],q=CONTENT[item.ref.m].quiz[item.ref.i];
@@ -6532,7 +6588,8 @@ function renderExam(){
     if(!t){stopTimer();return;}
     t.textContent="0"+Math.floor(ex.left/60)+":"+String(ex.left%60).padStart(2,"0");
     f.style.width=(ex.left/90*100)+"%";
-    if(ex.left<=15){t.classList.add("low");f.classList.add("low");}
+    if(ex.left<=15){t.classList.remove("warn");f.classList.remove("warn");t.classList.add("low");f.classList.add("low");}
+    else if(ex.left<=30){t.classList.add("warn");f.classList.add("warn");}
     if(ex.left<=0){stopTimer();exTimeout();}
   },1000);
 }
@@ -6582,7 +6639,8 @@ function startFull(){
     if(c){
       const mm=String(Math.floor(fx.left/60)).padStart(2,"0"),ss=String(fx.left%60).padStart(2,"0");
       c.textContent=mm+":"+ss;
-      if(fx.left<=300){c.classList.add("low");if(p)p.classList.add("low");}
+      if(fx.left<=300){c.classList.remove("warn");c.classList.add("low");if(p){p.classList.remove("warn");p.classList.add("low");}}
+      else if(fx.left<=900){c.classList.add("warn");if(p)p.classList.add("warn");}
       if(p)p.style.width=(fx.left/(75*60)*100)+"%";
     }
     if(fx.left<=0){fxStop();finishFull(true);}
@@ -6596,7 +6654,7 @@ function renderFull(){
   const mm=String(Math.floor(fx.left/60)).padStart(2,"0"),ss=String(fx.left%60).padStart(2,"0");
   body.innerHTML=`
     <div class="fx-bar">
-      <span class="fx-clock${fx.left<=300?" low":""}" id="fxClock">${mm}:${ss}</span>
+      <span class="fx-clock${fx.left<=300?" low":(fx.left<=900?" warn":"")}" id="fxClock">${mm}:${ss}</span>
       <div class="fx-prog"><i id="fxFill" style="width:${fx.left/(75*60)*100}%"></i></div>
       <span class="fx-count">${fxAnswered()}/60 işaretli</span>
     </div>
@@ -6658,7 +6716,7 @@ function finishFull(timedOut){
   $("#fullBody").innerHTML=`
     <div class="blk fx-res">
       ${state.full.best>=0?`<span class="badge-best">En iyi ${state.full.best} puan · ${state.full.att}. deneme</span><br>`:""}
-      <div class="fx-pt${pass?"":" fail"}">${pt}</div>
+      <div class="res-ring${pass?"":" fail"}" id="fxRing"><i><b>${pt}</b><span>puan</span></i></div>
       <div style="font-size:12px;color:var(--soft);margin-top:4px">${correct} doğru / 60 soru${timedOut?" · ⏱ süre doldu":""}</div>
       <div class="fx-verd ${pass?"pass":"fail"}">${pass?"✓ BAŞARILI (60 baraj)":"✗ BARAJ ALTI (60 gerekli)"}</div>
       ${isNew&&state.full.att>1?'<div style="font-size:11px;color:var(--accent-ink);margin-top:6px">🎉 Yeni rekor!</div>':""}
@@ -6675,6 +6733,8 @@ function finishFull(timedOut){
     </div>`;
   $("#fxAgain").addEventListener("click",startFull);
   $("#fxHome").addEventListener("click",()=>{renderHome();show("#scr-home");});
+  animateRing($("#fxRing"),pt);
+  if(pass)confettiBurst(44);
   window.scrollTo(0,0);
 }
 
