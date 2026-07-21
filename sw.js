@@ -1,68 +1,71 @@
-/* Yönetici Sınavı Koçu — service worker (network-first)
- * Strategy: her istekte önce ağ denenir; başarısızsa cache'e düşülür.
- * Bu sayede kurulu (installed) uygulamalarda içerik güncellemeleri
- * kullanıcı çevrimiçiyken otomatik gelir. */
-const VERSION = 'v2026-07-20-1';
-const CACHE = 'ysk-' + VERSION;
-const CORE = [
-  './',
-  './index.html',
-  './manifest.webmanifest',
-  './offline.html',
-  './icons/icon-192.png',
-  './icons/icon-512.png',
-  './icons/icon-192-maskable.png',
-  './icons/icon-512-maskable.png',
-  './icons/apple-touch-icon.png',
+/* Yönetici Adayı · Çalışma Defteri — service worker
+   Strateji:
+   - HTML/gezinme: ÖNCE AĞ (internet varsa hep en güncel sürüm), yoksa önbellekten aç.
+   - Statik dosyalar (ikon/manifest): önbellekten hızlı aç, arka planda tazele.
+   Böylece uygulama çevrimdışı çalışır ama internet varken güncellemeleri anında alır. */
+const CACHE = "yd-cache-v2";
+const ASSETS = [
+  "./",
+  "./index.html",
+  "./manifest.webmanifest",
+  "./icon-192.png",
+  "./icon-512.png",
+  "./icon-maskable-512.png",
+  "./apple-touch-icon.png"
 ];
 
-self.addEventListener('install', (event) => {
-  event.waitUntil((async () => {
-    const cache = await caches.open(CACHE);
-    // {cache:'reload'} => install sırasında ağdan taze kopya al
-    await cache.addAll(CORE.map((u) => new Request(u, { cache: 'reload' })));
-    await self.skipWaiting();
-  })());
+self.addEventListener("install", (e) => {
+  e.waitUntil(
+    caches.open(CACHE).then((c) => c.addAll(ASSETS)).then(() => self.skipWaiting())
+  );
 });
 
-self.addEventListener('activate', (event) => {
-  event.waitUntil((async () => {
-    const keys = await caches.keys();
-    await Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k)));
-    await self.clients.claim();
-  })());
+self.addEventListener("activate", (e) => {
+  e.waitUntil(
+    caches.keys()
+      .then((keys) => Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k))))
+      .then(() => self.clients.claim())
+  );
 });
 
-self.addEventListener('message', (event) => {
-  if (event.data === 'SKIP_WAITING') self.skipWaiting();
-});
+self.addEventListener("fetch", (e) => {
+  const req = e.request;
+  if (req.method !== "GET") return;
 
-self.addEventListener('fetch', (event) => {
-  const req = event.request;
-  if (req.method !== 'GET') return;
-  const url = new URL(req.url);
-  // Yalnızca same-origin isteklerini yönet; çapraz-köken (Google Fonts, API) doğrudan ağa gitsin.
-  if (url.origin !== self.location.origin) return;
+  let url;
+  try { url = new URL(req.url); } catch (_) { return; }
+  const sameOrigin = url.origin === location.origin;
+  const isHTML = req.mode === "navigation" ||
+    (sameOrigin && (url.pathname.endsWith("/") || url.pathname.endsWith("index.html")));
 
-  event.respondWith((async () => {
-    const cache = await caches.open(CACHE);
-    try {
-      // NETWORK-FIRST
-      const fresh = await fetch(req);
-      if (fresh && fresh.status === 200 && fresh.type === 'basic') {
-        cache.put(req, fresh.clone());
-      }
-      return fresh;
-    } catch (err) {
-      const cached = await cache.match(req);
-      if (cached) return cached;
-      if (req.mode === 'navigate') {
-        const shell = (await cache.match('./index.html')) || (await cache.match('./'));
-        if (shell) return shell;
-        const off = await cache.match('./offline.html');
-        if (off) return off;
-      }
-      throw err;
-    }
-  })());
+  // 1) HTML / gezinme → önce ağ, başarısızsa önbellek
+  if (isHTML) {
+    e.respondWith(
+      fetch(req).then((res) => {
+        try {
+          const copy = res.clone();
+          caches.open(CACHE).then((c) => { c.put("./index.html", copy); });
+        } catch (_) {}
+        return res;
+      }).catch(() =>
+        caches.match(req).then((h) => h || caches.match("./index.html")).then((h) => h || caches.match("./"))
+      )
+    );
+    return;
+  }
+
+  // 2) Aynı köken statikleri → önbellekten aç, arka planda tazele (stale-while-revalidate)
+  if (sameOrigin) {
+    e.respondWith(
+      caches.match(req).then((hit) => {
+        const net = fetch(req).then((res) => {
+          try { const copy = res.clone(); caches.open(CACHE).then((c) => c.put(req, copy)); } catch (_) {}
+          return res;
+        }).catch(() => hit);
+        return hit || net;
+      })
+    );
+    return;
+  }
+  // 3) Çapraz köken (yazı tipleri vb.) → tarayıcının varsayılan davranışı
 });

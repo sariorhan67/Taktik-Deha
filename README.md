@@ -1,45 +1,76 @@
-# Yönetici Sınavı Koçu
+# Yönetici Adayı · Çalışma Defteri
 
-MEB **İlk Defa Yönetici Görevlendirme (Yetiştirme Programı) e-sınavı** için mobil öncelikli bir hazırlık uygulaması. Konu özetleri, zihin haritaları, aktif hatırlama kartları, sınav radarı ve deneme sınavlarını tek bir panoda toplar.
+MEB **"İlk Defa Yönetici Görevlendirme — Yetiştirme Programı"** e-sınavına hazırlık için
+tek dosyalık, tamamen çevrimdışı çalışan bir çalışma defteri uygulaması.
 
-Uygulama **kurulabilir bir PWA**'dır (Progressive Web App): telefona/masaüstüne uygulama gibi kurulur, çevrimdışı açılır ve güncellemeler otomatik gelir.
+Tüm uygulama tek bir `index.html` dosyasındadır — **API, sunucu, derleme veya `npm install`
+gerektirmez**. İnternet olmadan da çalışır (yalnızca yazı tipleri çevrimiçi yüklenir; yoksa
+sistem yazı tipine düşer).
 
-## Canlı adres
+## Özellikler
 
-👉 **https://sariorhan67.github.io/taktik-deha/**
+**Her modülde (20 modül):**
+- 📋 Özet (çekirdek fikir, hafıza kancaları, sınav radarı)
+- 🧠 Zihin haritası
+- 📊 Karşılaştırma tablosu
+- 🔗 Eşleştirme alıştırması
+- 🃏 Kartlar (aralıklı tekrar / SRS)
+- 🎯 Vaka soruları (optik formlu mini sınav)
 
-## Kurulum
+**Çalışma araçları:**
+- 🔁 **Günün Tekrarı** — aralıklı tekrar (SRS) ile o gün tekrarı gelen kartlar
+- 📕 **Yanlış Defteri** — yanlış sorular ve zorlanılan kartlar otomatik birikir
+- ⏱ **Karma Deneme** ve 🎓 **Tam Deneme** (60 soru · 75 dk)
+- 📅 Sınav tarihi geri sayımı, genel ilerleme çubuğu
 
-### Android (Chrome)
-1. Yukarıdaki adresi Chrome'da aç.
-2. Menü (⋮) → **Uygulamayı yükle** / **Ana ekrana ekle**.
-3. Ana ekrandan uygulama gibi aç.
+**Bu sürümde eklenenler:**
+- 🎯 **Bugünkü Odağın** — akıllı çalışma planı: modülün sınav ağırlığını, mevcut
+  hazırlığını ve kalan gün sayısını birleştirip "bugün şu modüllere çalış" önerisi verir
+- 🔥 **Çalışma serisi (streak)** — ardışık çalışma günlerini takip eder
+- 🎯 **Günün hedefi** — günlük kart hedefi ve ilerleme halkası
+- 🏅 **Rozetler** — 10 kilometre taşı rozeti (kazanınca bildirim)
+- 🗺️ **Hazırlık Radarı** — 20 modülün hazırlık durumunu tek bakışta gösteren ısı haritası
+  (başlanmadı · zayıf · orta · hazır); dokununca modülü açar
+- 💾 **Yedekle / Geri Yükle** — ilerlemeyi `.json` olarak dışa aktar, başka cihaza taşı
+- ☾ Karanlık / aydınlık tema
 
-### iPhone / iPad (Safari)
-1. Adresi **Safari** ile aç (Chrome değil).
-2. **Paylaş** (kare + yukarı ok) → **Ana Ekrana Ekle**.
-3. Ana ekrandan tam ekran aç.
+## Çalıştırma
 
-> iPhone'da APK çalışmaz; iOS için "Ana Ekrana Ekle" yeterlidir.
+Dosyayı tarayıcıda açmanız yeterli:
 
-### Android APK (isteğe bağlı)
-Canlı adres kullanılarak [PWABuilder](https://www.pwabuilder.com) ile bir Android paketi (TWA) üretilebilir. APK yalnızca canlı siteyi açan bir kabuktur; içerik güncellemeleri için APK'nın yeniden yapılmasına gerek yoktur.
-
-## Teknik notlar
-- **Service worker** `network-first` çalışır: kullanıcı çevrimiçiyken her açılışta en güncel içerik ağdan gelir, çevrimdışıyken cache'ten açılır. Böylece kurulu uygulamalara güncellemeler otomatik yansır.
-- Tüm arayüz, veri ve içerik tek `index.html` dosyasında (bağımsız/self-contained).
-- İçeriğin büyük kısmı statik olarak gömülüdür (`STATIC_CONTENT`) ve anında açılır.
-
-## Yayınlama (GitHub Pages)
-Bu uygulama `taktik-deha` deposunda, `claude/sinav-kocu-6fr376` dalında tutulur (belgesel dosyaları `main` dalında ayrıdır).
-**Settings → Pages → Build and deployment → Source: Deploy from a branch → Branch: `claude/sinav-kocu-6fr376` / `(root)`**. Repo public olmalıdır.
-
-## Dosya yapısı
+```bash
+# macOS
+open index.html
+# Linux
+xdg-open index.html
+# Windows
+start index.html
 ```
-index.html              Uygulama (arayüz + veri + mantık)
-manifest.webmanifest    PWA manifesti
-sw.js                   Service worker (network-first)
-offline.html            Çevrimdışı yedek sayfa
-icons/                  Uygulama ikonları (192/512/maskable/apple-touch)
-.nojekyll               GitHub Pages Jekyll işlemesini kapatır
+
+İsterseniz yerel sunucuyla:
+
+```bash
+python3 -m http.server 8000   # → http://localhost:8000
 ```
+
+## Yayınlama (GitHub Pages) ve telefona kurma (PWA)
+
+Depoda `.github/workflows/pages.yml` iş akışı var; `claude/session-99v6q0` veya `main`
+dalına her push'ta siteyi otomatik olarak GitHub Pages'e yayınlar (Pages'i mümkünse
+kendisi etkinleştirir). Yayın adresi, Actions çalışmasının **Deploy** adımında ve
+repo **Settings → Pages** kısmında görünür.
+
+> İlk yayında Pages kapalıysa ve iş akışı otomatik etkinleştiremezse: **Settings → Pages →
+> Build and deployment → Source: GitHub Actions** seçip iş akışını yeniden çalıştırmak yeterlidir.
+
+Uygulama bir **PWA**'dır (`manifest.webmanifest` + `sw.js`). Yayınlanan adresi telefonda
+tarayıcıda açıp **"Ana ekrana ekle"** dediğinizde uygulama gibi kurulur, açılışta tam ekran
+olur ve ilk açılıştan sonra **çevrimdışı** çalışır.
+
+Tek dosya olarak indirip `file://` ile açtığınızda uygulama yine tam çalışır; PWA kurulumu
+ve service worker yalnızca bir adresten (http/https) sunulduğunda devreye girer.
+
+## Veri ve gizlilik
+
+İlerleme, tamamen kullanıcının tarayıcısındaki `localStorage`'da tutulur; hiçbir sunucuya
+veri gönderilmez. Farklı cihaza taşımak için ana ekrandaki **Yedekle / Geri Yükle** kullanılır.
