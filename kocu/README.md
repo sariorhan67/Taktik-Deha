@@ -6,7 +6,7 @@ Uygulama **kurulabilir bir PWA**'dır (Progressive Web App): telefona/masaüstü
 
 ## Canlı adres
 
-👉 **https://sariorhan67.github.io/taktik-deha/**
+👉 **https://sariorhan67.github.io/Taktik-Deha/kocu/**
 
 ## Kurulum
 
@@ -31,7 +31,7 @@ Canlı adres kullanılarak [PWABuilder](https://www.pwabuilder.com) ile bir Andr
 - İçeriğin büyük kısmı statik olarak gömülüdür (`STATIC_CONTENT`) ve anında açılır.
 
 ## Yayınlama (GitHub Pages)
-Bu uygulama `taktik-deha` deposunda, `claude/sinav-kocu-6fr376` dalında tutulur (belgesel dosyaları `main` dalında ayrıdır).
+Bu uygulama `Taktik-Deha` deposunda, `claude/sinav-kocu-6fr376` dalının `kocu/` klasöründe tutulur; `Çalışma Defteri` uygulaması aynı dalın kökündedir (adres: `Taktik-Deha/`).
 **Settings → Pages → Build and deployment → Source: Deploy from a branch → Branch: `claude/sinav-kocu-6fr376` / `(root)`**. Repo public olmalıdır.
 
 ## Dosya yapısı
