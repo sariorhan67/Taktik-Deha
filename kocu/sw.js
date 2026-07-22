@@ -2,7 +2,7 @@
  * Strategy: her istekte önce ağ denenir; başarısızsa cache'e düşülür.
  * Bu sayede kurulu (installed) uygulamalarda içerik güncellemeleri
  * kullanıcı çevrimiçiyken otomatik gelir. */
-const VERSION = 'v2026-07-20-1';
+const VERSION = 'v2026-07-21-2';
 const CACHE = 'ysk-' + VERSION;
 const CORE = [
   './',

@@ -332,6 +332,12 @@ let STORAGE_OK = (typeof window !== 'undefined' && window.storage
                   && typeof window.storage.get === 'function'
                   && typeof window.storage.set === 'function');
 
+const LS_PREFIX = 'ysk:';   /* diğer uygulamalarla çakışmasın diye isim-alanı */
+let LS_OK = (function(){
+  try{ const k='__ysk_probe'; window.localStorage.setItem(k,'1'); window.localStorage.removeItem(k); return true; }
+  catch(e){ return false; }
+})();
+
 async function storeGet(key){
   if(STORAGE_OK){
     try{
@@ -340,13 +346,21 @@ async function storeGet(key){
       return (key in MEM_STORE) ? MEM_STORE[key] : null;
     }catch(e){ STORAGE_OK = false; }   /* tek hatada dahi kalıcı olarak yedeğe geç */
   }
+  if(LS_OK){                            /* window.storage yoksa (ör. GitHub Pages) localStorage'tan oku */
+    try{ const s = window.localStorage.getItem(LS_PREFIX + key); if(s != null) return JSON.parse(s); }
+    catch(e){}
+  }
   return (key in MEM_STORE) ? MEM_STORE[key] : null;
 }
 async function storeSet(key, val){
   MEM_STORE[key] = val;               /* her zaman belleğe yaz (oturum-içi kalıcılık) */
   if(STORAGE_OK){
-    try{ await window.storage.set(key, JSON.stringify(val)); }
-    catch(e){ STORAGE_OK = false; }   /* hata olursa SESSİZCE yedeğe geç — kullanıcıya gösterme */
+    try{ await window.storage.set(key, JSON.stringify(val)); return; }
+    catch(e){ STORAGE_OK = false; }   /* hata olursa yedeğe geç */
+  }
+  if(LS_OK){                          /* kalıcı yedek: localStorage */
+    try{ window.localStorage.setItem(LS_PREFIX + key, JSON.stringify(val)); }
+    catch(e){}
   }
 }
 
@@ -1087,7 +1101,7 @@ function renderReview(){
 /* ============================================================
    EVENTS
    ============================================================ */
-root.addEventListener('click', async (e)=>{
+document.addEventListener('click', async (e)=>{
   const t=e.target.closest('[data-action]');
   if(!t) return;
   const a=t.dataset.action;
