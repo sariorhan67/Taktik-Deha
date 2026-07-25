@@ -17,6 +17,12 @@ sistem yazı tipine düşer).
 - 🃏 Kartlar (aralıklı tekrar / SRS)
 - 🎯 Vaka soruları (optik formlu mini sınav)
 
+**📄 Çıkmış Sorular (25 Temmuz 2026 e-Sınavı):**
+- MEB Yönetici Yetiştirme Program Sonu Değerlendirme e-Sınavının **192 gerçek sorusu**
+- Cevaplar **resmî cevap anahtarından** doğrulanmıştır (3 oturumun tamamı)
+- Oturuma göre, modüle göre, karışık 60 soru veya "hiç çözmediklerim" olarak çalışma
+- Yanlışların ayrı listede birikir, tekrar çözülebilir
+
 **Çalışma araçları:**
 - 🔁 **Günün Tekrarı** — aralıklı tekrar (SRS) ile o gün tekrarı gelen kartlar
 - 📕 **Yanlış Defteri** — yanlış sorular ve zorlanılan kartlar otomatik birikir
@@ -33,6 +39,10 @@ sistem yazı tipine düşer).
   (başlanmadı · zayıf · orta · hazır); dokununca modülü açar
 - 💾 **Yedekle / Geri Yükle** — ilerlemeyi `.json` olarak dışa aktar, başka cihaza taşı
 - ☾ Karanlık / aydınlık tema
+
+> **Not:** Modül ağırlıkları (her modülün kaç soru getirdiği), 25 Temmuz 2026 sınavının
+> gerçek soru dağılımına göre kalibre edilmiştir. Bu sayede "Bugünkü Odağın" planı,
+> Hazırlık Radarı ve Tam Deneme, gerçek sınavın ağırlıklarını yansıtır.
 
 ## Çalıştırma
 
