@@ -862,7 +862,7 @@ const HIZLI=[
 /* --- M13/M15 · DÜŞÜNCE TARİHİ (isim-eser eşleştirmesi) --- */
 {m:"m15",g:"ortak",s:"\"Türkiye'nin Maarif Davası\" adlı eserin yazarı kimdir?",o:["Mümtaz Turhan","Nurettin Topçu","Ziya Gökalp","Hasan Âli Yücel","İsmayıl Hakkı Baltacıoğlu"],c:1,w:"<b>Nurettin Topçu</b>, okulun toplumdan ve hayattan kopuk olmasını reddeder; okul insanı yalnızca meslek sahibi yapan değil, şahsiyet kazandıran kurumdur."},
 {m:"m13",g:"ortak",s:"\"Kültür Değişmeleri\" adlı eserinde modernleşme sürecinde okulun rolünü millî bir sentezle ele alan düşünür kimdir?",o:["Nurettin Topçu","Mümtaz Turhan","Farabi","Yusuf Has Hâcib","Nizâmülmülk"],c:1,w:"<b>Mümtaz Turhan</b>, kültürel değişme yaklaşımıyla okulun üstlenmesi gereken rolü millî bir sentez çerçevesinde tartışır."},
-{m:"m13",g:"ortak",s:"Okulun toplumun organik bir parçası olduğunu \"İçtimai Mektep\" yaklaşımıyla vurgulayan anlayış neyi ifade eder?",o:["Okulun toplumdan yalıtılmasını","Okulun toplumsal duyarlılık merkezi olmasını","Okulun yalnızca akademik başarıya odaklanmasını","Okulun merkezî bürokrasiye bağlılığını","Okulun ekonomik verimlilik aracı olmasını"],c:1,w:"<b>İçtimai Mektep</b>, okulu toplumun organik parçası ve toplumsal duyarlılığın merkezi olarak konumlandırır."},
+{m:"m13",g:"ortak",s:"Okulun toplumun organik bir parçası olduğunu \"İçtimai Mektep\" yaklaşımıyla vurgulayan anlayış neyi ifade eder?",o:["Okulun toplumdan yalıtılmasını","Okulun toplumsal duyarlılık merkezi olmasını","Okulun yalnızca akademik başarıya odaklanmasını","Okulun merkezî bürokrasiye bağlılığını","Okulun ekonomik verimlilik aracı olmasını"],c:1,w:"<b>İçtimaî Mektep</b> (<b>İsmayıl Hakkı Baltacıoğlu</b>), okulu toplumun organik parçası ve toplumsal duyarlılığın merkezi olarak konumlandırır. Karıştırma: <b>Türkiye'nin Maarif Davası</b> = Nurettin Topçu."},
 {m:"m15",g:"ortak",s:"Toplumsal düzenin ancak erdemli bir yöneticiyle mümkün olduğunu savunan Farabi'nin eseri hangisidir?",o:["El-Medinetü'l-Fâzıla","Siyasetnâme","Kutadgu Bilig","Divan-ı Hikmet","Atabetü'l-Hakayık"],c:0,w:"Farabi → <b>El-Medinetü'l-Fâzıla</b> (Erdemli Şehir). Siyasetnâme → Nizâmülmülk (Selçuklu), Kutadgu Bilig → Yusuf Has Hâcib."},
 {m:"m16",g:"ortak",s:"Değer odaklı perspektifte insanın \"yaratılmışların en şereflisi\" sayılmasını ifade eden kavram hangisidir?",o:["Üstat","Mentör","Eşref-i mahlukat","Beşer","Lider"],c:2,w:"<b>Eşref-i mahlukat</b>; yönetimi teknik bir süreç değil, ahlaki ve manevi temellere dayanan insan ilişkileri bütünü olarak gören anlayışın merkezindedir."},
 /* --- M19 · PROTOKOL VE YAZIŞMA --- */
@@ -1006,7 +1006,8 @@ harita:{
   {t:"Yeni Modeller",kids:[
     {k:"Öğrenen Okul",v:"Beşinci Disiplin — SKZPT"},
     {k:"Çerçeve Geçişi",v:"YİPS · bilişsel esneklik + durumsal farkındalık"}]}
- ]},
+ ,
+  {t:"İsim Haritası",kids:[{k:"Klasik",v:"Gulick · Weber · Fayol · Taylor"},{k:"Neo-klasik",v:"Elton Mayo · Hawthorne"},{k:"Modern",v:"Katz-Kahn · Argyris · Bolman-Deal"}]}]},
 poster:`
 <div class="po-hero">
   <span class="eyebrow">Tek Bakışta · Son Tekrar Posteri</span>
@@ -1091,6 +1092,15 @@ tablo:`
     <tr><td>Dijital</td><td>Stratejik teknoloji</td><td>Eşitsizlik + veri riski</td></tr>
     <tr><td>Sosyal adalet</td><td>Fırsat eşitliği</td><td>Somut araçları belirsiz</td></tr>
   </table></div>
+</div>
+<div class="blk">
+  <h3>Tablo D — Kim Hangi Yaklaşımda?</h3>
+  <div class="twrap"><table>
+    <tr><th>Yaklaşım</th><th>İsimler</th><th>Tuzak</th></tr>
+    <tr><td>Klasik</td><td>Gulick · Weber · Fayol · Taylor</td><td class="warn">Araya Argyris sokulur</td></tr>
+    <tr><td>Neo-klasik</td><td>Elton Mayo (Hawthorne)</td><td>Weber ile karıştırılır</td></tr>
+    <tr><td>Modern</td><td>Katz-Kahn · Argyris · Bolman-Deal · Senge</td><td>Argyris = çift döngülü öğrenme</td></tr>
+  </table></div>
 </div>`,
 match:[
  {name:"Liderlik → Zayıf Karnı",pairs:[
@@ -1110,7 +1120,8 @@ match:[
    ["Klasik","Makine · verimlilik"],
    ["Neo-klasik","Aile · insan ilişkileri"],
    ["Modern","Organizma · açık sistem"]]}
-],
+,
+ {name:"İsim → Yaklaşım",pairs:[["Luther Gulick","Klasik"],["Elton Mayo","Neo-klasik"],["Chris Argyris","Modern"],["Katz ve Kahn","Modern · açık sistem"]]}],
 cards:[
  {q:"Yönetim – yöneticilik – liderlik üçlüsünü tek cümlede ayırın.",a:"Yönetim süreçleri DÜZENLER, yöneticilik bu süreçleri UYGULAR, liderlik yapıya YÖN, ANLAM ve DÖNÜŞÜM kazandırır."},
  {q:"Eğitimde yönetim hangi iki eksende işler? Her birine ikişer örnek verin.",a:"① Örgütsel-idari: bütçe, personel işlemleri. ② Öğretimsel-pedagojik: öğretim kalitesi, öğrenci başarısı."},
@@ -1166,7 +1177,11 @@ quiz:[
    o:["Teknik-yönetsel yeterlik tek başına yeterlidir","Öğretimsel-pedagojik yeterlik gereksizdir","Teknik-yönetsel yeterlik güçlü olsa da insani-iletişimsel yeterlik zayıfsa okul gelişimi sekteye uğrar","Sorun yalnızca dijital yeterlik eksikliğidir","Kavramsal-stratejik yeterlik fazlalığı sorun yaratmıştır"],c:2,
    w:"Ders notu, teknik-yönetsel yeterliklerin gerekli ama TEK BAŞINA yetersiz olduğunu; insani boyutta zayıf yöneticinin okul geliştirmede etkili olamayabileceğini vurgular. Buradaki eksik, insani-iletişimsel yeterliktir (empati, iletişim, iklim).",
    b:"Dayanak: Modül 1 — Yöneticilik Yeterlikleri Çerçevesi"}
-]
+,
+ {s:"Bir aday, yönetim kuramları çalışırken 'Klasik yaklaşımın temsilcileri' başlığı altına dört isim yazmıştır: Gulick, Weber, Fayol ve Argyris. Bu listedeki hata nedir?",
+  o:["Gulick klasik değil, neo-klasiktir","Weber modern yaklaşımdadır","Argyris klasik değil; örgütsel öğrenmeyle modern yaklaşımdadır","Fayol neo-klasik yaklaşımdadır","Listede hata yoktur"],c:2,
+  w:"<b>Chris Argyris</b>, tek/çift döngülü öğrenme kavramlarıyla <b>modern</b> yaklaşımda yer alır. Gulick, Weber, Fayol ve Taylor klasik yaklaşımın isimleridir. Sınavda en sık kurulan tuzak budur.",
+  b:"Dayanak: Modül 1 — Yönetim Yaklaşımları"}]
 },
 m11:{
 ozet:`
@@ -1372,7 +1387,8 @@ harita:{
     {k:"e-Kurs",v:"DYK planlama"},
     {k:"e-Ambar",v:"pansiyon depo"},
     {k:"Kurumsal",v:"MEBBİS · TEFBİS · KBS · MYS-HYS · EKAP"}]}
- ]},
+ ,
+  {t:"Kademeye Özel",kids:[{k:"Kurum açma",v:"20 öğrenci · 2,40 m² · Bakanlığa tahsisli"},{k:"Okul konutu",v:"köyde parasız · şehirde aynı okul personeli"},{k:"MÖZEM",v:"ortaöğretim · mesleki · sektör iş birliği"},{k:"Uygulama evi",v:"1+0 · bağımsız yaşam becerisi"},{k:"Destek eğitim odası",v:"BEP birimi · en fazla 3 öğrenci"},{k:"Yardımcı teknoloji",v:"FM/DM · indüksiyon = işitme"}]}]},
 tablo:`
 <div class="blk">
   <h3>Tablo A — Okul Türü → Kabul Yolu</h3>
@@ -1406,6 +1422,25 @@ tablo:`
     <tr><td>Okullar</td><td>Fen, SBL, Anadolu</td><td>GSL, Spor, proje AİHL</td></tr>
     <tr><td>Zamanlama</td><td>Sonra</td><td><b>Önce</b> tamamlanır</td></tr>
   </table></div>
+</div>
+<div class="blk">
+  <h3>Tablo D — Kademeye Özel Sayılar</h3>
+  <div class="twrap"><table>
+    <tr><th>Sayı</th><th>Ne?</th></tr>
+    <tr><td><b>20 öğrenci</b></td><td>Bağımsız anaokulu açmak için gereken asgari öğrenci</td></tr>
+    <tr><td><b>2,40 m²</b></td><td>Anaokulunda öğrenci başına asgari kullanım alanı</td></tr>
+    <tr><td><b>1+0</b></td><td>Özel eğitim uygulama evinin formatı <span class="warn">(1+1 çeldirici!)</span></td></tr>
+    <tr><td><b>en fazla 3</b></td><td>Destek eğitim odasında grup eğitimi öğrenci sayısı</td></tr>
+  </table></div>
+</div>
+<div class="blk">
+  <h3>Tablo E — Özel Eğitim Yapıları</h3>
+  <div class="twrap"><table>
+    <tr><th>Yapı</th><th>Nerede</th><th>Amaç</th></tr>
+    <tr><td>MÖZEM</td><td>Ortaöğretim mesleki özel eğitim okulu</td><td>Sektör iş birliği · istihdam edilebilirlik</td></tr>
+    <tr><td>Uygulama Evi</td><td>Özel eğitim uygulama okulu içinde</td><td>Bağımsız yaşam becerileri</td></tr>
+    <tr><td>Destek Eğitim Odası</td><td>Örgün okul içinde</td><td>BEP doğrultusunda bireysel/küçük grup</td></tr>
+  </table></div>
 </div>`,
 match:[
  {name:"Sistem → İşlev",pairs:[
@@ -1425,7 +1460,8 @@ match:[
    ["Müdür yardımcısı","Günlük işleyiş + nöbet"],
    ["Belletici","Etüt + rehberlik"],
    ["Nöbetçi belletici","Güvenlik"]]}
-],
+,
+ {name:"Kademe Bilgisi → Değer",pairs:[["Bağımsız anaokulu asgari öğrenci","20"],["Anaokulu öğrenci başına alan","2,40 m²"],["Uygulama evi formatı","1+0"],["Destek eğitim odası grup üst sınırı","3 öğrenci"],["MÖZEM düzeyi","Ortaöğretim"]]}],
 cards:[
  {q:"Yetenek sınavıyla yerleştirme puanı nasıl hesaplanır? OBP neyin ortalamasıdır?",a:"Yetenek sınavı puanının %70'i + OBP'nin %30'u. OBP = 6, 7 ve 8. sınıf yıl sonu başarı puanlarının aritmetik ortalaması."},
  {q:"Pansiyon hakkını sona erdiren 5 durum nedir? Hangi durumda hak devam eder?",a:"Mezuniyet · disiplin cezası · uzun devamsızlık · açık öğretime geçiş · özel okula kayıt. NAKİLDE uygun kontenjan varsa hak DEVAM eder."},
@@ -1480,7 +1516,15 @@ quiz:[
   o:["Zorunlu eğitim 69. ayda başladığından bekleyebilirler","Özel eğitimde zorunlu eğitim 36. aydan itibaren başlar; çocuk özel eğitim anaokulu/ana sınıfına (36-66 ay) erişebilir","Özel eğitim ancak ilkokulda başlar","Yalnızca evde eğitim verilebilir","Veli talebiyle eğitim 66. aya kadar tamamen ertelenebilir"],c:1,
   w:"'En az kısıtlayıcı ortam' ve erken erişim ilkeleri gereği özel eğitimde ZORUNLU EĞİTİM 36. AYDAN itibaren başlar; 36-66 ay aralığındaki çocuklar için özel eğitim anaokulları ve ana sınıfları BEP temelli hizmet verir. Veli talebiyle tamamen erteleme gibi bir muafiyet mevzuatta yer almaz.",
   b:"Dayanak: Modül 11 — Özel Eğitim Okul/Kurumları"}
-]
+,
+ {s:"Bir ilçede okul öncesi çağ nüfusu artmış, mevcut ana sınıfları yetersiz kalmıştır. Müdür, bağımsız anaokulu açılışı için ön koşulları kontrol etmektedir. Hangisi bu koşullar arasında YER ALMAZ?",
+  o:["En az 20 öğrencinin bulunması","Öğrenci başına en az 2,40 m² kullanım alanı","Binanın Bakanlığa tahsisli olması","Bina ve ortamların engelli erişimine uygun olması","Kurumun ekonomik durumunun elverişli olması"],c:4,
+  w:"Yönetmelik; öğrenci sayısı, kullanım alanı, tahsis ve erişilebilirlik gibi <b>fiziki ve hukuki</b> koşulları arar. 'Ekonomik durum' ad verme ölçütlerinde de kurum açma koşullarında da yer almaz.",
+  b:"Dayanak: Modül 11 — Kurum Açma, Kapatma ve Ad Verme Yönetmeliği"},
+ {s:"Özel eğitim uygulama okulunda müdür, öğrencilerin mutfak ve kişisel bakım becerilerini gerçek yaşama yakın ortamda öğrenmesini planlamaktadır. Bu amaca hizmet eden yapı ve formatı hangisidir?",
+  o:["MÖZEM · sektör atölyesi","Özel eğitim uygulama evi · 1+0 format","Destek eğitim odası · birebir","Bilim ve sanat merkezi · atölye","Rehberlik araştırma merkezi · birim"],c:1,
+  w:"Uygulama evleri, uygulama okulu bünyesinde <b>1+0 formatında</b> kurulur ve bağımsız yaşam becerisi kazandırır. MÖZEM mesleki-sektörel, destek eğitim odası ise akademik destek amaçlıdır.",
+  b:"Dayanak: Modül 11 — Özel Eğitim Uygulama Evleri"}]
 },
 m3:{
 ozet:`
@@ -1903,7 +1947,8 @@ harita:{
     {k:"Kural 1",v:"temel beceri çıktısına süreç bileşeni YAZILMAZ"},
     {k:"Kural 2",v:"kavramsaldan üretirken bileşen eklenmez/çıkarılmaz"},
     {k:"Öğretmen yansıtmaları",v:"öz değerlendirme"}]}
- ]},
+ ,
+  {t:"Farklılaştırma",kids:[{k:"İçerik",v:"ne öğretilir"},{k:"Süreç",v:"nasıl öğrenilir"},{k:"Ürün",v:"nasıl gösterilir"},{k:"Öğrenme ortamı",v:"hangi düzen"}]}]},
 tablo:`
 <div class="blk">
   <h3>Tablo 1 — Beceriler Çerçevesi (KAEOS)</h3>
@@ -1932,6 +1977,16 @@ tablo:`
     <tr><td>İşlevsellik</td><td>Bütüncül <b>ilişkiyi fark etme</b></td></tr>
     <tr><td>Eylemsellik</td><td><b>Harekete geçme</b> (sarmal; işlevsellikte kalabilir)</td></tr>
   </table></div>
+</div>
+<div class="blk">
+  <h3>Tablo D — Farklılaştırmanın 4 Boyutu</h3>
+  <div class="twrap"><table>
+    <tr><th>Boyut</th><th>Soru</th><th>Örnek uygulama</th></tr>
+    <tr><td><b>İçerik</b></td><td>Ne öğretiliyor?</td><td>Farklı zorlukta metinler</td></tr>
+    <tr><td><b>Süreç</b></td><td>Nasıl öğreniliyor?</td><td>Süre esnetme · kademeli görev</td></tr>
+    <tr><td><b>Ürün</b></td><td>Nasıl gösteriliyor?</td><td>Poster / sunum / rapor seçeneği</td></tr>
+    <tr><td><b>Öğrenme ortamı</b></td><td>Nerede, hangi düzende?</td><td>Bireysel + iş birlikli sınıf düzeni</td></tr>
+  </table></div>
 </div>`,
 match:[
  {name:"KAEOS → Alt Yapı",pairs:[
@@ -1950,7 +2005,8 @@ match:[
    ["Farkındalık","Kavramı tanıma ve duyarlılık"],
    ["İşlevsellik","Bütüncül ilişkiyi fark etme"],
    ["Eylemsellik","Edinilenle harekete geçme"]]}
-],
+,
+ {name:"Uygulama → Boyut",pairs:[["Farklı zorlukta metin","İçerik"],["Süreyi esnetme","Süreç"],["Poster/sunum seçeneği","Ürün"],["Sınıf düzenini kurma","Öğrenme ortamı"]]}],
 cards:[
  {q:"TYMM'nin nihai hedefi, mottosu ve öğrenci profilinin yapısı nedir?",a:"Hedef: YETKİN VE ERDEMLİ İNSAN · Motto: 'Köklerden Geleceğe' · Profil: 2 bütünlük alanı (ruh-beden), 10 özellik."},
  {q:"Beceriler Çerçevesi'nin 5 bileşeni (KAEOS)?",a:"Kavramsal · Alan · Eğilimler · Okuryazarlık · Sosyal-duygusal öğrenme becerileri."},
@@ -2001,7 +2057,11 @@ quiz:[
    o:["Eğitimin yalnızca sınav odaklı olması","Eğitimin değer ve karakter gelişimini de kapsayan stratejik bir süreç olması","Okulun yalnızca bilgi aktaran bir kurum olması","Değerlerin okul dışına bırakılması","Programın merkezden bağımsız kurgulanması"],c:1,
    w:"TYMM, eğitim kurumlarını 'şahsiyetin geliştiği, değerlerin içselleştirildiği, erdem ve liyakat sahibi nesillerin yetiştirildiği stratejik kurumlar' olarak görür. Yani eğitim yalnızca bilgi aktarımı/sınav değil; değer ve karakter gelişimini de kapsar.",
    b:"Dayanak: Modül 5 — TYMM: Değer ve Karakter Temelli Eğitim"}
-]
+,
+ {s:"Bir öğretmen; aynı konuyu farklı zorlukta metinlerle sunuyor, etkinlik süresini esnetiyor, öğrencilere poster/sunum/rapor seçeneği veriyor ve sınıf düzenini iş birliğine uygun kuruyor. Bu dört uygulama sırasıyla hangi boyutlara karşılık gelir?",
+  o:["İçerik – Süreç – Ürün – Öğrenme ortamı","Süreç – İçerik – Ürün – Öğrenme ortamı","İçerik – Ürün – Süreç – Öğrenme ortamı","İçerik – Süreç – Öğrenme ortamı – Ürün","Öğrenme ortamı – İçerik – Süreç – Ürün"],c:0,
+  w:"Ne öğretildiği <b>içerik</b>, nasıl öğrenildiği <b>süreç</b>, nasıl gösterildiği <b>ürün</b>, mekân ve düzen <b>öğrenme ortamıdır</b>.",
+  b:"Dayanak: Modül 5 — Farklılaştırılmış Öğretim"}]
 },
 m6:{
 ozet:`
@@ -2687,7 +2747,8 @@ harita:{
     {k:"İlişkilendirme",v:"bütçe ↔ stratejik plan"},
     {k:"Göstergeler",v:"izleme-değerlendirme"},
     {k:"Proje/hibe",v:"planlama-uygulama-izleme-raporlama-denetim"}]}
- ]},
+ ,
+  {t:"Bilgi Sistemleri",kids:[{k:"MEBBİS",v:"personel-yönetim"},{k:"TEFBİS",v:"mali izleme"},{k:"EKAP",v:"ihale-satın alma"},{k:"KBS",v:"maaş-muhasebe"},{k:"HYS/MYS",v:"harcama-ödeme"}]}]},
 tablo:`
 <div class="blk">
   <h3>Tablo 1 — İki Mali Aktör</h3>
@@ -2713,6 +2774,17 @@ tablo:`
     <tr><th>Durum</th><th>Süre</th></tr>
     <tr><td>Kamu zararı zaman aşımı</td><td><b>10 yıl</b></td></tr>
     <tr><td>Emanet hesabı talep süresi</td><td>İzleyen <b>5. yıl</b> sonu</td></tr>
+  </table></div>
+</div>
+<div class="blk">
+  <h3>Tablo D — Bilgi Sistemi → İşlev</h3>
+  <div class="twrap"><table>
+    <tr><th>Sistem</th><th>İşlev</th><th>Anahtar kelime</th></tr>
+    <tr><td>MEBBİS</td><td>Personel ve yönetim işlemleri</td><td>merkezî</td></tr>
+    <tr><td>TEFBİS</td><td>Mali süreç izleme (gelir-gider)</td><td>izleme</td></tr>
+    <tr><td>EKAP</td><td>İhale ve satın alma</td><td>ihale</td></tr>
+    <tr><td>KBS</td><td>Maaş, muhasebe, ek ders, harcırah</td><td>ödeme hesabı</td></tr>
+    <tr><td>HYS / MYS</td><td>Harcama ve ödeme süreci</td><td>harcama</td></tr>
   </table></div>
 </div>`,
 match:[
@@ -2783,7 +2855,11 @@ quiz:[
    o:["e-Okul","MEBBİS","TEFBİS","EBA","UYAP"],c:2,
    w:"TEFBİS (Türkiye'de Eğitimin Finansmanı ve Eğitim Harcamaları Bilgi Yönetim Sistemi), okulların malî işlemlerini dijital, şeffaf ve denetlenebilir biçimde yürütmek ve gelir-giderleri merkezî veri tabanından izlemek için kullanılır. e-Okul öğrenci işleri, MEBBİS personel/yönetim, EBA içerik, UYAP yargı sistemidir.",
    b:"Dayanak: Modül 8 — TEFBİS"}
-]
+,
+ {s:"Okul müdürü; bir ihale süreci başlatacak, ek ders ödemelerini kontrol edecek ve harcama talimatını sisteme işleyecektir. Bu üç iş sırasıyla hangi sistemler üzerinden yürür?",
+  o:["TEFBİS – KBS – MEBBİS","EKAP – KBS – HYS/MYS","MEBBİS – EKAP – TEFBİS","KBS – HYS/MYS – EKAP","EKAP – TEFBİS – MEBBİS"],c:1,
+  w:"<b>EKAP</b> ihale/satın alma, <b>KBS</b> maaş-ek ders ödemeleri, <b>HYS/MYS</b> harcama ve ödeme sürecidir. TEFBİS mali izleme, MEBBİS personel-yönetim işlemleri içindir.",
+  b:"Dayanak: Modül 8 — Bilgi Yönetim Sistemleri"}]
 },
 m9:{
 ozet:`
@@ -3508,7 +3584,8 @@ harita:{
     {k:"Finlandiya",v:"güven, özerklik ↔ Ahilik dayanışması"},
     {k:"Singapur",v:"liyakat, karakter ↔ Kutadgu Bilig, Enderun"},
     {k:"Sentez",v:"evrenseli taklit değil, kültürle dönüştür"}]}
- ]},
+ ,
+  {t:"Düşünür-Eser",kids:[{k:"Farabi",v:"El-Medinetü'l-Fâzıla"},{k:"Nizâmülmülk",v:"Siyasetnâme · Selçuklu"},{k:"Yusuf Has Hâcib",v:"Kutadgu Bilig"},{k:"Nurettin Topçu",v:"Türkiye'nin Maarif Davası"}]}]},
 tablo:`
 <div class="blk">
   <h3>Tablo 1 — Eser → Yazar</h3>
@@ -3537,6 +3614,16 @@ tablo:`
     <tr><td><b>İlişkisel</b></td><td>Empati-hizmet</td><td>Ahilik, Yunus Emre</td></tr>
     <tr><td><b>Vizyoner</b></td><td>Stratejik akıl</td><td>Orhun, Kutadgu, Siyasetname</td></tr>
   </table></div>
+</div>
+<div class="blk">
+  <h3>Tablo D — Düşünür → Eser</h3>
+  <div class="twrap"><table>
+    <tr><th>Düşünür</th><th>Eser</th><th>Tuzak</th></tr>
+    <tr><td>Farabi</td><td>El-Medinetü'l-Fâzıla</td><td>Siyasetnâme ile karıştırılır</td></tr>
+    <tr><td>Nizâmülmülk</td><td>Siyasetnâme</td><td class="warn">Selçuklu (Osmanlı değil!)</td></tr>
+    <tr><td>Yusuf Has Hâcib</td><td>Kutadgu Bilig</td><td>11. yüzyıl</td></tr>
+    <tr><td>Nurettin Topçu</td><td>Türkiye'nin Maarif Davası</td><td>Mümtaz Turhan ile karıştırılır</td></tr>
+  </table></div>
 </div>`,
 match:[
  {name:"Eser → Yazar",pairs:[
@@ -3555,7 +3642,8 @@ match:[
    ["İlişkisel boyut","Ahilik, Yunus Emre"],
    ["Vizyoner boyut","Orhun, Kutadgu Bilig, Siyasetname"],
    ["Batı erdemi","Araçsallaştırma"]]}
-],
+,
+ {name:"Düşünür → Eser",pairs:[["Farabi","El-Medinetü'l-Fâzıla"],["Nizâmülmülk","Siyasetnâme"],["Yusuf Has Hâcib","Kutadgu Bilig"],["Nurettin Topçu","Türkiye'nin Maarif Davası"]]}],
 cards:[
  {q:"Kutadgu Bilig, Siyasetname ve Divan-ı Hikmet'in yazarları kimdir?",a:"Kutadgu Bilig = Yusuf Has Hâcib · Siyasetname = Nizamülmülk · Divan-ı Hikmet = Ahmed Yesevi."},
  {q:"Ahilik teşkilatının temel ahlaki ilkesi ve içerdiği eğitim anlayışı?",a:"'Eline, beline, diline sahip ol' — bireyin ahlaki öz denetimini merkeze alır. Mesleki eğitim + ahlaki eğitimi usta-çırak ilişkisiyle bütünleştirir."},
@@ -3606,7 +3694,11 @@ quiz:[
    o:["Devlet bütçesine tam bağımlılık","Vakıf sistemiyle sağlanan mali bağımsızlık","Yalnızca öğrenci harçları","Yabancı devlet bağışları","Ticari kredi kullanımı"],c:1,
    w:"Nizamülmülk, medreselerin gelirlerini çarşı, hamam, dükkân ve arazi gibi VAKIF kaynaklarına bağlayarak onları devlet bütçesine doğrudan bağımlılıktan kurtardı. Bu mali bağımsızlık, kurumların istikrarını ve öğrencilere sunulan fırsat eşitliğini güçlendirdi.",
    b:"Dayanak: Modül 15 — Nizamiye Medreseleri ve Vakıf Sistemi"}
-]
+,
+ {s:"Bir yönetici sunumunda 'Toplumsal düzen ancak erdemli yöneticiyle mümkündür' diyerek Farabi'ye atıf yapacak, ardından liyakat ve denetimi vurgulayan Selçuklu eserine geçecektir. Sırasıyla hangi eserleri anmalıdır?",
+  o:["Kutadgu Bilig – Siyasetnâme","El-Medinetü'l-Fâzıla – Siyasetnâme","Siyasetnâme – El-Medinetü'l-Fâzıla","El-Medinetü'l-Fâzıla – Kutadgu Bilig","Türkiye'nin Maarif Davası – Siyasetnâme"],c:1,
+  w:"Farabi → <b>El-Medinetü'l-Fâzıla</b>; liyakat-adalet-denetim vurgulu Selçuklu eseri → Nizâmülmülk'ün <b>Siyasetnâme</b>'si. Siyasetnâme'nin Osmanlı sanılması klasik çeldiricidir.",
+  b:"Dayanak: Modül 15 — Türk-İslam Yönetim Düşüncesi"}]
 },
 m2:{
 ozet:`
@@ -3764,7 +3856,8 @@ harita:{
     {k:"TYMM uyumu",v:"bütüncül maarif anlayışı"},
     {k:"Eleştiri 1",v:"performans/çıktı odağına kayma riski"},
     {k:"Eleştiri 2",v:"öğretmen özerkliğini sınırlama"}]}
- ]},
+ ,
+  {t:"Müfredat Uyumu",kids:[{k:"Yatay uyum",v:"aynı düzey şubeler arası"},{k:"Dikey uyum",v:"üst sınıfa hazırlık"}]}]},
 tablo:`
 <div class="blk">
   <h3>Tablo 1 — Hallinger & Murphy 3 Boyut</h3>
@@ -3806,7 +3899,8 @@ match:[
    ["Misyon","Somut hedef / uygulama"],
    ["Zaman koruma","Anons teneffüste yapılır"],
    ["Kültür mimarı","Öğrenme odaklı iklim kuran müdür"]]}
-],
+,
+ {name:"Uyum → Tanım",pairs:[["Yatay uyum","Aynı düzey şubeler arası eşitlik"],["Dikey uyum","Üst sınıfa hazırlık"]]}],
 cards:[
  {q:"Hallinger & Murphy öğretim liderliği modelinin üç temel boyutu?",a:"① Okul misyonunun tanımlanması · ② Öğretim programının yönetimi · ③ Olumlu öğrenme ikliminin geliştirilmesi."},
  {q:"Vizyon ile misyon arasındaki fark nedir?",a:"VİZYON = okulun ulaşmak istediği genel yön/ufuk (nereye). MİSYON = bu vizyona ulaştıracak somut hedefler ve uygulamalar (hangi değer/amaçla)."},
@@ -3856,7 +3950,11 @@ quiz:[
    o:["Bütçe açığı riski","Aşırı bireysellik riski","Teknoloji bağımlılığı riski","Merkeziyetçilik riski","Öğretmen özerkliğini yok sayıp performans baskısına dönüşme riski"],c:4,
    w:"Ders notu, öğretim liderliğinin performans/akademik çıktı baskısıyla özdeşleşip öğretmen özerkliğini ikinci plana itebileceği eleştirisini yapar. Güven temelli mesleki gelişim ve özerkliğe saygı, bu daraltıcı riske karşı denge kurar.",
    b:"Dayanak: Modül 2 — Öğretim Liderliğinin Sınırları ve Güven Temelli Gelişim"}
-]
+,
+ {s:"Bir okulda aynı sınıf düzeyindeki iki şube arasında ilerleme farkı büyümüştür. Müdürün 'yatay uyum' ilkesi gereği yapması gereken hangisidir?",
+  o:["Mesleki özerklik gereği farklılıkları kabul etmek","Zümreye, her şubenin temel öğrenme çıktılarına adil erişiminin zorunluluğunu hatırlatıp koordinasyonu sağlamak","Geride kalan şubenin dersine diğer öğretmeni sokmak","Durumu sınıfa özgü sayıp müdahale etmemek","Konuyu bir üst sınıfa devretmek"],c:1,
+  w:"Yatay uyum, <b>aynı düzeydeki şubelerde</b> temel kazanımlara adil erişimi hedefler; çözüm koordinasyondur. Müdahale etmemek veya ders devretmek uyumu sağlamaz.",
+  b:"Dayanak: Modül 2 — Müfredat Koordinasyonu"}]
 },
 m4:{
 ozet:`
@@ -4036,7 +4134,8 @@ harita:{
     {k:"MYM/ÇAM 2. aşama",v:"%10-15 için küçük grup hedefli destek"},
     {k:"MYM/ÇAM 3. aşama",v:"yoğun, bireyselleştirilmiş, uzman desteği"},
     {k:"Kilit soru",v:"'Öğrenciye ne tür destek sunuldu?'"}]}
- ]},
+ ,
+  {t:"SDÖ Bileşenleri",kids:[{k:"Öz farkındalık",v:"duygu ve değer tanıma"},{k:"Öz yönetim",v:"dürtü kontrolü"},{k:"Sosyal farkındalık",v:"empati"},{k:"İlişki becerileri",v:"iş birliği"},{k:"Sorumlu karar",v:"etik seçim"}]}]},
 tablo:`
 <div class="blk">
   <h3>Tablo 1 — BEP vs FEP</h3>
@@ -4093,7 +4192,8 @@ match:[
    ["MYM / ÇAM","Üç aşamalı, tepkiye göre ayarlanan destek"],
    ["ÇAM 2. aşama","%10-15 için küçük grup desteği"],
    ["ÇAM 1. aşama","Tüm sınıfa nitelikli öğretim + evrensel tarama"]]}
-],
+,
+ {name:"Bileşen → Tanım",pairs:[["Öz farkındalık","Kendi duygularını tanıma"],["Öz yönetim","Dürtü ve davranış kontrolü"],["Sosyal farkındalık","Empati ve saygı"],["Sorumlu karar verme","Etik ve sonuç odaklı seçim"]]}],
 cards:[
  {q:"Kapsayıcı eğitimin altın kuralı nedir (eşitlik-hakkaniyet ayrımı)?",a:"Kapsayıcı eğitim EŞİTLİĞİ değil HAKKANİYETİ, aynı uygulamayı değil öğrencinin İHTİYACINA UYGUN DESTEĞİ esas alır."},
  {q:"BEP ile FEP arasındaki temel fark nedir?",a:"BEP = özel eğitim ihtiyacı olan öğrenci için performans-hedef-yöntem-izleme; kurumsal karşılığı destek eğitim odası. FEP = özel yetenekli öğrenci için zenginleştirme-derinleştirme; kurumsal karşılığı BİLSEM."},
@@ -4144,7 +4244,11 @@ quiz:[
    o:["Tıbbi / bireysel yetersizlik modeli","Klasik disiplin modeli","Müdahaleye Yanıt / Çok Aşamalı Müdahale (MYM/ÇAM) Yaklaşımı","Salt yerleştirme modeli","Sıralama ve eleme modeli"],c:2,
    w:"MYM/ÇAM (Müdahaleye Yanıt / Çok Aşamalı Müdahale), güçlüğü yalnızca bireysel yetersizlikle açıklamaz; sınıf öğretiminin niteliğini, farklılaştırmayı ve öğrencinin sunulan DESTEĞE verdiği yanıtı inceler. Böylece 'Öğrenciye ne tür destek sunuldu?' sorusu öne çıkar.",
    b:"Dayanak: Modül 4 — Müdahaleye Yanıt ve Çok Aşamalı Müdahale (MYM/ÇAM)"}
-]
+,
+ {s:"Bir yönetici; öğrencilerin öz farkındalık, öz yönetim, sosyal farkındalık, ilişki becerileri ve sorumlu karar verme becerilerini geliştirmeyi programlaştırmaktadır. Bu beceri kümesi hangisidir?",
+  o:["Üst düzey düşünme becerileri","Sosyal duygusal öğrenme becerileri","Dijital okuryazarlık becerileri","Mesleki yeterlikler","Öğrenme çıktıları"],c:1,
+  w:"Bu beş bileşen <b>sosyal duygusal öğrenme (SDÖ)</b> becerileridir; kapsayıcı eğitim ve psikolojik güvenlikle birlikte bütüncül okul yaklaşımının parçasıdır.",
+  b:"Dayanak: Modül 4 — Sosyal Duygusal Öğrenme"}]
 },
 m10:{
 ozet:`
@@ -4330,7 +4434,8 @@ harita:{
     {k:"Afet okuryazarlığı",v:"risk değerlendirme + bilgiyi uygulama"},
     {k:"Tatbikat türleri",v:"masa başı · tahliye · tam kapsamlı"},
     {k:"Dezenformasyon",v:"panik yaratan yanlış bilgi"}]}
- ]},
+ ,
+  {t:"Risk Hiyerarşisi",kids:[{k:"1 Ortadan kaldırma",v:"tehlikeyi yok et"},{k:"2 İkame",v:"daha az riskliyle değiştir"},{k:"3 Mühendislik",v:"havalandırma-izolasyon"},{k:"4 İdari",v:"talimat-eğitim"},{k:"5 KKD",v:"son çare"}]}]},
 tablo:`
 <div class="blk">
   <h3>Tablo 1 — Risk Kontrol Hiyerarşisi</h3>
@@ -4370,6 +4475,17 @@ tablo:`
     <tr><td>Zehirlenme</td><td><b>Kusturmadan</b> 112'ye bilgi verme</td></tr>
     <tr><td>OED şok önerisi</td><td>Hastaya <b>kimse dokunmaz</b></td></tr>
   </table></div>
+</div>
+<div class="blk">
+  <h3>Tablo D — Risk Kontrol Hiyerarşisi</h3>
+  <div class="twrap"><table>
+    <tr><th>Sıra</th><th>Yöntem</th><th>Örnek</th></tr>
+    <tr><td>1</td><td>Ortadan kaldırma</td><td>Tehlikeli süreci tümüyle bırakma</td></tr>
+    <tr><td>2</td><td><b>İkame</b></td><td>Riskli kimyasalı az riskliyle değiştirme</td></tr>
+    <tr><td>3</td><td>Mühendislik kontrolü</td><td>Havalandırma · çeker ocak</td></tr>
+    <tr><td>4</td><td>İdari kontrol</td><td>Talimat · eğitim · işaretleme</td></tr>
+    <tr><td>5</td><td>KKD</td><td>Gözlük · eldiven <span class="warn">(en son çare)</span></td></tr>
+  </table></div>
 </div>`,
 match:[
  {name:"Sıra → Önlem",pairs:[
@@ -4393,7 +4509,8 @@ match:[
    ["Zehirlenme","Kusturma, 112'ye bildir"],
    ["OED şok önerisi","Kimse hastaya dokunmaz"],
    ["Hava yolu tıkanıklığı","Heimlich manevrası uygula"]]}
-],
+,
+ {name:"Önlem → Basamak",pairs:[["Riskli kimyasalı değiştirme","İkame"],["Çeker ocak kurma","Mühendislik"],["Talimat ve eğitim","İdari kontrol"],["Eldiven-gözlük","KKD"]]}],
 cards:[
  {q:"Risk kontrolünde uygulanan önlemlerin sırası nedir?",a:"Tehlikeyi KAYNAĞINDA ortadan kaldır → daha az tehlikeli yöntem → teknik önlemler → idari düzenlemeler → KİŞİSEL KORUNMA (EN SON)."},
  {q:"Afet yönetim döngüsünün 4 aşaması nedir?",a:"ZARAR AZALTMA → HAZIRLIK → MÜDAHALE → İYİLEŞTİRME."},
@@ -4445,7 +4562,11 @@ quiz:[
    o:["Zümre öğretmenler kurulu","Okul Aile Birliği","Okul Kriz Müdahale Ekibi (OKME)","Öğrenci Davranışlarını Değerlendirme Kurulu","Rehberlik ve Psikolojik Danışma Servisi"],c:2,
    w:"Proaktif hazırlık kapsamında müdür liderliğinde müdür yardımcısı, rehber öğretmen ve sınıf öğretmenlerinden oluşan, sene başında resmen görevlendirilen ekip OKME (Okul Kriz Müdahale Ekibi)'dir. Diğer kurullar farklı işlevlere sahiptir.",
    b:"Dayanak: Modül 10 — Proaktif Hazırlık ve OKME"}
-]
+,
+ {s:"Kimya laboratuvarında yüksek risk taşıyan bir madde kullanıldığını gören müdür, maddeyi daha az riskli bir eşdeğeriyle değiştirtmiştir. Bu karar risk kontrol hiyerarşisinde hangi basamaktır ve hangisinden sonra gelir?",
+  o:["İkame · ortadan kaldırmadan sonra","Mühendislik kontrolü · ikameden sonra","İdari kontrol · mühendislikten sonra","KKD · en son basamak","Ortadan kaldırma · ilk basamak"],c:0,
+  w:"Hiyerarşi: ortadan kaldırma → <b>ikame</b> → mühendislik kontrolü → idari kontrol → KKD. Maddeyi değiştirmek ikamedir ve yalnızca ortadan kaldırmadan sonra gelir.",
+  b:"Dayanak: Modül 10 — Risk Kontrol Hiyerarşisi"}]
 },
 m13:{
 ozet:`
@@ -4517,9 +4638,10 @@ ozet:`
   <div class="twrap"><table>
     <tr><th>Düşünür</th><th>Eser / Kavram</th><th>Ana fikir</th></tr>
     <tr><td><b>Mümtaz Turhan</b></td><td><span class="hl">Kültür Değişmeleri</span></td><td>Modernleşmede okulun rolünü <b>millî bir sentez</b> çerçevesinde ele alır</td></tr>
-    <tr><td><b>Nurettin Topçu</b></td><td><span class="hl">İçtimai Mektep</span> · Türkiye'nin Maarif Davası</td><td>Okul toplumun <b>organik parçasıdır</b>; toplumdan ve hayattan kopuk olamaz</td></tr>
+    <tr><td><b>İsmayıl Hakkı Baltacıoğlu</b></td><td><span class="hl">İçtimaî Mektep</span></td><td>Okul toplumun <b>organik parçasıdır</b>; hayatla iç içedir</td></tr>
+    <tr><td><b>Nurettin Topçu</b></td><td><span class="hl">Türkiye'nin Maarif Davası</span></td><td>Okul yalnızca meslek değil <b>şahsiyet</b> kazandırır</td></tr>
   </table></div>
-  <p style="margin-top:8px"><b>İçtimai Mektep</b> = toplumsal okul. Okulu toplumsal duyarlılığın merkezi sayar; okul yalnızca meslek kazandıran değil, <b>şahsiyet inşa eden</b> kurumdur.</p>
+  <p style="margin-top:8px"><b>İçtimaî Mektep</b> = toplumsal okul (<b>Baltacıoğlu</b>): okul toplumun organik parçasıdır. <b>Maarif Davası</b> (<b>Topçu</b>): okul yalnızca meslek kazandıran değil, <b>şahsiyet inşa eden</b> kurumdur. <span class="hl">Bu ikisini karıştırma — sınavda ikisi de ayrı soru olarak çıktı.</span></p>
 </div>`,
 poster:`
 <div class="po-hero">
@@ -4587,7 +4709,8 @@ harita:{
     {k:"Paydaş teorisi",v:"esnaf, STK, bölge halkı dâhil ilişkiler"},
     {k:"Kriz anı",v:"okul = güvenli liman"},
     {k:"Liderlik",v:"sağduyulu, sükunet sağlayan"}]}
- ]},
+ ,
+  {t:"Toplum-Okul",kids:[{k:"Mümtaz Turhan",v:"Kültür Değişmeleri · millî sentez"},{k:"Baltacıoğlu",v:"İçtimaî Mektep · organik parça"},{k:"Nurettin Topçu",v:"Maarif Davası · şahsiyet"}]}]},
 tablo:`
 <div class="blk">
   <h3>Tablo 1 — 3 Yeni Yaklaşım</h3>
@@ -4613,6 +4736,15 @@ tablo:`
     <tr><td>Taban</td><td>Yasal + ekonomik görevler</td></tr>
     <tr><td><b>Tepe</b></td><td><b>Gönüllü + ahlaki faaliyetler</b></td></tr>
   </table></div>
+</div>
+<div class="blk">
+  <h3>Tablo D — Toplum-Okul Düşüncesi</h3>
+  <div class="twrap"><table>
+    <tr><th>Düşünür</th><th>Eser / Kavram</th><th>Ana fikir</th></tr>
+    <tr><td>Mümtaz Turhan</td><td>Kültür Değişmeleri</td><td>Modernleşmede okul · <b>millî sentez</b></td></tr>
+    <tr><td>Baltacıoğlu</td><td>İçtimaî Mektep</td><td>Okul toplumun <b>organik parçası</b></td></tr>
+    <tr><td>Nurettin Topçu</td><td>Türkiye'nin Maarif Davası</td><td>Okul <b>şahsiyet</b> kazandırır</td></tr>
+  </table></div>
 </div>`,
 match:[
  {name:"Yaklaşım → Odak",pairs:[
@@ -4636,7 +4768,7 @@ cards:[
  {q:"Kurumsal sosyal sorumluluk piramidinin en üst basamağı nedir?",a:"GÖNÜLLÜ VE AHLAKİ FAALİYETLER — okulun yasal/ekonomik görevlerinin ötesinde toplum refahına proaktif katkısı."},
  {q:"Kültürel okuryazarlık nedir; yüzeysel veri toplamadan farkı ne?",a:"Çevrenin kültürel dokusunu anlayabilme becerisi. Yalnızca veri toplamakla sınırlı değildir — yerel örf-adet-toplumsal rollerin ARKASINDAKİ ANLAM DÜNYASINI kavramayı gerektirir."},
  {q:"'Kültür Değişmeleri' kimin eseridir, ana fikri nedir?",a:"<b>Mümtaz Turhan</b>. Modernleşme sürecinde okulun üstlenmesi gereken rolü <b>millî bir sentez</b> çerçevesinde ele alır."},
- {q:"'İçtimai Mektep' yaklaşımı neyi ifade eder?",a:"<b>Nurettin Topçu</b>'nun yaklaşımı: okul toplumun <b>organik bir parçasıdır</b>, toplumsal duyarlılığın merkezidir; toplumdan ve hayattan kopuk olamaz."}
+ {q:"'İçtimaî Mektep' kime aittir, 'Türkiye'nin Maarif Davası' kime?",a:"İçtimaî Mektep = <b>İsmayıl Hakkı Baltacıoğlu</b> (okul toplumun organik parçası). Türkiye'nin Maarif Davası = <b>Nurettin Topçu</b> (okul şahsiyet kazandırır). Sınavda ikisi ayrı soru olarak çıktı."}
 ],
 quiz:[
  {s:"Bir okul müdürü, matematik dersinde yüzde-oran konusunu bölgedeki üreticilerin pazar fiyatlandırması üzerinden işletmiş; tarih dersini mahallenin köklü ailelerinin sözlü tarih anlatılarıyla zenginleştirmiştir. Bu uygulama hangi yaklaşıma örnektir?",
@@ -4679,7 +4811,11 @@ quiz:[
    o:["Ziya Gökalp","Mümtaz Turhan","Hasan Âli Yücel","İsmail Hakkı Baltacıoğlu","Nurettin Topçu"],c:3,
    w:"Okulun toplumun organik bir parçası olması, eğitimin hakiki işler ve toplumsal ihtiyaçlar üzerinden şekillenmesi gerektiğini savunan 'sosyal okul / İçtimaî Mektep' anlayışı İSMAİL HAKKI BALTACIOĞLU'na aittir. Mümtaz Turhan ise 'Kültür Değişmeleri' ile anılır.",
    b:"Dayanak: Modül 13 — İsmail Hakkı Baltacıoğlu ve Sosyal Okul"}
-]
+,
+ {s:"Bir müdür, okulu 'toplumun organik bir parçası' sayan ve toplumsal duyarlılığı merkeze alan yaklaşımı benimsediğini söylemektedir. Bu anlayış hangi kavramla ifade edilir ve kime aittir?",
+  o:["Kültür Değişmeleri · Mümtaz Turhan","İçtimaî Mektep · İsmayıl Hakkı Baltacıoğlu","Erdemli Şehir · Farabi","Maarif Davası · Ziya Gökalp","Millî Sentez · Hasan Âli Yücel"],c:1,
+  w:"<b>İçtimaî Mektep</b> İsmayıl Hakkı Baltacıoğlu'na aittir. <b>Türkiye'nin Maarif Davası</b> Nurettin Topçu'nun, <b>Kültür Değişmeleri</b> ise Mümtaz Turhan'ındır — üçü de ayrı ayrı soruldu.",
+  b:"Dayanak: Modül 13 — Kültüre ve Topluma Duyarlı Yönetim"}]
 },
 m14:{
 ozet:`
@@ -5116,7 +5252,8 @@ harita:{
     {k:"Tükenmişlik",v:"takdirle başla, yansıtıcı sorular"},
     {k:"Kırsal yalnızlık",v:"temel ihtiyaç + paylaşım + anlamı görünür kılma"},
     {k:"Okulda şiddet",v:"onarıcı adalet; ıslah + ilişki onarımı"}]}
- ]},
+ ,
+  {t:"Değer Odaklı İnsan",kids:[{k:"Eşref-i mahlukat",v:"yaratılmışların en şereflisi"},{k:"Personel",v:"kaynak değil emanet"}]}]},
 tablo:`
 <div class="blk">
   <h3>Tablo 1 — İki Performans Anlayışı</h3>
@@ -5213,7 +5350,11 @@ quiz:[
    o:["Yalnızca evrak arşivleme","Yalnızca nöbet çizelgesi hazırlama","Motivasyon, mesleki gelişim ve örgütte tutma (elde tutma)","Yalnızca izin işlemleri","Yalnızca ceza süreçleri"],c:2,
    w:"Personel yönetiminin temel boyutlarından biri çalışanların motivasyonu, geliştirilmesi ve ÖRGÜTTE TUTULMASIDIR (elde tutma). Nitelikli öğretmenin kalıcılığı; motivasyon, mesleki gelişim fırsatları ve olumlu iklimle sağlanır.",
    b:"Dayanak: Modül 16 — Motivasyon ve Örgütte Tutma"}
-]
+,
+ {s:"Değer odaklı personel yönetiminde insanın 'yaratılmışların en şereflisi' kabul edilmesi neyi ifade eder?",
+  o:["Personelin maliyet kalemi sayılmasını","İnsanın eşref-i mahlukat oluşu; personelin kaynak değil emanet görülmesini","Kıdemin tek ölçüt olmasını","Performansın yalnızca sayısal ölçülmesini","Hiyerarşinin katı biçimde korunmasını"],c:1,
+  w:"<b>Eşref-i mahlukat</b> anlayışı; yönetimi teknik bir hesaplama değil, ahlaki ve manevi temelli insan ilişkileri bütünü olarak görür. Personel kaynak değil <b>emanettir</b>.",
+  b:"Dayanak: Modül 16 — Değer Odaklı Personel Yönetimi"}]
 },
 m17:{
 ozet:`
@@ -5401,7 +5542,8 @@ harita:{
     {k:"Aklıselim",v:"akıl-duygu dengesi, sağlıklı analiz"},
     {k:"Kalbiselim",v:"empati ve anlayış"},
     {k:"Zevkiselim",v:"estetik, uyumlu, huzurlu iklim"}]}
- ]},
+ ,
+  {t:"3A+S Modeli",kids:[{k:"Algıla",v:"duyguyu ve iklimi fark et"},{k:"Adlandır",v:"doğru isimlendir"},{k:"Ayarla",v:"düzenleme stratejisi"},{k:"Sürdür",v:"kurumsal duygusal iklim"}]}]},
 tablo:`
 <div class="blk">
   <h3>Tablo 1 — 3 Sınıflama</h3>
@@ -5429,6 +5571,16 @@ tablo:`
     <tr><td>Dikkat yönlendirme</td><td>Kaçınma</td></tr>
     <tr><td>Duygusal farkındalık</td><td>Dürtüsel tepki</td></tr>
   </table></div>
+</div>
+<div class="blk">
+  <h3>Tablo D — İki Model Yan Yana</h3>
+  <div class="twrap"><table>
+    <tr><th></th><th>Selye · Genel Uyum Sendromu</th><th>3A+S Modeli</th></tr>
+    <tr><td>Konu</td><td>Stres tepkisi</td><td>Duygu yönetimi</td></tr>
+    <tr><td>Aşamalar</td><td><b>Alarm → Direnç → Tükenme</b></td><td><b>Algıla → Adlandır → Ayarla + Sürdür</b></td></tr>
+    <tr><td>Düzey</td><td>Bireysel-fizyolojik</td><td>Bireysel + <b>kurumsal iklim</b></td></tr>
+    <tr><td>Dayanak</td><td>Selye (1973)</td><td>Lazarus · Gross · Goleman</td></tr>
+  </table></div>
 </div>`,
 match:[
  {name:"Ölçüt → Türler",pairs:[
@@ -5447,7 +5599,8 @@ match:[
    ["Duyguları bastırma","İşlevsiz — etkiyi artırır"],
    ["Orta düzey stres","Performansı destekler"],
    ["Kronik stres","Tükenmişliğe yol açar"]]}
-],
+,
+ {name:"Model → Aşama",pairs:[["Selye · GUS","Alarm-Direnç-Tükenme"],["3A+S","Algıla-Adlandır-Ayarla-Sürdür"],["Lazarus","Bilişsel değerlendirme"],["Goleman","Duygusal zekâ"]]}],
 cards:[
  {q:"Stresin üç sınıflama ölçütü ve karşılık gelen türleri nedir?",a:"SÜREYE GÖRE: akut ↔ kronik · İŞLEVİNE GÖRE: olumlu ↔ olumsuz · ETKİSİNE GÖRE: geliştirici ↔ engelleyici."},
  {q:"Stres ile performans arasındaki ilişki nasıldır?",a:"DOĞRUSAL DEĞİLDİR. Düşük stres motivasyon eksikliğine yol açar; ORTA DÜZEY dikkat-odaklanma-enerjiyi artırarak performansı DESTEKLER; yüksek stres bilişsel yükü artırıp hatalı kararlara neden olur. Amaç: stresi yok etmek değil, YÖNETİLEBİLİR düzeyde tutmak."},
@@ -5498,7 +5651,11 @@ quiz:[
    o:["Tek tip müdahale","Yalnızca bireysel terapi","Yalnızca ceza sistemi","Çok katmanlı (kademeli) destek / Müdahaleye Yanıt","Rastgele destek"],c:3,
    w:"Önce tüm öğrencilere genel (1. basamak), yanıt vermeyenlere odaklı grup (2. basamak), yoğun devam edenlere bireysel/sevk (3. basamak) uygulanan yapı ÇOK KATMANLI (KADEMELİ) DESTEK / Müdahaleye Yanıt yaklaşımıdır; kaynakları ihtiyaca göre kullanır.",
    b:"Dayanak: Modül 17 — Çok Katmanlı Destek (Sınav Kaygısı Örneği)"}
-]
+,
+ {s:"Bir müdür, veli görüşmesinde kalp atışlarının hızlandığını fark ediyor; bunu 'öfke' olarak adlandırıyor, nefesini düzenleyip tonunu alçaltıyor ve sonrasında okulda duygusal iklimi güçlendirecek düzenlemeler planlıyor. Bu akış hangi modele karşılık gelir?",
+  o:["Selye · Genel Uyum Sendromu","3A+S Bütüncül Duygu Yönetimi","Mikro müdahale yaklaşımı","Çözüm odaklı duygu yönetimi","Duygusal zekâ kuramı"],c:1,
+  w:"Sırasıyla <b>Algıla → Adlandır → Ayarla → Sürdür</b>. Son adımın <b>kurumsal</b> iklime uzanması 3A+S'yi diğerlerinden ayırır; Selye'nin modeli ise stres tepkisinin fizyolojik aşamalarını anlatır.",
+  b:"Dayanak: Modül 17 — 3A+S Modeli"}]
 },
 m18:{
 ozet:`
@@ -6254,7 +6411,8 @@ harita:{
     {k:"Dijital olgunluk",v:"altyapı, yeterlik, entegrasyon, veri kapasitesi"},
     {k:"Yeşil olgunluk",v:"enerji, kaynak, atık, çevre eğitimi"},
     {k:"Programlar",v:"Eko-Okullar · Enerji Dostu Mavi Yeşil Okul · Yeşil Vatan"}]}
- ]},
+ ,
+  {t:"İkiz Dönüşüm",kids:[{k:"Dijital ikiz",v:"fiziksel varlığın dijital kopyası"},{k:"Sıfır atık",v:"geri dönüşüm · dijital belge"},{k:"Siber güvenlik",v:"ortak hesap = risk"}]}]},
 tablo:`
 <div class="blk">
   <h3>Tablo 1 — Platform → İşlev</h3>
@@ -6285,6 +6443,15 @@ tablo:`
     <tr><td>Gözden geçirme</td><td><b>Yılda en az 1 kez</b></td></tr>
     <tr><td>İhlal kaynağı</td><td><b>İnsan hatası</b> (teknik değil)</td></tr>
   </table></div>
+</div>
+<div class="blk">
+  <h3>Tablo D — İkiz Dönüşümün İki Ayağı</h3>
+  <div class="twrap"><table>
+    <tr><th></th><th>Dijital ayak</th><th>Yeşil ayak</th></tr>
+    <tr><td>Kavram</td><td>Dijital ikiz · yapay zekâ · siber güvenlik</td><td>Sıfır atık · ekolojik ayak izi</td></tr>
+    <tr><td>Okulda</td><td>Robotik · blok programlama · Arduino (STEM)</td><td>Geri dönüşüm · dijital belge · plastiği azaltma</td></tr>
+    <tr><td>Ders</td><td>Bilişim dersleri</td><td>Çevre Eğitimi ve İklim Değişikliği</td></tr>
+  </table></div>
 </div>`,
 match:[
  {name:"Platform → İşlev",pairs:[
@@ -6304,7 +6471,8 @@ match:[
    ["Karanlık veri","Gereksiz veri birikimi"],
    ["Erişim ilkesi","İzin verilmedikçe yasak"],
    ["ENISA","AB Siber Güvenlik Ajansı"]]}
-],
+,
+ {name:"Kavram → Alan",pairs:[["Dijital ikiz","Dijital ayak"],["Sıfır atık","Yeşil ayak"],["Ortak şifre kullanımı","Siber risk"],["Çevre Eğitimi dersi","Ortaokul müfredatı"]]}],
 cards:[
  {q:"İkiz dönüşümün tek cümlelik tanımı ve iki boyutu nedir?",a:"DİJİTALLEŞMENİN ARAÇ, SÜRDÜRÜLEBİLİRLİĞİN HEDEF olduğu, iki sürecin birbirinden ayrı düşünülemeyeceği bütüncül dönüşüm. İki boyut: EŞZAMANLILIK (aynı dönemde) + ETKİLEŞİM (birbirini güçlendirme)."},
  {q:"Okul yöneticisinin KVKK kapsamındaki rolü nedir; ihlallerin ana kaynağı hangisidir?",a:"Yönetici, 6698 sayılı KVKK kapsamında 'VERİ SORUMLUSU'dur; okulda işlenen tüm kişisel verilerin güvenliğinden doğrudan sorumludur. İhlallerin önemli bölümü TEKNİK AÇIKTAN DEĞİL, İNSAN HATASINDAN kaynaklanır (phishing, zayıf parola, güvensiz cihaz, yanlış yetkilendirme)."},
@@ -6355,7 +6523,11 @@ quiz:[
    o:["2053 Net Sıfır Emisyon Hedefi ve On İkinci Kalkınma Planı","Yalnızca Kyoto Protokolü","Yalnızca Lozan Antlaşması","Tanzimat Fermanı","Sevr Antlaşması"],c:0,
    w:"Türkiye, 2053 NET SIFIR Emisyon Hedefi ve On İkinci Kalkınma Planı ile ikiz dönüşümü kalkınma vizyonunun merkezine yerleştiren aktif bir aktör konumundadır; bu, eğitim kurumlarının yönetim anlayışını da yeniden düşünmeyi gerektirir.",
    b:"Dayanak: Modül 20 — Türkiye'nin İkiz Dönüşüm Vizyonu"}
-]
+,
+ {s:"Bir okulda tüm öğretmenler ortak bilgisayarı aynı kullanıcı adı ve şifreyle kullanmaktadır. Bu durumun temel sakıncası hangisidir?",
+  o:["İnternet hızını düşürmesi","İşlemlerin kime ait olduğunun izlenememesi ve hesap verebilirliğin ortadan kalkması","Yazılım lisans maliyetini artırması","Donanım ömrünü kısaltması","Yedekleme süresini uzatması"],c:1,
+  w:"Ortak hesap, <b>izlenebilirlik ve hesap verebilirliği</b> ortadan kaldırır; yetkisiz erişim ve veri güvenliği riskini büyütür. Siber güvenlik kültürünün temel ilkesi kişiye özel kimliktir.",
+  b:"Dayanak: Modül 20 — Siber Güvenlik Kültürü"}]
 }
 };
 
