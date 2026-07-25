@@ -18,8 +18,12 @@ sistem yazı tipine düşer).
 - 🎯 Vaka soruları (optik formlu mini sınav)
 
 **📄 Çıkmış Sorular (25 Temmuz 2026 e-Sınavı):**
-- MEB Yönetici Yetiştirme Program Sonu Değerlendirme e-Sınavının **192 gerçek sorusu**
+- MEB Yönetici Yetiştirme Program Sonu Değerlendirme e-Sınavının **195 gerçek sorusu**
 - Cevaplar **resmî cevap anahtarından** doğrulanmıştır (3 oturumun tamamı)
+- **Kademe seçimi:** Gerçek sınavda herkes ortak soruları çözer, üstüne kendi kademesinin
+  5 sorusu gelir. Temel Eğitim / Ortaöğretim / Özel Eğitim seçilince yalnızca ilgili
+  sorular gösterilir (165 ortak + 10 kademeye özel)
+- Her soru; oturum, rol (Müdür / Müdür Yardımcısı), kademe ve modül etiketi taşır
 - Oturuma göre, modüle göre, karışık 60 soru veya "hiç çözmediklerim" olarak çalışma
 - Yanlışların ayrı listede birikir, tekrar çözülebilir
 
