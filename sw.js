@@ -23,7 +23,8 @@ self.addEventListener("install", (e) => {
 self.addEventListener("activate", (e) => {
   e.waitUntil(
     caches.keys()
-      .then((keys) => Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k))))
+      // yalnızca bu uygulamanın (yd-) eski önbelleklerini temizle; diğer uygulamaların cache'ine dokunma
+      .then((keys) => Promise.all(keys.filter((k) => k.startsWith("yd-") && k !== CACHE).map((k) => caches.delete(k))))
       .then(() => self.clients.claim())
   );
 });
