@@ -412,6 +412,7 @@ body.dark .btn-main{color:#10241D}
 .mic{margin-right:7px}
 /* ===== ÇIKMIŞ SINAV ===== */
 .past-start{background:linear-gradient(135deg,var(--slate,#3F5B78),var(--accent-ink));color:#fff;border:none}
+.hizli-start{background:linear-gradient(135deg,var(--gold),var(--brass-deep,#8A5F2C));color:#fff;border:none}
 .pt-hero{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:var(--shadow);margin-bottom:14px}
 .pt-hero h3{font-family:'Fraunces',serif;font-size:1.05rem;margin:0 0 4px}
 .pt-hero p{font-size:.78rem;color:var(--soft);line-height:1.5;margin:0}
@@ -471,6 +472,7 @@ body.dark .btn-main{color:#10241D}
     <button class="btn btn-main exam-start" id="actExam">⏱ Karma Deneme Başlat</button>
     <button class="btn btn-main full-start" id="actFull">🎓 TAM DENEME · 60 Soru · 75 dk</button>
     <button class="btn btn-main past-start" id="actPast">📄 ÇIKMIŞ SORULAR · 25 Tem 2026</button>
+    <button class="btn btn-main hizli-start" id="actHizli">⚡ HIZLI BİLGİ · kısa sorular</button>
 
     <section class="radar-sec">
       <div class="sec-label eyebrow">Hazırlık Radarı</div>
@@ -809,6 +811,83 @@ const PAST=[
 {k:"135901",m:"m8",t:3,g:"ozel",r:"myard",s:"HYS(Harcama Yönetim Sistemi); okul müdürlükleri, ilçe ve il millî eğitim müdürlükleri tarafından hangisini takip etmek amacıyla kullanılmamaktadır?",o:["Satın alma","Ödeme emri oluşturma","Özlük işlemleri","Bütçe","Harcama belgelerini düzenleme"],c:2},
 {k:"135902",m:"m11",t:3,g:"ozel",r:"myard",s:"Mesleki Özel Eğitim Mükemmeliyet Merkezleri (MÖZEM) ile ilgili hangisi yanlıştır?",o:["Özel eğitim ihtiyacı olan öğrencilerin mesleki becerilerini geliştirmelerini hedeflemektedir.","Özel eğitim ihtiyacı olan öğrencilerin iş hayatına daha güçlü bir şekilde hazırlanarak katılmalarına destek olmayı hedeflemektedir.","Özel eğitim öğrencilerini yalnızca teorik bilgiyle değil, uygulamaya dayalı ve sektör standartlarına uygun eğitim ortamlarıyla desteklemektir.","Özel eğitim öğrencilerinin mesleki yeterlilikleri artırılmakta, ancak durumları gereği istihdam edilebilirlikleri ile ilgili planlama yapılamamaktadır.","İş dünyasıyla kurulan iş birlikleri sayesinde özel eğitim ihtiyacı olan öğrencilerin gerçek çalışma ortamlarını tanımaları ve mesleki deneyim kazanmaları sağlanmaktadır."],c:3}
 ];
+
+/* ===== HIZLI BİLGİ SORULARI =====
+   Gerçek sınavın baskın formatı (kısa tanım / olumsuz kök / kim-ne) ile yazılmış,
+   kaynak: MEB Yönetici Yetiştirme Programı Ders Notları (17 Temmuz 2026).
+   g: kademe etiketi (ortak/temel/orta/ozel) ===== */
+const HIZLI=[
+/* --- M11 · KURUMA ÖZGÜ · ÖZEL EĞİTİM (en büyük boşluk) --- */
+{m:"m11",g:"ozel",s:"Mesleki Özel Eğitim Mükemmeliyet Merkezleri (MÖZEM) hangi eğitim düzeyinde hizmet verir?",o:["Okul öncesi","İlkokul","Ortaokul","Ortaöğretim","Yükseköğretim"],c:3,w:"MÖZEM, <b>ortaöğretim düzeyinde</b> mesleki eğitim sunan özel eğitim okullarının kurumsal kapasitesini güçlendirmek ve okul–sektör iş birliğini geliştirmek için kurulmuştur."},
+{m:"m11",g:"ozel",s:"Hangisi MÖZEM'in temel amaçlarından biri <b>değildir</b>?",o:["Özel eğitim öğrencilerinin mesleki becerilerini geliştirmek","İstihdam edilebilirliklerini güçlendirmek","Okul ile sektör arasındaki iş birliğini geliştirmek","Sektör standartlarına uygun uygulama ortamları sunmak","Öğrencileri yalnızca teorik bilgiyle donatmak"],c:4,w:"MÖZEM'in yaklaşımı öğrencileri <b>yalnızca teorik bilgiyle değil</b>, uygulamaya dayalı ve sektör standartlarına uygun ortamlarla desteklemektir. E seçeneği bu yaklaşımın tersidir."},
+{m:"m11",g:"ozel",s:"Özel Eğitim Uygulama Evleri hangi kurum bünyesinde kurulur?",o:["Rehberlik araştırma merkezleri","Özel eğitim uygulama okulları","Bilim ve sanat merkezleri","Halk eğitim merkezleri","Mesleki eğitim merkezleri"],c:1,w:"Uygulama evleri <b>Özel Eğitim Uygulama Okulları</b> bünyesinde kurulur ve öğrencilerin bağımsız yaşam becerilerini geliştirmeyi hedefler."},
+{m:"m11",g:"ozel",s:"Özel Eğitim Uygulama Evleri ile ilgili hangisi <b>yanlıştır</b>?",o:["Günlük yaşamda karşılaşılabilecek ortamlar örnek alınarak düzenlenir","Kişisel bakım, temizlik ve mutfak becerileri kazandırmayı amaçlar","Okul içerisinde 1+1 formatında evlerdir","Becerilerin gerçek hayata yakın koşullarda öğretilmesini sağlar","Öğrencilerin öğrendiklerini günlük hayata aktarmasını destekler"],c:2,w:"Uygulama evleri okulun içerisinde <b>1+0 formatında</b> düzenlenmiştir. Sınavda en sık çeldirici bu sayıdır."},
+{m:"m11",g:"ozel",s:"Özel Eğitim Hizmetleri Yönetmeliği'ne göre destek eğitim odasında grup eğitimi en fazla kaç öğrenciyle yürütülebilir?",o:["2","3","4","5","6"],c:1,w:"Destek eğitim odasında birebir eğitimin yanında, gerekirse <b>en fazla üç öğrencilik</b> grup eğitimi yürütülebilir. Planlama <b>BEP geliştirme birimi</b> doğrultusunda yapılır."},
+{m:"m11",g:"ozel",s:"Destek eğitim odası uygulaması ile ilgili hangisi <b>doğrudur</b>?",o:["Yalnızca okul saatleri içinde planlanabilir","Yalnızca okul saatleri dışında planlanabilir","Okul saatleri içinde ya da dışında planlanabilir","Yalnızca yaz döneminde açılabilir","Yalnızca birebir eğitim yapılabilir"],c:2,w:"Yönetmelik, destek eğitimin <b>okul saatleri içinde ya da dışında</b> planlanabileceğini düzenler."},
+{m:"m11",g:"ozel",s:"FM/DM sistemleri, indüksiyon döngü sistemleri ve ses alanı güçlendirme çözümleri hangi engel türüne yönelik yardımcı teknolojilerdir?",o:["Görme engelli","Bedensel engelli","İşitme engelli","Zihinsel engelli","Otizm spektrum bozukluğu"],c:2,w:"Bu araçlar <b>işitsel erişimi</b> güçlendirir; koklear implant ve canlı alt yazı araçlarıyla birlikte <b>işitme engelli</b> öğrenciler için kullanılır."},
+{m:"m11",g:"ozel",s:"Yardımcı teknoloji seçiminde temel ilke hangisidir?",o:["Tek bir teknoloji tüm öğrenciler için idealdir","En pahalı teknoloji en etkilidir","Bireyin yeti yitimine ve çevresel koşullarına göre belirlenir","Tüm okullarda aynı standart araç kullanılmalıdır","Teknoloji seçimi yalnızca aileye bırakılır"],c:2,w:"Tek bir teknoloji tüm öğrenciler için ideal değildir; öğrencinin <b>profili, dili ve sınıf akustiği</b> gibi koşullar kullanılacak teknolojiyi belirler."},
+{m:"m11",g:"ozel",s:"BEP (Bireyselleştirilmiş Eğitim Programı) sürecinde okul yönetiminin rolü ile ilgili hangisi <b>söylenemez</b>?",o:["BEP toplantılarını zamanında yürütmek","Destek eğitim odasını işlevsel hâle getirmek","Aileleri sürece katmak","Veri temelli izleme mekanizmaları kurmak","Süreci yalnızca öğretmenlerin sorumluluğuna bırakmak"],c:4,w:"Okul yönetimi kapsayıcı eğitimin <b>çevresel koşulu değil, merkezî uygulama dinamiğidir</b>. Yönetim katılmazsa BEP kâğıt üzerinde kalır."},
+/* --- M11 · ORTAÖĞRETİM --- */
+{m:"m11",g:"orta",s:"Yetenek sınavı ile öğrenci alan okullar arasında hangisi <b>yoktur</b>?",o:["Güzel sanatlar lisesi","Spor lisesi","Musiki programı uygulayan AİHL","Hafızlık programı uygulayan AİHL","Fen lisesi"],c:4,w:"Yetenek sınavı; <b>GSL, spor liseleri</b> ile musiki, hafızlık, geleneksel/çağdaş görsel sanatlar ve spor programı uygulayan <b>AİHL</b> için yapılır. Fen liseleri merkezî sınavla öğrenci alır."},
+{m:"m11",g:"orta",s:"Güzel sanatlar ve spor liselerinde yerleştirmeye esas puan nasıl hesaplanır?",o:["Yetenek sınavı %50 + OBP %50","Yetenek sınavı %70 + OBP %30","Yetenek sınavı %60 + OBP %40","Yalnızca yetenek sınavı puanı","Yalnızca OBP"],c:1,w:"Yerleştirme puanı = <b>Yetenek sınavı %70 + OBP %30</b>. OBP, 6-7-8. sınıf yıl sonu puanlarının ortalamasıdır."},
+{m:"m11",g:"orta",s:"Ortaöğretimde kuruma özgü yönetim uygulamaları arasında hangisi <b>sayılmaz</b>?",o:["Laboratuvar yönetimi","Yetenek sınavları","Destekleme ve yetiştirme kursları","Pansiyon hizmetleri","Kurum açma ve ad verme işlemleri"],c:4,w:"Ortaöğretim başlığı altında laboratuvar, yetenek sınavı, DYK, pansiyon, okul türleri ve dijital platformlar ele alınır. Kurum açma/ad verme <b>temel eğitim</b> kademesinin ağırlıklı konusudur."},
+{m:"m11",g:"orta",s:"Laboratuvar yönetiminde okul yöneticisinden beklenen süreçler arasında hangisi <b>yoktur</b>?",o:["Laboratuvar güvenliği","Risk yönetimi","Kimyasal güvenlik","Envanter kontrolü","Deney sonuçlarının bilimsel yayına dönüştürülmesi"],c:4,w:"Yöneticiden <b>güvenlik, risk, kimyasal güvenlik ve envanter kontrolü</b> süreçlerini etkin yürütmesi beklenir; bilimsel yayın bu kapsamda değildir."},
+/* --- M8 · BİLGİ SİSTEMLERİ (sınavda çok çıktı) --- */
+{m:"m8",g:"ortak",s:"İhale ve satın alma işlemlerinin elektronik ortamda yürütüldüğü platform hangisidir?",o:["MEBBİS","TEFBİS","EKAP","KBS","HYS"],c:2,w:"<b>EKAP</b> (Elektronik Kamu Alımları Platformu) ihale ve satın alma süreçlerini düzenler."},
+{m:"m8",g:"ortak",s:"Okulların mali süreçlerinin (gelir-gider) izlenmesini sağlayan sistem hangisidir?",o:["MEBBİS","TEFBİS","EKAP","MYS","e-Okul"],c:1,w:"<b>TEFBİS</b> (Türkiye'de Eğitimin Finansmanı ve Eğitim Harcamaları Bilgi Yönetim Sistemi) mali süreçlerin izlenmesini sağlar."},
+{m:"m8",g:"ortak",s:"Harcama ve ödeme süreçlerinin dijital ortamda yürütüldüğü sistem hangisidir?",o:["HYS/MYS","EKAP","MEBBİS","e-Okul","MEBİ"],c:0,w:"<b>HYS (Harcama Yönetim Sistemi) / MYS (Mali Yönetim Sistemi)</b> harcama ve ödeme süreçlerini dijital ortamda yürütür."},
+{m:"m8",g:"ortak",s:"Maaş ve muhasebe işlemlerinin yönetildiği sistem hangisidir?",o:["EKAP","KBS","TEFBİS","HYS","MEBİ"],c:1,w:"<b>KBS</b> maaş ve muhasebe işlemlerini yönetir; ek ders ve harcırah ödemeleri de KBS üzerinden hesaplanır."},
+{m:"m8",g:"ortak",s:"Personel ve yönetim işlemlerinin merkezî olarak yürütüldüğü sistem hangisidir?",o:["MEBBİS","EKAP","KBS","TEFBİS","MYS"],c:0,w:"<b>MEBBİS</b> personel ve yönetim işlemlerini merkezî olarak yürütür."},
+/* --- M17 · STRES VE DUYGU --- */
+{m:"m17",g:"ortak",s:"Hans Selye'nin Genel Uyum Sendromu modelinde stres tepkisinin aşamaları sırasıyla hangisidir?",o:["Alarm – Direnç – Tükenme","Direnç – Alarm – Uyum","Uyarılma – Değerlendirme – Tükenme","Alarm – Toparlanma – Direnç","Tükenme – Dengesizlik – Uyum"],c:0,w:"Selye'nin modeli stresin etkisini <b>alarm, direnç ve tükenme</b> aşamalarıyla açıklar."},
+{m:"m17",g:"ortak",s:"Okul yöneticileri için Bütüncül Duygu Yönetimi Modeli (3A+S) aşamaları hangisidir?",o:["Anla – Açıkla – Araştır + Sorgula","Algıla – Adlandır – Ayarla + Sürdür","Analiz – Aksiyon – Ayarla + Sonuç","Algıla – Aktar – Ayrıştır + Sürdür","Anla – Adlandır – Ayarla + Sonlandır"],c:1,w:"3A+S = <b>Algıla – Adlandır – Ayarla + Sürdür</b>. Son aşama, bireysel düzenlemenin ötesine geçip <b>kurumsal duygusal iklimi</b> sürdürmeyi içerir."},
+{m:"m17",g:"ortak",s:"3A+S Modeli hangi kuramlar üzerine temellendirilmiştir?",o:["Bilişsel değerlendirme, duygu düzenleme süreç modeli, duygusal zekâ","Klasik koşullanma, edimsel koşullanma, sosyal öğrenme","Bürokrasi, insan ilişkileri, sistem kuramı","İhtiyaçlar hiyerarşisi, çift faktör, X-Y kuramı","Dönüşümcü, otantik, hizmetkâr liderlik"],c:0,w:"Model; <b>Lazarus'un bilişsel değerlendirme</b>, <b>Gross'un duygu düzenleme süreç modeli</b> ve <b>Goleman'ın duygusal zekâ</b> kuramları üzerine kuruludur."},
+{m:"m17",g:"ortak",s:"Stresle ilgili hangisi <b>doğrudur</b>?",o:["Stres tamamen ortadan kaldırılması gereken bir durumdur","Kısa süreli stres her zaman performansı düşürür","Stres yalnızca dış baskıların sonucudur","Doğru tanınıp yönetilmesi gereken bir süreçtir","Aynı durum tüm bireylerde aynı tepkiyi doğurur"],c:3,w:"Stres <b>öznel</b> bir süreçtir; kısa süreli stres performansı destekleyebilir. Amaç yok etmek değil, <b>tanıyıp yönetmektir</b>."},
+/* --- M1 · KLASİK/NEO-KLASİK İSİMLER --- */
+{m:"m1",g:"ortak",s:"Hangisi Klasik Yönetim Yaklaşımı'nın temsilcilerinden biri <b>değildir</b>?",o:["Luther Gulick","Max Weber","Henri Fayol","Frederick Taylor","Chris Argyris"],c:4,w:"<b>Argyris</b>, örgütsel öğrenme (tek/çift döngülü öğrenme) ile modern yaklaşımda yer alır. Gulick, Weber, Fayol ve Taylor klasik yaklaşımın isimleridir."},
+{m:"m1",g:"ortak",s:"Hawthorne Araştırmaları'nı yürüten ve Neo-Klasik Yaklaşım'ın öncüsü sayılan kişi kimdir?",o:["Max Weber","Elton Mayo","Henri Fayol","Frederick Taylor","Luther Gulick"],c:1,w:"<b>Elton Mayo</b> ve arkadaşlarının Hawthorne araştırmaları, verimliliğin yalnızca fiziksel koşullara değil <b>sosyal ilişkiler ve aidiyete</b> de bağlı olduğunu gösterdi."},
+{m:"m1",g:"ortak",s:"Örgütleri çevresinden girdi alıp çıktıya dönüştüren yapılar olarak gören açık sistem yaklaşımı kimlerle anılır?",o:["Katz ve Kahn","Hallinger ve Murphy","Bolman ve Deal","Robbins ve Judge","Lazarus ve Folkman"],c:0,w:"<b>Katz ve Kahn</b> açık sistem yaklaşımını geliştirmiştir; örgütlerin kapalı sistem olarak analizi yetersiz kabul edilir."},
+{m:"m1",g:"ortak",s:"Örgütsel analizde yapısal, insan kaynakları, politik ve sembolik çerçeveleri öneren isimler kimlerdir?",o:["Katz ve Kahn","Bolman ve Deal","Robbins ve Judge","Lunenburg ve Ornstein","Hoy ve Miskel"],c:1,w:"<b>Bolman ve Deal</b>, yöneticilerin dört çerçeve (yapısal · İK · politik · sembolik) arasında geçiş yapmasını önerir."},
+{m:"m1",g:"ortak",s:"Chris Argyris'in örgütsel öğrenme kuramında vurguladığı, örgütsel değerlerin sorgulandığı öğrenme türü hangisidir?",o:["Tek döngülü öğrenme","Çift döngülü öğrenme","Takım öğrenmesi","Örtük öğrenme","Yaşam boyu öğrenme"],c:1,w:"Argyris, yalnızca hataları düzelten tek döngülü öğrenmenin ötesine geçen, <b>değerlerin sorgulandığı çift döngülü öğrenmeyi</b> vurgular."},
+/* --- M2 · ÖĞRETİM LİDERLİĞİ / KOORDİNASYON --- */
+{m:"m2",g:"ortak",s:"Aynı sınıf düzeyindeki farklı şubelerin temel öğrenme çıktılarına adil biçimde erişmesini sağlamaya yönelik koordinasyon ilkesi hangisidir?",o:["Dikey uyum","Yatay uyum","Örgütsel uyum","Program esnekliği","Mesleki özerklik"],c:1,w:"<b>Yatay uyum</b>, aynı düzeydeki şubeler arasında öğrenme çıktılarına erişimde eşitliği sağlar; dikey uyum ise sınıflar arası ardışıklığı ilgilendirir."},
+{m:"m2",g:"ortak",s:"Öğretim liderliğiyle ilgili hangisi <b>söylenemez</b>?",o:["Okul misyonu öğrenme odağında tanımlanmalıdır","Öğretmenlerin mesleki gelişimi desteklenmelidir","Öncelikli ve tek görev idari işleyişi sürdürmektir","Olumlu öğrenme iklimi için tedbirler alınmalıdır","Öğretim programlarının tutarlı uygulanması sağlanmalıdır"],c:2,w:"Öğretim liderliğinin özü, okulun asıl işi olan <b>öğrenmeyi merkeze almaktır</b>; idari işleyiş tek görev değildir."},
+/* --- M4 · KAPSAYICI EĞİTİM --- */
+{m:"m4",g:"ortak",s:"Desteklerin tüm öğrenciler için başlayıp gereksinim arttıkça yoğunlaştığı ve bireyselleştiği yaklaşım hangisidir?",o:["Evrensel Tasarım","Çok Katmanlı Destek Sistemi","Kapsayıcı Liderlik Modeli","Onarıcı Okul Uygulamaları","Farklılaştırılmış Öğretim"],c:1,w:"<b>Çok Katmanlı Destek Sistemi</b>, desteği katmanlar hâlinde artırır: tüm öğrenciler → risk grubu → yoğun bireysel destek."},
+{m:"m4",g:"ortak",s:"Sosyal duygusal öğrenme becerileri arasında hangisi <b>yer almaz</b>?",o:["Öz farkındalık","Öz yönetim","Sosyal farkındalık","Sorumlu karar verme","Mekanik ezberleme"],c:4,w:"Sosyal duygusal öğrenme; <b>öz farkındalık, öz yönetim/öz düzenleme, sosyal farkındalık, ilişki becerileri ve sorumlu karar verme</b> bileşenlerinden oluşur."},
+/* --- M5 · TYMM (en ağır modül) --- */
+{m:"m5",g:"ortak",s:"Farklılaştırılmış öğretimin boyutları arasında hangisi <b>yoktur</b>?",o:["İçerik","Süreç","Ürün","Öğrenme ortamı","Bütçe"],c:4,w:"Farklılaştırma dört boyutta yapılır: <b>içerik, süreç, ürün ve öğrenme ortamı</b>."},
+{m:"m5",g:"ortak",s:"Aynı konuyu farklı zorlukta metinlerle sunmak, farklılaştırmanın hangi boyutudur?",o:["İçerik","Süreç","Ürün","Öğrenme ortamı","Değerlendirme"],c:0,w:"Neyin öğretileceğinin çeşitlendirilmesi <b>içerik</b>; süre/görev tasarımı <b>süreç</b>; poster/sunum/rapor <b>ürün</b>; sınıf düzeni <b>öğrenme ortamı</b> boyutudur."},
+{m:"m5",g:"ortak",s:"TYMM'de öğrenme kanıtlarının öğrenme-öğretme yaşantılarından önce yer almasının temel gerekçesi hangisidir?",o:["Öğretmenin iş yükünü dengelemek","Başarı ölçütleri önceden belirlenerek yaşantıların bu hedeflere hizmet etmesini sağlamak","Değerlendirmeyi öğretimden ayırmak","Sınıf gruplarını dönem başında oluşturmak","Değerlendirme sayısını azaltmak"],c:1,w:"Önce <b>başarı ölçütü</b> belirlenir, öğrenme-öğretme yaşantıları bu hedeflere hizmet edecek biçimde tasarlanır."},
+/* --- M13/M15 · DÜŞÜNCE TARİHİ (isim-eser eşleştirmesi) --- */
+{m:"m15",g:"ortak",s:"\"Türkiye'nin Maarif Davası\" adlı eserin yazarı kimdir?",o:["Mümtaz Turhan","Nurettin Topçu","Ziya Gökalp","Hasan Âli Yücel","İsmayıl Hakkı Baltacıoğlu"],c:1,w:"<b>Nurettin Topçu</b>, okulun toplumdan ve hayattan kopuk olmasını reddeder; okul insanı yalnızca meslek sahibi yapan değil, şahsiyet kazandıran kurumdur."},
+{m:"m13",g:"ortak",s:"\"Kültür Değişmeleri\" adlı eserinde modernleşme sürecinde okulun rolünü millî bir sentezle ele alan düşünür kimdir?",o:["Nurettin Topçu","Mümtaz Turhan","Farabi","Yusuf Has Hâcib","Nizâmülmülk"],c:1,w:"<b>Mümtaz Turhan</b>, kültürel değişme yaklaşımıyla okulun üstlenmesi gereken rolü millî bir sentez çerçevesinde tartışır."},
+{m:"m13",g:"ortak",s:"Okulun toplumun organik bir parçası olduğunu \"İçtimai Mektep\" yaklaşımıyla vurgulayan anlayış neyi ifade eder?",o:["Okulun toplumdan yalıtılmasını","Okulun toplumsal duyarlılık merkezi olmasını","Okulun yalnızca akademik başarıya odaklanmasını","Okulun merkezî bürokrasiye bağlılığını","Okulun ekonomik verimlilik aracı olmasını"],c:1,w:"<b>İçtimai Mektep</b>, okulu toplumun organik parçası ve toplumsal duyarlılığın merkezi olarak konumlandırır."},
+{m:"m15",g:"ortak",s:"Toplumsal düzenin ancak erdemli bir yöneticiyle mümkün olduğunu savunan Farabi'nin eseri hangisidir?",o:["El-Medinetü'l-Fâzıla","Siyasetnâme","Kutadgu Bilig","Divan-ı Hikmet","Atabetü'l-Hakayık"],c:0,w:"Farabi → <b>El-Medinetü'l-Fâzıla</b> (Erdemli Şehir). Siyasetnâme → Nizâmülmülk (Selçuklu), Kutadgu Bilig → Yusuf Has Hâcib."},
+{m:"m16",g:"ortak",s:"Değer odaklı perspektifte insanın \"yaratılmışların en şereflisi\" sayılmasını ifade eden kavram hangisidir?",o:["Üstat","Mentör","Eşref-i mahlukat","Beşer","Lider"],c:2,w:"<b>Eşref-i mahlukat</b>; yönetimi teknik bir süreç değil, ahlaki ve manevi temellere dayanan insan ilişkileri bütünü olarak gören anlayışın merkezindedir."},
+/* --- M19 · PROTOKOL VE YAZIŞMA --- */
+{m:"m19",g:"ortak",s:"Resmî yazışmalarda alt makamlara ve üst/aynı düzeydeki makamlara hangi ibarelerle bitirilir?",o:["arz ederim – rica ederim","saygılarımla – arz ederim","rica ederim – saygılarımla","saygılarımla – rica ederim","rica ederim – arz ederim"],c:4,w:"Alt makamlara <b>\"rica ederim\"</b>, üst ve aynı düzeydeki makamlara <b>\"arz ederim\"</b> ile bitirilir."},
+{m:"m19",g:"ortak",s:"Geleneklere uygun davranma, saygı, hoşgörü, dürüstlük ve hak gözetme gibi niteliklerin bütününü ifade eden kavram hangisidir?",o:["Teşrifat","Zarafet","Estetik","Terbiye","Nezaket"],c:3,w:"Bu niteliklerin bütünü <b>terbiye</b> kavramıyla ifade edilir; teşrifat protokol düzenini, nezaket ise davranış inceliğini anlatır."},
+/* --- M20 · İKİZ DÖNÜŞÜM --- */
+{m:"m20",g:"ortak",s:"Fiziksel bir varlığın dijital ortamda birebir modellenerek izlenmesini sağlayan teknoloji hangisidir?",o:["Dijital ikiz","Blok zincir","Nesnelerin interneti","Artırılmış gerçeklik","Büyük veri"],c:0,w:"<b>Dijital ikiz</b>, gerçek sistemin dijital kopyası üzerinden izleme, benzetim ve karar desteği sağlar."},
+{m:"m20",g:"ortak",s:"Hangisi siber güvenlik kültürünü <b>zayıflatan</b> bir uygulamadır?",o:["Güçlü ve kişiye özel parolalar kullanmak","Tüm öğretmenlerin aynı kullanıcı adı ve şifreyi paylaşması","Düzenli yedekleme yapmak","Yazılım güncellemelerini zamanında uygulamak","Farkındalık eğitimleri düzenlemek"],c:1,w:"Ortak hesap kullanımı <b>hesap verebilirliği ve izlenebilirliği ortadan kaldırır</b>, yetkisiz erişim riskini artırır."},
+{m:"m20",g:"ortak",s:"Geri dönüşüm kutuları, dijital belge kullanımı ve plastik tüketiminin azaltılması hangi hedefle doğrudan ilişkilidir?",o:["Sıfır atık","Siber güvenlik","Dijital okuryazarlık","Veri gözetimi","Kalite güvencesi"],c:0,w:"Bu uygulamalar <b>sıfır atık</b> yaklaşımının okul düzeyindeki karşılığıdır ve ikiz dönüşümün çevresel ayağını oluşturur."},
+/* --- M10 · SAĞLIK-GÜVENLİK --- */
+{m:"m10",g:"ortak",s:"Yüksek riskli bir kimyasalın daha az riskli bir maddeyle değiştirilmesi hangi risk kontrol yöntemidir?",o:["Ortadan kaldırma","İkame","Mühendislik kontrolü","İdari kontrol","Kişisel koruyucu donanım"],c:1,w:"Tehlikeli olanı daha az tehlikeliyle değiştirmek <b>ikame</b>dir. Hiyerarşi: ortadan kaldırma → ikame → mühendislik → idari kontrol → KKD."},
+{m:"m10",g:"ortak",s:"6331 sayılı Kanun'a göre çalışanın çalışmaktan kaçınma hakkı hangi durumda doğar?",o:["Her türlü iş yoğunluğunda","Ciddi ve yakın tehlike ile karşı karşıya kalındığında","Ücret ödemesi geciktiğinde","İzin talebi reddedildiğinde","Görev yeri değiştiğinde"],c:1,w:"Çalışmaktan kaçınma hakkı, <b>ciddi ve yakın tehlike</b> durumunda; kurul/işverene başvuru ve gerekli tedbirin alınmaması hâlinde kullanılır."},
+{m:"m10",g:"ortak",s:"Deprem tatbikatında tahliye süresinin geçen yıla göre uzadığını fark eden yöneticinin öncelikli yaklaşımı hangisi olmalıdır?",o:["Sonucu kayıt altına alıp bir sonraki yılı beklemek","Nedenleri analiz edip tahliye planını ve eğitimi güncellemek","Tatbikatı iptal etmek","Yalnızca öğretmenleri uyarmak","Sonucu paydaşlardan gizlemek"],c:1,w:"Tatbikat bir <b>veri kaynağıdır</b>; kriz yönetimi döngüsünde sonuç analiz edilip plan, tatbikat sıklığı ve eğitim güncellenir."},
+/* --- M6 · STRATEJİK PLANLAMA --- */
+{m:"m6",g:"ortak",s:"Stratejik planda \"Neredeyiz?\" sorusuna cevap aranan bölüm hangisidir?",o:["Durum analizi","Misyon bildirimi","Vizyon bildirimi","Hedefler","İzleme ve değerlendirme"],c:0,w:"<b>Durum analizi</b> \"Neredeyiz?\"; misyon-vizyon \"Nereye ulaşmak istiyoruz?\"; izleme-değerlendirme \"Nasıl ölçer ve değerlendiririz?\" sorusuna karşılık gelir."},
+{m:"m6",g:"ortak",s:"PESTLE analizinde dikkate alınan dış çevre etkenleri arasında hangisi <b>yoktur</b>?",o:["Politik","Ekonomik","Sosyokültürel","Teknolojik","Personel devir hızı"],c:4,w:"PESTLE = <b>Politik, Ekonomik, Sosyokültürel, Teknolojik, Yasal (Legal), Çevresel (Environmental)</b>. Personel devir hızı iç çevre unsurudur."},
+/* --- M3 · KURUM KÜLTÜRÜ --- */
+{m:"m3",g:"ortak",s:"Bir kurumda çalışanların paylaştığı ortak davranış kuralları hangi kavramla ifade edilir?",o:["Gelenek","Vizyon","Strateji","Norm","Misyon"],c:3,w:"<b>Norm</b>, kültürün en yüzeydeki ve gözlenebilir davranış kuralı düzeyidir."},
+{m:"m3",g:"ortak",s:"Okul marşı, okul logosu ve ödül törenleri kurum kültürünün hangi unsurudur?",o:["Temel varsayımlar","Semboller ve törenler","Normlar","Değerler","Kahramanlar"],c:1,w:"Marş, logo, tören ve pano gibi görünür ögeler kültürün <b>sembolik</b> düzeyidir; en derin düzey ise temel varsayımlardır."},
+{m:"m3",g:"ortak",s:"Değişimi küçük pilot uygulamalarla başlatıp başarılı sonuçlar elde ettikçe tüm okula yaymak hangi yaklaşımdır?",o:["Radikal değişim","Kademeli (aşamalı) değişim","Yıkıcı değişim","Zorlayıcı değişim","Tepeden inme değişim"],c:1,w:"Pilot uygulama → yaygınlaştırma, <b>kademeli/aşamalı değişim</b> stratejisidir; direnci azaltır ve öğrenme fırsatı verir."},
+/* --- M9 · MEVZUAT --- */
+{m:"m9",g:"ortak",s:"Türk hukukunda normlar hiyerarşisinde en üstte hangisi yer alır?",o:["Anayasa","Kanun","Cumhurbaşkanlığı kararnamesi","Yönetmelik","Genelge"],c:0,w:"Sıralama: <b>Anayasa → Kanun → CB Kararnamesi → Yönetmelik → Genelge</b>. Alt norm üst norma aykırı olamaz."},
+{m:"m9",g:"ortak",s:"1739 sayılı Millî Eğitim Temel Kanunu'nun temel ilkeleri arasında hangisi <b>yoktur</b>?",o:["Genellik ve eşitlik","Fırsat ve imkân eşitliği","Eğitim hakkı","Kariyer ve liyakatte kayırma","Karma eğitim"],c:3,w:"Kayırma bir ilke değil, ilkelerin ihlalidir. Kanun; genellik-eşitlik, fırsat eşitliği, eğitim hakkı, karma eğitim gibi ilkeleri düzenler."}
+];
+HIZLI.forEach((q,i)=>{q.k='h'+(i+1);q.t=0;q.r='';});
 
 const MICON={m1:"🧭",m2:"📖",m3:"🏛️",m4:"🤝",m5:"📚",m6:"🎯",m7:"🔄",m8:"💰",m9:"⚖️",m10:"🚨",
  m11:"🏫",m12:"👥",m13:"🌍",m14:"🕊️",m15:"🌟",m16:"🧑‍🏫",m17:"🧘",m18:"🎤",m19:"📜",m20:"🌱"};
@@ -6314,6 +6393,10 @@ function pastPool(){
   const k=state.kademe;
   return k?PAST.filter(q=>q.g==="ortak"||q.g===k):PAST;
 }
+function hizliPool(){
+  const k=state.kademe;
+  return k?HIZLI.filter(q=>q.g==="ortak"||q.g===k):HIZLI;
+}
 function pastStats(){
   const r=state.pastR||{},pool=pastPool();
   const ids=pool.filter(q=>r[q.k]!==undefined);
@@ -6354,6 +6437,7 @@ function renderPastHome(){
     <button class="pt-btn" data-mode="mix"><span class="ptt">🎲 Karışık 60 soru</span><span class="ptm">gerçek sınav uzunluğu</span></button>
     <button class="pt-btn" data-mode="new"><span class="ptt">🆕 Hiç çözmediklerim</span><span class="ptm">${st.toplam-st.cozulen} soru</span></button>
     ${wrong?`<button class="pt-btn hot" data-mode="wrong"><span class="ptt">📕 Yanlışlarımı tekrar çöz</span><span class="ptm">${wrong} soru</span></button>`:""}
+    <button class="pt-btn" data-mode="hizli"><span class="ptt">⚡ Hızlı Bilgi soruları</span><span class="ptm">${hizliPool().length} kısa soru</span></button>
   </div>
   <div class="sec-label eyebrow">Modüle Göre</div>
   <div class="pt-pick" id="ptMods"></div>`;
@@ -6396,6 +6480,8 @@ function renderPastHome(){
       const l=pastPool().filter(q=>r[q.k]===undefined);
       if(!l.length){alert("Tüm soruları çözmüşsün 👏");return;}
       startPast(shuffle(l).slice(0,60),"Yeni sorular");
+    }else if(md==="hizli"){
+      startPast(shuffle(hizliPool().slice()),"Hızlı Bilgi");
     }else{
       const l=pastWrongList();
       if(!l.length)return;
@@ -6429,7 +6515,7 @@ function renderPast(){
   const mod=MODULES.find(x=>x.id===q.m);
   body.innerHTML=`
     <div class="q-head"><span class="eyebrow">Soru ${pq.i+1}/${pq.list.length} · ${pq.label}</span><span class="mono" style="font-size:.7rem">doğru ${pq.score}</span></div>
-    <span class="pt-tag">${q.t}. Oturum · ${q.r==="mudur"?"Müdür":"Müdür Yrd."} · ${MICON[q.m]||""} M${mod?mod.no:"?"}</span>${q.g!=="ortak"?`<span class="pt-tag kad">🎓 ${KADEME[q.g]}</span>`:""}
+    <span class="pt-tag">${q.t?`${q.t}. Oturum · ${q.r==="mudur"?"Müdür":"Müdür Yrd."}`:"⚡ Hızlı Bilgi"} · ${MICON[q.m]||""} M${mod?mod.no:"?"}</span>${q.g!=="ortak"?`<span class="pt-tag kad">🎓 ${KADEME[q.g]}</span>`:""}
     <div class="q-scen">${q.s}</div>
     <div class="optik">Optik form — cevabını işaretle</div>
     <div id="ptOpts">${q.o.map((t,x)=>`<button class="opt" data-x="${x}"><span class="bub">${"ABCDE"[x]}</span><span>${t}</span></button>`).join("")}</div>
@@ -6455,8 +6541,8 @@ function pastPick(x){
   const mod=MODULES.find(m=>m.id===q.m);
   $("#ptExpl").innerHTML=`<div class="expl ${ok?"ok":"no"}">
     <div class="verdict">${ok?"✓ Doğru":"✗ Yanlış — doğru cevap "+"ABCDE"[q.c]}</div>
-    Resmî cevap anahtarına göre doğru seçenek <b>${"ABCDE"[q.c]}</b>.
-    <span class="basis">📌 Gerçek sınav · ${q.t}. Oturum${mod?" · Modül "+mod.no+" — "+mod.title:""}</span></div>`;
+    ${q.w?q.w:`Resmî cevap anahtarına göre doğru seçenek <b>${"ABCDE"[q.c]}</b>.`}
+    <span class="basis">📌 ${q.t?"Gerçek sınav · "+q.t+". Oturum":"Ders notu · Hızlı Bilgi"}${mod?" · Modül "+mod.no+" — "+mod.title:""}</span></div>`;
   $("#ptNext").style.display="block";
 }
 
@@ -6594,6 +6680,7 @@ $("#actReview").addEventListener("click",()=>{startReview();});
 $("#actWrong").addEventListener("click",()=>{renderWrongHome();show("#scr-wrong");});
 $("#actExam").addEventListener("click",()=>{startExam();});
 $("#actFull").addEventListener("click",()=>{startFull();});
+$("#actHizli").addEventListener("click",()=>{startPast(shuffle(hizliPool().slice()).slice(0,20),"Hızlı Bilgi");show("#scr-past");});
 $("#actPast").addEventListener("click",()=>{pq=null;renderPastHome();show("#scr-past");window.scrollTo(0,0);});
 $("#ptBack").addEventListener("click",()=>{if(pq){pq=null;renderPastHome();window.scrollTo(0,0);}else{renderHome();show("#scr-home");}});
 $("#expBtn").addEventListener("click",doExport);

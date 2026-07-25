@@ -27,6 +27,14 @@ sistem yazı tipine düşer).
 - Oturuma göre, modüle göre, karışık 60 soru veya "hiç çözmediklerim" olarak çalışma
 - Yanlışların ayrı listede birikir, tekrar çözülebilir
 
+**⚡ Hızlı Bilgi (54 kısa soru):**
+Gerçek sınavın baskın formatı **kısa bilgi sorusu**dur (%70) ve dörtte biri **olumsuz kök**
+taşır ("Hangisi ... değildir?"). Uygulamanın kendi 200 sorusu vaka tipiydi; bu banka o açığı
+kapatır. Sorular ders notlarına dayanır ve gerçek sınavda çıkan ama uygulamada zayıf kalan
+konulara odaklanır: MÖZEM, özel eğitim uygulama evleri, destek eğitim odası, yardımcı
+teknolojiler, TEFBİS/EKAP/HYS-MYS/KBS/MEBBİS, Selye ve 3A+S modeli, isim-eser
+eşleştirmeleri, PESTLE, normlar hiyerarşisi ve diğerleri.
+
 **Çalışma araçları:**
 - 🔁 **Günün Tekrarı** — aralıklı tekrar (SRS) ile o gün tekrarı gelen kartlar
 - 📕 **Yanlış Defteri** — yanlış sorular ve zorlanılan kartlar otomatik birikir
