@@ -22,8 +22,8 @@
   --wash:#EDF6F1;
   --card:#FFFFFF;
   --ink:#26362F;
-  --soft:#66786F;
-  --faint:#9DACA4;
+  --soft:#64766D;
+  --faint:#6A746F;
   --line:#E6EEE9;
   --accent:#41A184;
   --accent-ink:#25795F;
@@ -54,7 +54,7 @@ body.dark{
   --card:#1E2723;
   --ink:#E6EEE9;
   --soft:#9FAFA7;
-  --faint:#6E7E76;
+  --faint:#7F9288;
   --line:#2C3833;
   --accent:#57BA9C;
   --accent-ink:#8CD6BD;
@@ -484,8 +484,7 @@ body{padding-bottom:calc(64px + env(safe-area-inset-bottom))}
 .hero.compact h1,.hero.compact .sub,.hero.compact .eyebrow,
 .hero.compact .meter,.hero.compact .cd-row{display:none}
 .hero.compact{padding:calc(10px + env(safe-area-inset-top)) 0 10px;border-bottom:1px solid var(--line);margin-bottom:4px}
-.hero.compact::after{content:attr(data-title);display:block;font-family:var(--serif);
-  font-size:var(--fs-6);font-weight:600;letter-spacing:-.01em;color:var(--ink);line-height:1.2}
+
 .hero.compact .theme-btn{top:calc(6px + env(safe-area-inset-top))}
 
 /* ===== v7 PROFESYONEL DÜZEN: kompakt hero, düzgün stat kartları ===== */
@@ -538,6 +537,24 @@ body{padding-bottom:calc(64px + env(safe-area-inset-bottom))}
 .es-item b{display:block;font-family:var(--serif);font-size:var(--fs-5);color:var(--accent-ink);line-height:1.2}
 .es-item span{display:block;font-size:var(--fs-1);font-weight:600;color:var(--ink);margin-top:2px}
 .es-item i{display:block;font-style:normal;font-size:10px;color:var(--faint);margin-top:1px}
+
+/* ===== Başlık satırı: tema düğmesi artık akışta, hiçbir şeyin üstüne binmez ===== */
+.hero-top{display:flex;align-items:center;gap:12px;min-height:var(--tap)}
+.hero-top .eyebrow{flex:1;min-width:0;padding-right:0;margin-bottom:0}
+.theme-btn{position:static;flex:0 0 var(--tap);width:var(--tap);height:var(--tap);
+  display:grid;place-items:center;margin:0}
+.hero.compact .theme-btn{position:static}
+.hero.compact .hero-top{margin-bottom:2px}
+
+
+.sec-title{flex:1;min-width:0;font-family:var(--serif);font-size:var(--fs-6);font-weight:600;
+  letter-spacing:-.01em;color:var(--ink);line-height:1.25;margin:0}
+.hero.compact .eyebrow{display:none}
+.hero:not(.compact) .sec-title{display:none}
+
+/* plan kartı yeşil zeminde metin kontrastı (WCAG AA) */
+.plan .plan-sub{color:#5A6A62}
+body.dark .plan .plan-sub{color:#A8B8AF}
 </style>
 </head>
 <body>
@@ -546,8 +563,11 @@ body{padding-bottom:calc(64px + env(safe-area-inset-bottom))}
 <div id="scr-home" class="screen active">
   <div class="wrap">
     <header class="hero">
-      <button class="theme-btn" id="themeBtn" aria-label="Tema değiştir"></button>
-      <span class="eyebrow">Millî Eğitim Akademisi · Sınav Hazırlık</span>
+      <div class="hero-top">
+        <span class="eyebrow">Millî Eğitim Akademisi · Sınav Hazırlık</span>
+        <h2 class="sec-title" id="secTitle" hidden></h2>
+        <button class="theme-btn" id="themeBtn" aria-label="Tema değiştir"></button>
+      </div>
       <h1>Yönetici Adayı<br><em>Çalışma Defteri</em></h1>
       <div class="sub">İlk Defa Yönetici Görevlendirme Programı — 20 modül, tek defter.</div>
       <div class="meter">
@@ -7861,7 +7881,9 @@ function setTab(name){
     if(on){ el.style.animation="none"; void el.offsetWidth; el.style.animation="scrIn .26s cubic-bezier(.22,.7,.3,1)"; }
   });
   const hero=document.querySelector("#scr-home .hero");
-  if(hero){ hero.classList.toggle("compact", name!=="home"); hero.dataset.title=TAB_TITLE[name]||""; }
+  if(hero) hero.classList.toggle("compact", name!=="home");
+  const st=$("#secTitle");
+  if(st){ st.textContent=TAB_TITLE[name]||""; st.hidden=(name==="home"); }
   if(name==="progress"){ renderRadar(); renderBadges(); }
   if(name==="exam"){ renderExamStats(); }
   if(name==="home"){ renderStatline(); renderPlan(); }
