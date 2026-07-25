@@ -22,8 +22,8 @@
   --wash:#EDF6F1;
   --card:#FFFFFF;
   --ink:#26362F;
-  --soft:#66786F;
-  --faint:#9DACA4;
+  --soft:#64766D;
+  --faint:#6A746F;
   --line:#E6EEE9;
   --accent:#41A184;
   --accent-ink:#25795F;
@@ -54,7 +54,7 @@ body.dark{
   --card:#1E2723;
   --ink:#E6EEE9;
   --soft:#9FAFA7;
-  --faint:#6E7E76;
+  --faint:#7F9288;
   --line:#2C3833;
   --accent:#57BA9C;
   --accent-ink:#8CD6BD;
@@ -551,6 +551,10 @@ body{padding-bottom:calc(64px + env(safe-area-inset-bottom))}
   letter-spacing:-.01em;color:var(--ink);line-height:1.25;margin:0}
 .hero.compact .eyebrow{display:none}
 .hero:not(.compact) .sec-title{display:none}
+
+/* plan kartı yeşil zeminde metin kontrastı (WCAG AA) */
+.plan .plan-sub{color:#5A6A62}
+body.dark .plan .plan-sub{color:#A8B8AF}
 </style>
 </head>
 <body>
