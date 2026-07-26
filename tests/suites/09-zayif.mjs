@@ -136,13 +136,92 @@ export default async function ({ browser, rec }) {
   rec.chk(yazim.banka === yazim.bankaN,
     `Her banka sorusu çözülmüş olarak kaydedildi (${yazim.banka}/${yazim.bankaN})`);
 
+  /* --- Çeldirici takibi ---
+     Şıklar her açılışta karıştığı için "C'yi seçtim" kalıcı bir bilgi değildir;
+     kaydedilen indeks ÖZGÜN dizideki yeri göstermeli, ekrandaki sırayı değil.
+     Bu yanlış olursa istatistik sessizce yanlış çeldiriciyi biriktirir. */
+  const celdirici = await page.evaluate(() => {
+    const mid = MODULES.find(m => CONTENT[m.id]).id, q = CONTENT[mid].quiz[0];
+    let kaydirmali = 0, hata = 0;
+    const TUR = 120;
+    for (let t = 0; t < TUR; t++) {
+      state.qStat = {};
+      openModule(mid); switchTab("sinav"); initQuiz(mid);
+      const gorunen = qz.ord.findIndex(o => o !== q.c);
+      const ozgun = qz.ord[gorunen];
+      pick(gorunen);
+      const kayit = +Object.keys(state.qStat[mid + ":0"].y)[0];
+      if (ozgun !== gorunen) kaydirmali++;
+      if (kayit !== ozgun) hata++;
+    }
+    /* Yanlış Defteri çözücüsü ve deneme yolu da aynı eşlemeyi yapmalı */
+    state.qStat = {};
+    const it = { src: "vaka", m: mid, i: 0, ord: [3, 1, 4, 0, 2], correct: 0, pick: null };
+    denemeYaz(it, false, 2);                  /* ekranda 3. sıra → özgün 4 */
+    const denemeKayit = +Object.keys(state.qStat[mid + ":0"].y)[0];
+    /* boş bırakma ve süre dolması çeldirici saymamalı */
+    state.qStat = {};
+    denemeYaz(it, false, null);
+    const bosVar = !!(state.qStat[mid + ":0"].y);
+    const bosSayildi = state.qStat[mid + ":0"].n;
+    state.qStat = {};
+    return { TUR, kaydirmali, hata, denemeKayit, bosVar, bosSayildi };
+  });
+  rec.chk(celdirici.kaydirmali > celdirici.TUR * 0.5,
+    `Karıştırma testi anlamlı: ${celdirici.kaydirmali}/${celdirici.TUR} denemede ekran sırası özgün sıradan farklı`);
+  rec.chk(celdirici.hata === 0,
+    `Kaydedilen çeldirici ekrandaki harfi değil özgün şıkkı gösteriyor (${celdirici.TUR} denemede 0 sapma)`);
+  rec.chk(celdirici.denemeKayit === 4,
+    `Deneme yolu da ord ile çeviriyor (ekran 2 → özgün ${celdirici.denemeKayit}, beklenen 4)`);
+  rec.chk(!celdirici.bosVar && celdirici.bosSayildi === 1,
+    "Boş bırakılan / süresi dolan soru denemeye sayılıyor ama çeldirici olarak sayılmıyor");
+
+  /* --- Karışım listesi --- */
+  const karisim = await page.evaluate(() => {
+    state.qStat = {};
+    const mid = MODULES.find(m => CONTENT[m.id]).id, q = CONTENT[mid].quiz[0];
+    const yanlisA = [0, 1, 2, 3, 4].find(i => i !== q.c);
+    const yanlisB = [0, 1, 2, 3, 4].find(i => i !== q.c && i !== yanlisA);
+    for (let i = 0; i < 5; i++) qStatYaz(mid + ":0", false, yanlisA);
+    for (let i = 0; i < 2; i++) qStatYaz(mid + ":0", false, yanlisB);
+    /* ikinci bir soru, daha az karıştırılan */
+    qStatYaz(mid + ":1", false, [0, 1, 2, 3, 4].find(i => i !== CONTENT[mid].quiz[1].c));
+    const l = karisimListesi(8);
+    const bas = l[0];
+    const r = {
+      n: l.length,
+      enUstKez: bas.kez, enUstToplam: bas.toplam,
+      /* en sık seçilen yanlış gösterilmeli, ikinci sıradaki değil */
+      dogruCeldirici: bas.yanlis === yanlisA,
+      /* doğru şık asla "karıştırılan" olarak gösterilmemeli */
+      dogruSikSizmasi: l.some(x => x.yanlis === x.q.c),
+      siralama: l.every((x, i, a) => i === 0 || a[i - 1].kez >= x.kez),
+    };
+    state.qStat = {};
+    return r;
+  });
+  rec.chk(karisim.n === 2 && karisim.enUstKez === 5 && karisim.enUstToplam === 7,
+    `Karışım listesi doğru sayıyor (${karisim.n} soru, en üstte 5/7 kez)`);
+  rec.chk(karisim.dogruCeldirici,
+    "Listede sorunun EN SIK seçilen yanlış şıkkı gösteriliyor");
+  rec.chk(!karisim.dogruSikSizmasi,
+    "Doğru şık hiçbir zaman 'karıştırdığın' olarak listelenmiyor");
+  rec.chk(karisim.siralama, "Liste en çok karıştırılandan aza doğru sıralı");
+
   /* --- Kalıcılık: istatistik yedeğe girmeli --- */
   const kalici = await page.evaluate(() => {
+    state.qStat = {};
+    const mid = MODULES.find(m => CONTENT[m.id]).id;
+    qStatYaz(mid + ":0", false, 3);
+    qStatYaz(mid + ":0", false, 3);
+    qStatYaz(mid + ":1", true);
     const j = JSON.parse(snapshot());
-    return { var: !!j.qStat, n: Object.keys(j.qStat || {}).length };
+    const e = (j.qStat || {})[mid + ":0"] || {};
+    state.qStat = {};
+    return { n: Object.keys(j.qStat || {}).length, deneme: e.n, celdirici: e.y && e.y["3"] };
   });
-  rec.chk(kalici.var && kalici.n === 20,
-    `İstatistik yedekleme anlık görüntüsüne giriyor (${kalici.n} kayıt)`);
+  rec.chk(kalici.n === 2 && kalici.deneme === 2 && kalici.celdirici === 2,
+    `İstatistik ve çeldirici sayaçları yedeğe giriyor (${kalici.n} kayıt, çeldirici ×${kalici.celdirici})`);
 
   await page.context().close();
 }

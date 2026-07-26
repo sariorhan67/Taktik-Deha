@@ -40,7 +40,7 @@ yoksa ne yapılacağını söyleyen bir hata verir.
 | `06-sinav-yapisi.mjs` | Resmî Sınav Yapısı paneli ve oturum/rol/kademe veri modeli |
 | `07-kocu.mjs` | Sınav Koçu (`kocu/index.html`) şık karıştırma — dosya yoksa atlanır |
 | `08-deneme.mjs` | Deneme havuzunun format karışımı: kısa kök ve olumsuz kök oranları, modül ağırlıkları, tekrar derinliği |
-| `09-zayif.mjs` | Soru istatistiği anahtarları, zorluk fonksiyonu, ağırlıklı seçim, sonuçların doğru deftere yazılması |
+| `09-zayif.mjs` | Soru istatistiği anahtarları, zorluk fonksiyonu, ağırlıklı seçim, çeldirici takibinde özgün-indeks eşlemesi, sonuçların doğru deftere yazılması |
 
 ## Yeni test yazmak
 
@@ -75,6 +75,10 @@ metinler ise zeminle karıştırılıp gerçek renkleri üzerinden ölçülür.
 **Eşikler koda gömülü değil, gerekçeli.** Örneğin doğru şıkkın en uzun olma oranı için
 üst sınır %40'tır: şans düzeyi %20, %40'ın üstü ise soruyu bilmeden en uzunu seçmeyi
 kârlı hâle getirir.
+
+**Karıştırmayla ilgilenen testler, karıştırmanın gerçekten olduğunu da doğrular.**
+Çeldirici takibi testi önce "120 denemenin kaçında ekran sırası özgün sıradan farklı"
+diye sorar; bu sayı düşükse asıl kontrol boş yere geçiyor demektir.
 
 **Uyarlanabilir seçim iki yönden sınanır.** Yalnızca "zayıf soruyu getiriyor mu" değil,
 "tamamen zayıfa kilitlenmiyor mu" da denetlenir: saf sömürü, ustalaşmış soruyu bir daha

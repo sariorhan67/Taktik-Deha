@@ -407,6 +407,12 @@ body.dark .btn-main{background:var(--accent);color:#10241D}
 .plan-item:active{transform:scale(.99)}
 .zn{margin-bottom:18px}
 .zn .btn{margin-top:10px}
+.wq-card.kx .q s{color:var(--soft);text-decoration-thickness:1px}
+.wq-card.kx .q b{color:var(--accent-ink)}
+/* Kapalıyken kök iki satıra kırpılır, açılınca tamamı görünür */
+.wq-card.kx .kx-kok{font-size:var(--fs-1);color:var(--soft);line-height:1.4;margin-bottom:5px;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.wq-card.kx.open .kx-kok{-webkit-line-clamp:unset}
 .plan-item .pno{font-weight:700;color:var(--accent-ink);font-size:var(--fs-4);min-width:22px}
 .plan-item .pt{flex:1;font-size:var(--fs-3);font-weight:600;color:var(--ink);line-height:1.25}
 .plan-item .pm{font-size:var(--fs-1);color:var(--soft);white-space:nowrap}
@@ -7431,12 +7437,22 @@ function qKey(q){return q.vk||q.k;}
 
 /* Soru başına deneme kaydı: kaç kez görüldü (n), kaçı doğru (ok), kaç kez arka
    arkaya doğru bilindi (s), en son hangi gün çözüldü (d). */
-function qStatYaz(key,ok){
+/* secilen: seçilen şıkkın ÖZGÜN dizi indeksi (görünen harf değil). Şıklar her
+   açılışta karıştığı için "C'yi seçtim" bilgisi kalıcı değildir; anlamlı olan
+   hangi metnin seçildiğidir. Boş bırakma / süre dolması için null geçilir. */
+function qStatYaz(key,ok,secilen){
   if(!key)return;
   if(!state.qStat)state.qStat={};
   const e=state.qStat[key]||{n:0,ok:0,s:0,d:0};
   e.n++;
-  if(ok){e.ok++;e.s++;}else e.s=0;
+  if(ok){e.ok++;e.s++;}
+  else{
+    e.s=0;
+    if(secilen!==null&&secilen!==undefined){
+      e.y=e.y||{};
+      e.y[secilen]=(e.y[secilen]||0)+1;
+    }
+  }
   e.d=Math.floor(Date.now()/DAY);
   state.qStat[key]=e;
 }
@@ -7475,10 +7491,31 @@ function qStatOzet(){
 }
 /* Çıkmış / Hızlı Bilgi sonucu çözülmüş soru kaydına, vaka sonucu Yanlış
    Defteri'ne yazılır; istatistik üçünde de tutulur. */
-function bankaYaz(q,ok){
+function bankaYaz(q,ok,secilen){
   if(q.vk){if(ok)delete state.wrongQ[q.vk];else state.wrongQ[q.vk]=true;}
   else{if(!state.pastR)state.pastR={};state.pastR[q.k]=ok?1:0;}
-  qStatYaz(qKey(q),ok);
+  qStatYaz(qKey(q),ok,secilen);
+}
+/* En çok karıştırılan ayrımlar: her sorunun en sık seçilen yanlış şıkkını doğru
+   şıkkıyla eşleştirir. Açıklamalar zaten her çeldiriciyi tek tek çürüttüğü için,
+   karıştırılan ayrımı göstermek tedaviyi de beraberinde getirir. */
+function karisimListesi(n){
+  const out=[];
+  const bak=(q,key)=>{
+    const e=state.qStat&&state.qStat[key];
+    if(!e||!e.y)return;
+    let en=null,enKez=0,toplam=0;
+    Object.keys(e.y).forEach(i=>{
+      toplam+=e.y[i];
+      if(e.y[i]>enKez){enKez=e.y[i];en=+i;}
+    });
+    /* doğru şık kendisi sayılmışsa (olmamalı) veya şık silinmişse atla */
+    if(en===null||en===q.c||!q.o[en])return;
+    out.push({q,key,yanlis:en,kez:enKez,toplam});
+  };
+  VAKA.forEach(q=>bak(q,q.vk));
+  hizliPool().concat(pastPool()).forEach(q=>bak(q,q.k));
+  return out.sort((a,b)=>b.kez-a.kez||b.toplam-a.toplam).slice(0,n||8);
 }
 function renderPastHome(){
   const st=pastStats();
@@ -7605,7 +7642,7 @@ function pastPick(x){
   if(pq.answered)return;pq.answered=true;
   const q=pq.list[pq.i],ok=pq.ord[x]===q.c,dsp=pq.ord.indexOf(q.c);
   if(ok)pq.score++;
-  bankaYaz(q,ok);
+  bankaYaz(q,ok,pq.ord[x]);
   recordStudy();saveState();
   document.querySelectorAll("#ptOpts .opt").forEach(b=>{
     const bx=+b.dataset.x;b.disabled=true;
@@ -8048,7 +8085,22 @@ function renderWrongHome(){
       html+=`<button class="wq-card" data-k="${k}"><span class="src">Modül ${no} · dokun-cevabı gör</span><div class="q">${card.q}</div><div class="a">${card.a}</div></button>`;
     });
   }
-  if(!wq.length&&!wc.length&&!bw.length){
+  /* Karıştırılan ayrımlar: "bu soruyu bilmiyorsun" yerine "şunu şununla
+     karıştırıyorsun" diyebildiğimiz tek yer. */
+  const kar=karisimListesi(6);
+  if(kar.length){
+    html+=`<div class="sec-label eyebrow">En çok karıştırdıkların · ${kar.length}</div>`;
+    kar.forEach(k=>{
+      const mod=MODULES.find(m=>m.id===k.q.m);
+      /* Kök her zaman gösterilir: vaka sorularında şıklar kavram değil senaryo
+         etiketi olabiliyor ("L Okulu → K Okulu") ve çift tek başına anlamsız kalır. */
+      html+=`<button class="wq-card kx"><span class="src">M${mod?mod.no:"?"} · ${k.kez} kez seçtin · dokun-ayrımı gör</span>
+        <div class="kx-kok">${k.q.s}</div>
+        <div class="q"><s>${k.q.o[k.yanlis]}</s> → <b>${k.q.o[k.q.c]}</b></div>
+        <div class="a">${k.q.w||""}</div></button>`;
+    });
+  }
+  if(!wq.length&&!wc.length&&!bw.length&&!kar.length){
     html+=`<div class="wq-empty"><span class="serif">Defter tertemiz ✨</span>Yanlış çıkan sorular ve zorlanılan kartlar otomatik burada birikir.</div>`;
   }
   body.innerHTML=html;
@@ -8091,7 +8143,7 @@ function renderWrongSolve(){
     if(wr.answered)return;wr.answered=true;
     const ok=wr.ord[+b.dataset.x]===q.c;
     if(ok)delete state.wrongQ[key];else state.wrongQ[key]=true;
-    qStatYaz(key,ok);
+    qStatYaz(key,ok,wr.ord[+b.dataset.x]);
     saveState();
     body.querySelectorAll("#opts .opt").forEach(o=>{
       const bx=+o.dataset.x;o.disabled=true;
@@ -8155,9 +8207,12 @@ function denemeMadde(src,mid,ref){
 }
 /* Sonucu her kaynağın kendi defterine yazar: vaka → Yanlış Defteri,
    Hızlı Bilgi → çözülmüş soru kaydı (modül hazırlığını da besler). */
-function denemeYaz(it,ok){
-  if(it.src==="hizli"){if(!state.pastR)state.pastR={};state.pastR[it.k]=ok?1:0;qStatYaz(it.k,ok);}
-  else{const key=it.m+":"+it.i;if(ok)delete state.wrongQ[key];else state.wrongQ[key]=true;qStatYaz(key,ok);}
+/* gorunen: seçilen şıkkın EKRANDAKİ sırası (it.correct de öyledir); özgün indekse
+   it.ord ile çevrilir. Boş bırakılan / süresi dolan soruda null gelir. */
+function denemeYaz(it,ok,gorunen){
+  const sec=(gorunen===null||gorunen===undefined||gorunen<0)?null:it.ord[gorunen];
+  if(it.src==="hizli"){if(!state.pastR)state.pastR={};state.pastR[it.k]=ok?1:0;qStatYaz(it.k,ok,sec);}
+  else{const key=it.m+":"+it.i;if(ok)delete state.wrongQ[key];else state.wrongQ[key]=true;qStatYaz(key,ok,sec);}
 }
 function buildFullPool(){
   const list=[];
@@ -8238,7 +8293,7 @@ function exResolve(chosen,timedOut){
   const item=ex.list[ex.i],q=denemeQ(item);
   const ok=!timedOut&&chosen===item.correct;
   if(ok)ex.score++;
-  denemeYaz(item,ok);
+  denemeYaz(item,ok,timedOut?null:chosen);
   saveState();
   document.querySelectorAll("#scr-exam #opts .opt").forEach(b=>{
     const bx=+b.dataset.x;b.disabled=true;
@@ -8319,7 +8374,7 @@ function finishFull(timedOut){
     const ok=it.pick===it.correct;
     if(ok)correct++;
     /* Boş bırakılan soru yanlış sayılmaz, deftere de yazılmaz */
-    if(ok||it.pick!==null)denemeYaz(it,ok);
+    if(ok||it.pick!==null)denemeYaz(it,ok,it.pick);
     if(!byMod[it.m])byMod[it.m]={t:0,c:0};
     byMod[it.m].t++;if(ok)byMod[it.m].c++;
   });
@@ -8401,7 +8456,7 @@ function pick(x){
   const key=curMod+":"+qz.i;
   if(ok){qz.score++;delete state.wrongQ[key];}
   else state.wrongQ[key]=true;
-  qStatYaz(key,ok);
+  qStatYaz(key,ok,qz.ord[x]);
   document.querySelectorAll("#pane-sinav #opts .opt").forEach(b=>{
     const bx=+b.dataset.x;b.disabled=true;
     if(bx===x)b.classList.add(ok?"picked-ok":"picked-no");
