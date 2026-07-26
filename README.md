@@ -39,7 +39,11 @@ teknolojiler, TEFBİS/EKAP/HYS-MYS/KBS/MEBBİS, Selye ve 3A+S modeli, isim-eser
 eşleştirmeleri, PESTLE, normlar hiyerarşisi ve diğerleri.
 
 **Çalışma araçları:**
-- 🔁 **Günün Tekrarı** — aralıklı tekrar (SRS) ile o gün tekrarı gelen kartlar
+- 🔁 **Günün Tekrarı** — aralıklı tekrar (SRS). Aralık merdiveni **1 · 3 · 7 · 14 · 30 · 60 gün**;
+  kart hiçbir zaman programdan silinmez, en üst basamakta da dönmeye devam eder. Her kartın
+  bir **kolaylık katsayısı** vardır: kolay gelen kartların arası açılır, zorlananların sıklaşır.
+  Unutulan kart sıfırlanmaz — iki basamak geri düşüp ertesi gün yeniden gelir.
+  **Sınav tarihi girdiysen hiçbir tekrar sınavdan sonraya atılmaz.**
 - 📕 **Yanlış Defteri** — yanlış sorular ve zorlanılan kartlar otomatik birikir
 - ⏱ **Karma Deneme** ve 🎓 **Tam Deneme** (60 soru · 75 dk)
 - 📅 Sınav tarihi geri sayımı, genel ilerleme çubuğu

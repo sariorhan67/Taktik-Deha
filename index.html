@@ -288,7 +288,9 @@ body.dark .po-pill.hot span{color:rgba(16,36,29,.8)}
 .m-done p{font-size:var(--fs-2);color:var(--soft);margin:5px 0 16px}
 
 /* ============ FLASHCARDS ============ */
-.fc-stat{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:var(--fs-2)}
+.fc-stat{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:12px;font-size:var(--fs-2)}
+.srs-chip{flex:0 0 auto;font-family:var(--mono);font-size:10px;color:var(--soft);
+  background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:3px 9px;white-space:nowrap}
 .dots{display:flex;gap:6px}
 .dot{width:8px;height:8px;border-radius:50%;background:var(--line)}
 .dot.ok{background:var(--accent)}
@@ -6720,8 +6722,8 @@ quiz:[
 
 /* ================= STATE / STORAGE ================= */
 const SKEY="meb-yonetici-defter-v1";
-const DAY=86400000, IV=[1,3,7];
-let state={cards:{},quiz:{},match:{},theme:"light",srs:{},wrongQ:{},examDate:null,exam:{best:-1,att:0},full:{best:-1,att:0},streak:{n:0,last:null},daily:{date:null,n:0},badges:{},goal:15,pastR:{},kademe:null};
+const DAY=86400000;
+let state={cards:{},quiz:{},match:{},theme:"light",srs:{},wrongQ:{},examDate:null,exam:{best:-1,att:0},full:{best:-1,att:0},streak:{n:0,last:null},daily:{date:null,n:0},badges:{},goal:15,pastR:{},kademe:null,srsV:0};
 const hasStore=typeof window!=="undefined"&&window.storage;
 
 /* ---- KATMANLI DEPOLAMA ----
@@ -6764,14 +6766,14 @@ async function loadState(){
       const p=JSON.parse(raw);
       state={cards:p.cards||{},quiz:p.quiz||{},match:p.match||{},theme:p.theme3||"light",
              srs:p.srs||{},wrongQ:p.wrongQ||{},examDate:p.examDate||null,exam:p.exam||{best:-1,att:0},full:p.full||{best:-1,att:0},
-             streak:p.streak||{n:0,last:null},daily:p.daily||{date:null,n:0},badges:p.badges||{},goal:p.goal||15,pastR:p.pastR||{},kademe:p.kademe||null};
+             streak:p.streak||{n:0,last:null},daily:p.daily||{date:null,n:0},badges:p.badges||{},goal:p.goal||15,pastR:p.pastR||{},kademe:p.kademe||null,srsV:p.srsV||0};
     }
   }catch(e){/* ilk kullanım veya kayıt yok */}
 }
 function snapshot(){
   return JSON.stringify({cards:state.cards,quiz:state.quiz,match:state.match,
     theme3:state.theme,srs:state.srs,wrongQ:state.wrongQ,examDate:state.examDate,exam:state.exam,full:state.full,
-    streak:state.streak,daily:state.daily,badges:state.badges,goal:state.goal,pastR:state.pastR,kademe:state.kademe});
+    streak:state.streak,daily:state.daily,badges:state.badges,goal:state.goal,pastR:state.pastR,kademe:state.kademe,srsV:state.srsV});
 }
 /* Yazma temposu: her tıklamada değil, 900 ms sessizlikten sonra tek yazma */
 let saveTimer=null,noticeShown=false;
@@ -6800,25 +6802,77 @@ function showSaveNotice(){
   if(x)x.addEventListener("click",()=>d.remove());
 }
 
-/* ================= SRS ÇEKİRDEĞİ ================= */
+/* ================= SRS ÇEKİRDEĞİ =================
+   Aralık merdiveni 1-3-7-14-30-60 gün. Kart hiçbir zaman programdan silinmez;
+   en üst basamakta da dönmeye devam eder. Kolaylık katsayısı (ef) kartın sana
+   ne kadar kolay geldiğini takip eder ve üst basamaklardaki aralığı esnetir.
+   Sınav tarihi girilmişse hiçbir kart sınavdan sonraya atılmaz. */
+const SRS_IV=[1,3,7,14,30,60], EF_DEF=2.3, EF_MIN=1.3, EF_MAX=2.8;
+
+function srsEntry(k){
+  const e=state.srs[k];
+  if(!e)return null;
+  /* eski kayıtlar yalnızca {due,stage} taşıyordu — eksik alanları tamamla */
+  return{due:e.due, stage:e.stage||0, ef:e.ef||EF_DEF, lapses:e.lapses||0};
+}
+/* Sınava kalan gün, aralığı sınırlar: sınavdan sonraya düşen tekrar işe yaramaz. */
+function srsCap(days){
+  const left=examDaysLeft();
+  if(left===null||left<=0)return days;
+  return Math.max(1,Math.min(days,left-1));
+}
+function srsInterval(stage,ef){
+  const base=SRS_IV[Math.min(stage,SRS_IV.length-1)];
+  /* ilk iki basamak sabit; sonrakiler kolaylığa göre esner */
+  const d=stage>=2?Math.round(base*(ef/EF_DEF)):base;
+  return srsCap(Math.max(1,d));
+}
 function srsMark(mod,idx,val){
-  const k=mod+":"+idx;
-  if(val==="again"){state.srs[k]={due:Date.now()+DAY,stage:0};}
-  else{
-    const st=state.srs[k]?state.srs[k].stage+1:1;
-    if(st>=3)delete state.srs[k];
-    else state.srs[k]={due:Date.now()+IV[st]*DAY,stage:st};
+  const k=mod+":"+idx, prev=srsEntry(k), now=Date.now();
+  if(val==="again"){
+    /* Unutma: yarın tekrar gör, merdivende iki basamak geri düş, ef azalsın.
+       Sıfıra düşürmüyoruz — iyi öğrenilmiş bir kart tek hatayla baştan başlamaz. */
+    const stage=prev?Math.max(0,prev.stage-2):0;
+    const ef=Math.max(EF_MIN,(prev?prev.ef:EF_DEF)-0.2);
+    state.srs[k]={due:now+srsCap(1)*DAY,stage,ef,lapses:(prev?prev.lapses:0)+1};
+  }else{
+    const stage=prev?Math.min(prev.stage+1,SRS_IV.length-1):0;
+    const ef=Math.min(EF_MAX,(prev?prev.ef:EF_DEF)+0.1);
+    state.srs[k]={due:now+srsInterval(stage,ef)*DAY,stage,ef,lapses:prev?prev.lapses:0};
   }
 }
+function srsAlive(k){const[m,i]=k.split(":");return CONTENT[m]&&CONTENT[m].cards[+i];}
 function dueList(){
   const now=Date.now();
-  return Object.entries(state.srs).filter(([,v])=>v.due<=now).map(([k])=>k)
-    .filter(k=>{const[m,i]=k.split(":");return CONTENT[m]&&CONTENT[m].cards[+i];});
+  return Object.entries(state.srs)
+    .filter(([k,v])=>v.due<=now&&srsAlive(k))
+    .sort((a,b)=>a[1].due-b[1].due)   /* en çok gecikmiş önce */
+    .map(([k])=>k);
 }
 function nextDueDays(){
-  const arr=Object.values(state.srs).map(v=>v.due);
+  const arr=Object.entries(state.srs).filter(([k])=>srsAlive(k)).map(([,v])=>v.due);
   if(!arr.length)return null;
   return Math.max(1,Math.ceil((Math.min(...arr)-Date.now())/DAY));
+}
+/* Eski sürüm, 3. başarılı tekrardan sonra kartı programdan siliyordu; o kartlar
+   bir daha hiç sorulmuyordu. Bir kereye mahsus, "bildim" işaretli ama programda
+   karşılığı olmayan kartları orta basamaktan geri al ve 1-10 güne yay. */
+function srsMigrate(){
+  if(state.srsV===2)return;
+  const now=Date.now();let n=0;
+  Object.keys(CONTENT).forEach(m=>{
+    const cs=state.cards[m]||{};
+    Object.entries(cs).forEach(([i,v])=>{
+      const k=m+":"+i;
+      if(v==="ok"&&!state.srs[k]&&CONTENT[m].cards[+i]){
+        state.srs[k]={due:now+srsCap(1+Math.floor(Math.random()*10))*DAY,stage:2,ef:EF_DEF,lapses:0};
+        n++;
+      }
+    });
+  });
+  state.srsV=2;
+  if(n)saveState();
+  return n;
 }
 
 /* ================= SERİ · GÜNLÜK HEDEF · ROZET ================= */
@@ -7212,8 +7266,8 @@ function doImport(file){
       if(!confirm("Yedekteki ilerleme yüklenecek ve mevcut ilerlemenin yerine geçecek. Devam edilsin mi?"))return;
       state={cards:p.cards||{},quiz:p.quiz||{},match:p.match||{},theme:p.theme3||state.theme,
         srs:p.srs||{},wrongQ:p.wrongQ||{},examDate:p.examDate||null,exam:p.exam||{best:-1,att:0},full:p.full||{best:-1,att:0},
-        streak:p.streak||{n:0,last:null},daily:p.daily||{date:null,n:0},badges:p.badges||{},goal:p.goal||15,pastR:p.pastR||{},kademe:p.kademe||null};
-      applyTheme();flushSave();renderHome();
+        streak:p.streak||{n:0,last:null},daily:p.daily||{date:null,n:0},badges:p.badges||{},goal:p.goal||15,pastR:p.pastR||{},kademe:p.kademe||null,srsV:p.srsV||0};
+      srsMigrate();applyTheme();flushSave();renderHome();
       alert("Yedek yüklendi ✓");
     }catch(e){alert("Bu dosya okunamadı. Geçerli bir yedek dosyası (.json) seçtiğinden emin ol.");}
   };
@@ -7559,8 +7613,12 @@ function renderReview(){
   const key=rv.list[rv.i],[m,iS]=key.split(":"),idx=+iS;
   const card=CONTENT[m].cards[idx];
   const mNo=MODULES.find(x=>x.id===m).no;
+  const e=srsEntry(key);
+  /* Bu kartı bir daha bilirsen ne zaman döneceğini önceden göster */
+  const sonraki=e?srsInterval(Math.min(e.stage+1,SRS_IV.length-1),Math.min(EF_MAX,e.ef+0.1)):1;
+  const rozet=e?`<span class="srs-chip" title="Aralıklı tekrar durumu">${e.lapses?"↺ "+e.lapses+" · ":""}bilirsen ${sonraki} gün sonra</span>`:"";
   body.innerHTML=`
-    <div class="fc-stat"><span class="eyebrow">Tekrar ${rv.i+1}/${rv.list.length} · Modül ${mNo}</span></div>
+    <div class="fc-stat"><span class="eyebrow">Tekrar ${rv.i+1}/${rv.list.length} · Modül ${mNo}</span>${rozet}</div>
     ${cardShell(card.q,card.a,"Hatırlıyor musun?")}
     <div class="fc-btns">
       <button class="btn btn-again" id="btnAgain" disabled>Tekrar ✗</button>
@@ -7982,6 +8040,7 @@ show=function(id){ _show(id); const tb=document.getElementById("tabbar"); if(tb)
 /* ================= INIT ================= */
 (async function(){
   await loadState();
+  srsMigrate();
   applyTheme();
   renderHome();
   setTab('home');
