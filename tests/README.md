@@ -40,6 +40,7 @@ yoksa ne yapılacağını söyleyen bir hata verir.
 | `06-sinav-yapisi.mjs` | Resmî Sınav Yapısı paneli ve oturum/rol/kademe veri modeli |
 | `07-kocu.mjs` | Sınav Koçu (`kocu/index.html`) şık karıştırma — dosya yoksa atlanır |
 | `08-deneme.mjs` | Deneme havuzunun format karışımı: kısa kök ve olumsuz kök oranları, modül ağırlıkları, tekrar derinliği |
+| `10-ozet.mjs` | Özet iskeleti (radar son blok, kanca hemen önce), sonradan eklenen bloğa dayanıklılık, hatırlama maskesinin hedefleri ve punto basamağı |
 | `09-zayif.mjs` | Soru istatistiği anahtarları, zorluk fonksiyonu, ağırlıklı seçim, çeldirici takibinde özgün-indeks eşlemesi, sonuçların doğru deftere yazılması |
 
 ## Yeni test yazmak
@@ -75,6 +76,11 @@ metinler ise zeminle karıştırılıp gerçek renkleri üzerinden ölçülür.
 **Eşikler koda gömülü değil, gerekçeli.** Örneğin doğru şıkkın en uzun olma oranı için
 üst sınır %40'tır: şans düzeyi %20, %40'ın üstü ise soruyu bilmeden en uzunu seçmeyi
 kârlı hâle getirir.
+
+**Yapıyı koruyan testler, korumayı da sınar.** Özet iskeleti testi yalnızca mevcut
+20 modülün sırasına bakmaz; kaynağın sonuna geçici bir blok ekleyip radarın hâlâ
+sonda kaldığını doğrular. Asıl güvence budur — sıralama kuralı değil, kuralın
+gelecekteki eklemelere dayanması.
 
 **Karıştırmayla ilgilenen testler, karıştırmanın gerçekten olduğunu da doğrular.**
 Çeldirici takibi testi önce "120 denemenin kaçında ekran sırası özgün sıradan farklı"
