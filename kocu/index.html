@@ -1085,7 +1085,9 @@ function renderStage(mod, stageNum, data){
   }
   else if(stageNum===4){
     QUIZ_ANSWERS={}; STAGE4_DATA=data;
-    const qs=(data.questions||[]).map((q,i)=>{
+    const qs=(data.questions||[]).map((q0,i)=>{
+      /* Şıklar her açılışta karıştırılır; doğru cevabın ekrandaki konumu data-correct'e yazılır */
+      const q=shuffleOpts(q0);
       const opts=(q.options||[]).map((o,oi)=>`
         <button class="quiz-option" data-action="answer" data-qidx="${i}" data-oidx="${oi}">
           <span class="opt-letter">${String.fromCharCode(65+oi)}</span><span>${esc(o)}</span>
