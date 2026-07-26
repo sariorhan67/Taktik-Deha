@@ -52,6 +52,18 @@ eşleştirmeleri, PESTLE, normlar hiyerarşisi ve diğerleri.
 - 💾 **Yedekle / Geri Yükle** — ilerlemeyi `.json` olarak dışa aktar, başka cihaza taşı
 - ☾ Karanlık / aydınlık tema
 
+**Ölçme geçerliği (bu sürümde düzeltildi):**
+- 🔀 **Şıklar her seferinde karıştırılır** — modül sınavı, Yanlış Defteri ve Hızlı Bilgi'de
+  şık sırası her açılışta yeniden kurulur. Böylece "cevap hep B'dir" gibi ezber kısayolları
+  çalışmaz; ölçülen şey konu bilgisi olur. **Çıkmış sorularda kitapçık sırası korunur** —
+  gerçek sınav deneyimi ve resmî cevap anahtarı harfleriyle birebir eşleşsin diye.
+- 📏 **Çeldirici uzunlukları dengelendi** — doğru şıkkın en uzun şık olma oranı
+  %51'den %31'e (şans düzeyi ~%20), ortalama uzunluk avantajı +14 karakterden
+  +3 karaktere indirildi. Doğru şıkta duran gerekçe cümleleri, soruyu bilmeden
+  ipucu vermesin diye çözüm açıklamasına taşındı — bilgi kaybı yok, açıklamalar zenginleşti.
+- 🔤 **Açıklamalar harf değil içerik anlatır** — "C şıkkı yanlıştır" yerine
+  «şıkkın kendi metni» yazılır; şıklar karıştığında açıklama tutarlı kalır.
+
 > **Not:** Modül ağırlıkları (her modülün kaç soru getirdiği), 25 Temmuz 2026 sınavının
 > gerçek soru dağılımına göre kalibre edilmiştir. Bu sayede "Bugünkü Odağın" planı,
 > Hazırlık Radarı ve Tam Deneme, gerçek sınavın ağırlıklarını yansıtır.
