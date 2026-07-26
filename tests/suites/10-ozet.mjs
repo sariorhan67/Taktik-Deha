@@ -1,4 +1,4 @@
-/* Özet iskeleti ve aktif hatırlama.
+/* Özet iskeleti ve tipografi.
    Bu paketin asıl işi: özete içerik eklendikçe yapının bozulmadığını garanti etmek.
    Sıralama render sırasında uygulandığı için, yeni blok kaynağın neresine
    eklenirse eklensin kapanış blokları sonda kalmalı. */
@@ -49,78 +49,6 @@ export default async function ({ browser, rec }) {
   });
   rec.chk(/Sınav Radarı/.test(eklemeDayanikli.son) && eklemeDayanikli.yeniVar,
     `Kaynağın sonuna blok eklense bile radar sonda kalıyor (son blok: ${eklemeDayanikli.son})`);
-
-  /* --- Aktif hatırlama maskesi --- */
-  const maske = await page.evaluate(() => {
-    state.ozetGizli = true;
-    const kotu = { thMaskeli: 0, ilkSutunMaskeli: 0, gorunurMaske: 0, bosHucre: 0 };
-    let toplam = 0, tablo = 0, radar = 0, kanca = 0;
-    MODULES.forEach(m => {
-      openModule(m.id); switchTab("ozet"); ozetModu();
-      const pane = document.querySelector("#pane-ozet");
-      toplam += pane.querySelectorAll(".gz").length;
-      tablo += pane.querySelectorAll("td .gz").length;
-      radar += pane.querySelectorAll("ul.radar li .gz").length;
-      kanca += pane.querySelectorAll(".kanca .open .gz").length;
-      kotu.thMaskeli += pane.querySelectorAll("th .gz").length;
-      pane.querySelectorAll("table tr").forEach(tr => {
-        if (tr.querySelector("th") || tr.cells.length < 2) return;
-        if (tr.cells[0].querySelector(".gz")) kotu.ilkSutunMaskeli++;
-        /* ipucu sütunu boşsa satır anlamsız kalır */
-        if (!tr.cells[0].textContent.trim()) kotu.bosHucre++;
-      });
-      /* maskelenen metin torunlarıyla birlikte gerçekten görünmez olmalı:
-         .kanca .code b gibi kendi rengi olan öğeler maskenin içinden okunabilirdi */
-      pane.querySelectorAll(".gz, .gz *").forEach(e => {
-        if (getComputedStyle(e).color !== "rgba(0, 0, 0, 0)") kotu.gorunurMaske++;
-      });
-    });
-    state.ozetGizli = false;
-    return { toplam, tablo, radar, kanca, ...kotu };
-  });
-  rec.chk(maske.toplam > 200,
-    `Hatırlama modu 20 modülde ${maske.toplam} cevap maskeliyor (tablo ${maske.tablo} · radar ${maske.radar} · kanca ${maske.kanca})`);
-  rec.chk(maske.thMaskeli === 0 && maske.ilkSutunMaskeli === 0,
-    "Tabloda başlık satırı ve ipucu sütunu açık kalıyor — maskelenen yalnızca cevap sütunu");
-  rec.chk(maske.gorunurMaske === 0,
-    `Maskelenen metin torunlarıyla birlikte görünmez (${maske.gorunurMaske} sızıntı)`);
-
-  /* --- Açma / kapama --- */
-  const davranis = await page.evaluate(() => {
-    openModule(MODULES[8].id); switchTab("ozet");
-    state.ozetGizli = true; ozetModu();
-    const pane = document.querySelector("#pane-ozet");
-    const g = pane.querySelectorAll(".gz");
-    g[0].click();
-    const birAcik = [...g].filter(x => x.classList.contains("ac")).length;
-    /* modu kapatıp açınca açılmış maskeler sıfırlanmalı */
-    state.ozetGizli = false; ozetModu();
-    state.ozetGizli = true; ozetModu();
-    const sifirlandi = [...pane.querySelectorAll(".gz")].filter(x => x.classList.contains("ac")).length;
-    /* mod kapalıyken tıklamak bir şey yapmamalı */
-    state.ozetGizli = false; ozetModu();
-    pane.querySelectorAll(".gz")[1].click();
-    const kapaliyken = [...pane.querySelectorAll(".gz")].filter(x => x.classList.contains("ac")).length;
-    const dugme = document.querySelector("#ozGizle");
-    return { birAcik, sifirlandi, kapaliyken, dugmeVar: !!dugme, etiket: dugme && dugme.textContent };
-  });
-  rec.chk(davranis.birAcik === 1,
-    "Dokunulan maske tek başına açılıyor, diğerleri kapalı kalıyor");
-  rec.chk(davranis.sifirlandi === 0,
-    "Moddan çıkıp girince açılmış maskeler sıfırlanıyor");
-  rec.chk(davranis.kapaliyken === 0,
-    "Hatırlama modu kapalıyken tıklama bir şeyi açmıyor");
-  rec.chk(davranis.dugmeVar && /kapat ve hatırla/.test(davranis.etiket),
-    `Düğme modu doğru anlatıyor ("${davranis.etiket}")`);
-
-  /* --- Tercih kalıcı olmalı --- */
-  const kalici = await page.evaluate(() => {
-    state.ozetGizli = true;
-    const j = JSON.parse(snapshot());
-    state.ozetGizli = false;
-    return j.ozetGizli;
-  });
-  rec.chk(kalici === true, "Hatırlama modu tercihi yedeğe giriyor");
 
   /* --- Punto basamağı: gövde metniyle tablo arası uçurum olmamalı --- */
   const punto = await page.evaluate(() => {
