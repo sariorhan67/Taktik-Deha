@@ -87,6 +87,18 @@ gibidir: 1. Oturum 10.00 Müdür · 2. Oturum 13.00 Müdür Yrd. (Temel Eğitim)
 > soru dağılımı tablosundan** alınmıştır — tahmin değildir. Bu sayede "Bugünkü Odağın"
 > planı, Hazırlık Radarı ve Tam Deneme gerçek sınavın ağırlıklarını yansıtır.
 
+## Testler
+
+```bash
+node tests/run.mjs        # 102 kontrol · ~100 sn
+node tests/run.mjs srs    # ad parçasıyla süz
+```
+
+Uygulama tek dosya olduğu için testler onu gerçek bir tarayıcıda açıp hem veriyi hem
+arayüzü yerinde denetler: soru bankalarının biçimi, modül ağırlıklarının resmî duyuruyla
+aynılığı, şık karıştırma, aralıklı tekrar zamanlayıcısı, WCAG AA kontrastı (dört sekme ×
+iki tema) ve yatay taşma. Ayrıntılar için [`tests/README.md`](tests/README.md).
+
 ## Çalıştırma
 
 Dosyayı tarayıcıda açmanız yeterli:
