@@ -40,7 +40,7 @@ yoksa ne yapılacağını söyleyen bir hata verir.
 | `06-sinav-yapisi.mjs` | Resmî Sınav Yapısı paneli ve oturum/rol/kademe veri modeli |
 | `07-kocu.mjs` | Sınav Koçu (`kocu/index.html`) şık karıştırma — dosya yoksa atlanır |
 | `08-deneme.mjs` | Deneme havuzunun format karışımı: kısa kök ve olumsuz kök oranları, modül ağırlıkları, tekrar derinliği |
-| `10-ozet.mjs` | Özet iskeleti (radar son blok, kanca hemen önce), sonradan eklenen bloğa dayanıklılık, punto basamağı |
+| `10-ozet.mjs` | Özet iskeleti (radar son blok, kanca hemen önce), sonradan eklenen bloğa dayanıklılık, vurgu sınıflarının neyi alıp neyi almadığı, sayı şeridi, radar→çıkmış soru bağı, punto basamağı |
 | `09-zayif.mjs` | Soru istatistiği anahtarları, zorluk fonksiyonu, ağırlıklı seçim, çeldirici takibinde özgün-indeks eşlemesi, sonuçların doğru deftere yazılması |
 
 ## Yeni test yazmak

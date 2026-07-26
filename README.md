@@ -15,6 +15,19 @@ sistem yazı tipine düşer).
   **son** gelir. Sıralama kaynağa değil ekrana uygulanır: özete ileride nereye blok
   eklenirse eklensin kapanış blokları kendiliğinden sonda kalır, iskelet eklemelerle
   bozulmaz. Özet uzunluğu modülün yoğunluğuna göre değişir — sabit değildir.
+- 🔢 **Bu Modülün Sayıları** — özetin başında, o modülün ezberlenmesi gereken
+  sayıları tek şeritte: kanun numaraları, süreler, oranlar, ölçüler. Şerit
+  yazılmaz, **özetteki vurgulardan türetilir** — içerik eklendikçe kendiliğinden
+  büyür. Çipe dokununca metinde geçtiği yere gider. 9 modülde 53 sayı.
+- 🎨 **Vurguya anlam yüklendi** — özet metninin ortalama %19'u kalındı ve 936
+  vurgunun hepsi aynı görünüyordu; her şey kalın olunca kalın olmak "önemli"
+  demiyor. Vurgu artık iki sınıfa ayrılıyor: **sayı** (mono rakam, zeminli çip)
+  ve **tuzak** (kırmızı dalgalı altı çizili — «değildir», «≠», «sırası»).
+  Ayrımın püf noktası, neyi *almadığı*: liste tanıtan sayaçlar iki nokta ile
+  biter ("5 ilke:", "10 özellik:") ve sayı sayılmaz, yoksa şerit çöp dolardı.
+- 🎯 **Radar artık kanıt gösteriyor** — her modülün Sınav Radarı'nın altında
+  «bu modülden çıkmış N soruyu çöz» bağlantısı var; iddia doğrudan gerçek
+  sınav sorusuna bağlanıyor.
 - 🧠 Zihin haritası
 - 📊 Karşılaştırma tablosu
 - 🔗 Eşleştirme alıştırması — **361 çift**, her modülde sınavda getirdiği soru
@@ -122,7 +135,7 @@ gibidir: 1. Oturum 10.00 Müdür · 2. Oturum 13.00 Müdür Yrd. (Temel Eğitim)
 ## Testler
 
 ```bash
-node tests/run.mjs        # 160 kontrol · ~140 sn
+node tests/run.mjs        # 172 kontrol · ~140 sn
 node tests/run.mjs srs    # ad parçasıyla süz
 ```
 
