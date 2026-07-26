@@ -213,6 +213,23 @@ b{font-weight:700}
 
 /* ============ CONCEPT MAP ============ */
 .map-tools{display:flex;justify-content:flex-end;margin-bottom:12px}
+/* Sayı vurgusu: mono rakam + hafif zemin. Uzun künyeler de bu sınıfa girebildiği
+   için nowrap YOK — "6331 sayılı İş Sağlığı ve Güvenliği Kanunu" satır taşırırdı. */
+/* box-decoration-break: satır kırılınca iki parça da tam zemin ve köşe alsın,
+   yoksa "1739 ≠ 222" bölündüğünde çip yarım görünür. */
+#pane-ozet .blk b.v-sayi{font-family:var(--mono);font-weight:600;font-size:.94em;
+  background:var(--accent-soft);color:var(--accent-ink);padding:1px 5px;border-radius:5px;
+  box-decoration-break:clone;-webkit-box-decoration-break:clone}
+#pane-ozet .blk b.v-tuzak{color:var(--red-ink);text-decoration:underline;
+  text-decoration-style:wavy;text-decoration-thickness:1px;text-underline-offset:3px}
+#pane-ozet .blk b.sy-flash{outline:2px solid var(--accent);outline-offset:2px}
+.sayi-serit .sy-wrap{display:flex;flex-wrap:wrap;gap:6px}
+.sayi-serit .sy{font-family:var(--mono);font-size:var(--fs-3);font-weight:600;
+  background:var(--accent-soft);color:var(--accent-ink);border:1px solid var(--accent);
+  border-radius:8px;padding:5px 9px;cursor:pointer;max-width:100%;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sayi-serit .sy:active{transform:scale(.97)}
+.rd-git{margin-top:12px}
 .map-tools button{font-family:var(--mono);font-size:var(--fs-1);color:var(--accent-ink);border:1px solid var(--line);background:var(--card);padding:7px 14px;border-radius:99px;box-shadow:var(--shadow)}
 .map-root{background:var(--accent-soft);color:var(--accent-ink);border:1px solid var(--accent);font-family:var(--serif);font-weight:600;font-size:var(--fs-5);text-align:center;padding:16px;border-radius:var(--radius);letter-spacing:.02em}
 .map-tree{position:relative;margin:0 0 0 16px;padding:14px 0 4px 22px;border-left:1.5px solid var(--line)}
@@ -7825,7 +7842,7 @@ function openModule(id){
   $("#modNo").textContent=(MICON[id]?MICON[id]+" ":"")+"Modül "+m.no;
   $("#modTitle").textContent=m.title;
   $("#pane-ozet").innerHTML=c.ozet;
-  ozetHazirla();
+  ozetHazirla(id);
   $("#pane-tablo").innerHTML=c.tablo;
   $("#pane-poster").innerHTML=c.poster||"";
   renderMap(id);
@@ -7870,9 +7887,96 @@ function ozetDuzenle(pane){
   /* sort kararlıdır: aynı türden birden çok blok varsa kendi sıraları korunur */
   son.sort((a,b)=>a[0]-b[0]).forEach(x=>pane.appendChild(x[1]));
 }
-function ozetHazirla(){
+/* ---- Vurguya anlam yüklemek ----
+   Özet metninin ortalama %19'u kalın (M20'de %28) ve 936 vurgunun hepsi aynı
+   görünüyordu; her şey kalın olunca kalın olmak "önemli" demiyor. Vurgu iki
+   ölçülebilir sınıfa ayrılır, gerisi düz kalın kalır.
+
+   Not: İSİM sınıfı bilerek yapılmadı. Eşleştirme setlerinden ad sözlüğü türetmeyi
+   denedim; sözlük "Klasik", "Modern", "açık sistem" gibi ad olmayanları da
+   topluyor ve bunları özel ad gibi işaretlemek yanlış bilgi verirdi. Güvenilir
+   bir ayrım bulunana kadar bu sınıf yok. */
+const TUZAK_RE=/değil|yanlış|≠|sıras|aykırı|karıştır|tuzak|yalnız|sadece|dışında|hariç/i;
+/* Ezberlenen sayı ile yapısal sayacı ayırır. Ayrım birim listesiyle değil —
+   o yol "50 cm", "%70", "24 birim", "1,5 katı"yı kaçırıyordu — sayacın kendi
+   biçimiyle yapılır: yapısal sayaç bir listeyi TANITIR ve iki nokta ile biter
+   ("5 ilke:", "10 özellik:", "4 alan:", "3 Katman (…):"), ezberlenen sayı bitmez
+   ("1739", "10 yıl", "%70", "2,40 m²"). Çıplak sayı da alınmaz: bağlamsız "3"
+   veya "20" şeritte hiçbir şey ifade etmez. */
+function ozetSayiMi(ham){
+  const h=String(ham).trim();
+  if(/:$/.test(h))return false;
+  const t=h.replace(/[.,;]+$/,"");
+  if(!/\d/.test(t))return false;
+  if(/Modül\s*\d/i.test(t))return false;
+  if(/^\d{1,2}$/.test(t))return false;
+  if(/^\d+\.\s*\S/.test(t))return false;      /* "1. Alarm" — sıra numarası, ezber sayısı değil */
+  /* iki nokta almadan da sayaç olabilen kalıplar */
+  if(/^\d+\s*(boyut|ilke|özellik|katman|unsur|aşama|adım|düzey|tür)/i.test(t))return false;
+  return true;
+}
+function ozetVurgula(pane){
+  pane.querySelectorAll(".blk b").forEach(x=>{
+    if(x.closest(".kanca"))return;             /* kancanın kendi altın vurgusu var */
+    const ham=x.textContent.trim();
+    const t=ham.replace(/[:.,;]+$/,"");
+    if(!t)return;
+    if(ozetSayiMi(ham))x.classList.add("v-sayi");
+    /* uzun tuzak vurguları cümle boyunda olabiliyor; işaret cümleye değil ibareye */
+    else if(t.length<=40&&TUZAK_RE.test(t))x.classList.add("v-tuzak");
+  });
+}
+/* ---- Kritik sayılar şeridi ----
+   Sayılar sınavın en çok sorduğu ve en çabuk uçan bilgisi; yalnızca 3 modülde
+   "Kritik Sayılar" bloğu vardı. Şerit yazılmaz, özetteki sayı vurgularından
+   türetilir — içerik eklendikçe kendiliğinden büyür. */
+function ozetSayiSeridi(pane){
+  const gorulen=new Set(),liste=[];
+  pane.querySelectorAll("b.v-sayi").forEach(x=>{
+    const t=x.textContent.trim().replace(/[:.,;]+$/,"");
+    if(gorulen.has(t))return;
+    gorulen.add(t);x.dataset.sy=liste.length;liste.push(t);
+  });
+  if(liste.length<3)return;                    /* iki sayı için şerit kurmaya değmez */
+  const el=document.createElement("div");
+  el.className="blk sayi-serit";
+  el.innerHTML='<h3>🔢 Bu Modülün Sayıları</h3><div class="sy-wrap">'+
+    liste.map((t,i)=>'<button class="sy" data-git="'+i+'">'+t+'</button>').join("")+'</div>';
+  const ilk=pane.querySelector(".blk");
+  pane.insertBefore(el,ilk||pane.firstChild);
+  el.querySelectorAll(".sy").forEach(bt=>bt.addEventListener("click",()=>{
+    const hedef=pane.querySelector('b.v-sayi[data-sy="'+bt.dataset.git+'"]');
+    if(!hedef)return;
+    hedef.scrollIntoView({block:"center",behavior:"smooth"});
+    hedef.classList.add("sy-flash");
+    setTimeout(()=>hedef.classList.remove("sy-flash"),1400);
+  }));
+}
+/* ---- Radarı kanıta bağlamak ----
+   Radar "bunlar sorulur" diyor ama kanıt göstermiyordu. Bağ MODÜL düzeyinde
+   kuruldu: madde başına eşleştirme denendi ve güvenilmez çıktı (aynı soru farklı
+   maddelere eşleşiyordu), yanlış kanıt hiç kanıt göstermemekten kötüdür. */
+function ozetRadarBag(pane,mid){
+  const radar=[...pane.querySelectorAll(".blk")]
+    .filter(b=>{const h=b.querySelector("h3");return h&&/Sınav Radarı/.test(h.textContent);});
+  const son=radar[radar.length-1];if(!son)return;
+  const n=pastPool().filter(q=>q.m===mid).length;if(!n)return;
+  const bt=document.createElement("button");
+  bt.className="btn btn-ghost rd-git";
+  bt.textContent="Bu modülden çıkmış "+n+" soruyu çöz →";
+  bt.addEventListener("click",()=>{
+    const m=MODULES.find(x=>x.id===mid);
+    startPast(pastPool().filter(q=>q.m===mid),"Modül "+m.no);
+    show("#scr-past");window.scrollTo(0,0);
+  });
+  son.appendChild(bt);
+}
+function ozetHazirla(mid){
   const pane=$("#pane-ozet");if(!pane)return;
   ozetDuzenle(pane);
+  ozetVurgula(pane);
+  ozetSayiSeridi(pane);
+  ozetRadarBag(pane,mid);
 }
 
 /* ================= CONCEPT MAP ================= */
