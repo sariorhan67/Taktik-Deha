@@ -31,9 +31,9 @@ sistem yazı tipine düşer).
 - Oturuma göre, modüle göre, karışık 60 soru veya "hiç çözmediklerim" olarak çalışma
 - Yanlışların ayrı listede birikir, tekrar çözülebilir
 
-**⚡ Hızlı Bilgi (124 kısa soru):**
-Gerçek sınavın baskın formatı **kısa bilgi sorusu**dur (%70) ve dörtte biri **olumsuz kök**
-taşır ("Hangisi ... değildir?"). Uygulamanın kendi 200 sorusu vaka tipiydi; bu banka o açığı
+**⚡ Hızlı Bilgi (161 kısa soru):**
+Gerçek sınavın baskın formatı **kısa bilgi sorusu**dur (%70) ve yaklaşık üçte biri
+**olumsuz kök** taşır ("Hangisi ... değildir?"). Uygulamanın kendi 200 sorusu vaka tipiydi; bu banka o açığı
 kapatır. Sorular ders notlarına dayanır ve gerçek sınavda çıkan ama uygulamada zayıf kalan
 konulara odaklanır: MÖZEM, özel eğitim uygulama evleri, destek eğitim odası, yardımcı
 teknolojiler, TEFBİS/EKAP/HYS-MYS/KBS/MEBBİS, Selye ve 3A+S modeli, isim-eser
@@ -54,8 +54,11 @@ hiç soru yoktu. Her sorunun çözüm açıklaması vardır.
 - ⏱ **Karma Deneme** (10 soru) ve 🎓 **Tam Deneme** (60 soru · 75 dk) — soru dağılımı
   resmî ağırlıklara, **format karışımı gerçek sınavın ölçülmüş profiline** göre kurulur:
   çıkmış 195 soruda kısa bilgi kökü %52'dir, bu yüzden denemenin de yaklaşık yarısı
-  Hızlı Bilgi bankasından, kalanı vaka bankasından çekilir. Her deneme farklı bir
-  bileşim taşır; havuz 337 soruya çıktığı için aynı soru daha seyrek tekrarlanır.
+  Hızlı Bilgi bankasından, kalanı vaka bankasından çekilir. **Olumsuz kök** oranı da
+  gözetilir: gerçek sınavın %31'i «hangisi … değildir?» biçimindedir ve bu ayrı bir
+  beceridir — en iyi seçeneği bulmak yerine beş seçeneğin de doğruluğunu yoklamayı
+  gerektirir. Her deneme farklı bir bileşim taşır; havuz 389 soruya çıktığı için aynı
+  soru daha seyrek tekrarlanır.
 - 📅 Sınav tarihi geri sayımı, genel ilerleme çubuğu
 
 **Bu sürümde eklenenler:**
@@ -95,7 +98,7 @@ gibidir: 1. Oturum 10.00 Müdür · 2. Oturum 13.00 Müdür Yrd. (Temel Eğitim)
 ## Testler
 
 ```bash
-node tests/run.mjs        # 123 kontrol · ~110 sn
+node tests/run.mjs        # 126 kontrol · ~115 sn
 node tests/run.mjs srs    # ad parçasıyla süz
 ```
 

@@ -107,6 +107,23 @@ export default async function ({ browser, rec }) {
   rec.chk(d.kartBozuk === 0 && d.kartYinelenen === 0,
     `Kartlarda boş alan veya yinelenen soru yok (boş ${d.kartBozuk}, yinelenen ${d.kartYinelenen})`);
 
+  /* Olumsuz kök derinliği: deneme havuzu bunları tercihen çektiği için her modülde
+     birkaç tane bulunmalı, yoksa aynı soru neredeyse her denemede tekrarlanır. */
+  const olm = await page.evaluate(() => {
+    const hz = {};
+    hizliPool().forEach(q => { (hz[q.m] = hz[q.m] || []).push(q); });
+    return MODULES.map(m => ({
+      no: m.no, w: m.w,
+      n: (hz[m.id] || []).filter(olumsuzKok).length +
+         (CONTENT[m.id].quiz || []).filter(olumsuzKok).length,
+    }));
+  });
+  /* Deneme başına ihtiyaç modülün ağırlığı × %31; havuz bunun en az üç katı olmalı
+     ki aynı soru denemelerin üçte birinden fazlasında çıkmasın. */
+  const ince = olm.filter(x => x.n < Math.max(2, Math.ceil(x.w * 0.31 * 3)));
+  rec.chk(ince.length === 0,
+    `Her modülde yeterli olumsuz köklü soru var${ince.length ? " — ince: " + ince.map(x => `M${x.no}(${x.n})`).join(" ") : ` (toplam ${olm.reduce((a, x) => a + x.n, 0)})`}`);
+
   /* Rozet eşikleri ulaşılabilir ve doğru olmalı: kart rozeti desteden büyük olamaz,
      baraj rozeti de gerçek barajın (60 puan) altında verilmemeli. */
   const rozet = await page.evaluate(() => {

@@ -7,8 +7,9 @@
 import { openApp } from "../lib.mjs";
 export const baslik = "Deneme havuzu";
 
-const TUR = 40;           /* örneklem: rastgeleliğin gürültüsünü düşürmek için */
-const GERCEK_KISA = 0.52; /* çıkmış sorulardan ölçüldü */
+const TUR = 40;              /* örneklem: rastgeleliğin gürültüsünü düşürmek için */
+const GERCEK_KISA = 0.52;    /* çıkmış 195 soruda ölçüldü */
+const GERCEK_OLUMSUZ = 0.31; /* çıkmış 195 soruda ölçüldü */
 
 export default async function ({ browser, rec }) {
   const page = await openApp(browser, rec);
@@ -17,6 +18,7 @@ export default async function ({ browser, rec }) {
     const kes = t => String(t).replace(/<[^>]+>/g, "");
     const olumsuz = /değildir|olamaz|yanlış|söylenemez|yer almaz|sayılmaz|beklenmez|yoktur/i;
     let kisa = 0, olm = 0, top = 0, hz = 0, boyutHata = 0;
+    const tekrar = {};
     const modSayac = {}, kullanim = {}, esleme = [];
     for (let t = 0; t < n; t++) {
       const pool = buildFullPool();
@@ -28,7 +30,9 @@ export default async function ({ browser, rec }) {
         if (olumsuz.test(kes(q.s))) olm++;
         if (it.src === "hizli") hz++;
         modSayac[it.m] = (modSayac[it.m] || 0) + 1;
-        kullanim[it.src + ":" + (it.k || it.m + "#" + it.i)] = 1;
+        const kimlik = it.src + ":" + (it.k || it.m + "#" + it.i);
+        kullanim[kimlik] = 1;
+        tekrar[kimlik] = (tekrar[kimlik] || 0) + 1;
         /* karıştırılmış şıkta doğru cevap doğru yere düşmüş mü */
         esleme.push(it.ord[it.correct] === q.c && q.o.length === 5);
       });
@@ -40,6 +44,7 @@ export default async function ({ browser, rec }) {
       boyutHata, kisa: kisa / top, olm: olm / top, hz: hz / top,
       agirlikSapma, farkli: Object.keys(kullanim).length,
       esleme: esleme.every(Boolean),
+      enCokTekrar: Math.max(...Object.values(tekrar)),
       vakaToplam: Object.values(CONTENT).reduce((a, c) => a + (c.quiz || []).length, 0),
     };
   }, TUR);
@@ -55,6 +60,17 @@ export default async function ({ browser, rec }) {
     `Kısa kök oranı gerçek sınava yakın: %${Math.round(d.kisa * 100)} (gerçek %52, bant ±8)`);
   rec.chk(d.hz > 0.25 && d.hz < 0.55,
     `Denemenin bir bölümü Hızlı Bilgi bankasından geliyor: %${Math.round(d.hz * 100)}`);
+
+  /* Olumsuz kök ayrı bir beceridir ve gerçek sınavın üçte birini oluşturur.
+     Bankalarda doğal oran daha düşük olduğu için havuz kurucu bunları tercihen
+     çeker; bant, örneklem gürültüsünü tolere ederken %11'e (kurucu öncesi
+     seviyeye) düşüşü yakalar. */
+  rec.chk(Math.abs(d.olm - GERCEK_OLUMSUZ) <= 0.08,
+    `Olumsuz kök oranı gerçek sınava yakın: %${Math.round(d.olm * 100)} (gerçek %31, bant ±8)`);
+
+  /* Olumsuz köklüleri tercih etmek, o alt kümeyi aşırı tekrarlatmamalı. */
+  rec.chk(d.enCokTekrar <= TUR * 0.8,
+    `Hiçbir soru denemelerin çoğunda tekrarlanmıyor (en çok ${d.enCokTekrar}/${TUR})`);
 
   /* Havuz derinliği: tek kaynaklı sürümde 40 denemede yalnızca vaka bankası
      (213 soru) dolaşılabiliyordu. */
