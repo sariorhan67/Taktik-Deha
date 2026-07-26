@@ -52,6 +52,15 @@ export default async function ({ browser, rec }) {
       }).filter(Boolean),
       hizliModul: HIZLI.reduce((a, q) => (a[q.m] = (a[q.m] || 0) + 1, a), {}),
       modIdByNo: MODULES.reduce((a, m) => (a[+m.no] = m.id, a), {}),
+      /* Kart desteleri: sayı ve biçim */
+      kart: MODULES.reduce((a, m) => (a[+m.no] = (CONTENT[m.id] && CONTENT[m.id].cards || []).length, a), {}),
+      kartBozuk: MODULES.reduce((n, m) => n + (CONTENT[m.id] && CONTENT[m.id].cards || [])
+        .filter(c => !c.q || !c.a || !String(c.q).trim() || !String(c.a).trim()).length, 0),
+      kartYinelenen: (() => {
+        const t = []; MODULES.forEach(m => (CONTENT[m.id] && CONTENT[m.id].cards || []).forEach(c => t.push(c.q)));
+        return t.length - new Set(t).size;
+      })(),
+      kartToplam: MODULES.reduce((n, m) => n + (CONTENT[m.id] && CONTENT[m.id].cards || []).length, 0),
     };
   });
 
@@ -87,6 +96,46 @@ export default async function ({ browser, rec }) {
     .filter(x => x.var < x.hedef);
   rec.chk(eksikBanka.length === 0,
     `Her modülde ağırlığının en az 2 katı Hızlı Bilgi sorusu var${eksikBanka.length ? " — eksik: " + eksikBanka.map(x => `M${x.no}(${x.var}/${x.hedef})`).join(" ") : ""}`);
+
+  /* Kartlar aralıklı tekrarın yakıtıdır; ağır modüllerin destesi ince kalmamalı.
+     Hedef, modülün resmî soru sayısının üç katıdır. */
+  const eksikKart = Object.entries(RESMI_DAGILIM)
+    .map(([no, w]) => ({ no, hedef: w * 3, var: d.kart[no] || 0 }))
+    .filter(x => x.var < x.hedef);
+  rec.chk(eksikKart.length === 0,
+    `Her modülde ağırlığının en az 3 katı kart var (toplam ${d.kartToplam})${eksikKart.length ? " — eksik: " + eksikKart.map(x => `M${x.no}(${x.var}/${x.hedef})`).join(" ") : ""}`);
+  rec.chk(d.kartBozuk === 0 && d.kartYinelenen === 0,
+    `Kartlarda boş alan veya yinelenen soru yok (boş ${d.kartBozuk}, yinelenen ${d.kartYinelenen})`);
+
+  /* Rozet eşikleri ulaşılabilir ve doğru olmalı: kart rozeti desteden büyük olamaz,
+     baraj rozeti de gerçek barajın (60 puan) altında verilmemeli. */
+  const rozet = await page.evaluate(() => {
+    const kaynak = BADGES.map(b => ({ id: b.id, ad: b.n, kod: b.t.toString() }));
+    const sayi = k => { const m = k.match(/>=\s*(\d+)/); return m ? +m[1] : null; };
+    return {
+      n: BADGES.length,
+      kart: kaynak.filter(b => /totalLearned/.test(b.kod)).map(b => ({ ...b, esik: sayi(b.kod) })),
+      past: kaynak.filter(b => /pastSolved/.test(b.kod)).map(b => ({ ...b, esik: sayi(b.kod) })),
+      baraj: kaynak.filter(b => /state\.full.*best/.test(b.kod)).map(b => ({ ...b, esik: sayi(b.kod) })),
+      kartToplam: MODULES.reduce((n, m) => n + (CONTENT[m.id] && CONTENT[m.id].cards || []).length, 0),
+      pastToplam: PAST.length + HIZLI.length,
+      /* uygulama tam deneme puanını yüzde olarak saklar */
+      yuzdeMi: true,
+    };
+  });
+  const ulasilmaz = [
+    ...rozet.kart.filter(b => b.esik > rozet.kartToplam).map(b => `${b.ad} (${b.esik}>${rozet.kartToplam} kart)`),
+    ...rozet.past.filter(b => b.esik > rozet.pastToplam).map(b => `${b.ad} (${b.esik}>${rozet.pastToplam} soru)`),
+  ];
+  rec.chk(ulasilmaz.length === 0,
+    `Rozet eşikleri ulaşılabilir${ulasilmaz.length ? " — " + ulasilmaz.join(", ") : ""}`);
+  const barajHatali = rozet.baraj.filter(b => b.esik !== null && b.esik < 60);
+  rec.chk(barajHatali.length === 0,
+    `Baraj rozeti gerçek barajın altında verilmiyor (Tam Deneme puanı yüzdedir, baraj 60)${barajHatali.length ? " — " + barajHatali.map(b => `${b.ad}:${b.esik}`).join(", ") : ""}`);
+  const adUyumsuz = rozet.kart.concat(rozet.past)
+    .filter(b => { const m = b.ad.match(/(\d+)/); return m && +m[1] !== b.esik; });
+  rec.chk(adUyumsuz.length === 0,
+    `Rozet adındaki sayı eşikle aynı${adUyumsuz.length ? " — " + adUyumsuz.map(b => `${b.ad}≠${b.esik}`).join(", ") : ""}`);
 
   await page.context().close();
 }
