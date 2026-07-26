@@ -1152,6 +1152,7 @@ const HIZLI=[
 {m:"m20",g:"ortak",s:"Yapay zekâ ile üretilen içeriğin doğrulanmadan kullanılmaması talebi öncelikle neyi vurgular?",o:["Siber saldırılara karşı korunmayı","Okulun donanım yönetimini","Etik ve sorumlu yapay zekâ kullanımını","Teknolojiye bağımlılık riskini","Okul ağının güvenliğini"],c:2,w:"Vurgu <b>etik ve sorumlu yapay zekâ kullanımıdır</b>: çıktı bir öneri olarak alınır, doğruluğu insan tarafından sınanır. Dijital vatandaşlık daha geniş bir şemsiyedir; siber saldırı, donanım ve ağ güvenliği ise içerik doğruluğuyla değil altyapı güvenliğiyle ilgilidir."}
 ];
 HIZLI.forEach((q,i)=>{q.k='h'+(i+1);q.t=0;q.r='';});
+const HIZLI_BY_K={};HIZLI.forEach(q=>{HIZLI_BY_K[q.k]=q;});
 
 const MICON={m1:"🧭",m2:"📖",m3:"🏛️",m4:"🤝",m5:"📚",m6:"🎯",m7:"🔄",m8:"💰",m9:"⚖️",m10:"🚨",
  m11:"🏫",m12:"👥",m13:"🌍",m14:"🕊️",m15:"🌟",m16:"🧑‍🏫",m17:"🧘",m18:"🎤",m19:"📜",m20:"🌱"};
@@ -7882,17 +7883,51 @@ function renderWrongSolve(){
 let ex={list:[],i:0,score:0,answered:false,left:90};
 let tick=null;
 function stopTimer(){if(tick){clearInterval(tick);tick=null;}}
-function buildExamPool(){
-  const pool=[];
-  MODULES.filter(m=>m.ready&&CONTENT[m.id]).forEach(m=>{
-    CONTENT[m.id].quiz.forEach((q,i)=>pool.push({m:m.id,i}));
-  });
-  return shuffle(pool).slice(0,10).map(ref=>{
-    const q=CONTENT[ref.m].quiz[ref.i];
-    const ord=shuffle(q.o.map((_,x)=>x));
-    return{ref,ord,correct:ord.indexOf(q.c)};
-  });
+/* ---- DENEME HAVUZU ----
+   Gerçek sınavda soruların yarısından fazlası KISA BİLGİ kökü taşır (195 çıkmış
+   soruda %52) ve neredeyse üçte biri olumsuz köklüdür. Vaka bankası ise %80 orta
+   uzunluktadır; yalnızca ondan kurulan bir deneme, var olmayan bir sınav formatına
+   hazırlar. Bu yüzden denemeler her modülden AĞIRLIĞI KADAR soru çeker ve bunun bir
+   bölümünü Hızlı Bilgi (kısa kök) bankasından alır. Havuz da derinleşir: aynı soru
+   arka arkaya denemelerde daha seyrek tekrarlanır. */
+const DENEME_KISA_ORAN=0.4;
+
+/* Deneme maddesi iki kaynaktan gelebilir:
+   {src:"vaka", m, i}  → CONTENT[m].quiz[i]      {src:"hizli", m, k} → HIZLI_BY_K[k] */
+function denemeQ(it){return it.src==="hizli"?HIZLI_BY_K[it.k]:CONTENT[it.m].quiz[it.i];}
+function denemeMadde(src,mid,ref){
+  const q=src==="hizli"?HIZLI_BY_K[ref]:CONTENT[mid].quiz[ref];
+  const ord=shuffle(q.o.map((_,x)=>x));
+  const it={src,m:mid,ord,correct:ord.indexOf(q.c),pick:null};
+  if(src==="hizli")it.k=ref;else it.i=ref;
+  return it;
 }
+/* Sonucu her kaynağın kendi defterine yazar: vaka → Yanlış Defteri,
+   Hızlı Bilgi → çözülmüş soru kaydı (modül hazırlığını da besler). */
+function denemeYaz(it,ok){
+  if(it.src==="hizli"){if(!state.pastR)state.pastR={};state.pastR[it.k]=ok?1:0;}
+  else{const key=it.m+":"+it.i;if(ok)delete state.wrongQ[key];else state.wrongQ[key]=true;}
+}
+function buildFullPool(){
+  const list=[];
+  const hzHavuz={};hizliPool().forEach(q=>{(hzHavuz[q.m]=hzHavuz[q.m]||[]).push(q.k);});
+  MODULES.filter(m=>m.ready&&CONTENT[m.id]).forEach(m=>{
+    const hz=hzHavuz[m.id]||[],qs=CONTENT[m.id].quiz;
+    /* Olasılıksal yuvarlama: ağırlığı 2 olan bir modülde pay 0,8 çıkar. Yukarı
+       yuvarlansaydı her modül en az bir kısa soru alır ve karışım hedefi aşardı.
+       Böylece oran ortalamada tutar, ayrıca her deneme farklı bir bileşim taşır. */
+    const pay=m.w*DENEME_KISA_ORAN, taban=Math.floor(pay);
+    const istenen=taban+(Math.random()<pay-taban?1:0);
+    /* Hızlı Bilgi havuzu yetmezse eksik, vaka tarafından tamamlanır. */
+    const kisa=Math.min(hz.length,istenen);
+    shuffle(hz).slice(0,kisa).forEach(k=>list.push(denemeMadde("hizli",m.id,k)));
+    shuffle(qs.map((_,i)=>i)).slice(0,m.w-kisa).forEach(i=>list.push(denemeMadde("vaka",m.id,i)));
+  });
+  return shuffle(list);
+}
+/* Karma Deneme, tam denemenin küçük örneklemidir: aynı format karışımını ve
+   modül ağırlıklarını taşır. */
+function buildExamPool(){return buildFullPool().slice(0,10);}
 function startExam(){
   ex={list:buildExamPool(),i:0,score:0,answered:false,left:90};
   renderExam();show("#scr-exam");
@@ -7921,8 +7956,8 @@ function renderExam(){
     if(ex.score===n)confettiBurst(36);
     return;
   }
-  const item=ex.list[ex.i],q=CONTENT[item.ref.m].quiz[item.ref.i];
-  const no=MODULES.find(x=>x.id===item.ref.m).no;
+  const item=ex.list[ex.i],q=denemeQ(item);
+  const no=MODULES.find(x=>x.id===item.m).no;
   ex.answered=false;ex.left=90;
   body.innerHTML=`
     <div class="q-head"><span class="eyebrow">Soru ${ex.i+1}/${ex.list.length} · M${no}</span><span class="timer" id="tmr">01:30</span></div>
@@ -7947,11 +7982,10 @@ function renderExam(){
 }
 function exResolve(chosen,timedOut){
   stopTimer();ex.answered=true;
-  const item=ex.list[ex.i],q=CONTENT[item.ref.m].quiz[item.ref.i];
+  const item=ex.list[ex.i],q=denemeQ(item);
   const ok=!timedOut&&chosen===item.correct;
-  const key=item.ref.m+":"+item.ref.i;
-  if(ok){ex.score++;delete state.wrongQ[key];}
-  else state.wrongQ[key]=true;
+  if(ok)ex.score++;
+  denemeYaz(item,ok);
   saveState();
   document.querySelectorAll("#scr-exam #opts .opt").forEach(b=>{
     const bx=+b.dataset.x;b.disabled=true;
@@ -7961,7 +7995,7 @@ function exResolve(chosen,timedOut){
   });
   $("#explBox").innerHTML=`<div class="expl ${ok?"ok":"no"}">
     <div class="verdict">${ok?"✓ Doğru":timedOut?"⏱ Süre doldu — doğru cevap "+"ABCDE"[item.correct]:"✗ Yanlış — doğru cevap "+"ABCDE"[item.correct]}</div>
-    ${q.w}<span class="basis">📌 ${q.b}</span></div>`;
+    ${q.w}<span class="basis">📌 ${q.b||(item.src==="hizli"?"Ders notu · Hızlı Bilgi":"")}</span></div>`;
   $("#exNext").style.display="block";
 }
 function exPick(x){if(ex.answered)return;exResolve(x,false);}
@@ -7970,17 +8004,6 @@ function exTimeout(){if(ex.answered)return;exResolve(-1,true);}
 /* ================= TAM DENEME (60 SORU · 75 DK) ================= */
 let fx=null,fxTick=null;
 function fxStop(){if(fxTick){clearInterval(fxTick);fxTick=null;}}
-function buildFullPool(){
-  const list=[];
-  MODULES.filter(m=>m.ready&&CONTENT[m.id]).forEach(m=>{
-    const qs=CONTENT[m.id].quiz;
-    shuffle(qs.map((_,i)=>i)).slice(0,m.w).forEach(i=>{
-      const q=qs[i],ord=shuffle(q.o.map((_,x)=>x));
-      list.push({m:m.id,i,ord,correct:ord.indexOf(q.c),pick:null});
-    });
-  });
-  return shuffle(list);
-}
 function startFull(){
   fx={list:buildFullPool(),i:0,left:75*60,done:false};
   renderFull();show("#scr-full");window.scrollTo(0,0);
@@ -8001,22 +8024,22 @@ function startFull(){
 function fxAnswered(){return fx.list.filter(x=>x.pick!==null).length;}
 function renderFull(){
   if(fx.done)return;
-  const body=$("#fullBody"),it=fx.list[fx.i],q=CONTENT[it.m].quiz[it.i];
-  const no=MODULES.find(x=>x.id===it.m).no;
+  const body=$("#fullBody"),it=fx.list[fx.i],q=denemeQ(it);
+  const no=MODULES.find(x=>x.id===it.m).no,N=fx.list.length;
   const mm=String(Math.floor(fx.left/60)).padStart(2,"0"),ss=String(fx.left%60).padStart(2,"0");
   body.innerHTML=`
     <div class="fx-bar">
       <span class="fx-clock${fx.left<=300?" low":(fx.left<=900?" warn":"")}" id="fxClock">${mm}:${ss}</span>
       <div class="fx-prog"><i id="fxFill" style="width:${fx.left/(75*60)*100}%"></i></div>
-      <span class="fx-count">${fxAnswered()}/60 işaretli</span>
+      <span class="fx-count">${fxAnswered()}/${N} işaretli</span>
     </div>
-    <div class="q-head"><span class="eyebrow">Soru ${fx.i+1}/60 · M${no}</span></div>
+    <div class="q-head"><span class="eyebrow">Soru ${fx.i+1}/${N} · M${no}</span></div>
     <div class="q-scen">${q.s}</div>
     <div class="optik">Cevabını işaretle — açıklamalar sınav sonunda</div>
     <div id="fxOpts">${it.ord.map((orig,x)=>`<button class="opt${it.pick===x?" sel":""}" data-x="${x}"><span class="bub">${"ABCDE"[x]}</span><span>${q.o[orig]}</span></button>`).join("")}</div>
     <div class="fx-nav">
       <button class="btn btn-ghost" id="fxPrev" ${fx.i===0?"disabled":""}>← Önceki</button>
-      <button class="btn btn-main" id="fxNext">${fx.i===59?"Bitir":"Sonraki →"}</button>
+      <button class="btn btn-main" id="fxNext">${fx.i===N-1?"Bitir":"Sonraki →"}</button>
     </div>
     <div class="fx-jump" id="fxJump">${fx.list.map((x,n)=>`<b class="${n===fx.i?"here":(x.pick!==null?"done":"")}" data-n="${n}">${n+1}</b>`).join("")}</div>
     <button class="btn btn-ghost" id="fxEnd" style="margin-top:8px">Sınavı bitir ve sonucu gör</button>`;
@@ -8025,28 +8048,29 @@ function renderFull(){
   }));
   $("#fxPrev").addEventListener("click",()=>{if(fx.i>0){fx.i--;renderFull();window.scrollTo(0,0);}});
   $("#fxNext").addEventListener("click",()=>{
-    if(fx.i===59){finishFull(false);}else{fx.i++;renderFull();window.scrollTo(0,0);}
+    if(fx.i===N-1){finishFull(false);}else{fx.i++;renderFull();window.scrollTo(0,0);}
   });
   body.querySelectorAll("#fxJump b").forEach(b=>b.addEventListener("click",()=>{
     fx.i=+b.dataset.n;renderFull();window.scrollTo(0,0);
   }));
   $("#fxEnd").addEventListener("click",()=>{
-    const un=60-fxAnswered();
+    const un=N-fxAnswered();
     if(un>0&&!confirm(un+" soru boş. Yine de bitirmek istiyor musun?"))return;
     finishFull(false);
   });
 }
 function finishFull(timedOut){
   fxStop();fx.done=true;
-  let correct=0;const byMod={};
+  let correct=0;const byMod={},N=fx.list.length;
   fx.list.forEach(it=>{
-    const ok=it.pick===it.correct,key=it.m+":"+it.i;
-    if(ok){correct++;delete state.wrongQ[key];}
-    else if(it.pick!==null)state.wrongQ[key]=true;
+    const ok=it.pick===it.correct;
+    if(ok)correct++;
+    /* Boş bırakılan soru yanlış sayılmaz, deftere de yazılmaz */
+    if(ok||it.pick!==null)denemeYaz(it,ok);
     if(!byMod[it.m])byMod[it.m]={t:0,c:0};
     byMod[it.m].t++;if(ok)byMod[it.m].c++;
   });
-  const pt=Math.round(correct/60*10000)/100;
+  const pt=Math.round(correct/N*10000)/100;
   const pass=pt>=60;
   const isNew=pt>(state.full?state.full.best:-1);
   state.full={best:Math.max(state.full?state.full.best:-1,pt),att:(state.full?state.full.att:0)+1};
@@ -8058,18 +8082,18 @@ function finishFull(timedOut){
   }).join("");
   const wrongs=fx.list.map((it,n)=>({it,n})).filter(o=>o.it.pick!==o.it.correct);
   const revHtml=wrongs.map(o=>{
-    const q=CONTENT[o.it.m].quiz[o.it.i],no=MODULES.find(x=>x.id===o.it.m).no;
+    const q=denemeQ(o.it),no=MODULES.find(x=>x.id===o.it.m).no;
     return `<div class="blk fx-rev">
       <span class="eyebrow">Soru ${o.n+1} · M${no}</span>
       <div class="q-scen">${q.s}</div>
       <div class="expl no"><div class="verdict">${o.it.pick===null?"— Boş bırakıldı":"✗ Senin cevabın: "+"ABCDE"[o.it.pick]} · Doğru: ${"ABCDE"[o.it.correct]} (${q.o[o.it.ord[o.it.correct]]})</div>
-      ${q.w}<span class="basis">📌 ${q.b}</span></div></div>`;
+      ${q.w}<span class="basis">📌 ${q.b||(o.it.src==="hizli"?"Ders notu · Hızlı Bilgi":"")}</span></div></div>`;
   }).join("");
   $("#fullBody").innerHTML=`
     <div class="blk fx-res">
       ${state.full.best>=0?`<span class="badge-best">En iyi ${state.full.best} puan · ${state.full.att}. deneme</span><br>`:""}
       <div class="res-ring${pass?"":" fail"}" id="fxRing"><i><b>${pt}</b><span>puan</span></i></div>
-      <div style="font-size:var(--fs-2);color:var(--soft);margin-top:4px">${correct} doğru / 60 soru${timedOut?" · ⏱ süre doldu":""}</div>
+      <div style="font-size:var(--fs-2);color:var(--soft);margin-top:4px">${correct} doğru / ${N} soru${timedOut?" · ⏱ süre doldu":""}</div>
       <div class="fx-verd ${pass?"pass":"fail"}">${pass?"✓ BAŞARILI (60 baraj)":"✗ BARAJ ALTI (60 gerekli)"}</div>
       ${isNew&&state.full.att>1?'<div style="font-size:var(--fs-1);color:var(--accent-ink);margin-top:6px">🎉 Yeni rekor!</div>':""}
     </div>

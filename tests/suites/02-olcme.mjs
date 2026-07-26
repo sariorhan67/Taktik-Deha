@@ -84,15 +84,12 @@ export default async function ({ browser, rec }) {
   rec.chk(wr.spread >= ESIK, `Yanlış Defteri'nde şıklar karışıyor (${wr.spread}/${DENEME})`);
   rec.chk(wr.silindi, "Doğru cevaplanan soru Yanlış Defteri'nden siliniyor");
 
-  /* --- Denemelerde doğru şık eşlemesi --- */
+  /* --- Denemelerde doğru şık eşlemesi ---
+     Deneme maddeleri iki kaynaktan gelir; soru denemeQ ile çözümlenir. */
   const den = await page.evaluate(() => {
+    const kontrol = list => list.every(it => it.ord[it.correct] === denemeQ(it).c);
     const e = buildExamPool(), f = buildFullPool();
-    const eok = e.every(it => {
-      const q = CONTENT[it.ref.m].quiz[it.ref.i];
-      return it.ord[it.correct] === q.c;
-    });
-    const fok = f.every(it => it.ord[it.correct] === CONTENT[it.m].quiz[it.i].c);
-    return { e: e.length, f: f.length, eok, fok };
+    return { e: e.length, f: f.length, eok: kontrol(e), fok: kontrol(f) };
   });
   rec.chk(den.eok && den.fok,
     `Karma (${den.e}) ve Tam Deneme (${den.f}) karıştırılmış şıklarda doğru cevabı doğru işaretliyor`);
