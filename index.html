@@ -405,6 +405,8 @@ body.dark .btn-main{background:var(--accent);color:#10241D}
 .plan .plan-sub{font-size:var(--fs-1);color:var(--soft);line-height:1.45;margin-bottom:4px}
 .plan-item{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:9px 11px;margin-top:7px;cursor:pointer;text-align:left;width:100%;transition:transform .1s}
 .plan-item:active{transform:scale(.99)}
+.zn{margin-bottom:18px}
+.zn .btn{margin-top:10px}
 .plan-item .pno{font-weight:700;color:var(--accent-ink);font-size:var(--fs-4);min-width:22px}
 .plan-item .pt{flex:1;font-size:var(--fs-3);font-weight:600;color:var(--ink);line-height:1.25}
 .plan-item .pm{font-size:var(--fs-1);color:var(--soft);white-space:nowrap}
@@ -1765,7 +1767,15 @@ match:[
    ["Belletici","Etüt + rehberlik"],
    ["Nöbetçi belletici","Güvenlik"]]}
 ,
- {name:"Kademe Bilgisi → Değer",pairs:[["Bağımsız anaokulu asgari öğrenci","20"],["Anaokulu öğrenci başına alan","2,40 m²"],["Uygulama evi formatı","1+0"],["Destek eğitim odası grup üst sınırı","3 öğrenci"],["MÖZEM düzeyi","Ortaöğretim"]]}],
+ {name:"Kademe Bilgisi → Değer",pairs:[["Bağımsız anaokulu asgari öğrenci","20"],["Anaokulu öğrenci başına alan","2,40 m²"],["Uygulama evi formatı","1+0"],["Destek eğitim odası grup üst sınırı","3 öğrenci"],["MÖZEM düzeyi","Ortaöğretim"]]},
+ {name:"Mevzuat → Düzenlediği",pairs:[
+   ["5378 sayılı Kanun","Engelli bireylerin haklarına ilişkin çerçeve"],
+   ["573 sayılı KHK","Özel eğitim hizmetlerinin temel esasları"],
+   ["Özel Eğitim Hizmetleri Yönetmeliği","Tanılama, yerleştirme ve BEP süreçleri"]]},
+ {name:"Yapı → Amacı",pairs:[
+   ["MÖZEM","Mesleki özel eğitimde mükemmeliyet merkezi"],
+   ["Özel Eğitim Uygulama Evi","Bağımsız ve günlük yaşam becerisi kazandırma"],
+   ["Özel Eğitim Materyal Platformu","Öğretim materyaline ortak erişim"]]}],
 cards:[
  {q:"Yetenek sınavıyla yerleştirme puanı nasıl hesaplanır? OBP neyin ortalamasıdır?",a:"Yetenek sınavı puanının %70'i + OBP'nin %30'u. OBP = 6, 7 ve 8. sınıf yıl sonu başarı puanlarının aritmetik ortalaması."},
  {q:"Pansiyon hakkını sona erdiren 5 durum nedir? Hangi durumda hak devam eder?",a:"Mezuniyet · disiplin cezası · uzun devamsızlık · açık öğretime geçiş · özel okula kayıt. NAKİLDE uygun kontenjan varsa hak DEVAM eder."},
@@ -2036,7 +2046,14 @@ match:[
    ["Ritüel","Değerleri pekiştiren etkinlik"],
    ["Kahraman","Değerleri kişileştiren rol model"],
    ["Mit","Sorgulanmadan kabul edilen hikâye"]]}
-],
+,
+ {name:"Kültür Niteliği → Anlamı",pairs:[
+   ["Yenilik ve risk alma","Üyelerin risk almaya teşvik edilme derecesi"],
+   ["Ayrıntıya önem","İşin ayrıntılarına hassasiyet beklentisi"],
+   ["Sonuç odaklılık","Süreç ve teknikten çok amaç ve çıktıya bakma"],
+   ["İnsan odaklılık","Kararların üyelerde doğuracağı sonucu gözetme"],
+   ["Takım odaklılık","Faaliyetleri bireyden çok takımla düzenleme"],
+   ["İstikrar","Gelişim yerine mevcut durumu sürdürme"]]}],
 cards:[
  {q:"Kültürün 3 katmanı görünmezden görünene doğru nedir?",a:"SAYILTILAR (bilinçsiz temel varsayımlar) → DEĞERLER (arzu edilenler) → SOMUT GÖSTERGELER (sembol, ritüel, hikâye...)."},
  {q:"Klinik stratejinin 5 aşamasını sırasıyla sayın.",a:"Bilgi toplama → Teşhis → Tahmin → Reçete → Değerlendirme. (Bizim Tabip Tahminle Reçete Düzenler)"},
@@ -2332,7 +2349,12 @@ match:[
    ["İşlevsellik","Bütüncül ilişkiyi fark etme"],
    ["Eylemsellik","Edinilenle harekete geçme"]]}
 ,
- {name:"Uygulama → Boyut",pairs:[["Farklı zorlukta metin","İçerik"],["Süreyi esnetme","Süreç"],["Poster/sunum seçeneği","Ürün"],["Sınıf düzenini kurma","Öğrenme ortamı"]]}],
+ {name:"Uygulama → Boyut",pairs:[["Farklı zorlukta metin","İçerik"],["Süreyi esnetme","Süreç"],["Poster/sunum seçeneği","Ürün"],["Sınıf düzenini kurma","Öğrenme ortamı"]]},
+ {name:"Bütünlük → Alanı",pairs:[
+   ["Ontolojik bütünlük","Ruh ve beden bütünlüğü"],
+   ["Epistemolojik bütünlük","Bilgi ve bilgelik birlikteliği"],
+   ["Zamansal bütünlük","Geçmişten geleceğe süreklilik"],
+   ["Aksiyolojik olgunluk","Ahlaki bilinç ve estetik bakış"]]}],
 cards:[
  {q:"TYMM'nin nihai hedefi, mottosu ve öğrenci profilinin yapısı nedir?",a:"Hedef: YETKİN VE ERDEMLİ İNSAN · Motto: 'Köklerden Geleceğe' · Profil: 2 bütünlük alanı (ruh-beden), 10 özellik."},
  {q:"Beceriler Çerçevesi'nin 5 bileşeni (KAEOS)?",a:"Kavramsal · Alan · Eğilimler · Okuryazarlık · Sosyal-duygusal öğrenme becerileri."},
@@ -2610,7 +2632,14 @@ match:[
    ["Amaç","Kavramsal sonuç ifadesi"],
    ["Hedef","Ölçülebilir, süreli çıktı"],
    ["PESTLE","Yalnız dış çevre analizi"]]}
-],
+,
+ {name:"PESTLE Etkeni → Kapsamı",pairs:[
+   ["Politik (P)","Kamu politikaları ve siyasi ortam"],
+   ["Ekonomik (E)","Ekonomik koşullar ve kaynak durumu"],
+   ["Sosyokültürel (S)","Nüfus, demografi ve sosyal hayat"],
+   ["Teknolojik (T)","Teknolojik gelişme ve bilişim altyapısı"],
+   ["Yasal (L)","Mevzuat ve hukuki düzenlemeler"],
+   ["Çevresel (E)","Çevre koşulları ve sürdürülebilirlik"]]}],
 cards:[
  {q:"Stratejik planlamanın omurgasını oluşturan 4 temel soru ve karşılıkları?",a:"Neredeyiz? (DURUM ANALİZİ) → Nereye ulaşmak istiyoruz? (GELECEĞE BAKIŞ) → Nasıl ulaşırız? (STRATEJİ-FAALİYET) → Nasıl izler/ölçeriz? (İZLEME-DEĞERLENDİRME)."},
  {q:"5 performans göstergesi ve her birinin ölçtüğü şey?",a:"Girdi=kaynak · Çıktı=hizmet miktarı · Sonuç=etki · Kalite=memnuniyet · Verimlilik=çıktı/girdi. (GÇSKV)"},
@@ -2865,7 +2894,16 @@ match:[
    ["Yetersizlik hissi","Beceremeyeceğini düşünme"],
    ["İletişim eksikliği","Bilgilendirilmeme"],
    ["Rol değişimi kaygısı","Yeni rol endişesi"]]}
-],
+,
+ {name:"Direnç Düzeyi → Belirtisi",pairs:[
+   ["Bireysel · yetersizlik","Yeni beklenti karşısında kendini yetersiz görme"],
+   ["Bireysel · değersizleşme","Mevcut uzmanlığın işe yaramaz olacağı kaygısı"],
+   ["Örgütsel · durağan kültür","Yerleşik iletişim kalıpları ve alışkanlıklar"],
+   ["Örgütsel · reform hafızası","Geçmişte başarısız olmuş değişim deneyimleri"]]},
+ {name:"Yeni Yönelim → Karşılığı",pairs:[
+   ["Hazır oluş değerlendirmesi","Değişim öncesi kurumsal kapasitenin ölçülmesi"],
+   ["Öğrenen kurum","Deneyiminden sistemli ders çıkaran okul"],
+   ["Bağlamsal uyarlama","Merkezî politikayı okulun koşullarına uyarlama"]]}],
 cards:[
  {q:"Modülün üç ekseni ve her birinin cevapladığı soru?",a:"Yenilikçilik = değişim hangi YÖNE (gelişim kapasitesi) · Değişim yönetimi = süreç NASIL yürür · Politika uyumu = hangi HEDEFE (stratejik çerçeve)."},
  {q:"Değişime direncin 5 temel nedeni?",a:"Belirsizlik · Artan iş yükü · Rol değişimi kaygısı · Yetersizlik hissi · İletişim eksikliği. (Direnç = geri bildirim, engel değil.)"},
@@ -3164,7 +3202,12 @@ match:[
    ["Özel gelir","Asli hizmet dışı faaliyet geliri"],
    ["Kamu zararı","10 yıl zaman aşımı"],
    ["Emanet hesabı","İzleyen 5. yıl sonu talep"]]}
-],
+,
+ {name:"Mali Süreç → Karşılığı",pairs:[
+   ["KBS","Personel maaş, ek ders ve muhasebe işlemleri"],
+   ["HYS / MYS","Harcama ve ödeme sürecinin dijital yürütülmesi"],
+   ["Kantin kira geliri","Okul aile birliği geliri olarak kaydedilir"],
+   ["Bakım-onarım harcaması","TEFBİS gider kalemine işlenir"]]}],
 cards:[
  {q:"Harcama yetkilisi ile gerçekleştirme görevlisinin farkı nedir?",a:"HARCAMA YETKİLİSİ = harcama biriminin en üst yöneticisi; ödeme emrini imzalar, ödeneğin etkili-ekonomik-verimli kullanımından sorumlu. GERÇEKLEŞTİRME GÖREVLİSİ = işi yaptıran, mal/hizmeti teslim alan, ödeme belgelerini hazırlayan personel."},
  {q:"TEFBİS, EKAP ve MEBBİS hangi alanın sistemidir?",a:"TEFBİS = eğitimin FİNANSMANI/harcamaları (gelir-gider, OAB, bağış) · EKAP = İHALE/satın alma · MEBBİS = PERSONEL/özlük/norm kadro."},
@@ -3727,11 +3770,11 @@ tablo:`
 </div>`,
 match:[
  {name:"Paydaş → İç/Dış",pairs:[
-   ["Öğretmen","İç paydaş"],
-   ["Öğrenci","İç paydaş"],
-   ["OAB üyesi","İç paydaş"],
-   ["Veli","Dış paydaş"],
-   ["Muhtar","Dış paydaş"]]},
+   ["Öğretmen","İç paydaş · öğretimi doğrudan yürütür"],
+   ["Öğrenci","İç paydaş · hizmetin doğrudan yararlanıcısı"],
+   ["OAB üyesi","İç paydaş · okulun bir parçası, karar süreçlerinde yer alır"],
+   ["Veli","Dış paydaş · okulun parçası değil, dolaylı etkilenir"],
+   ["Muhtar","Dış paydaş · yerel yönetim bağlantısı"]]},
  {name:"Engel → Çözüm",pairs:[
    ["Hiyerarşik yapı","İstişare (şûra)"],
    ["İletişim kopukluğu","Şeffaflık"],
@@ -3743,7 +3786,15 @@ match:[
    ["Emanet bilinci","Sorumluluğu ortak iyiyle taşıma"],
    ["Hizmetkâr liderlik","Rehberlik eden ve dinleyen lider"],
    ["Paydaş","Amacı etkileyen veya etkilenen taraf"]]}
-],
+,
+ {name:"Dış Paydaş → Rolü",pairs:[
+   ["İl / ilçe millî eğitim müdürlüğü","Yönlendirme, denetim ve kaynak tahsisi"],
+   ["Valilik","Yerel yönetsel onay ve koordinasyon"],
+   ["Sivil toplum kuruluşu","Proje, gönüllülük ve sosyal destek"]]},
+ {name:"Görüş Alma Yolu → Niteliği",pairs:[
+   ["Anket","Geniş kitleden ölçülebilir veri"],
+   ["Mülakat","Derinlemesine bireysel görüş"],
+   ["Atölye çalışması","Ortak akıl üretme ve önceliklendirme"]]}],
 cards:[
  {q:"İç ve dış paydaşları ayırın; en sık karıştırılan üç örnek hangisidir?",a:"İÇ: müdür, md.yrd., öğretmen, öğrenci, destek personeli, OAB üyeleri. DIŞ: veli, MEM, kamu kurumları, muhtar, STK, özel sektör. Tuzak: veli = DIŞ, ama OAB üyesi = İÇ, öğrenci = İÇ."},
  {q:"Bu modüldeki paydaş anlayışı Batı paydaş teorisinden nasıl ayrılır?",a:"Batı = çıkar dengesi/pazarlık, stratejik yönetim aracı. Bu modül = ORTAK İYİYİ gerçekleştirme, EMANET + ADALET temelli ahlaki hizmet süreci."},
@@ -4030,7 +4081,12 @@ match:[
    ["Vizyoner boyut","Orhun, Kutadgu Bilig, Siyasetname"],
    ["Batı erdemi","Araçsallaştırma"]]}
 ,
- {name:"Düşünür → Eser",pairs:[["Farabi","El-Medinetü'l-Fâzıla"],["Nizâmülmülk","Siyasetnâme"],["Yusuf Has Hâcib","Kutadgu Bilig"],["Nurettin Topçu","Türkiye'nin Maarif Davası"]]}],
+ {name:"Düşünür → Eser",pairs:[["Farabi","El-Medinetü'l-Fâzıla"],["Nizâmülmülk","Siyasetnâme"],["Yusuf Has Hâcib","Kutadgu Bilig"],["Nurettin Topçu","Türkiye'nin Maarif Davası"]]},
+ {name:"İsim → Ayırt Edici Yanı",pairs:[
+   ["Yunus Emre","Sevgi ve hoşgörü dili"],
+   ["Ahmed Yesevi","Nefis terbiyesi ve hikmet geleneği"],
+   ["İsmayıl Hakkı Baltacıoğlu","İçtimaî Mektep"],
+   ["Mümtaz Turhan","Kültür Değişmeleri"]]}],
 cards:[
  {q:"Kutadgu Bilig, Siyasetname ve Divan-ı Hikmet'in yazarları kimdir?",a:"Kutadgu Bilig = Yusuf Has Hâcib · Siyasetname = Nizamülmülk · Divan-ı Hikmet = Ahmed Yesevi."},
  {q:"Ahilik teşkilatının temel ahlaki ilkesi ve içerdiği eğitim anlayışı?",a:"'Eline, beline, diline sahip ol' — bireyin ahlaki öz denetimini merkeze alır. Mesleki eğitim + ahlaki eğitimi usta-çırak ilişkisiyle bütünleştirir."},
@@ -4297,7 +4353,12 @@ match:[
    ["Zaman koruma","Anons teneffüste yapılır"],
    ["Kültür mimarı","Öğrenme odaklı iklim kuran müdür"]]}
 ,
- {name:"Uyum → Tanım",pairs:[["Yatay uyum","Aynı düzey şubeler arası eşitlik"],["Dikey uyum","Üst sınıfa hazırlık"]]}],
+ {name:"Uyum → Tanım",pairs:[["Yatay uyum","Aynı düzey şubeler arası eşitlik"],["Dikey uyum","Üst sınıfa hazırlık"],["Ölçme uyumu","Sınav sorularının kazanımla örtüşmesi"]]},
+ {name:"Kaynak → Katkısı",pairs:[
+   ["Hallinger ve Murphy (1985)","Öğretim liderliğinin üç boyutlu ilk modeli"],
+   ["Spillane (2005)","Liderliğin paylaşılması gerektiği savı"],
+   ["Birinci derece değişim","Öğretim uygulamasını doğrudan biçimlendirme"],
+   ["İkinci derece değişim","Öğretmenin katılım koşullarını hazırlama"]]}],
 cards:[
  {q:"Hallinger & Murphy öğretim liderliği modelinin üç temel boyutu?",a:"① Okul misyonunun tanımlanması · ② Öğretim programının yönetimi · ③ Olumlu öğrenme ikliminin geliştirilmesi."},
  {q:"Vizyon ile misyon arasındaki fark nedir?",a:"VİZYON = okulun ulaşmak istediği genel yön/ufuk (nereye). MİSYON = bu vizyona ulaştıracak somut hedefler ve uygulamalar (hangi değer/amaçla)."},
@@ -6895,7 +6956,12 @@ match:[
    ["Erişim ilkesi","İzin verilmedikçe yasak"],
    ["ENISA","AB Siber Güvenlik Ajansı"]]}
 ,
- {name:"Kavram → Alan",pairs:[["Dijital ikiz","Dijital ayak"],["Sıfır atık","Yeşil ayak"],["Ortak şifre kullanımı","Siber risk"],["Çevre Eğitimi dersi","Ortaokul müfredatı"]]}],
+ {name:"Kavram → Alan",pairs:[["Dijital ikiz","Dijital ayak"],["Sıfır atık","Yeşil ayak"],["Ortak şifre kullanımı","Siber risk"],["Çevre Eğitimi dersi","Ortaokul müfredatı"]]},
+ {name:"GreenComp Alanı → Odağı",pairs:[
+   ["Sürdürülebilirlik değerleri","Değerleri tanıma ve önceliklendirme"],
+   ["Karmaşıklığı kavrama","Sistem düşüncesi ve eleştirel bakış"],
+   ["Geleceği tasarlama","Senaryo kurma ve uyarlanabilirlik"],
+   ["Harekete geçme","Bireysel ve ortak eyleme dönüştürme"]]}],
 cards:[
  {q:"İkiz dönüşümün tek cümlelik tanımı ve iki boyutu nedir?",a:"DİJİTALLEŞMENİN ARAÇ, SÜRDÜRÜLEBİLİRLİĞİN HEDEF olduğu, iki sürecin birbirinden ayrı düşünülemeyeceği bütüncül dönüşüm. İki boyut: EŞZAMANLILIK (aynı dönemde) + ETKİLEŞİM (birbirini güçlendirme)."},
  {q:"Okul yöneticisinin KVKK kapsamındaki rolü nedir; ihlallerin ana kaynağı hangisidir?",a:"Yönetici, 6698 sayılı KVKK kapsamında 'VERİ SORUMLUSU'dur; okulda işlenen tüm kişisel verilerin güvenliğinden doğrudan sorumludur. İhlallerin önemli bölümü TEKNİK AÇIKTAN DEĞİL, İNSAN HATASINDAN kaynaklanır (phishing, zayıf parola, güvensiz cihaz, yanlış yetkilendirme)."},
@@ -6967,7 +7033,7 @@ quiz:[
 /* ================= STATE / STORAGE ================= */
 const SKEY="meb-yonetici-defter-v1";
 const DAY=86400000;
-let state={cards:{},quiz:{},match:{},theme:"light",srs:{},wrongQ:{},examDate:null,exam:{best:-1,att:0},full:{best:-1,att:0},streak:{n:0,last:null},daily:{date:null,n:0},badges:{},goal:15,pastR:{},kademe:null,srsV:0};
+let state={cards:{},quiz:{},match:{},theme:"light",srs:{},wrongQ:{},examDate:null,exam:{best:-1,att:0},full:{best:-1,att:0},streak:{n:0,last:null},daily:{date:null,n:0},badges:{},goal:15,pastR:{},kademe:null,srsV:0,qStat:{}};
 const hasStore=typeof window!=="undefined"&&window.storage;
 
 /* ---- KATMANLI DEPOLAMA ----
@@ -7010,14 +7076,14 @@ async function loadState(){
       const p=JSON.parse(raw);
       state={cards:p.cards||{},quiz:p.quiz||{},match:p.match||{},theme:p.theme3||"light",
              srs:p.srs||{},wrongQ:p.wrongQ||{},examDate:p.examDate||null,exam:p.exam||{best:-1,att:0},full:p.full||{best:-1,att:0},
-             streak:p.streak||{n:0,last:null},daily:p.daily||{date:null,n:0},badges:p.badges||{},goal:p.goal||15,pastR:p.pastR||{},kademe:p.kademe||null,srsV:p.srsV||0};
+             streak:p.streak||{n:0,last:null},daily:p.daily||{date:null,n:0},badges:p.badges||{},goal:p.goal||15,pastR:p.pastR||{},kademe:p.kademe||null,srsV:p.srsV||0,qStat:p.qStat||{}};
     }
   }catch(e){/* ilk kullanım veya kayıt yok */}
 }
 function snapshot(){
   return JSON.stringify({cards:state.cards,quiz:state.quiz,match:state.match,
     theme3:state.theme,srs:state.srs,wrongQ:state.wrongQ,examDate:state.examDate,exam:state.exam,full:state.full,
-    streak:state.streak,daily:state.daily,badges:state.badges,goal:state.goal,pastR:state.pastR,kademe:state.kademe,srsV:state.srsV});
+    streak:state.streak,daily:state.daily,badges:state.badges,goal:state.goal,pastR:state.pastR,kademe:state.kademe,srsV:state.srsV,qStat:state.qStat});
 }
 /* Yazma temposu: her tıklamada değil, 900 ms sessizlikten sonra tek yazma */
 let saveTimer=null,noticeShown=false;
@@ -7258,13 +7324,15 @@ function renderPlan(){
   if(nd!==null&&nd>0)sub='Sınava <b>'+nd+' gün</b> — ağırlık ve eksiğine göre bugünün önceliği:';
   else if(nd===0)sub='Sınav bugün! Son tekrar için en zayıf konular:';
   else sub='Sınavda en çok soru getiren ve en eksik olduğun konular:';
-  const due=dueList().length;
+  const due=dueList().length,takilan=qStatOzet().zor;
   const items=pick.map(x=>{
     const short=x.m.title.length>44?x.m.title.slice(0,42)+'…':x.m.title;
     return '<button class="plan-item" data-mid="'+x.m.id+'"><span class="pno">'+x.m.no+'</span><span class="pt">'+short+'</span><span class="pm">'+x.m.w+' soru · %'+Math.round(x.pc*100)+'</span></button>';
   }).join('');
   el.innerHTML='<div class="plan"><h4>'+ic("target",18)+' Bugünkü Odağın</h4><div class="plan-sub">'+
-    (due?'Önce Günün Tekrarı: <b>'+due+' kart</b>. Sonra 👇<br>':'')+sub+'</div>'+items+'</div>';
+    (due?'Önce Günün Tekrarı: <b>'+due+' kart</b>. Sonra 👇<br>':'')+
+    (takilan?'Takıldığın <b>'+takilan+' soru</b> var — Yanlış Defteri’nde «Seni Zorlayanlar».<br>':'')+
+    sub+'</div>'+items+'</div>';
   el.querySelectorAll('.plan-item').forEach(b=>b.addEventListener('click',()=>openModule(b.dataset.mid)));
 }
 function renderRadar(){
@@ -7347,6 +7415,70 @@ function pastWrongList(){
 function bankWrongList(){
   const r=state.pastR||{};
   return pastPool().concat(hizliPool()).filter(q=>r[q.k]===0);
+}
+
+/* ================= SORU İSTATİSTİĞİ · ZAYIF NOKTA ================= */
+/* Üç banka da tek tip anahtar taşısın: vaka "m3:7" (Yanlış Defteri'yle aynı biçim),
+   Hızlı Bilgi "h12", çıkmış soru "135708". Banka anahtarlarında iki nokta yok,
+   bu yüzden ad alanları çakışmaz. Vaka anahtarı dizideki sıradan üretilir —
+   araya soru eklemek çözülmüş kayıtları kaydırır, sona eklemek güvenlidir. */
+const VAKA=[];
+MODULES.forEach(m=>{
+  const c=CONTENT[m.id];if(!c||!c.quiz)return;
+  c.quiz.forEach((q,i)=>{q.m=m.id;q.g="ortak";q.vk=m.id+":"+i;VAKA.push(q);});
+});
+function qKey(q){return q.vk||q.k;}
+
+/* Soru başına deneme kaydı: kaç kez görüldü (n), kaçı doğru (ok), kaç kez arka
+   arkaya doğru bilindi (s), en son hangi gün çözüldü (d). */
+function qStatYaz(key,ok){
+  if(!key)return;
+  if(!state.qStat)state.qStat={};
+  const e=state.qStat[key]||{n:0,ok:0,s:0,d:0};
+  e.n++;
+  if(ok){e.ok++;e.s++;}else e.s=0;
+  e.d=Math.floor(Date.now()/DAY);
+  state.qStat[key]=e;
+}
+/* Sorunun "senin için zorluğu" (0..1). Laplace düzeltmesi: tek denemelik gözlem
+   on denemelik kadar güvenilir sayılmaz, yoksa bir kez yanlış yapılan soru
+   sonsuza kadar tepede kalırdı. Hiç çözülmemiş soru 0.5 verir — bilinmiyor
+   demektir, kolay demek değil. Arka arkaya doğru bilinen soru üstel olarak
+   geri plana düşer ama hiçbir zaman sıfırlanmaz. */
+function qZorluk(key){
+  const e=state.qStat&&state.qStat[key];
+  if(!e||!e.n)return 0.5;
+  return ((e.n-e.ok+1)/(e.n+2))*Math.pow(0.6,e.s);
+}
+/* Ağırlıklı örnekleme, yerine koymadan (exponential race): ağırlığı yüksek soru
+   daha sık seçilir ama seçim rastgele kalır — aynı 20 soru her seferinde gelmez. */
+function agirlikliSec(list,agirlik,n){
+  return list.map(x=>({x,a:-Math.log(Math.random()||1e-9)/Math.max(agirlik(x),1e-6)}))
+    .sort((p,q)=>p.a-q.a).slice(0,n).map(o=>o.x);
+}
+/* Zayıf Noktaların: üç bankanın tamamından, geçmiş performansına göre seçilmiş
+   pratik. Modül ağırlığı çarpan olarak girer — sınavda 5 soru getiren modüldeki
+   zayıflık, 2 soru getirendekinden daha pahalıya patlar. */
+const ZAYIF_N=20;
+function zayifHavuz(){
+  const wOf={};MODULES.forEach(m=>{wOf[m.id]=m.w||1;});
+  return agirlikliSec(VAKA.concat(hizliPool(),pastPool()),
+    q=>qZorluk(qKey(q))*(wOf[q.m]||1),ZAYIF_N);
+}
+/* Takıldığın soru: en az iki kez denenmiş ve yarısından azı doğru. Tek denemede
+   yanlış yapılan soru henüz "takılma" sayılmaz — dikkatsizlik de olabilir. */
+function qStatOzet(){
+  const st=state.qStat||{},ks=Object.keys(st);
+  let deneme=0,dogru=0,zor=0;
+  ks.forEach(k=>{const e=st[k];deneme+=e.n;dogru+=e.ok;if(e.n>=2&&e.ok/e.n<0.5)zor++;});
+  return {soru:ks.length,deneme,dogru,zor,toplam:VAKA.length+HIZLI.length+PAST.length};
+}
+/* Çıkmış / Hızlı Bilgi sonucu çözülmüş soru kaydına, vaka sonucu Yanlış
+   Defteri'ne yazılır; istatistik üçünde de tutulur. */
+function bankaYaz(q,ok){
+  if(q.vk){if(ok)delete state.wrongQ[q.vk];else state.wrongQ[q.vk]=true;}
+  else{if(!state.pastR)state.pastR={};state.pastR[q.k]=ok?1:0;}
+  qStatYaz(qKey(q),ok);
 }
 function renderPastHome(){
   const st=pastStats();
@@ -7441,7 +7573,7 @@ function renderPast(){
     const n=pq.list.length,pass=pq.score/n>=0.6;
     body.innerHTML=`<div class="blk q-done">
       <div class="res-ring${pass?"":" fail"}" id="ptRing"><i><b>${pq.score}</b><span>/ ${n} doğru</span></i></div>
-      <p>${pq.label} tamamlandı. ${pq.score===n?"Tam isabet! 🎯":"Yanlışların 'Yanlışlarımı tekrar çöz' listesine eklendi."}</p>
+      <p>${pq.label} tamamlandı. ${pq.score===n?"Tam isabet! 🎯":"Yanlışların Yanlış Defteri'ne eklendi."}</p>
       <div class="stack">
         <button class="btn btn-main" id="ptAgain">Başka set çöz</button>
         <button class="btn btn-ghost" id="ptHome2">Ana Sayfa</button>
@@ -7459,7 +7591,7 @@ function renderPast(){
   pq.ord=q.t?q.o.map((_,x)=>x):shuffle(q.o.map((_,x)=>x));
   body.innerHTML=`
     <div class="q-head"><span class="eyebrow">Soru ${pq.i+1}/${pq.list.length} · ${pq.label}</span><span class="mono" style="font-size:var(--fs-1)">doğru ${pq.score}</span></div>
-    <span class="pt-tag">${q.t?`${q.t}. Oturum · ${q.r==="mudur"?"Müdür":"Müdür Yrd."}`:"⚡ Hızlı Bilgi"} · ${MICON[q.m]||""} M${mod?mod.no:"?"}</span>${q.g!=="ortak"?`<span class="pt-tag kad">🎓 ${KADEME[q.g]}</span>`:""}
+    <span class="pt-tag">${q.t?`${q.t}. Oturum · ${q.r==="mudur"?"Müdür":"Müdür Yrd."}`:(q.vk?"🧩 Vaka":"⚡ Hızlı Bilgi")} · ${MICON[q.m]||""} M${mod?mod.no:"?"}</span>${q.g!=="ortak"?`<span class="pt-tag kad">🎓 ${KADEME[q.g]}</span>`:""}
     <div class="q-scen">${q.s}</div>
     <div class="optik">Optik form — cevabını işaretle</div>
     <div id="ptOpts">${pq.ord.map((orig,x)=>`<button class="opt" data-x="${x}"><span class="bub">${"ABCDE"[x]}</span><span>${q.o[orig]}</span></button>`).join("")}</div>
@@ -7473,8 +7605,7 @@ function pastPick(x){
   if(pq.answered)return;pq.answered=true;
   const q=pq.list[pq.i],ok=pq.ord[x]===q.c,dsp=pq.ord.indexOf(q.c);
   if(ok)pq.score++;
-  if(!state.pastR)state.pastR={};
-  state.pastR[q.k]=ok?1:0;
+  bankaYaz(q,ok);
   recordStudy();saveState();
   document.querySelectorAll("#ptOpts .opt").forEach(b=>{
     const bx=+b.dataset.x;b.disabled=true;
@@ -7486,7 +7617,7 @@ function pastPick(x){
   $("#ptExpl").innerHTML=`<div class="expl ${ok?"ok":"no"}">
     <div class="verdict">${ok?"✓ Doğru":"✗ Yanlış — doğru cevap "+"ABCDE"[dsp]}</div>
     ${q.w?q.w:`Resmî cevap anahtarına göre doğru seçenek <b>${"ABCDE"[dsp]}</b>.`}
-    <span class="basis">📌 ${q.t?"Gerçek sınav · "+q.t+". Oturum":"Ders notu · Hızlı Bilgi"}${mod?" · Modül "+mod.no+" — "+mod.title:""}</span></div>`;
+    <span class="basis">📌 ${q.t?"Gerçek sınav · "+q.t+". Oturum":(q.b||"Ders notu · Hızlı Bilgi")}${mod?" · Modül "+mod.no+" — "+mod.title:""}</span></div>`;
   $("#ptNext").style.display="block";
 }
 
@@ -7510,7 +7641,7 @@ function doImport(file){
       if(!confirm("Yedekteki ilerleme yüklenecek ve mevcut ilerlemenin yerine geçecek. Devam edilsin mi?"))return;
       state={cards:p.cards||{},quiz:p.quiz||{},match:p.match||{},theme:p.theme3||state.theme,
         srs:p.srs||{},wrongQ:p.wrongQ||{},examDate:p.examDate||null,exam:p.exam||{best:-1,att:0},full:p.full||{best:-1,att:0},
-        streak:p.streak||{n:0,last:null},daily:p.daily||{date:null,n:0},badges:p.badges||{},goal:p.goal||15,pastR:p.pastR||{},kademe:p.kademe||null,srsV:p.srsV||0};
+        streak:p.streak||{n:0,last:null},daily:p.daily||{date:null,n:0},badges:p.badges||{},goal:p.goal||15,pastR:p.pastR||{},kademe:p.kademe||null,srsV:p.srsV||0,qStat:p.qStat||{}};
       srsMigrate();applyTheme();flushSave();renderHome();
       alert("Yedek yüklendi ✓");
     }catch(e){alert("Bu dosya okunamadı. Geçerli bir yedek dosyası (.json) seçtiğinden emin ol.");}
@@ -7644,7 +7775,7 @@ $("#resetBtn").addEventListener("click",async()=>{
     setTimeout(()=>{resetArmed=false;b.textContent="İlerlemeyi sıfırla";b.classList.remove("arm");},3500);return;}
   const th=state.theme,ed=state.examDate,g=state.goal;
   state={cards:{},quiz:{},match:{},theme:th,srs:{},wrongQ:{},examDate:ed,exam:{best:-1,att:0},full:{best:-1,att:0},
-    streak:{n:0,last:null},daily:{date:null,n:0},badges:{},goal:g,pastR:{},kademe:state.kademe};
+    streak:{n:0,last:null},daily:{date:null,n:0},badges:{},goal:g,pastR:{},kademe:state.kademe,srsV:2,qStat:{}};
   await flushSave();
   resetArmed=false;b.textContent="İlerlemeyi sıfırla";b.classList.remove("arm");
   renderHome();
@@ -7889,11 +8020,19 @@ function wrongKeys(){
 function renderWrongHome(){
   const body=$("#wrongBody");
   const wq=wrongKeys(),wc=weakCards(),bw=bankWrongList();
-  if(!wq.length&&!wc.length&&!bw.length){
-    body.innerHTML=`<div class="wq-empty"><span class="serif">Tertemiz ✨</span>Yanlış çıkan sorular ve zorlanılan kartlar otomatik burada birikir.</div>`;
-    return;
-  }
-  let html="";
+  /* Zayıf Noktaların, defterin ileri hâlidir: defter "şu an yanlış duran" soruyu
+     tutar, bu ise her sorunun tüm geçmişine bakıp seni en çok zorlayanları çeker.
+     Hiç kayıt yokken de çalışır — o zaman kapsama amaçlı örnekleme yapar. */
+  const zs=qStatOzet();
+  let html=`<div class="plan zn"><h4>${ic("target",18)} Seni Zorlayanlar</h4>
+    <div class="plan-sub">${zs.soru
+      ? `<b>${zs.soru}</b> soruyu denedin, <b>%${Math.round(zs.dogru/zs.deneme*100)}</b> doğru.
+         ${zs.zor?`Bunlardan <b>${zs.zor}</b> tanesinde takılıyorsun — pratik ağırlıklı olarak onları getirir.`
+                 :"Henüz takıldığın bir soru yok; pratik, ağır modüllerden az çalıştıklarını getirir."}`
+      : `Her sorunun geçmişi tutulur: sık yanlışladıkların ve hiç görmediklerin
+         öne çıkar, arka arkaya doğru bildiklerin geri plana düşer.
+         Havuz <b>${zs.toplam}</b> soru.`}</div>
+    <button class="btn btn-main" id="znStart">${ZAYIF_N} soruluk pratik başlat</button></div>`;
   if(wq.length){
     html+=`<div class="sec-label eyebrow">Yanlış çıkan sorular · ${wq.length}</div>
       <button class="btn btn-main" id="wrSolve" style="margin-bottom:16px">Soruları yeniden çöz</button>`;
@@ -7909,7 +8048,13 @@ function renderWrongHome(){
       html+=`<button class="wq-card" data-k="${k}"><span class="src">Modül ${no} · dokun-cevabı gör</span><div class="q">${card.q}</div><div class="a">${card.a}</div></button>`;
     });
   }
+  if(!wq.length&&!wc.length&&!bw.length){
+    html+=`<div class="wq-empty"><span class="serif">Defter tertemiz ✨</span>Yanlış çıkan sorular ve zorlanılan kartlar otomatik burada birikir.</div>`;
+  }
   body.innerHTML=html;
+  $("#znStart").addEventListener("click",()=>{
+    startPast(zayifHavuz(),"Seni Zorlayanlar");show("#scr-past");
+  });
   const s=$("#wrSolve");if(s)s.addEventListener("click",startWrongSolve);
   const bb=$("#wrBank");if(bb)bb.addEventListener("click",()=>{startPast(shuffle(bankWrongList()),"Yanlış Defteri");show("#scr-past");});
   body.querySelectorAll(".wq-card").forEach(b=>b.addEventListener("click",()=>b.classList.toggle("open")));
@@ -7946,6 +8091,7 @@ function renderWrongSolve(){
     if(wr.answered)return;wr.answered=true;
     const ok=wr.ord[+b.dataset.x]===q.c;
     if(ok)delete state.wrongQ[key];else state.wrongQ[key]=true;
+    qStatYaz(key,ok);
     saveState();
     body.querySelectorAll("#opts .opt").forEach(o=>{
       const bx=+o.dataset.x;o.disabled=true;
@@ -8010,8 +8156,8 @@ function denemeMadde(src,mid,ref){
 /* Sonucu her kaynağın kendi defterine yazar: vaka → Yanlış Defteri,
    Hızlı Bilgi → çözülmüş soru kaydı (modül hazırlığını da besler). */
 function denemeYaz(it,ok){
-  if(it.src==="hizli"){if(!state.pastR)state.pastR={};state.pastR[it.k]=ok?1:0;}
-  else{const key=it.m+":"+it.i;if(ok)delete state.wrongQ[key];else state.wrongQ[key]=true;}
+  if(it.src==="hizli"){if(!state.pastR)state.pastR={};state.pastR[it.k]=ok?1:0;qStatYaz(it.k,ok);}
+  else{const key=it.m+":"+it.i;if(ok)delete state.wrongQ[key];else state.wrongQ[key]=true;qStatYaz(key,ok);}
 }
 function buildFullPool(){
   const list=[];
@@ -8255,6 +8401,7 @@ function pick(x){
   const key=curMod+":"+qz.i;
   if(ok){qz.score++;delete state.wrongQ[key];}
   else state.wrongQ[key]=true;
+  qStatYaz(key,ok);
   document.querySelectorAll("#pane-sinav #opts .opt").forEach(b=>{
     const bx=+b.dataset.x;b.disabled=true;
     if(bx===x)b.classList.add(ok?"picked-ok":"picked-no");

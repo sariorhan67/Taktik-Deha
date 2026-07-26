@@ -124,6 +124,36 @@ export default async function ({ browser, rec }) {
   rec.chk(ince.length === 0,
     `Her modülde yeterli olumsuz köklü soru var${ince.length ? " — ince: " + ince.map(x => `M${x.no}(${x.n})`).join(" ") : ` (toplam ${olm.reduce((a, x) => a + x.n, 0)})`}`);
 
+  /* Eşleştirme alıştırmaları: oyun şıkları İNDEKSE göre eşleştirdiği için bir set
+     içinde aynı metin iki kez geçerse, doğru bilen kullanıcı yanlış kutuya
+     dokunup hata almış olur. Ayrıca deste ağırlıkla orantılı kalmalı. */
+  const es = await page.evaluate(() => {
+    const setler = [], yinelenen = [];
+    MODULES.forEach(m => (CONTENT[m.id].match || []).forEach(st => {
+      setler.push({ no: m.no, ad: st.name, n: st.pairs.length });
+      const L = st.pairs.map(p => p[0]), R = st.pairs.map(p => p[1]);
+      if (new Set(L).size !== L.length || new Set(R).size !== R.length)
+        yinelenen.push(`M${m.no}/${st.name}`);
+    }));
+    return {
+      yinelenen,
+      bosluk: setler.filter(s => s.n < 3).map(s => `M${s.no}/${s.ad}(${s.n})`),
+      cift: MODULES.reduce((a, m) => (a[+m.no] = (CONTENT[m.id].match || [])
+        .reduce((n, s) => n + s.pairs.length, 0), a), {}),
+      toplam: MODULES.reduce((a, m) => a + (CONTENT[m.id].match || [])
+        .reduce((n, s) => n + s.pairs.length, 0), 0),
+    };
+  });
+  rec.chk(es.yinelenen.length === 0,
+    `Eşleştirme setlerinde yinelenen taraf yok (indeksle eşleşiyor, aynı metin iki kutuda olamaz)${es.yinelenen.length ? " — " + es.yinelenen.join(" ") : ""}`);
+  rec.chk(es.bosluk.length === 0,
+    `Her eşleştirme setinde en az 3 çift var${es.bosluk.length ? " — " + es.bosluk.join(" ") : ""}`);
+  const eksikEs = Object.entries(RESMI_DAGILIM)
+    .map(([no, w]) => ({ no, hedef: w * 5, var: es.cift[no] || 0 }))
+    .filter(x => x.var < x.hedef);
+  rec.chk(eksikEs.length === 0,
+    `Her modülde ağırlığının en az 5 katı eşleştirme çifti var (toplam ${es.toplam})${eksikEs.length ? " — eksik: " + eksikEs.map(x => `M${x.no}(${x.var}/${x.hedef})`).join(" ") : ""}`);
+
   /* Rozet eşikleri ulaşılabilir ve doğru olmalı: kart rozeti desteden büyük olamaz,
      baraj rozeti de gerçek barajın (60 puan) altında verilmemeli. */
   const rozet = await page.evaluate(() => {

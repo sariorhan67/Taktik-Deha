@@ -32,13 +32,15 @@ yoksa ne yapılacağını söyleyen bir hata verir.
 
 | Dosya | Ne denetler |
 |---|---|
-| `01-veri.mjs` | Üç soru bankasının biçimi; kimliklerin benzersizliği; modül ağırlıklarının resmî duyuruyla aynı olması; her modülde yeterli Hızlı Bilgi sorusu bulunması |
+| `01-veri.mjs` | Üç soru bankasının biçimi; kimliklerin benzersizliği; modül ağırlıklarının resmî duyuruyla aynı olması; her modülde yeterli Hızlı Bilgi sorusu, kart, olumsuz kök ve eşleştirme çifti bulunması |
 | `02-olcme.mjs` | Şık karıştırma (modül sınavı, Yanlış Defteri, Hızlı Bilgi), çıkmış sorularda kitapçık sırasının korunması, çeldirici uzunluk dengesi |
 | `03-srs.mjs` | Aralık merdiveni, kolaylık katsayısı, unutma davranışı, sınav tarihi sınırı, eski kayıt göçü, sıralama |
 | `04-arayuz.mjs` | Sekme akışı, kart çevirme, denemeler, yedekleme, tema, yatay taşma |
 | `05-erisilebilirlik.mjs` | WCAG AA metin kontrastı (dört sekme × iki tema), düğme etiketleri, odak görünürlüğü, dokunma hedefi boyutu |
 | `06-sinav-yapisi.mjs` | Resmî Sınav Yapısı paneli ve oturum/rol/kademe veri modeli |
 | `07-kocu.mjs` | Sınav Koçu (`kocu/index.html`) şık karıştırma — dosya yoksa atlanır |
+| `08-deneme.mjs` | Deneme havuzunun format karışımı: kısa kök ve olumsuz kök oranları, modül ağırlıkları, tekrar derinliği |
+| `09-zayif.mjs` | Soru istatistiği anahtarları, zorluk fonksiyonu, ağırlıklı seçim, sonuçların doğru deftere yazılması |
 
 ## Yeni test yazmak
 
@@ -73,3 +75,7 @@ metinler ise zeminle karıştırılıp gerçek renkleri üzerinden ölçülür.
 **Eşikler koda gömülü değil, gerekçeli.** Örneğin doğru şıkkın en uzun olma oranı için
 üst sınır %40'tır: şans düzeyi %20, %40'ın üstü ise soruyu bilmeden en uzunu seçmeyi
 kârlı hâle getirir.
+
+**Uyarlanabilir seçim iki yönden sınanır.** Yalnızca "zayıf soruyu getiriyor mu" değil,
+"tamamen zayıfa kilitlenmiyor mu" da denetlenir: saf sömürü, ustalaşmış soruyu bir daha
+hiç göstermez ve aralıklı tekrarın kapsama işlevini bozar. Alt sınır %40, üst sınır %90.
