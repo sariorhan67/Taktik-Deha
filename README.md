@@ -23,6 +23,9 @@ sistem yazı tipine düşer).
 - **Kademe seçimi:** Gerçek sınavda herkes ortak soruları çözer, üstüne kendi kademesinin
   5 sorusu gelir. Temel Eğitim / Ortaöğretim / Özel Eğitim seçilince yalnızca ilgili
   sorular gösterilir (165 ortak + 10 kademeye özel)
+- **195 sorunun tamamında çözüm açıklaması var** — yalnızca "doğru cevap C" demez;
+  doğrunun neden doğru olduğunu, her çeldiricinin neden yanlış olduğunu ve konuyu
+  ayırt ettiren ipucunu ders notlarına dayanarak anlatır (ortalama ~420 karakter)
 - Her soru; oturum, rol (Müdür / Müdür Yardımcısı), kademe ve modül etiketi taşır
 - Oturuma göre, modüle göre, karışık 60 soru veya "hiç çözmediklerim" olarak çalışma
 - Yanlışların ayrı listede birikir, tekrar çözülebilir
