@@ -15,13 +15,6 @@ sistem yazı tipine düşer).
   **son** gelir. Sıralama kaynağa değil ekrana uygulanır: özete ileride nereye blok
   eklenirse eklensin kapanış blokları kendiliğinden sonda kalır, iskelet eklemelerle
   bozulmaz. Özet uzunluğu modülün yoğunluğuna göre değişir — sabit değildir.
-- 🙈 **Kapat ve hatırla** (özet sekmesinde) — özeti okumak üretken *hissettirir* ama
-  en zayıf çalışma biçimidir. Bu düğme aynı içeriği tek satır değiştirmeden
-  **geri-getirme pratiğine** çevirir: tabloda cevap sütunu, sınav radarında kritik
-  vurgular, hafıza kancalarında açılım satırı maskelenir; dokununca tek tek açılır.
-  Toplam **357 gizlenebilir cevap**. Neyin gizleneceği içeriğin biçimine göre
-  seçildi — tabloda kalın metni maskelemek olmazdı, çünkü hücrelerin %33'ü baştan
-  sona kalın; orada ipucu ilk sütunda kalır.
 - 🧠 Zihin haritası
 - 📊 Karşılaştırma tablosu
 - 🔗 Eşleştirme alıştırması — **361 çift**, her modülde sınavda getirdiği soru
@@ -129,7 +122,7 @@ gibidir: 1. Oturum 10.00 Müdür · 2. Oturum 13.00 Müdür Yrd. (Temel Eğitim)
 ## Testler
 
 ```bash
-node tests/run.mjs        # 168 kontrol · ~140 sn
+node tests/run.mjs        # 160 kontrol · ~140 sn
 node tests/run.mjs srs    # ad parçasıyla süz
 ```
 

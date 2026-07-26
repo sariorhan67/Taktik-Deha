@@ -213,15 +213,6 @@ b{font-weight:700}
 
 /* ============ CONCEPT MAP ============ */
 .map-tools{display:flex;justify-content:flex-end;margin-bottom:12px}
-/* Maskelenmiş cevap. İç öğelerin kendi renkleri var (ör. .kanca .code b altın),
-   bu yüzden şeffaflık torunlara da uygulanır — yoksa maskenin içinden okunur. */
-#pane-ozet.gizli .gz{background:var(--line);border-radius:5px;cursor:pointer;
-  box-decoration-break:clone;-webkit-box-decoration-break:clone;
-  -webkit-user-select:none;user-select:none;transition:background .12s}
-#pane-ozet.gizli .gz,#pane-ozet.gizli .gz *{color:transparent}
-#pane-ozet.gizli .gz.ac{background:transparent}
-#pane-ozet.gizli .gz.ac,#pane-ozet.gizli .gz.ac *{color:inherit}
-#pane-ozet.gizli .kanca .open .gz{display:inline-block;min-width:60%}
 .map-tools button{font-family:var(--mono);font-size:var(--fs-1);color:var(--accent-ink);border:1px solid var(--line);background:var(--card);padding:7px 14px;border-radius:99px;box-shadow:var(--shadow)}
 .map-root{background:var(--accent-soft);color:var(--accent-ink);border:1px solid var(--accent);font-family:var(--serif);font-weight:600;font-size:var(--fs-5);text-align:center;padding:16px;border-radius:var(--radius);letter-spacing:.02em}
 .map-tree{position:relative;margin:0 0 0 16px;padding:14px 0 4px 22px;border-left:1.5px solid var(--line)}
@@ -7048,7 +7039,7 @@ quiz:[
 /* ================= STATE / STORAGE ================= */
 const SKEY="meb-yonetici-defter-v1";
 const DAY=86400000;
-let state={cards:{},quiz:{},match:{},theme:"light",srs:{},wrongQ:{},examDate:null,exam:{best:-1,att:0},full:{best:-1,att:0},streak:{n:0,last:null},daily:{date:null,n:0},badges:{},goal:15,pastR:{},kademe:null,srsV:0,qStat:{},ozetGizli:false};
+let state={cards:{},quiz:{},match:{},theme:"light",srs:{},wrongQ:{},examDate:null,exam:{best:-1,att:0},full:{best:-1,att:0},streak:{n:0,last:null},daily:{date:null,n:0},badges:{},goal:15,pastR:{},kademe:null,srsV:0,qStat:{}};
 const hasStore=typeof window!=="undefined"&&window.storage;
 
 /* ---- KATMANLI DEPOLAMA ----
@@ -7091,14 +7082,14 @@ async function loadState(){
       const p=JSON.parse(raw);
       state={cards:p.cards||{},quiz:p.quiz||{},match:p.match||{},theme:p.theme3||"light",
              srs:p.srs||{},wrongQ:p.wrongQ||{},examDate:p.examDate||null,exam:p.exam||{best:-1,att:0},full:p.full||{best:-1,att:0},
-             streak:p.streak||{n:0,last:null},daily:p.daily||{date:null,n:0},badges:p.badges||{},goal:p.goal||15,pastR:p.pastR||{},kademe:p.kademe||null,srsV:p.srsV||0,qStat:p.qStat||{},ozetGizli:!!p.ozetGizli};
+             streak:p.streak||{n:0,last:null},daily:p.daily||{date:null,n:0},badges:p.badges||{},goal:p.goal||15,pastR:p.pastR||{},kademe:p.kademe||null,srsV:p.srsV||0,qStat:p.qStat||{}};
     }
   }catch(e){/* ilk kullanım veya kayıt yok */}
 }
 function snapshot(){
   return JSON.stringify({cards:state.cards,quiz:state.quiz,match:state.match,
     theme3:state.theme,srs:state.srs,wrongQ:state.wrongQ,examDate:state.examDate,exam:state.exam,full:state.full,
-    streak:state.streak,daily:state.daily,badges:state.badges,goal:state.goal,pastR:state.pastR,kademe:state.kademe,srsV:state.srsV,qStat:state.qStat,ozetGizli:state.ozetGizli});
+    streak:state.streak,daily:state.daily,badges:state.badges,goal:state.goal,pastR:state.pastR,kademe:state.kademe,srsV:state.srsV,qStat:state.qStat});
 }
 /* Yazma temposu: her tıklamada değil, 900 ms sessizlikten sonra tek yazma */
 let saveTimer=null,noticeShown=false;
@@ -7687,7 +7678,7 @@ function doImport(file){
       if(!confirm("Yedekteki ilerleme yüklenecek ve mevcut ilerlemenin yerine geçecek. Devam edilsin mi?"))return;
       state={cards:p.cards||{},quiz:p.quiz||{},match:p.match||{},theme:p.theme3||state.theme,
         srs:p.srs||{},wrongQ:p.wrongQ||{},examDate:p.examDate||null,exam:p.exam||{best:-1,att:0},full:p.full||{best:-1,att:0},
-        streak:p.streak||{n:0,last:null},daily:p.daily||{date:null,n:0},badges:p.badges||{},goal:p.goal||15,pastR:p.pastR||{},kademe:p.kademe||null,srsV:p.srsV||0,qStat:p.qStat||{},ozetGizli:!!p.ozetGizli};
+        streak:p.streak||{n:0,last:null},daily:p.daily||{date:null,n:0},badges:p.badges||{},goal:p.goal||15,pastR:p.pastR||{},kademe:p.kademe||null,srsV:p.srsV||0,qStat:p.qStat||{}};
       srsMigrate();applyTheme();flushSave();renderHome();
       alert("Yedek yüklendi ✓");
     }catch(e){alert("Bu dosya okunamadı. Geçerli bir yedek dosyası (.json) seçtiğinden emin ol.");}
@@ -7821,7 +7812,7 @@ $("#resetBtn").addEventListener("click",async()=>{
     setTimeout(()=>{resetArmed=false;b.textContent="İlerlemeyi sıfırla";b.classList.remove("arm");},3500);return;}
   const th=state.theme,ed=state.examDate,g=state.goal;
   state={cards:{},quiz:{},match:{},theme:th,srs:{},wrongQ:{},examDate:ed,exam:{best:-1,att:0},full:{best:-1,att:0},
-    streak:{n:0,last:null},daily:{date:null,n:0},badges:{},goal:g,pastR:{},kademe:state.kademe,srsV:2,qStat:{},ozetGizli:state.ozetGizli};
+    streak:{n:0,last:null},daily:{date:null,n:0},badges:{},goal:g,pastR:{},kademe:state.kademe,srsV:2,qStat:{}};
   await flushSave();
   resetArmed=false;b.textContent="İlerlemeyi sıfırla";b.classList.remove("arm");
   renderHome();
@@ -7860,27 +7851,7 @@ function refreshTicks(){
   document.querySelector('[data-pane="eslestir"]').classList.toggle("done",p.mDone>=p.mTotal);
 }
 
-/* ================= ÖZETTE AKTİF HATIRLAMA ================= */
-/* Özet okumak üretken hissettirir ama en zayıf çalışma biçimidir. Aynı içeriği
-   tek satır bile değiştirmeden geri-getirme pratiğine çevirmek için cevap tarafı
-   maskelenir, dokununca açılır. Hedefler içeriğin ÖLÇÜLEN biçimine göre seçildi:
-     · tablo → satırın SON hücresi; ipucu ilk sütunda kalır. Burada kalını
-               maskelemek olmazdı: 332 hücrenin %33'ü baştan sona kalın, tamamen
-               silinirlerdi.
-     · radar → maddenin içindeki kalın parçalar (boşluk doldurma). 71 maddenin
-               hiçbiri baştan sona kalın değil; %6'sında hiç kalın yok, onlar
-               olduğu gibi kalır.
-     · kanca → açılım satırı; kancanın kendisi zaten ipucudur.
-   Maske yalnızca görünümdür — CONTENT'e dokunulmaz, bu yüzden özetlere içerik
-   eklendikçe kendiliğinden yeni malzemeye de uygulanır. */
-function ozetSar(el){
-  if(!el||el.dataset.gz)return;
-  const s=document.createElement("span");
-  s.className="gz";
-  while(el.firstChild)s.appendChild(el.firstChild);
-  el.appendChild(s);
-  el.dataset.gz="1";
-}
+/* ================= ÖZET İSKELETİ ================= */
 /* Özetin iskeleti: … konu blokları … → 🧠 Hafıza Kancaları → 🎯 Sınav Radarı.
    Radar kapanış bloğudur ("bunlar sorulur"); ondan sonra içerik gelirse o vaat
    bozulur. Ölçümde 20 modülün 12'sinde radardan sonra blok vardı — çoğu sonradan
@@ -7902,33 +7873,7 @@ function ozetDuzenle(pane){
 function ozetHazirla(){
   const pane=$("#pane-ozet");if(!pane)return;
   ozetDuzenle(pane);
-  pane.querySelectorAll("table tr").forEach(tr=>{
-    if(tr.querySelector("th")||tr.cells.length<2)return;   /* başlık satırı dokunulmaz */
-    ozetSar(tr.cells[tr.cells.length-1]);
-  });
-  pane.querySelectorAll("ul.radar li b").forEach(ozetSar);
-  pane.querySelectorAll(".kanca .open").forEach(ozetSar);
-  const bar=document.createElement("div");
-  bar.className="map-tools";
-  bar.innerHTML='<button id="ozGizle"></button>';
-  pane.insertBefore(bar,pane.firstChild);
-  $("#ozGizle").addEventListener("click",()=>{
-    state.ozetGizli=!state.ozetGizli;saveState();ozetModu();
-  });
-  ozetModu();
 }
-function ozetModu(){
-  const pane=$("#pane-ozet");if(!pane)return;
-  const on=!!state.ozetGizli;
-  pane.classList.toggle("gizli",on);
-  if(!on)pane.querySelectorAll(".gz.ac").forEach(g=>g.classList.remove("ac"));
-  const b=$("#ozGizle");
-  if(b)b.textContent=on?"cevapları aç":"kapat ve hatırla";
-}
-$("#pane-ozet").addEventListener("click",e=>{
-  const g=e.target.closest(".gz");
-  if(g&&$("#pane-ozet").classList.contains("gizli"))g.classList.toggle("ac");
-});
 
 /* ================= CONCEPT MAP ================= */
 let mapAllOpen=false;
