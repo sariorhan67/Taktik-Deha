@@ -10,7 +10,18 @@ sistem yazı tipine düşer).
 ## Özellikler
 
 **Her modülde (20 modül):**
-- 📋 Özet (çekirdek fikir, hafıza kancaları, sınav radarı)
+- 📋 Özet — sabit iskelet: **çekirdek fikir → konu blokları → 🧠 hafıza kancaları →
+  🎯 sınav radarı**. Radar kapanış bloğudur ("bunlar sorulur"), bu yüzden her modülde
+  **son** gelir. Sıralama kaynağa değil ekrana uygulanır: özete ileride nereye blok
+  eklenirse eklensin kapanış blokları kendiliğinden sonda kalır, iskelet eklemelerle
+  bozulmaz. Özet uzunluğu modülün yoğunluğuna göre değişir — sabit değildir.
+- 🙈 **Kapat ve hatırla** (özet sekmesinde) — özeti okumak üretken *hissettirir* ama
+  en zayıf çalışma biçimidir. Bu düğme aynı içeriği tek satır değiştirmeden
+  **geri-getirme pratiğine** çevirir: tabloda cevap sütunu, sınav radarında kritik
+  vurgular, hafıza kancalarında açılım satırı maskelenir; dokununca tek tek açılır.
+  Toplam **357 gizlenebilir cevap**. Neyin gizleneceği içeriğin biçimine göre
+  seçildi — tabloda kalın metni maskelemek olmazdı, çünkü hücrelerin %33'ü baştan
+  sona kalın; orada ipucu ilk sütunda kalır.
 - 🧠 Zihin haritası
 - 📊 Karşılaştırma tablosu
 - 🔗 Eşleştirme alıştırması — **361 çift**, her modülde sınavda getirdiği soru
@@ -118,13 +129,13 @@ gibidir: 1. Oturum 10.00 Müdür · 2. Oturum 13.00 Müdür Yrd. (Temel Eğitim)
 ## Testler
 
 ```bash
-node tests/run.mjs        # 153 kontrol · ~125 sn
+node tests/run.mjs        # 168 kontrol · ~140 sn
 node tests/run.mjs srs    # ad parçasıyla süz
 ```
 
 Uygulama tek dosya olduğu için testler onu gerçek bir tarayıcıda açıp hem veriyi hem
 arayüzü yerinde denetler: soru bankalarının biçimi, modül ağırlıklarının resmî duyuruyla
-aynılığı, şık karıştırma, aralıklı tekrar zamanlayıcısı, deneme havuzunun format
+aynılığı, şık karıştırma, aralıklı tekrar zamanlayıcısı, özet iskeleti, deneme havuzunun format
 karışımı, uyarlanabilir soru seçimi, WCAG AA kontrastı (dört sekme × iki tema) ve
 yatay taşma. Ayrıntılar için [`tests/README.md`](tests/README.md).
 
