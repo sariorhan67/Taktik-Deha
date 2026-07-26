@@ -14,7 +14,8 @@ sistem yazı tipine düşer).
 - 🧠 Zihin haritası
 - 📊 Karşılaştırma tablosu
 - 🔗 Eşleştirme alıştırması
-- 🃏 Kartlar (aralıklı tekrar / SRS)
+- 🃏 Kartlar (aralıklı tekrar / SRS) — **191 kart**, her modülde sınavda getirdiği
+  soru sayısının en az üç katı
 - 🎯 Vaka soruları (optik formlu mini sınav)
 
 **📄 Çıkmış Sorular (25 Temmuz 2026 e-Sınavı):**
@@ -90,7 +91,7 @@ gibidir: 1. Oturum 10.00 Müdür · 2. Oturum 13.00 Müdür Yrd. (Temel Eğitim)
 ## Testler
 
 ```bash
-node tests/run.mjs        # 102 kontrol · ~100 sn
+node tests/run.mjs        # 107 kontrol · ~100 sn
 node tests/run.mjs srs    # ad parçasıyla süz
 ```
 
