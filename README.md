@@ -17,6 +17,24 @@ sistem yazı tipine düşer).
 - 🃏 Kartlar (aralıklı tekrar / SRS)
 - 🎯 Vaka soruları (optik formlu mini sınav)
 
+**📄 Çıkmış Sorular (25 Temmuz 2026 e-Sınavı):**
+- MEB Yönetici Yetiştirme Program Sonu Değerlendirme e-Sınavının **195 gerçek sorusu**
+- Cevaplar **resmî cevap anahtarından** doğrulanmıştır (3 oturumun tamamı)
+- **Kademe seçimi:** Gerçek sınavda herkes ortak soruları çözer, üstüne kendi kademesinin
+  5 sorusu gelir. Temel Eğitim / Ortaöğretim / Özel Eğitim seçilince yalnızca ilgili
+  sorular gösterilir (165 ortak + 10 kademeye özel)
+- Her soru; oturum, rol (Müdür / Müdür Yardımcısı), kademe ve modül etiketi taşır
+- Oturuma göre, modüle göre, karışık 60 soru veya "hiç çözmediklerim" olarak çalışma
+- Yanlışların ayrı listede birikir, tekrar çözülebilir
+
+**⚡ Hızlı Bilgi (54 kısa soru):**
+Gerçek sınavın baskın formatı **kısa bilgi sorusu**dur (%70) ve dörtte biri **olumsuz kök**
+taşır ("Hangisi ... değildir?"). Uygulamanın kendi 200 sorusu vaka tipiydi; bu banka o açığı
+kapatır. Sorular ders notlarına dayanır ve gerçek sınavda çıkan ama uygulamada zayıf kalan
+konulara odaklanır: MÖZEM, özel eğitim uygulama evleri, destek eğitim odası, yardımcı
+teknolojiler, TEFBİS/EKAP/HYS-MYS/KBS/MEBBİS, Selye ve 3A+S modeli, isim-eser
+eşleştirmeleri, PESTLE, normlar hiyerarşisi ve diğerleri.
+
 **Çalışma araçları:**
 - 🔁 **Günün Tekrarı** — aralıklı tekrar (SRS) ile o gün tekrarı gelen kartlar
 - 📕 **Yanlış Defteri** — yanlış sorular ve zorlanılan kartlar otomatik birikir
@@ -33,6 +51,22 @@ sistem yazı tipine düşer).
   (başlanmadı · zayıf · orta · hazır); dokununca modülü açar
 - 💾 **Yedekle / Geri Yükle** — ilerlemeyi `.json` olarak dışa aktar, başka cihaza taşı
 - ☾ Karanlık / aydınlık tema
+
+**Ölçme geçerliği (bu sürümde düzeltildi):**
+- 🔀 **Şıklar her seferinde karıştırılır** — modül sınavı, Yanlış Defteri ve Hızlı Bilgi'de
+  şık sırası her açılışta yeniden kurulur. Böylece "cevap hep B'dir" gibi ezber kısayolları
+  çalışmaz; ölçülen şey konu bilgisi olur. **Çıkmış sorularda kitapçık sırası korunur** —
+  gerçek sınav deneyimi ve resmî cevap anahtarı harfleriyle birebir eşleşsin diye.
+- 📏 **Çeldirici uzunlukları dengelendi** — doğru şıkkın en uzun şık olma oranı
+  %51'den %31'e (şans düzeyi ~%20), ortalama uzunluk avantajı +14 karakterden
+  +3 karaktere indirildi. Doğru şıkta duran gerekçe cümleleri, soruyu bilmeden
+  ipucu vermesin diye çözüm açıklamasına taşındı — bilgi kaybı yok, açıklamalar zenginleşti.
+- 🔤 **Açıklamalar harf değil içerik anlatır** — "C şıkkı yanlıştır" yerine
+  «şıkkın kendi metni» yazılır; şıklar karıştığında açıklama tutarlı kalır.
+
+> **Not:** Modül ağırlıkları (her modülün kaç soru getirdiği), 25 Temmuz 2026 sınavının
+> gerçek soru dağılımına göre kalibre edilmiştir. Bu sayede "Bugünkü Odağın" planı,
+> Hazırlık Radarı ve Tam Deneme, gerçek sınavın ağırlıklarını yansıtır.
 
 ## Çalıştırma
 
