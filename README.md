@@ -62,6 +62,15 @@ hiç soru yoktu. Her sorunun çözüm açıklaması vardır.
   tepede kalmaz. Modülün sınav ağırlığı da çarpandır — 5 soru getiren modüldeki
   zayıflık, 2 soru getirendekinden pahalıdır. Seçim ağırlıklı ama **rastgeledir**:
   aynı 20 soru iki kez gelmez, dörtte biri kapsama için ayrılır.
+- 🔀 **En Çok Karıştırdıkların** — yalnızca doğru/yanlış değil, **hangi çeldiriciyi
+  seçtiğin** de kaydedilir. Şıklar her açılışta karıştığı için "C'yi seçtim" kalıcı
+  bir bilgi değildir; saklanan şey şıkkın **özgün dizi indeksi**, yani seçtiğin
+  *metin*. Böylece uygulama "bu soruyu bilmiyorsun" yerine «*Örgütsel bilgi toplama*
+  yerine **Teşhis**» diyebiliyor — ve 195+161 sorunun açıklaması zaten her çeldiriciyi
+  tek tek çürüttüğü için, karıştırdığın ayrımın izahı doğrudan altında çıkıyor.
+  Her kartta sorunun kökü de görünür: vaka sorularında şıklar kavram değil senaryo
+  etiketi olabiliyor ("L Okulu → K Okulu") ve çift tek başına anlamsız kalırdı.
+  Boş bırakılan veya süresi dolan soru çeldirici olarak sayılmaz.
 - ⏱ **Karma Deneme** (10 soru) ve 🎓 **Tam Deneme** (60 soru · 75 dk) — soru dağılımı
   resmî ağırlıklara, **format karışımı gerçek sınavın ölçülmüş profiline** göre kurulur:
   çıkmış 195 soruda kısa bilgi kökü %52'dir, bu yüzden denemenin de yaklaşık yarısı
@@ -109,7 +118,7 @@ gibidir: 1. Oturum 10.00 Müdür · 2. Oturum 13.00 Müdür Yrd. (Temel Eğitim)
 ## Testler
 
 ```bash
-node tests/run.mjs        # 145 kontrol · ~125 sn
+node tests/run.mjs        # 153 kontrol · ~125 sn
 node tests/run.mjs srs    # ad parçasıyla süz
 ```
 
