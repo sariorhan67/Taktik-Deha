@@ -67,9 +67,16 @@ eşleştirmeleri, PESTLE, normlar hiyerarşisi ve diğerleri.
 - 🔤 **Açıklamalar harf değil içerik anlatır** — "C şıkkı yanlıştır" yerine
   «şıkkın kendi metni» yazılır; şıklar karıştığında açıklama tutarlı kalır.
 
-> **Not:** Modül ağırlıkları (her modülün kaç soru getirdiği), 25 Temmuz 2026 sınavının
-> gerçek soru dağılımına göre kalibre edilmiştir. Bu sayede "Bugünkü Odağın" planı,
-> Hazırlık Radarı ve Tam Deneme, gerçek sınavın ağırlıklarını yansıtır.
+**📋 Resmî Sınav Yapısı (Deneme sekmesinde):**
+Millî Eğitim Akademisi Başkanlığı / ÖDSGM'nin yayımladığı **2026 Yönetici Yetiştirme
+Program Sonu Değerlendirme e-Sınav Duyurusu**'ndaki resmî soru dağılımı tablosu, her
+modülün yanında kendi hazırlık yüzdenle birlikte gösterilir. Oturum yapısı da duyurudaki
+gibidir: 1. Oturum 10.00 Müdür · 2. Oturum 13.00 Müdür Yrd. (Temel Eğitim) ·
+3. Oturum 16.00 Müdür Yrd. (Ortaöğretim / Özel Eğitim).
+
+> **Not:** Modül ağırlıkları (her modülün kaç soru getirdiği) **resmî sınav duyurusundaki
+> soru dağılımı tablosundan** alınmıştır — tahmin değildir. Bu sayede "Bugünkü Odağın"
+> planı, Hazırlık Radarı ve Tam Deneme gerçek sınavın ağırlıklarını yansıtır.
 
 ## Çalıştırma
 
