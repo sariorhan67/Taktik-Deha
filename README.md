@@ -13,7 +13,8 @@ sistem yazı tipine düşer).
 - 📋 Özet (çekirdek fikir, hafıza kancaları, sınav radarı)
 - 🧠 Zihin haritası
 - 📊 Karşılaştırma tablosu
-- 🔗 Eşleştirme alıştırması
+- 🔗 Eşleştirme alıştırması — **361 çift**, her modülde sınavda getirdiği soru
+  sayısının en az beş katı
 - 🃏 Kartlar (aralıklı tekrar / SRS) — **191 kart**, her modülde sınavda getirdiği
   soru sayısının en az üç katı
 - 🎯 Vaka soruları (optik formlu mini sınav)
@@ -51,6 +52,16 @@ hiç soru yoktu. Her sorunun çözüm açıklaması vardır.
   Unutulan kart sıfırlanmaz — iki basamak geri düşüp ertesi gün yeniden gelir.
   **Sınav tarihi girdiysen hiçbir tekrar sınavdan sonraya atılmaz.**
 - 📕 **Yanlış Defteri** — yanlış sorular ve zorlanılan kartlar otomatik birikir
+- 🎯 **Seni Zorlayanlar** (Yanlış Defteri'nde) — defterin ileri hâli. Defter "şu an
+  yanlış duran" soruyu tutar; bu ise **her sorunun tüm geçmişine** bakar: kaç kez
+  görüldü, kaçı doğru, kaç kez arka arkaya bilindi. Üç bankanın **584 sorusundan**
+  seni en çok zorlayan 20'sini çeker. Sık yanlışladığın öne çıkar, arka arkaya doğru
+  bildiğin geri plana düşer ama **hiç silinmez**; hiç görmediğin soru "kolay" değil
+  "bilinmiyor" sayılır. Tek denemelik gözlem beş denemelik kadar güvenilir sayılmaz
+  (Laplace düzeltmesi), böylece bir kez dikkatsizlik ettiğin soru sonsuza kadar
+  tepede kalmaz. Modülün sınav ağırlığı da çarpandır — 5 soru getiren modüldeki
+  zayıflık, 2 soru getirendekinden pahalıdır. Seçim ağırlıklı ama **rastgeledir**:
+  aynı 20 soru iki kez gelmez, dörtte biri kapsama için ayrılır.
 - ⏱ **Karma Deneme** (10 soru) ve 🎓 **Tam Deneme** (60 soru · 75 dk) — soru dağılımı
   resmî ağırlıklara, **format karışımı gerçek sınavın ölçülmüş profiline** göre kurulur:
   çıkmış 195 soruda kısa bilgi kökü %52'dir, bu yüzden denemenin de yaklaşık yarısı
@@ -98,14 +109,15 @@ gibidir: 1. Oturum 10.00 Müdür · 2. Oturum 13.00 Müdür Yrd. (Temel Eğitim)
 ## Testler
 
 ```bash
-node tests/run.mjs        # 126 kontrol · ~115 sn
+node tests/run.mjs        # 145 kontrol · ~125 sn
 node tests/run.mjs srs    # ad parçasıyla süz
 ```
 
 Uygulama tek dosya olduğu için testler onu gerçek bir tarayıcıda açıp hem veriyi hem
 arayüzü yerinde denetler: soru bankalarının biçimi, modül ağırlıklarının resmî duyuruyla
-aynılığı, şık karıştırma, aralıklı tekrar zamanlayıcısı, WCAG AA kontrastı (dört sekme ×
-iki tema) ve yatay taşma. Ayrıntılar için [`tests/README.md`](tests/README.md).
+aynılığı, şık karıştırma, aralıklı tekrar zamanlayıcısı, deneme havuzunun format
+karışımı, uyarlanabilir soru seçimi, WCAG AA kontrastı (dört sekme × iki tema) ve
+yatay taşma. Ayrıntılar için [`tests/README.md`](tests/README.md).
 
 ## Çalıştırma
 
