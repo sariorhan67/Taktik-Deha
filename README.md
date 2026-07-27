@@ -44,7 +44,9 @@ sistem yazı tipine düşer).
   sayısının en az beş katı
 - 🃏 Kartlar (aralıklı tekrar / SRS) — **191 kart**, her modülde sınavda getirdiği
   soru sayısının en az üç katı
-- 🎯 Vaka soruları (optik formlu mini sınav)
+- 🎯 Vaka soruları — **309 soru**, her modülde sınavda getirdiği soru sayısının
+  en az beş katı. Deneme havuzunun asıl kaynağı burasıdır: Tam Deneme her modülden
+  ağırlığı kadar soru çeker, bu yüzden ince banka aynı sorunun tekrarı demektir.
 
 **📄 Çıkmış Sorular (25 Temmuz 2026 e-Sınavı):**
 - MEB Yönetici Yetiştirme Program Sonu Değerlendirme e-Sınavının **195 gerçek sorusu**
@@ -104,7 +106,7 @@ hiç soru yoktu. Her sorunun çözüm açıklaması vardır.
   Hızlı Bilgi bankasından, kalanı vaka bankasından çekilir. **Olumsuz kök** oranı da
   gözetilir: gerçek sınavın %31'i «hangisi … değildir?» biçimindedir ve bu ayrı bir
   beceridir — en iyi seçeneği bulmak yerine beş seçeneğin de doğruluğunu yoklamayı
-  gerektirir. Her deneme farklı bir bileşim taşır; havuz 389 soruya çıktığı için aynı
+  gerektirir. Her deneme farklı bir bileşim taşır; havuz 470 soruya çıktığı için aynı
   soru daha seyrek tekrarlanır.
 - 📈 **Deneme Eğrin** (İlerleme sekmesinde) — her Tam Deneme puanı kaydedilir ve
   eğri olarak çizilir; baraj çizgisi (60) referans, baraj üstü denemeler ayrı
@@ -156,7 +158,7 @@ gibidir: 1. Oturum 10.00 Müdür · 2. Oturum 13.00 Müdür Yrd. (Temel Eğitim)
 ## Testler
 
 ```bash
-node tests/run.mjs        # 204 kontrol · ~155 sn
+node tests/run.mjs        # 205 kontrol · ~155 sn
 node tests/run.mjs srs    # ad parçasıyla süz
 ```
 

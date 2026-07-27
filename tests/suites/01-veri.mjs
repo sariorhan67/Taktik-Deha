@@ -97,6 +97,18 @@ export default async function ({ browser, rec }) {
   rec.chk(eksikBanka.length === 0,
     `Her modülde ağırlığının en az 2 katı Hızlı Bilgi sorusu var${eksikBanka.length ? " — eksik: " + eksikBanka.map(x => `M${x.no}(${x.var}/${x.hedef})`).join(" ") : ""}`);
 
+  /* Vaka soruları sınava en çok benzeyen pratiktir ve deneme havuzunun da asıl
+     kaynağıdır: buildFullPool her modülden ağırlığı kadar soru çeker, bu yüzden
+     ince bankada aynı soru sık tekrarlanır. Taban modülün ağırlığının 5 katıdır. */
+  const vakaSayi = await page.evaluate(() =>
+    MODULES.reduce((a, m) => (a[+m.no] = (CONTENT[m.id] && CONTENT[m.id].quiz || []).length, a), {}));
+  const eksikVaka = Object.entries(RESMI_DAGILIM)
+    .map(([no, w]) => ({ no, hedef: w * 5, var: vakaSayi[no] || 0 }))
+    .filter(x => x.var < x.hedef);
+  const vakaToplam = Object.values(vakaSayi).reduce((a, b) => a + b, 0);
+  rec.chk(eksikVaka.length === 0,
+    `Her modülde ağırlığının en az 5 katı vaka sorusu var (toplam ${vakaToplam})${eksikVaka.length ? " — eksik: " + eksikVaka.map(x => `M${x.no}(${x.var}/${x.hedef})`).join(" ") : ""}`);
+
   /* Kartlar aralıklı tekrarın yakıtıdır; ağır modüllerin destesi ince kalmamalı.
      Hedef, modülün resmî soru sayısının üç katıdır. */
   const eksikKart = Object.entries(RESMI_DAGILIM)
