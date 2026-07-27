@@ -120,5 +120,37 @@ export default async function ({ browser, rec }) {
   rec.chk(altEkran.kucuk.length === 0,
     `Alt ekranlarda dokunma hedefleri en az 40px${altEkran.kucuk.length ? " → " + altEkran.kucuk.join(", ") : ""}`);
 
+  /* Geri düğmesi yedi ekranda da aynı görünmeli ve ikon taşımalı: metin «←»
+     karakteriyken 12px'te kalıyor ve 20px'lik başlığın yanında kayboluyordu. */
+  const geri = await page.evaluate(() => {
+    const ekranlar = ["scr-mod", "scr-review", "scr-wrong", "scr-tur",
+                      "scr-exam", "scr-full", "scr-past"];
+    const bicim = new Set(); let ikonsuz = 0, etiketsiz = 0, n = 0;
+    const tema = document.querySelector("#themeBtn");
+    const t = tema ? getComputedStyle(tema) : null;
+    ekranlar.forEach(id => {
+      document.querySelectorAll(".screen").forEach(x => x.classList.remove("active"));
+      document.getElementById(id).classList.add("active");
+      const el = document.querySelector("#" + id + " .back");
+      if (!el) return;
+      n++;
+      const c = getComputedStyle(el), r = el.getBoundingClientRect();
+      bicim.add([Math.round(r.width), Math.round(r.height), c.borderRadius, c.borderTopWidth].join("/"));
+      if (!el.querySelector("svg")) ikonsuz++;
+      if (!el.getAttribute("aria-label") && !el.textContent.trim()) etiketsiz++;
+    });
+    document.querySelectorAll(".screen").forEach(x => x.classList.remove("active"));
+    document.getElementById("scr-home").classList.add("active");
+    return { n, bicim: [...bicim], ikonsuz, etiketsiz, temaYuvarlak: t && t.borderRadius };
+  });
+  rec.chk(geri.n === 7 && geri.bicim.length === 1,
+    `Geri düğmesi yedi ekranda da aynı ölçüde (${geri.bicim.join(" | ")})`);
+  rec.chk(geri.ikonsuz === 0,
+    `Geri düğmeleri metin değil ikon taşıyor (${geri.ikonsuz} ikonsuz)`);
+  rec.chk(geri.etiketsiz === 0,
+    "İkonlu geri düğmelerinin erişilebilir adı var");
+  rec.chk(!!geri.temaYuvarlak && geri.bicim[0].includes(geri.temaYuvarlak),
+    `Geri düğmesi tema düğmesiyle aynı biçim dilinde (yuvarlaklık ${geri.temaYuvarlak})`);
+
   await page.context().close();
 }
