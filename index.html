@@ -178,10 +178,23 @@ button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-r
 
 /* ============ SUBSCREEN HEAD ============ */
 .mhead{padding:24px 0 16px;display:flex;gap:14px;align-items:flex-start}
-/* Dokunma hedefi: görünen boyut aynı, tıklanabilir alan 44px. Negatif margin
-   ile büyütülen alan yerleşimi kaydırmaz. Ölçümde 17×22 idi — WCAG 2.5.8'in
-   AA düzeyindeki 24×24 asgarisinin bile altında, üstelik yedi alt ekranda. */
-.back{font-family:var(--mono);font-size:var(--fs-2);font-weight:600;color:var(--accent-ink);flex-shrink:0;display:inline-flex;align-items:center;justify-content:flex-start;min-width:44px;min-height:44px;padding:0 10px 0 0;margin:-11px 0 -11px -6px;padding-left:6px}
+/* Daire, üst satırın (eyebrow) optik ortasına hizalanır — başlık iki satıra
+   düştüğünde de yerinden oynamaz. */
+.mhead .back{margin-top:-13px}
+.mhead .mt{flex:1;min-width:0}
+/* Geri düğmesi, ana ekrandaki tema düğmesiyle AYNI dili konuşur: aynı çap,
+   aynı çerçeve, aynı gölge. Önceden 12px'lik bir «←» karakteriydi; 40px'lik
+   dairenin yanında 20px'lik başlığın karşısında kayıp duruyordu ve dokunma
+   alanı da 17×22 idi (WCAG 2.5.8'in AA asgarisi 24×24). */
+.back{flex:0 0 var(--tap);width:var(--tap);height:var(--tap);display:grid;place-items:center;
+  border:1px solid var(--line);border-radius:50%;background:var(--card);
+  box-shadow:var(--shadow);color:var(--accent-ink);padding:0;margin:0;
+  transition:background .15s,transform .1s}
+.back:active{transform:scale(.94);background:var(--accent-soft)}
+/* Karanlık temada --accent-ink koyu kalıyor ve daire zemininde 1,68:1 veriyor;
+   orada parlak vurgu rengi kullanılır (ikon eşiği 3:1). */
+body.dark .back{color:var(--accent)}
+.back .ic{width:20px;height:20px}
 .mhead h1{font-family:var(--serif);font-weight:600;font-size:var(--fs-6);line-height:1.25;letter-spacing:-.01em}
 .mhead .eyebrow{display:block;margin-bottom:4px}
 .tabs{position:sticky;top:0;z-index:20;display:flex;gap:2px;background:var(--bg);padding:8px 0 0;border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:none}
@@ -769,7 +782,7 @@ body.dark .plan .plan-sub{color:#A8B8AF}
 <div id="scr-mod" class="screen">
   <div class="wrap">
     <div class="mhead">
-      <button class="back" data-home>←</button>
+      <button class="back" data-home aria-label="Geri"></button>
       <div class="mt">
         <span class="eyebrow" id="modNo"></span>
         <h1 id="modTitle"></h1>
@@ -798,7 +811,7 @@ body.dark .plan .plan-sub{color:#A8B8AF}
 <div id="scr-review" class="screen">
   <div class="wrap">
     <div class="mhead">
-      <button class="back" data-home>←</button>
+      <button class="back" data-home aria-label="Geri"></button>
       <div class="mt"><span class="eyebrow">Aralıklı Tekrar</span><h1>Günün Tekrarı</h1></div>
     </div>
     <div id="reviewBody" style="padding-top:6px"></div>
@@ -809,7 +822,7 @@ body.dark .plan .plan-sub{color:#A8B8AF}
 <div id="scr-wrong" class="screen">
   <div class="wrap">
     <div class="mhead">
-      <button class="back" data-home>←</button>
+      <button class="back" data-home aria-label="Geri"></button>
       <div class="mt"><span class="eyebrow">Zayıf Noktalar</span><h1>Yanlış Defteri</h1></div>
     </div>
     <div id="wrongBody" style="padding-top:6px"></div>
@@ -820,7 +833,7 @@ body.dark .plan .plan-sub{color:#A8B8AF}
 <div id="scr-tur" class="screen">
   <div class="wrap">
     <div class="mhead">
-      <button class="back" data-home>←</button>
+      <button class="back" data-home aria-label="Geri"></button>
       <div class="mt"><span class="eyebrow">Son Tekrar Turu</span><h1 id="turBaslik">Poster</h1></div>
     </div>
     <div class="tur-bar"><div class="tur-fill" id="turFill"></div></div>
@@ -836,7 +849,7 @@ body.dark .plan .plan-sub{color:#A8B8AF}
 <div id="scr-exam" class="screen">
   <div class="wrap">
     <div class="mhead">
-      <button class="back" data-home>←</button>
+      <button class="back" data-home aria-label="Geri"></button>
       <div class="mt"><span class="eyebrow">Süre Baskılı · 90 sn/soru</span><h1>Karma Deneme</h1></div>
     </div>
     <div id="examBody" style="padding-top:6px"></div>
@@ -847,7 +860,7 @@ body.dark .plan .plan-sub{color:#A8B8AF}
 <div id="scr-full" class="screen">
   <div class="wrap">
     <div class="mhead">
-      <button class="back" id="fxBack">←</button>
+      <button class="back" id="fxBack" aria-label="Geri"></button>
       <div class="mt"><span class="eyebrow">Resmî Dağılım · 75 dakika</span><h1>Tam Deneme</h1></div>
     </div>
     <div id="fullBody" style="padding-top:6px"></div>
@@ -858,7 +871,7 @@ body.dark .plan .plan-sub{color:#A8B8AF}
 <div id="scr-past" class="screen">
   <div class="wrap">
     <div class="mhead">
-      <button class="back" id="ptBack">←</button>
+      <button class="back" id="ptBack" aria-label="Geri"></button>
       <div class="mt"><span class="eyebrow">25 Temmuz 2026 · Gerçek Sınav</span><h1>Çıkmış Sorular</h1></div>
     </div>
     <div id="pastBody" style="padding-top:6px"></div>
@@ -9000,12 +9013,16 @@ const ICONS={
  map:'<path d="M9 4.5 3.5 6.5v13L9 17.5l6 2 5.5-2v-13l-5.5 2z"/><path d="M9 4.5v13M15 6.5v13"/>',
  moon:'<path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/>',
  sun:'<circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/>',
+ back:'<path d="M14.5 6 9 12l5.5 6"/>',
  down:'<path d="M12 4v11"/><path d="M7.5 10.5 12 15l4.5-4.5"/><path d="M4.5 19.5h15"/>',
  up:'<path d="M12 20V9"/><path d="M7.5 13.5 12 9l4.5 4.5"/><path d="M4.5 4.5h15"/>'
 };
 function ic(name,size){
   return '<svg class="ic" viewBox="0 0 24 24" width="'+(size||20)+'" height="'+(size||20)+'" aria-hidden="true">'+(ICONS[name]||'')+'</svg>';
 }
+
+/* Geri düğmelerinin ikonu tek yerden basılır; markup'ta metin ok yok. */
+document.querySelectorAll(".back").forEach(b=>{b.innerHTML=ic("back",22);});
 
 /* ================= ALT SEKME ÇUBUĞU ================= */
 let CURTAB="home";

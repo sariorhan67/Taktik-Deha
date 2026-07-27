@@ -159,7 +159,7 @@ gibidir: 1. Oturum 10.00 Müdür · 2. Oturum 13.00 Müdür Yrd. (Temel Eğitim)
 ## Testler
 
 ```bash
-node tests/run.mjs        # 222 kontrol · ~30 sn
+node tests/run.mjs        # 226 kontrol · ~30 sn
 node tests/run.mjs srs    # ad parçasıyla süz
 ```
 
