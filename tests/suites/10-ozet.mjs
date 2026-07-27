@@ -158,6 +158,111 @@ export default async function ({ browser, rec }) {
   rec.chk(acilis.hepsiModul && acilis.n > 0,
     `Bağlantı yalnızca o modülün sorularını açıyor (${acilis.n} soru · "${acilis.etiket}")`);
 
+  /* --- Blok kimliği ---
+     Karşıtlık deseninin değeri, neyi yakalamadığında: geniş hâli "Karşılama
+     Protokolü" ve "Farklılaştırılmış Öğretim" gibi karşıtlık olmayan başlıkları
+     da işaretliyordu, o da kimliği anlamsızlaştırırdı. */
+  const kimlik = await page.evaluate(() => {
+    const olmali = ["⭐ Vizyon vs Misyon", "⭐ İşitme ≠ Dinleme", "⭐ BEP vs FEP (en sık tuzak!)",
+                    "⭐ İki Paradigma Karşıtlığı", "⭐ Performans Değerlendirme: İki Anlayış"];
+    const olmamali = ["⭐ Taşıt & Karşılama Protokolü", "🎚️ Farklılaştırılmış Öğretimin 4 Boyutu",
+                      "Pansiyon Esasları", "⭐ Kritik Sayılar"];
+    const sah = t => { const h = document.createElement("h3"); h.textContent = t; return ozetBlokTuru(h); };
+    const say = { cekirdek: 0, radar: 0, karsit: 0, kanca: 0 };
+    let isaretli = 0, toplam = 0;
+    MODULES.forEach(m => {
+      openModule(m.id); switchTab("ozet");
+      const p = document.querySelector("#pane-ozet");
+      Object.keys(say).forEach(t => say[t] += p.querySelectorAll(".blk.bt-" + t).length);
+      toplam += p.querySelectorAll(".blk").length;
+      isaretli += p.querySelectorAll(".blk[class*='bt-']").length;
+    });
+    return {
+      say, toplam, isaretli,
+      kacan: olmali.filter(t => sah(t) !== "karsit"),
+      sizan: olmamali.filter(t => sah(t) === "karsit"),
+    };
+  });
+  rec.chk(kimlik.kacan.length === 0,
+    `Gerçek karşıtlık başlıkları işaretleniyor${kimlik.kacan.length ? " — kaçan: " + kimlik.kacan.join(", ") : ""}`);
+  rec.chk(kimlik.sizan.length === 0,
+    `Karşıtlık olmayan başlıklar işaretlenmiyor${kimlik.sizan.length ? " — sızan: " + kimlik.sizan.join(", ") : ""}`);
+  rec.chk(kimlik.say.kanca === 20 && kimlik.say.radar >= 20 && kimlik.say.karsit >= 8,
+    `Kimlikler uygulanıyor (çekirdek ${kimlik.say.cekirdek} · radar ${kimlik.say.radar} · karşıtlık ${kimlik.say.karsit} · kanca ${kimlik.say.kanca})`);
+  rec.chk(kimlik.isaretli < kimlik.toplam * 0.7,
+    `Konu blokları sade kalıyor — ${kimlik.toplam} bloğun ${kimlik.isaretli}'i işaretli; her şeyi işaretlemek hiçbirini işaretlememektir`);
+
+  /* --- Karşılaştırma tablosu: iki taraf karşılıklı, ölçüt sütunu nötr --- */
+  const kx = await page.evaluate(() => {
+    let tablo = 0, olcutBoyali = 0, karsitDisi = 0, eksikTaraf = 0;
+    MODULES.forEach(m => {
+      openModule(m.id); switchTab("ozet");
+      document.querySelectorAll("#pane-ozet .kx-tbl").forEach(t => {
+        tablo++;
+        if (!t.closest(".bt-karsit")) karsitDisi++;
+        const n = t.rows[0].cells.length;
+        [...t.rows].forEach(tr => {
+          if (tr.cells.length !== n) return;
+          if (!tr.cells[n - 2].classList.contains("kx-a") ||
+              !tr.cells[n - 1].classList.contains("kx-b")) eksikTaraf++;
+          /* üç sütunluda ilk sütun ölçüttür, boyanmamalı */
+          if (n === 3 && (tr.cells[0].classList.contains("kx-a") ||
+                          tr.cells[0].classList.contains("kx-b"))) olcutBoyali++;
+        });
+      });
+    });
+    return { tablo, olcutBoyali, karsitDisi, eksikTaraf };
+  });
+  rec.chk(kx.tablo >= 3 && kx.eksikTaraf === 0,
+    `${kx.tablo} karşılaştırma tablosunda iki taraf da renklendi`);
+  rec.chk(kx.olcutBoyali === 0,
+    "Üç sütunlu tabloda ölçüt sütunu nötr kalıyor (M4: Ölçüt | BEP | FEP)");
+  rec.chk(kx.karsitDisi === 0,
+    "Karşılıklı renklendirme yalnızca karşıtlık bloklarında");
+
+  /* --- Gezinme çipleri --- */
+  const nav = await page.evaluate(() => {
+    let modul = 0, cip = 0, kirikBag = 0, emojili = 0, uzun = 0, azBlokAmaNav = 0;
+    MODULES.forEach(m => {
+      openModule(m.id); switchTab("ozet");
+      const p = document.querySelector("#pane-ozet");
+      const bar = p.querySelector(".oz-nav");
+      const blok = p.querySelectorAll(".blk").length;
+      if (!bar) return;
+      if (blok < 4) azBlokAmaNav++;
+      modul++;
+      const c = [...bar.querySelectorAll(".chip")];
+      cip += c.length;
+      /* çip sayısı blok sayısıyla aynı olmalı, yoksa bir bloğa ulaşılamıyor */
+      if (c.length !== blok) kirikBag += 100;
+      c.forEach(x => {
+        if (!p.querySelector('.blk[data-blk="' + x.dataset.git + '"]')) kirikBag++;
+        if (/\p{Extended_Pictographic}/u.test(x.textContent)) emojili++;
+        if (x.textContent.length > 26) uzun++;
+      });
+    });
+    return { modul, cip, kirikBag, emojili, uzun, azBlokAmaNav };
+  });
+  rec.chk(nav.modul === 20 && nav.cip > 150,
+    `Gezinme çipleri ${nav.modul} modülde, toplam ${nav.cip} çip`);
+  rec.chk(nav.kirikBag === 0,
+    "Her blok için bir çip var ve her çip bloğuna gidiyor");
+  rec.chk(nav.emojili === 0 && nav.uzun === 0,
+    `Çip etiketleri emojiden arındırılmış ve kısaltılmış (${nav.emojili} emojili, ${nav.uzun} uzun)`);
+
+  /* Çip şeridi yatay kaydırır ama SAYFAYI taşırmamalı */
+  await page.setViewportSize({ width: 360, height: 780 });
+  const tasma = await page.evaluate(() => {
+    const kotu = [];
+    MODULES.forEach(m => {
+      openModule(m.id); switchTab("ozet");
+      if (document.documentElement.scrollWidth > window.innerWidth) kotu.push(+m.no);
+    });
+    return kotu;
+  });
+  rec.chk(tasma.length === 0,
+    `360px'te hiçbir modül sayfayı yatay taşırmıyor${tasma.length ? " — " + tasma.join(", ") : ""}`);
+
   /* --- Punto basamağı: gövde metniyle tablo arası uçurum olmamalı --- */
   const punto = await page.evaluate(() => {
     openModule(MODULES[8].id); switchTab("ozet");
