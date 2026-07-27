@@ -36,11 +36,12 @@ yoksa ne yapılacağını söyleyen bir hata verir.
 | `02-olcme.mjs` | Şık karıştırma (modül sınavı, Yanlış Defteri, Hızlı Bilgi), çıkmış sorularda kitapçık sırasının korunması, çeldirici uzunluk dengesi |
 | `03-srs.mjs` | Aralık merdiveni, kolaylık katsayısı, unutma davranışı, sınav tarihi sınırı, eski kayıt göçü, sıralama |
 | `04-arayuz.mjs` | Sekme akışı, kart çevirme, denemeler, yedekleme, tema, yatay taşma |
-| `05-erisilebilirlik.mjs` | WCAG AA metin kontrastı (dört sekme × iki tema), düğme etiketleri, odak görünürlüğü, dokunma hedefi boyutu |
+| `05-erisilebilirlik.mjs` | WCAG AA metin kontrastı (dört sekme × iki tema), düğme etiketleri, odak görünürlüğü, dokunma hedefi boyutu — ana sekmeler *ve yedi alt ekran* |
 | `06-sinav-yapisi.mjs` | Resmî Sınav Yapısı paneli ve oturum/rol/kademe veri modeli |
 | `07-kocu.mjs` | Sınav Koçu (`kocu/index.html`) şık karıştırma — dosya yoksa atlanır |
 | `08-deneme.mjs` | Deneme havuzunun format karışımı: kısa kök ve olumsuz kök oranları, modül ağırlıkları, tekrar derinliği |
 | `10-ozet.mjs` | Özet iskeleti (radar son blok, kanca hemen önce), sonradan eklenen bloğa dayanıklılık, vurgu sınıflarının neyi alıp neyi almadığı, sayı şeridi, radar→çıkmış soru bağı, blok kimliği, karşılaştırma tabloları, gezinme çipleri, punto basamağı |
+| `12-acilis.mjs` | Ağlı/ağsız açılış süresi, bloklamayan yazı tipi yüklemesi, service worker zaman aşımı ve yazı tipi önbelleği |
 | `11-ilerleme.mjs` | İsabete dayalı hazırlık, deneme puan geçmişi ve eğilimi, eğri çizimi, Son Tekrar Turu |
 | `09-zayif.mjs` | Soru istatistiği anahtarları, zorluk fonksiyonu, ağırlıklı seçim, çeldirici takibinde özgün-indeks eşlemesi, sonuçların doğru deftere yazılması |
 
