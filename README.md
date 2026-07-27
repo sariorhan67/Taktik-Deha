@@ -28,6 +28,16 @@ sistem yazı tipine düşer).
 - 🎯 **Radar artık kanıt gösteriyor** — her modülün Sınav Radarı'nın altında
   «bu modülden çıkmış N soruyu çöz» bağlantısı var; iddia doğrudan gerçek
   sınav sorusuna bağlanıyor.
+- 🧭 **Gezinme çipleri** — özetin başında blok başlıklarından türetilmiş çip
+  şeridi; en uzun özette 12 blok var ve radara ulaşmak için tüm modülü
+  kaydırmak gerekiyordu.
+- 🎨 **Blok kimliği** — rol taşıyan bloklar sol renk şeridiyle ayrılır: çekirdek
+  fikir ve radar yeşil, **karşıtlık kırmızı**, hafıza kancası altın. Konu
+  blokları sade kalır — 179 bloğun 71'i işaretli; her şeyi işaretlemek hiçbirini
+  işaretlememekle aynı kapıya çıkar.
+- ⚖️ **Karşılaştırma tabloları karşılıklı renkli** — sınavın en sevdiği tuzak
+  biçimi «X mi Y mi» (Vizyon↔Misyon, BEP↔FEP, İşitme↔Dinleme). Bu tablolarda iki
+  taraf zıt renk alır, ölçüt sütunu nötr kalır.
 - 🧠 Zihin haritası
 - 📊 Karşılaştırma tablosu
 - 🔗 Eşleştirme alıştırması — **361 çift**, her modülde sınavda getirdiği soru
@@ -135,7 +145,7 @@ gibidir: 1. Oturum 10.00 Müdür · 2. Oturum 13.00 Müdür Yrd. (Temel Eğitim)
 ## Testler
 
 ```bash
-node tests/run.mjs        # 172 kontrol · ~140 sn
+node tests/run.mjs        # 183 kontrol · ~140 sn
 node tests/run.mjs srs    # ad parçasıyla süz
 ```
 

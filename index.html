@@ -230,6 +230,21 @@ b{font-weight:700}
   overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .sayi-serit .sy:active{transform:scale(.97)}
 .rd-git{margin-top:12px}
+/* Blok kimliği: rol taşıyan bloklar sol şeritle ayrılır, konu blokları sade kalır. */
+#pane-ozet .blk.bt-cekirdek{border-left:3px solid var(--accent)}
+#pane-ozet .blk.bt-radar{border-left:3px solid var(--accent)}
+#pane-ozet .blk.bt-radar h3{color:var(--accent-ink)}
+#pane-ozet .blk.bt-karsit{border-left:3px solid var(--red)}
+#pane-ozet .blk.bt-karsit h3{color:var(--red-ink)}
+#pane-ozet .blk.sayi-serit{border-left:3px solid var(--accent)}
+/* Karşılaştırma tablosunda iki taraf karşılıklı renklenir; ölçüt sütunu nötr. */
+#pane-ozet .kx-tbl td.kx-a,#pane-ozet .kx-tbl th.kx-a{background:var(--accent-soft)}
+#pane-ozet .kx-tbl td.kx-b,#pane-ozet .kx-tbl th.kx-b{background:var(--red-soft)}
+#pane-ozet .kx-tbl th.kx-a{color:var(--accent-ink)}
+#pane-ozet .kx-tbl th.kx-b{color:var(--red-ink)}
+/* Gezinme çipleri: tek satır, yatay kaydırmalı; sayfayı taşırmaz. */
+.oz-nav{margin:0 -20px 14px;padding:0 20px 10px}
+.oz-nav .chip{font-size:var(--fs-1);padding:6px 12px}
 .map-tools button{font-family:var(--mono);font-size:var(--fs-1);color:var(--accent-ink);border:1px solid var(--line);background:var(--card);padding:7px 14px;border-radius:99px;box-shadow:var(--shadow)}
 .map-root{background:var(--accent-soft);color:var(--accent-ink);border:1px solid var(--accent);font-family:var(--serif);font-weight:600;font-size:var(--fs-5);text-align:center;padding:16px;border-radius:var(--radius);letter-spacing:.02em}
 .map-tree{position:relative;margin:0 0 0 16px;padding:14px 0 4px 22px;border-left:1.5px solid var(--line)}
@@ -7971,12 +7986,76 @@ function ozetRadarBag(pane,mid){
   });
   son.appendChild(bt);
 }
+/* ---- Blok kimliği ----
+   Uzun özetlerde (en uzunu 7.558 karakter, 12 blok) kaydırırken nerede olduğunu
+   bilmek başlı başına kazanç. Kancanın altın şeridi zaten bunu yapıyordu; aynı
+   mantık rol taşıyan öteki bloklara yayıldı. Konu blokları işaretsiz kalır —
+   her şeyi işaretlemek, hiçbirini işaretlememekle aynı kapıya çıkar.
+
+   Karşıtlık kalıbı sınavın en sevdiği tuzak biçimi (Vizyon↔Misyon, BEP↔FEP,
+   İşitme↔Dinleme). Desen dar tutuldu: geniş hâli "Karşılama Protokolü" ve
+   "Farklılaştırılmış Öğretim" gibi karşıtlık olmayan başlıkları da yakalıyordu. */
+const KARSIT_RE=/\bvs\b|≠|karşıtlığı?|karşılaştırma|ayrımı?\b|farkı\b|İki (Anlayış|Paradigma|Kere)/i;
+function ozetBlokTuru(h){
+  const t=h.textContent;
+  if(/Hafıza Kancaları/.test(t))return "kanca";
+  if(/Sınav Radarı/.test(t))return "radar";
+  if(/Çekirdek/.test(t))return "cekirdek";
+  if(KARSIT_RE.test(t))return "karsit";
+  return null;
+}
+function ozetKimlik(pane){
+  pane.querySelectorAll(".blk").forEach(b=>{
+    const h=b.querySelector("h3");if(!h)return;
+    const tur=ozetBlokTuru(h);
+    if(tur)b.classList.add("bt-"+tur);
+    /* Karşıtlık bloğundaki gerçek karşılaştırma tablosu: iki taraf karşılıklı
+       renklensin. Yalnızca son iki sütun boyanır, ölçüt sütunu nötr kalır —
+       M4 "Ölçüt | BEP | FEP" üç sütunlu, M12/M15 iki sütunlu. */
+    if(tur!=="karsit")return;
+    const t=b.querySelector("table");
+    if(!t||!t.rows.length)return;
+    const n=t.rows[0].cells.length;
+    if(n<2||n>3)return;
+    [...t.rows].forEach(tr=>{
+      if(tr.cells.length!==n)return;
+      tr.cells[n-2].classList.add("kx-a");
+      tr.cells[n-1].classList.add("kx-b");
+    });
+    t.classList.add("kx-tbl");
+  });
+}
+/* ---- Özet içi gezinme ----
+   En uzun özette 12 blok var; radara ulaşmak için tüm modülü kaydırmak
+   gerekiyordu. Çipler blok başlıklarından türetilir, ayrıca yazılmaz. */
+function ozetGezinme(pane){
+  const bloklar=[...pane.querySelectorAll(".blk")];
+  if(bloklar.length<4)return;
+  const bar=document.createElement("div");
+  bar.className="chips oz-nav";
+  bar.innerHTML=bloklar.map((b,i)=>{
+    const h=b.querySelector("h3");if(!h)return "";
+    b.dataset.blk=i;
+    /* Başlıktaki emoji çipte yer kaplıyor, metin sadeleştirilir. Kod noktası
+       aralığı yerine Unicode özelliği kullanılır: elle yazılan aralık ⭐'ı
+       (U+2B50) kaçırıyordu, 🎯 ve 🧠'yı temizlerken. */
+    const ad=h.textContent.replace(/[\p{Extended_Pictographic}️‍]/gu,"").trim();
+    return '<button class="chip" data-git="'+i+'">'+(ad.length>26?ad.slice(0,24)+"…":ad)+"</button>";
+  }).join("");
+  pane.insertBefore(bar,pane.firstChild);
+  bar.querySelectorAll(".chip").forEach(c=>c.addEventListener("click",()=>{
+    const hedef=pane.querySelector('.blk[data-blk="'+c.dataset.git+'"]');
+    if(hedef)hedef.scrollIntoView({block:"start",behavior:"smooth"});
+  }));
+}
 function ozetHazirla(mid){
   const pane=$("#pane-ozet");if(!pane)return;
   ozetDuzenle(pane);
   ozetVurgula(pane);
   ozetSayiSeridi(pane);
   ozetRadarBag(pane,mid);
+  ozetKimlik(pane);
+  ozetGezinme(pane);          /* en sona: çipler tüm blokları görsün */
 }
 
 /* ================= CONCEPT MAP ================= */
