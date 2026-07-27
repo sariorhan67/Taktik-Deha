@@ -230,6 +230,30 @@ b{font-weight:700}
   overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .sayi-serit .sy:active{transform:scale(.97)}
 .rd-git{margin-top:12px}
+/* Son Tekrar Turu */
+.tur-git{margin-bottom:2px}
+.tur-bar{height:4px;background:var(--line);border-radius:99px;overflow:hidden;margin:4px 0 2px}
+.tur-fill{height:100%;background:var(--accent);border-radius:99px;transition:width .25s}
+.tur-nav{display:flex;gap:10px;margin:18px 0 8px}
+.tur-nav .btn{flex:1;margin:0}
+/* Deneme eğrisi */
+.trend-sec{padding:0 20px;margin-bottom:22px}
+#trendBox{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px;box-shadow:var(--shadow)}
+.tr-bos{font-size:var(--fs-3);color:var(--soft);line-height:1.5}
+.tr-head{display:flex;align-items:baseline;gap:7px;margin-bottom:8px}
+.tr-head b{font-size:var(--fs-7);font-family:var(--serif);color:var(--ink);line-height:1}
+.tr-head span{font-size:var(--fs-1);color:var(--soft)}
+.tr-ok{font-size:var(--fs-1);font-weight:600;font-style:normal;margin-left:auto;padding:3px 9px;border-radius:99px}
+.tr-ok.up{background:var(--accent-soft);color:var(--accent-ink)}
+.tr-ok.down{background:var(--red-soft);color:var(--red-ink)}
+.tr-ok.flat{background:var(--line);color:var(--soft)}
+.tr-svg{width:100%;height:96px;display:block;overflow:visible}
+.tr-line{fill:none;stroke:var(--accent);stroke-width:2;stroke-linejoin:round;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.tr-baraj{stroke:var(--faint);stroke-width:1;stroke-dasharray:4 4;vector-effect:non-scaling-stroke}
+.tr-dot{fill:var(--card);stroke:var(--red);stroke-width:2;vector-effect:non-scaling-stroke}
+.tr-dot.pass{stroke:var(--accent)}
+.tr-foot{display:flex;gap:12px;font-size:var(--fs-1);color:var(--soft);margin-top:8px}
+.tr-foot .tr-bl{margin-left:auto}
 /* Blok kimliği: rol taşıyan bloklar sol şeritle ayrılır, konu blokları sade kalır. */
 #pane-ozet .blk.bt-cekirdek{border-left:3px solid var(--accent)}
 #pane-ozet .blk.bt-radar{border-left:3px solid var(--accent)}
@@ -688,6 +712,10 @@ body.dark .plan .plan-sub{color:#A8B8AF}
     </div>
 
     <div data-sec="progress" hidden>
+    <section class="trend-sec">
+      <div class="sec-label eyebrow">Deneme Eğrin</div>
+      <div id="trendBox"></div>
+    </section>
     <section class="radar-sec">
       <div class="sec-label eyebrow">Hazırlık Radarı</div>
       <div class="radar-grid" id="radarGrid"></div>
@@ -715,7 +743,13 @@ body.dark .plan .plan-sub{color:#A8B8AF}
 
     <div data-sec="study" hidden>
       <section class="mods">
-        <div class="sec-label eyebrow">Modüller</div>
+        <div class="sec-label eyebrow">Son Tekrar</div>
+        <button class="plan-item tur-git" id="turBtn">
+          <span class="pno">🎓</span>
+          <span class="pt">Son Tekrar Turu</span>
+          <span class="pm" id="turSub">20 poster</span>
+        </button>
+        <div class="sec-label eyebrow" style="margin-top:20px">Modüller</div>
         <div id="modList"></div>
         <div class="foot">20 modül · dokunarak aç</div>
       </section>
@@ -771,6 +805,22 @@ body.dark .plan .plan-sub{color:#A8B8AF}
       <div class="mt"><span class="eyebrow">Zayıf Noktalar</span><h1>Yanlış Defteri</h1></div>
     </div>
     <div id="wrongBody" style="padding-top:6px"></div>
+  </div>
+</div>
+
+<!-- ============ SON TEKRAR TURU ============ -->
+<div id="scr-tur" class="screen">
+  <div class="wrap">
+    <div class="mhead">
+      <button class="back" data-home>←</button>
+      <div class="mt"><span class="eyebrow">Son Tekrar Turu</span><h1 id="turBaslik">Poster</h1></div>
+    </div>
+    <div class="tur-bar"><div class="tur-fill" id="turFill"></div></div>
+    <div id="turBody" style="padding-top:6px"></div>
+    <div class="tur-nav">
+      <button class="btn btn-ghost" id="turOnce">← Önceki</button>
+      <button class="btn btn-main" id="turSonra">Sonraki →</button>
+    </div>
   </div>
 </div>
 
@@ -7071,7 +7121,7 @@ quiz:[
 /* ================= STATE / STORAGE ================= */
 const SKEY="meb-yonetici-defter-v1";
 const DAY=86400000;
-let state={cards:{},quiz:{},match:{},theme:"light",srs:{},wrongQ:{},examDate:null,exam:{best:-1,att:0},full:{best:-1,att:0},streak:{n:0,last:null},daily:{date:null,n:0},badges:{},goal:15,pastR:{},kademe:null,srsV:0,qStat:{}};
+let state={cards:{},quiz:{},match:{},theme:"light",srs:{},wrongQ:{},examDate:null,exam:{best:-1,att:0},full:{best:-1,att:0},streak:{n:0,last:null},daily:{date:null,n:0},badges:{},goal:15,pastR:{},kademe:null,srsV:0,qStat:{},puanlar:{tam:[],karma:[]}};
 const hasStore=typeof window!=="undefined"&&window.storage;
 
 /* ---- KATMANLI DEPOLAMA ----
@@ -7114,14 +7164,14 @@ async function loadState(){
       const p=JSON.parse(raw);
       state={cards:p.cards||{},quiz:p.quiz||{},match:p.match||{},theme:p.theme3||"light",
              srs:p.srs||{},wrongQ:p.wrongQ||{},examDate:p.examDate||null,exam:p.exam||{best:-1,att:0},full:p.full||{best:-1,att:0},
-             streak:p.streak||{n:0,last:null},daily:p.daily||{date:null,n:0},badges:p.badges||{},goal:p.goal||15,pastR:p.pastR||{},kademe:p.kademe||null,srsV:p.srsV||0,qStat:p.qStat||{}};
+             streak:p.streak||{n:0,last:null},daily:p.daily||{date:null,n:0},badges:p.badges||{},goal:p.goal||15,pastR:p.pastR||{},kademe:p.kademe||null,srsV:p.srsV||0,qStat:p.qStat||{},puanlar:p.puanlar||{tam:[],karma:[]}};
     }
   }catch(e){/* ilk kullanım veya kayıt yok */}
 }
 function snapshot(){
   return JSON.stringify({cards:state.cards,quiz:state.quiz,match:state.match,
     theme3:state.theme,srs:state.srs,wrongQ:state.wrongQ,examDate:state.examDate,exam:state.exam,full:state.full,
-    streak:state.streak,daily:state.daily,badges:state.badges,goal:state.goal,pastR:state.pastR,kademe:state.kademe,srsV:state.srsV,qStat:state.qStat});
+    streak:state.streak,daily:state.daily,badges:state.badges,goal:state.goal,pastR:state.pastR,kademe:state.kademe,srsV:state.srsV,qStat:state.qStat,puanlar:state.puanlar});
 }
 /* Yazma temposu: her tıklamada değil, 900 ms sessizlikten sonra tek yazma */
 let saveTimer=null,noticeShown=false;
@@ -7332,13 +7382,47 @@ function pastAccuracy(id){
   if(!all.length)return null;
   return all.filter(q=>r[q.k]===1).length/all.length;
 }
+/* Modülün GERÇEK isabet oranı: üç bankanın da denenmiş sorularının tüm geçmişi.
+   pastAccuracy yalnızca son sonuca ve iki bankaya bakıyordu; bu, aynı soruyu üç
+   kez yanlış yapıp dördüncüde bilmekle ilk seferde bilmeyi ayırt eder. */
+function modIsabet(id){
+  const st=state.qStat||{};
+  let n=0,ok=0;
+  const bak=k=>{const e=st[k];if(!e||!e.n)return;n+=e.n;ok+=e.ok;};
+  (CONTENT[id]&&CONTENT[id].quiz||[]).forEach((_,i)=>bak(id+":"+i));
+  PAST.concat(HIZLI).forEach(q=>{if(q.m===id)bak(q.k);});
+  return n?{oran:ok/n,deneme:n}:null;
+}
+/* Hazırlık = kart + modül sınavı + eşleştirme + isabet.
+   İsabet ÇİFT ağırlık taşır: yoksa modülü baştan sona okuyup kartları çevirmek
+   soruları yanlış yaparken bile %100 "hazır" gösteriyordu. Artık 10 soruyu
+   sıfır isabetle çözen biri en fazla (1+1+1+0+0)/5 = %60 görünür. */
 function moduleReadiness(id){
   const p=modProgress(id);if(!p)return 0;
   const c=p.total?p.learned/p.total:0,q=(p.best<0?0:(p.qTotal?p.best/p.qTotal:0)),mm=p.mTotal?p.mDone/p.mTotal:0;
   const parts=[c,q,mm];
-  const pa=pastAccuracy(id);
-  if(pa!==null)parts.push(pa);
+  const is=modIsabet(id);
+  if(is)parts.push(is.oran,is.oran);
+  else{const pa=pastAccuracy(id);if(pa!==null)parts.push(pa);}
   return parts.reduce((a,b)=>a+b,0)/parts.length;
+}
+/* Deneme puan geçmişi. Önceden yalnızca {best,att} tutuluyordu; gelişip
+   gelişmediğini görmenin hiçbir yolu yoktu. Son 40 kayıt saklanır. */
+const PUAN_GECMIS_N=40;
+function puanKaydet(tur,puan){
+  if(!state.puanlar)state.puanlar={tam:[],karma:[]};
+  if(!state.puanlar[tur])state.puanlar[tur]=[];
+  state.puanlar[tur].push({t:Date.now(),p:Math.round(puan*10)/10});
+  if(state.puanlar[tur].length>PUAN_GECMIS_N)state.puanlar[tur].shift();
+}
+/* Eğilim: son üçün ortalaması ile ondan öncekilerin ortalaması arasındaki fark.
+   Tek denemeye bakmak gürültülü — bir kötü deneme "geriliyorsun" demez. */
+function puanEgilim(tur){
+  const l=(state.puanlar&&state.puanlar[tur])||[];
+  if(l.length<4)return null;
+  const son=l.slice(-3),onceki=l.slice(0,-3);
+  const ort=a=>a.reduce((x,y)=>x+y.p,0)/a.length;
+  return ort(son)-ort(onceki);
 }
 function examDaysLeft(){
   if(!state.examDate)return null;
@@ -7373,6 +7457,64 @@ function renderPlan(){
     sub+'</div>'+items+'</div>';
   el.querySelectorAll('.plan-item').forEach(b=>b.addEventListener('click',()=>openModule(b.dataset.mid)));
 }
+/* ================= SON TEKRAR TURU =================
+   20 modülün "Son Tekrar Posteri" tek tek modül ekranında duruyordu; hepsini
+   arka arkaya gezecek bir yer yoktu. Sınav sabahının doğal aracı: her poster
+   ~2 dakika, tur yaklaşık 40 dakika. İçerik yeniden kullanılır, yazılmaz. */
+let tur=null;
+function turListesi(){return MODULES.filter(m=>m.ready&&CONTENT[m.id]&&CONTENT[m.id].poster);}
+function startTur(i){
+  const l=turListesi();
+  if(!l.length)return;
+  tur={i:Math.max(0,Math.min(i||0,l.length-1))};
+  renderTur();show("#scr-tur");window.scrollTo(0,0);
+}
+function renderTur(){
+  const l=turListesi(),m=l[tur.i];
+  $("#turBaslik").textContent="Modül "+m.no+" · "+(tur.i+1)+"/"+l.length;
+  $("#turBody").innerHTML=CONTENT[m.id].poster;
+  $("#turFill").style.width=((tur.i+1)/l.length*100)+"%";
+  const once=$("#turOnce"),sonra=$("#turSonra");
+  once.disabled=tur.i===0;
+  sonra.textContent=tur.i===l.length-1?"Turu bitir ✓":"Sonraki →";
+}
+function turGit(d){
+  const l=turListesi();
+  if(tur.i+d>=l.length){renderHome();show("#scr-home");setTab("study");return;}
+  tur.i=Math.max(0,tur.i+d);
+  renderTur();window.scrollTo(0,0);
+}
+/* Deneme eğrisi. Küçük bir SVG çizgi — kütüphane yok, tek dosya kuralı bozulmaz.
+   Baraj çizgisi (60) referans olarak çizilir; asıl soru "barajın üstünde miyim". */
+function renderTrend(){
+  const el=$("#trendBox");if(!el)return;
+  const tam=(state.puanlar&&state.puanlar.tam)||[];
+  if(tam.length<2){
+    el.innerHTML='<div class="tr-bos">Tam Deneme puanların burada eğri olarak birikir. '+
+      (tam.length?'Bir deneme daha çöz, eğilim görünsün.':'Henüz deneme çözmedin.')+'</div>';
+    return;
+  }
+  const W=300,H=96,P=6;
+  const p=tam.map(x=>x.p);
+  const enAz=Math.min(...p,50),enCok=Math.max(...p,70);
+  const x=i=>P+i*(W-2*P)/(p.length-1);
+  const y=v=>H-P-(v-enAz)/(enCok-enAz||1)*(H-2*P);
+  const cizgi=p.map((v,i)=>(i?"L":"M")+x(i).toFixed(1)+" "+y(v).toFixed(1)).join(" ");
+  const eg=puanEgilim("tam"), son=p[p.length-1], enIyi=Math.max(...p);
+  const okText=eg===null?"":(eg>=1?"↑ yükseliyor":eg<=-1?"↓ geriliyor":"→ yatay");
+  const okCls=eg===null?"":(eg>=1?"up":eg<=-1?"down":"flat");
+  el.innerHTML=
+    '<div class="tr-head"><b>'+son+'</b><span>son puan</span>'+
+      (okText?'<i class="tr-ok '+okCls+'">'+okText+'</i>':'')+'</div>'+
+    '<svg class="tr-svg" viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="none" role="img" '+
+      'aria-label="'+p.length+' denemenin puan eğrisi, son puan '+son+'">'+
+      (enAz<=60&&enCok>=60?'<line class="tr-baraj" x1="'+P+'" x2="'+(W-P)+'" y1="'+y(60).toFixed(1)+'" y2="'+y(60).toFixed(1)+'"/>':'')+
+      '<path class="tr-line" d="'+cizgi+'"/>'+
+      p.map((v,i)=>'<circle class="tr-dot'+(v>=60?" pass":"")+'" cx="'+x(i).toFixed(1)+'" cy="'+y(v).toFixed(1)+'" r="2.6"/>').join("")+
+    '</svg>'+
+    '<div class="tr-foot"><span>'+p.length+' deneme</span><span>en iyi '+enIyi+'</span>'+
+      (enAz<=60&&enCok>=60?'<span class="tr-bl">— baraj 60</span>':'')+'</div>';
+}
 function renderRadar(){
   const g=$("#radarGrid");if(!g)return;g.innerHTML="";
   MODULES.forEach(m=>{
@@ -7381,7 +7523,9 @@ function renderRadar(){
     if(pc>=.67)cls="r3";else if(pc>=.34)cls="r2";else if(pc>0)cls="r1";
     const cell=document.createElement("button");
     cell.className="rcell "+cls;cell.textContent=m.no;
-    cell.title=m.title+" · %"+Math.round(pc*100);
+    const is=modIsabet(m.id);
+    cell.title=m.title+" · hazırlık %"+Math.round(pc*100)+
+      (is?" · isabet %"+Math.round(is.oran*100)+" ("+is.deneme+" deneme)":" · henüz soru çözülmedi");
     if(m.ready)cell.addEventListener("click",()=>openModule(m.id));
     g.appendChild(cell);
   });
@@ -7710,7 +7854,7 @@ function doImport(file){
       if(!confirm("Yedekteki ilerleme yüklenecek ve mevcut ilerlemenin yerine geçecek. Devam edilsin mi?"))return;
       state={cards:p.cards||{},quiz:p.quiz||{},match:p.match||{},theme:p.theme3||state.theme,
         srs:p.srs||{},wrongQ:p.wrongQ||{},examDate:p.examDate||null,exam:p.exam||{best:-1,att:0},full:p.full||{best:-1,att:0},
-        streak:p.streak||{n:0,last:null},daily:p.daily||{date:null,n:0},badges:p.badges||{},goal:p.goal||15,pastR:p.pastR||{},kademe:p.kademe||null,srsV:p.srsV||0,qStat:p.qStat||{}};
+        streak:p.streak||{n:0,last:null},daily:p.daily||{date:null,n:0},badges:p.badges||{},goal:p.goal||15,pastR:p.pastR||{},kademe:p.kademe||null,srsV:p.srsV||0,qStat:p.qStat||{},puanlar:p.puanlar||{tam:[],karma:[]}};
       srsMigrate();applyTheme();flushSave();renderHome();
       alert("Yedek yüklendi ✓");
     }catch(e){alert("Bu dosya okunamadı. Geçerli bir yedek dosyası (.json) seçtiğinden emin ol.");}
@@ -7823,6 +7967,9 @@ function renderHome(){
 }
 $("#actReview").addEventListener("click",()=>{startReview();});
 $("#actWrong").addEventListener("click",()=>{renderWrongHome();show("#scr-wrong");});
+$("#turBtn").addEventListener("click",()=>startTur(0));
+$("#turOnce").addEventListener("click",()=>turGit(-1));
+$("#turSonra").addEventListener("click",()=>turGit(1));
 $("#actExam").addEventListener("click",()=>{startExam();});
 $("#actFull").addEventListener("click",()=>{startFull();});
 $("#actHizli").addEventListener("click",()=>{startPast(shuffle(hizliPool().slice()).slice(0,20),"Hızlı Bilgi");show("#scr-past");});
@@ -7844,7 +7991,7 @@ $("#resetBtn").addEventListener("click",async()=>{
     setTimeout(()=>{resetArmed=false;b.textContent="İlerlemeyi sıfırla";b.classList.remove("arm");},3500);return;}
   const th=state.theme,ed=state.examDate,g=state.goal;
   state={cards:{},quiz:{},match:{},theme:th,srs:{},wrongQ:{},examDate:ed,exam:{best:-1,att:0},full:{best:-1,att:0},
-    streak:{n:0,last:null},daily:{date:null,n:0},badges:{},goal:g,pastR:{},kademe:state.kademe,srsV:2,qStat:{}};
+    streak:{n:0,last:null},daily:{date:null,n:0},badges:{},goal:g,pastR:{},kademe:state.kademe,srsV:2,qStat:{},puanlar:{tam:[],karma:[]}};
   await flushSave();
   resetArmed=false;b.textContent="İlerlemeyi sıfırla";b.classList.remove("arm");
   renderHome();
@@ -8455,6 +8602,7 @@ function renderExam(){
     const n=ex.list.length;
     const isNew=ex.score>state.exam.best;
     state.exam={best:Math.max(state.exam.best,ex.score),att:state.exam.att+1};
+    puanKaydet("karma",ex.score/n*100);
     saveState();
     const exPass=ex.score/n>=0.6;
     body.innerHTML=`<div class="blk q-done">
@@ -8590,6 +8738,7 @@ function finishFull(timedOut){
   const pass=pt>=60;
   const isNew=pt>(state.full?state.full.best:-1);
   state.full={best:Math.max(state.full?state.full.best:-1,pt),att:(state.full?state.full.att:0)+1};
+  puanKaydet("tam",pt);
   flushSave();
   const rows=MODULES.filter(m=>byMod[m.id]).map(m=>{
     const d=byMod[m.id],r=d.c/d.t;
@@ -8722,7 +8871,7 @@ function setTab(name){
   if(hero) hero.classList.toggle("compact", name!=="home");
   const st=$("#secTitle");
   if(st){ st.textContent=TAB_TITLE[name]||""; st.hidden=(name==="home"); }
-  if(name==="progress"){ renderRadar(); renderBadges(); }
+  if(name==="progress"){ renderTrend(); renderRadar(); renderBadges(); }
   if(name==="exam"){
     renderExamStats(); renderBlueprint();
     /* Sayı elle yazılmasın: kademe seçiliyse havuz daralır, etiket ona göre güncellenir */
@@ -8730,6 +8879,10 @@ function setTab(name){
     if(hs){const n=hizliPool().length;hs.textContent=n+" kısa soru"+(state.kademe?" · kademene göre":"");}
   }
   if(name==="home"){ renderStatline(); renderPlan(); }
+  if(name==="study"){
+    const ts=$("#turSub");
+    if(ts){const n=turListesi().length;ts.textContent=n+" poster · ~"+(n*2)+" dk";}
+  }
   window.scrollTo(0,0);
 }
 document.querySelectorAll("#tabbar button").forEach(b=>{

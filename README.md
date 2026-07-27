@@ -106,6 +106,13 @@ hiç soru yoktu. Her sorunun çözüm açıklaması vardır.
   beceridir — en iyi seçeneği bulmak yerine beş seçeneğin de doğruluğunu yoklamayı
   gerektirir. Her deneme farklı bir bileşim taşır; havuz 389 soruya çıktığı için aynı
   soru daha seyrek tekrarlanır.
+- 📈 **Deneme Eğrin** (İlerleme sekmesinde) — her Tam Deneme puanı kaydedilir ve
+  eğri olarak çizilir; baraj çizgisi (60) referans, baraj üstü denemeler ayrı
+  renkte. Önceden yalnızca *en iyi* puan tutuluyordu, yani 40 → 52 → 61 → 66 diye
+  ilerlediysen bunu görmenin hiçbir yolu yoktu. Eğilim son üçün ortalamasına
+  bakar — tek kötü deneme "geriliyorsun" demez.
+- 🎓 **Son Tekrar Turu** (Modüller sekmesinde) — 20 modülün son tekrar posteri
+  arka arkaya, ~40 dakikalık tek akış. Sınav sabahı için.
 - 📅 Sınav tarihi geri sayımı, genel ilerleme çubuğu
 
 **Bu sürümde eklenenler:**
@@ -115,7 +122,11 @@ hiç soru yoktu. Her sorunun çözüm açıklaması vardır.
 - 🎯 **Günün hedefi** — günlük kart hedefi ve ilerleme halkası
 - 🏅 **Rozetler** — 10 kilometre taşı rozeti (kazanınca bildirim)
 - 🗺️ **Hazırlık Radarı** — 20 modülün hazırlık durumunu tek bakışta gösteren ısı haritası
-  (başlanmadı · zayıf · orta · hazır); dokununca modülü açar
+  (başlanmadı · zayıf · orta · hazır); dokununca modülü açar. Hazırlık artık
+  **gerçek isabeti** de sayar (çift ağırlıkla): modülü baştan sona okuyup kartları
+  çevirmek, soruları yanlış yaparken %100 «hazır» göstermez — 10 soruyu sıfır
+  isabetle çözen biri en fazla %60 görünür. Hiç soru çözmemiş olmak ceza değildir;
+  cezalandırılan yanlış bilmek, veri yokluğu değil.
 - 💾 **Yedekle / Geri Yükle** — ilerlemeyi `.json` olarak dışa aktar, başka cihaza taşı
 - ☾ Karanlık / aydınlık tema
 
@@ -145,7 +156,7 @@ gibidir: 1. Oturum 10.00 Müdür · 2. Oturum 13.00 Müdür Yrd. (Temel Eğitim)
 ## Testler
 
 ```bash
-node tests/run.mjs        # 183 kontrol · ~140 sn
+node tests/run.mjs        # 204 kontrol · ~155 sn
 node tests/run.mjs srs    # ad parçasıyla süz
 ```
 

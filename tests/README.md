@@ -41,6 +41,7 @@ yoksa ne yapılacağını söyleyen bir hata verir.
 | `07-kocu.mjs` | Sınav Koçu (`kocu/index.html`) şık karıştırma — dosya yoksa atlanır |
 | `08-deneme.mjs` | Deneme havuzunun format karışımı: kısa kök ve olumsuz kök oranları, modül ağırlıkları, tekrar derinliği |
 | `10-ozet.mjs` | Özet iskeleti (radar son blok, kanca hemen önce), sonradan eklenen bloğa dayanıklılık, vurgu sınıflarının neyi alıp neyi almadığı, sayı şeridi, radar→çıkmış soru bağı, blok kimliği, karşılaştırma tabloları, gezinme çipleri, punto basamağı |
+| `11-ilerleme.mjs` | İsabete dayalı hazırlık, deneme puan geçmişi ve eğilimi, eğri çizimi, Son Tekrar Turu |
 | `09-zayif.mjs` | Soru istatistiği anahtarları, zorluk fonksiyonu, ağırlıklı seçim, çeldirici takibinde özgün-indeks eşlemesi, sonuçların doğru deftere yazılması |
 
 ## Yeni test yazmak
