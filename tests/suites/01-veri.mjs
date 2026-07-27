@@ -97,6 +97,18 @@ export default async function ({ browser, rec }) {
   rec.chk(eksikBanka.length === 0,
     `Her modülde ağırlığının en az 2 katı Hızlı Bilgi sorusu var${eksikBanka.length ? " — eksik: " + eksikBanka.map(x => `M${x.no}(${x.var}/${x.hedef})`).join(" ") : ""}`);
 
+  /* Vaka soruları sınava en çok benzeyen pratiktir ve deneme havuzunun da asıl
+     kaynağıdır: buildFullPool her modülden ağırlığı kadar soru çeker, bu yüzden
+     ince bankada aynı soru sık tekrarlanır. Taban modülün ağırlığının 5 katıdır. */
+  const vakaSayi = await page.evaluate(() =>
+    MODULES.reduce((a, m) => (a[+m.no] = (CONTENT[m.id] && CONTENT[m.id].quiz || []).length, a), {}));
+  const eksikVaka = Object.entries(RESMI_DAGILIM)
+    .map(([no, w]) => ({ no, hedef: w * 5, var: vakaSayi[no] || 0 }))
+    .filter(x => x.var < x.hedef);
+  const vakaToplam = Object.values(vakaSayi).reduce((a, b) => a + b, 0);
+  rec.chk(eksikVaka.length === 0,
+    `Her modülde ağırlığının en az 5 katı vaka sorusu var (toplam ${vakaToplam})${eksikVaka.length ? " — eksik: " + eksikVaka.map(x => `M${x.no}(${x.var}/${x.hedef})`).join(" ") : ""}`);
+
   /* Kartlar aralıklı tekrarın yakıtıdır; ağır modüllerin destesi ince kalmamalı.
      Hedef, modülün resmî soru sayısının üç katıdır. */
   const eksikKart = Object.entries(RESMI_DAGILIM)
@@ -106,6 +118,36 @@ export default async function ({ browser, rec }) {
     `Her modülde ağırlığının en az 3 katı kart var (toplam ${d.kartToplam})${eksikKart.length ? " — eksik: " + eksikKart.map(x => `M${x.no}(${x.var}/${x.hedef})`).join(" ") : ""}`);
   rec.chk(d.kartBozuk === 0 && d.kartYinelenen === 0,
     `Kartlarda boş alan veya yinelenen soru yok (boş ${d.kartBozuk}, yinelenen ${d.kartYinelenen})`);
+
+  /* Zihin haritası ve karşılaştırma tabloları da ağırlığı izlemeli. Bunlar drill
+     değil kavrayış aracıdır, bu yüzden taban korelasyondan önce gelir: hafif
+     modüldeki bolluk zarar değil, ağır modüldeki incelik zarardır. */
+  const gorsel = await page.evaluate(() => MODULES.reduce((a, m) => {
+    const h = (CONTENT[m.id] && CONTENT[m.id].harita) || {};
+    a[+m.no] = {
+      yaprak: (h.branches || []).reduce((n, b) => n + (b.kids || []).length, 0),
+      dal: (h.branches || []).length,
+      bosYaprak: (h.branches || []).reduce((n, b) => n +
+        (b.kids || []).filter(k => !k.k || !k.v || !String(k.k).trim() || !String(k.v).trim()).length, 0),
+      tablo: (((CONTENT[m.id] || {}).tablo || "").match(/<table/g) || []).length,
+      tabloKapanis: (((CONTENT[m.id] || {}).tablo || "").match(/<\/table>/g) || []).length,
+    };
+    return a;
+  }, {}));
+  const eksikHarita = Object.entries(RESMI_DAGILIM)
+    .map(([no, w]) => ({ no, hedef: w * 10, var: gorsel[no].yaprak })).filter(x => x.var < x.hedef);
+  rec.chk(eksikHarita.length === 0,
+    `Her modülde ağırlığının en az 10 katı zihin haritası yaprağı var (toplam ${Object.values(gorsel).reduce((a, x) => a + x.yaprak, 0)})${eksikHarita.length ? " — eksik: " + eksikHarita.map(x => `M${x.no}(${x.var}/${x.hedef})`).join(" ") : ""}`);
+  const eksikTablo = Object.entries(RESMI_DAGILIM)
+    .map(([no, w]) => ({ no, hedef: Math.max(3, w), var: gorsel[no].tablo })).filter(x => x.var < x.hedef);
+  rec.chk(eksikTablo.length === 0,
+    `Her modülde en az ağırlığı kadar (asgari 3) karşılaştırma tablosu var (toplam ${Object.values(gorsel).reduce((a, x) => a + x.tablo, 0)})${eksikTablo.length ? " — eksik: " + eksikTablo.map(x => `M${x.no}(${x.var}/${x.hedef})`).join(" ") : ""}`);
+  const bozukHarita = Object.entries(gorsel).filter(([, x]) => x.bosYaprak || x.dal < 5);
+  rec.chk(bozukHarita.length === 0,
+    `Haritalarda boş yaprak yok ve her modülde en az 5 dal var${bozukHarita.length ? " — " + bozukHarita.map(([no]) => "M" + no).join(" ") : ""}`);
+  const acikTablo = Object.entries(gorsel).filter(([, x]) => x.tablo !== x.tabloKapanis);
+  rec.chk(acikTablo.length === 0,
+    `Tablo etiketleri kapatılmış${acikTablo.length ? " — " + acikTablo.map(([no]) => "M" + no).join(" ") : ""}`);
 
   /* Olumsuz kök derinliği: deneme havuzu bunları tercihen çektiği için her modülde
      birkaç tane bulunmalı, yoksa aynı soru neredeyse her denemede tekrarlanır. */

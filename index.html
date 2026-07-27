@@ -230,6 +230,30 @@ b{font-weight:700}
   overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .sayi-serit .sy:active{transform:scale(.97)}
 .rd-git{margin-top:12px}
+/* Son Tekrar Turu */
+.tur-git{margin-bottom:2px}
+.tur-bar{height:4px;background:var(--line);border-radius:99px;overflow:hidden;margin:4px 0 2px}
+.tur-fill{height:100%;background:var(--accent);border-radius:99px;transition:width .25s}
+.tur-nav{display:flex;gap:10px;margin:18px 0 8px}
+.tur-nav .btn{flex:1;margin:0}
+/* Deneme eğrisi */
+.trend-sec{padding:0 20px;margin-bottom:22px}
+#trendBox{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px;box-shadow:var(--shadow)}
+.tr-bos{font-size:var(--fs-3);color:var(--soft);line-height:1.5}
+.tr-head{display:flex;align-items:baseline;gap:7px;margin-bottom:8px}
+.tr-head b{font-size:var(--fs-7);font-family:var(--serif);color:var(--ink);line-height:1}
+.tr-head span{font-size:var(--fs-1);color:var(--soft)}
+.tr-ok{font-size:var(--fs-1);font-weight:600;font-style:normal;margin-left:auto;padding:3px 9px;border-radius:99px}
+.tr-ok.up{background:var(--accent-soft);color:var(--accent-ink)}
+.tr-ok.down{background:var(--red-soft);color:var(--red-ink)}
+.tr-ok.flat{background:var(--line);color:var(--soft)}
+.tr-svg{width:100%;height:96px;display:block;overflow:visible}
+.tr-line{fill:none;stroke:var(--accent);stroke-width:2;stroke-linejoin:round;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.tr-baraj{stroke:var(--faint);stroke-width:1;stroke-dasharray:4 4;vector-effect:non-scaling-stroke}
+.tr-dot{fill:var(--card);stroke:var(--red);stroke-width:2;vector-effect:non-scaling-stroke}
+.tr-dot.pass{stroke:var(--accent)}
+.tr-foot{display:flex;gap:12px;font-size:var(--fs-1);color:var(--soft);margin-top:8px}
+.tr-foot .tr-bl{margin-left:auto}
 /* Blok kimliği: rol taşıyan bloklar sol şeritle ayrılır, konu blokları sade kalır. */
 #pane-ozet .blk.bt-cekirdek{border-left:3px solid var(--accent)}
 #pane-ozet .blk.bt-radar{border-left:3px solid var(--accent)}
@@ -688,6 +712,10 @@ body.dark .plan .plan-sub{color:#A8B8AF}
     </div>
 
     <div data-sec="progress" hidden>
+    <section class="trend-sec">
+      <div class="sec-label eyebrow">Deneme Eğrin</div>
+      <div id="trendBox"></div>
+    </section>
     <section class="radar-sec">
       <div class="sec-label eyebrow">Hazırlık Radarı</div>
       <div class="radar-grid" id="radarGrid"></div>
@@ -715,7 +743,13 @@ body.dark .plan .plan-sub{color:#A8B8AF}
 
     <div data-sec="study" hidden>
       <section class="mods">
-        <div class="sec-label eyebrow">Modüller</div>
+        <div class="sec-label eyebrow">Son Tekrar</div>
+        <button class="plan-item tur-git" id="turBtn">
+          <span class="pno">🎓</span>
+          <span class="pt">Son Tekrar Turu</span>
+          <span class="pm" id="turSub">20 poster</span>
+        </button>
+        <div class="sec-label eyebrow" style="margin-top:20px">Modüller</div>
         <div id="modList"></div>
         <div class="foot">20 modül · dokunarak aç</div>
       </section>
@@ -771,6 +805,22 @@ body.dark .plan .plan-sub{color:#A8B8AF}
       <div class="mt"><span class="eyebrow">Zayıf Noktalar</span><h1>Yanlış Defteri</h1></div>
     </div>
     <div id="wrongBody" style="padding-top:6px"></div>
+  </div>
+</div>
+
+<!-- ============ SON TEKRAR TURU ============ -->
+<div id="scr-tur" class="screen">
+  <div class="wrap">
+    <div class="mhead">
+      <button class="back" data-home>←</button>
+      <div class="mt"><span class="eyebrow">Son Tekrar Turu</span><h1 id="turBaslik">Poster</h1></div>
+    </div>
+    <div class="tur-bar"><div class="tur-fill" id="turFill"></div></div>
+    <div id="turBody" style="padding-top:6px"></div>
+    <div class="tur-nav">
+      <button class="btn btn-ghost" id="turOnce">← Önceki</button>
+      <button class="btn btn-main" id="turSonra">Sonraki →</button>
+    </div>
   </div>
 </div>
 
@@ -1732,7 +1782,9 @@ harita:{
     {k:"e-Ambar",v:"pansiyon depo"},
     {k:"Kurumsal",v:"MEBBİS · TEFBİS · KBS · MYS-HYS · EKAP"}]}
  ,
-  {t:"Kademeye Özel",kids:[{k:"Kurum açma",v:"20 öğrenci · 2,40 m² · Bakanlığa tahsisli"},{k:"Okul konutu",v:"köyde parasız · şehirde aynı okul personeli"},{k:"MÖZEM",v:"ortaöğretim · mesleki · sektör iş birliği"},{k:"Uygulama evi",v:"1+0 · bağımsız yaşam becerisi"},{k:"Destek eğitim odası",v:"BEP birimi · en fazla 3 öğrenci"},{k:"Yardımcı teknoloji",v:"FM/DM · indüksiyon = işitme"}]}]},
+  {t:"Kademeye Özel",kids:[{k:"Kurum açma",v:"20 öğrenci · 2,40 m² · Bakanlığa tahsisli"},{k:"Okul konutu",v:"köyde parasız · şehirde aynı okul personeli"},{k:"MÖZEM",v:"ortaöğretim · mesleki · sektör iş birliği"},{k:"Uygulama evi",v:"1+0 · bağımsız yaşam becerisi"},{k:"Destek eğitim odası",v:"BEP birimi · en fazla 3 öğrenci"},{k:"Yardımcı teknoloji",v:"FM/DM · indüksiyon = işitme"}]},
+   {t:"Özel Eğitim Mevzuatı",kids:[{k:"5378 sayılı Kanun",v:"engelli bireylerin haklarına ilişkin çerçeve"},{k:"573 sayılı KHK",v:"özel eğitim hizmetlerinin temel esasları"},{k:"Özel Eğitim Hiz. Yönetmeliği",v:"tanılama, yerleştirme, BEP süreçleri"},{k:"Anayasal dayanak",v:"eğitim hakkı ve fırsat eşitliği"}]},
+   {t:"Destek Yapıları",kids:[{k:"Destek eğitim odası",v:"kaynaştırma öğrencisine birebir/küçük grup · en çok 3"},{k:"BİLSEM",v:"özel yetenekli öğrenci · tanılama 1-2-3. sınıf"},{k:"MÖZEM",v:"ortaöğretim düzeyinde mesleki özel eğitim"},{k:"Özel eğitim uygulama evi",v:"bağımsız yaşam becerisi · 1+0 format"},{k:"Özel Eğitim Materyal Platformu",v:"öğretim materyaline ortak erişim"},{k:"İki kere farklılık",v:"yetenek ile güçlük birbirini maskeler"}]}]},
 tablo:`
 <div class="blk">
   <h3>Tablo A — Okul Türü → Kabul Yolu</h3>
@@ -1886,7 +1938,18 @@ quiz:[
  /* --- olumsuz kök (dizinin sonuna) --- */
  {s:"Destekleme ve Yetiştirme Kursu planlayan bir okul müdürü için hangisi <b>uygun bir çözüm önerisi değildir</b>?",o:["Kapsamlı bir ihtiyaç analizi yapmak","Kursları yerel ihtiyaca göre açmak","Esnek planlama yapıp süreçleri düzenli izlemek","Kursa ulaşımı okul müdürlüğü bütçesinden karşılamak","Veli ve öğrenci bilgilendirme süreçlerini güçlendirmek"],c:3,w:"Öğrenci taşıma ve ulaşım <b>okul müdürlüğünün yetki ve bütçe alanı değildir</b>; bu öneri çözülemeyecek bir sorumluluğu okula yükler. Etkili DYK'nın temeli doğru ve kapsamlı ihtiyaç analizidir; esnek planlama, yerel uygunluk, bilgilendirme ve izleme onu tamamlar.",b:"Dayanak: Modül 11 — DYK Uygulama Sorunları ve Çözümleri"},
  {s:"Ortaöğretim okul türleri ve kontenjanlarıyla ilgili hangisi <b>yanlıştır</b>?",o:["Güzel sanatlar liselerinde alan başına şube sayısı beştir","Spor liselerinde kız ve erkek için ayrı kontenjan esastır","Anadolu liselerinde şube mevcudunun 34 olması esastır","Fen liselerinde şube mevcudu 30'dur","Sosyal bilimler liselerinde hazırlık sınıfı açılabilir"],c:0,w:"Güzel sanatlar liselerinde 9. sınıflarda her bir alan için açılacak şube sayısı <b>beşi değil, İKİYİ</b> geçemez. Kalıbı sabitle: <i>güzel sanatlar ve spor liselerinde şube sayısı ikiyi geçemez.</i> Diğer dördü doğrudur.",b:"Dayanak: Modül 11 — Ortaöğretim Okul Türleri ve Kontenjanlar"}
-]
+,
+ {s:"Tam zamanlı kaynaştırma yoluyla eğitimine devam eden bir öğrenci, matematikte akranlarından belirgin biçimde geride kalmaktadır. Okulda ona birebir veya küçük grup hâlinde ek destek verilecek yapı hangisidir?",o:["Destek eğitim odası","Özel eğitim uygulama okulu","BİLSEM","MÖZEM","Özel eğitim sınıfı"],c:0,w:"Kaynaştırma öğrencisine okul içinde birebir ya da küçük grupla destek veren yapı <b>destek eğitim odasıdır</b>. Özel eğitim sınıfı ayrı bir yerleştirme kararı gerektirir; BİLSEM özel yetenekli öğrencilere, MÖZEM ise ortaöğretim düzeyindeki mesleki özel eğitime yöneliktir.",b:"Dayanak: Modül 11 — Destek Eğitim Odası"},
+ {s:"Yönetici adayı bir öğretmen, özel eğitim kurumlarının hangi düzeye ve hangi gereksinime hizmet ettiğini tablo hâlinde çıkarmıştır. Tablodaki satırlardan biri mevzuattaki tanımla örtüşmemektedir. Buna göre özel eğitim alanında hangisi <b>yanlıştır</b>?",o:["Destek eğitim odası özel yetenekli öğrenciler için de düzenlenebilir","BİLSEM tanılaması ilkokul 1, 2 ve 3. sınıfta yapılır","MÖZEM ortaöğretim düzeyinde hizmet verir","Özel eğitim uygulama evi okul öncesi çağa yöneliktir","Kaynaştırma esas alınan yerleştirme biçimidir"],c:3,w:"Özel Eğitim Uygulama Evleri <b>okul öncesine değil</b>, bireylere bağımsız ve günlük yaşam becerisi kazandırmaya yöneliktir; formatı 1+0'dır. Diğer ifadeler mevzuatla uyumludur: destek eğitim odası özel yetenekliler için de açılabilir, kaynaştırma esastır.",b:"Dayanak: Modül 11 — Özel Eğitim Kurumları"},
+ {s:"Bir öğrenci resim alanında akranlarının çok üzerinde bir yetenek göstermekte, buna karşılık okuma-yazmada belirgin bir güçlük yaşamaktadır. Rehberlik servisi öğrencinin hangi kategoriye gireceğinde zorlanmaktadır. Hem özel yetenekli olup hem de öğrenme güçlüğü yaşayan bir öğrencinin planlamasında temel güçlük nedir?",o:["İki özelliğin birbirini maskeleyebilmesi","Yalnızca güçlüğü gidermek yeterlidir","Böyle bir durum mevzuatta tanımlı değildir","Öğrenci tek bir kategoriye yerleştirilmelidir","Yalnızca güçlü yönü desteklemek yeterlidir"],c:0,w:"«İki kere farklı» öğrencide üstün yetenek güçlüğü, güçlük de yeteneği <b>maskeleyebilir</b>; bu yüzden tanılama zorlaşır. Doğru plan iki yönü birlikte ele alır: güç alanlarını zenginleştiren öğretim ve açık, yapılandırılmış destekler.",b:"Dayanak: Modül 11 — İki Kere Farklılık"},
+ {s:"Pansiyonlu bir okulda akşam etüt saatlerinde öğrencilerin derse hazırlanması ve karşılaştıkları güçlüklerde onlara rehberlik edilmesi gerekmektedir. Müdür bu işin görev tanımını netleştirmek istemektedir. Etüt saatlerinin yürütülmesinden ve öğrencilere rehberlik edilmesinden birinci derecede kim sorumludur?",o:["Nöbetçi belletici","Pansiyondan sorumlu memur","Okul müdürü","Müdür yardımcısı","Belletici öğretmen"],c:4,w:"Etüt ve rehberlik <b>belletici öğretmenin</b> görevidir. Nöbetçi belletici öncelikle güvenlikten sorumludur; müdür yardımcısı günlük işleyiş ve nöbet düzenini, okul müdürü ise genel yönetimi yürütür.",b:"Dayanak: Modül 11 — Pansiyon Esasları"},
+ {s:"Görme yetersizliği olan bir öğrencinin derslere akranlarıyla birlikte katılabilmesi için okul, ekrandaki metni sesli okuyan bir yazılım temin etmiştir. Yazılım öğrencinin ders materyaline bağımsız erişmesini sağlamaktadır. Bu araç hangi kategoriye girer?",o:["Destek eğitim hizmeti","Farklılaştırılmış program","Evrensel tasarım ilkesi","Bireyselleştirilmiş eğitim programı","Yardımcı teknoloji"],c:4,w:"Erişilebilirliği ve katılımı artıran araç ve yazılımlar <b>yardımcı teknolojidir</b>. BEP bir planlama belgesidir; evrensel tasarım baştan herkes için erişilebilir kurgu yapma ilkesidir — yardımcı teknoloji ise bireysel gereksinime yönelen somut araçtır.",b:"Dayanak: Modül 11 — Yardımcı Teknolojiler"},
+ {s:"Bir veli, çocuğunun güzel sanatlar lisesine nasıl yerleşebileceğini sormak için okula gelmiş; merkezî sınav puanının yeterli olup olmayacağını öğrenmek istemiştir. Müdür yardımcısı ona kabul koşullarını anlatacaktır. Güzel sanatlar lisesine öğrenci alımıyla ilgili hangisi <b>doğrudur</b>?",o:["Yalnızca okul başarı puanı esas alınır","Yalnızca merkezî sınav puanıyla alınır","Yetenek sınavıyla ve alan çizelgesine göre alınır","Yalnızca adrese dayalı yerleştirme yapılır","Hazırlık sınıfı zorunludur"],c:2,w:"Güzel sanatlar lisesi <b>yetenek sınavıyla</b> öğrenci alır ve değerlendirme alan çizelgesine göre yapılır. Fen ve sosyal bilimler liseleri merkezî sınavla, Anadolu liseleri merkezî sınav veya adrese dayalı yerleştirmeyle alır; spor lisesinde parkur-fotosel uygulaması vardır.",b:"Dayanak: Modül 11 — Okul Türü ve Kabul"},
+ {s:"Okulda özel eğitim süreçlerinin hukuki dayanaklarını bir sunuma dönüştüren müdür yardımcısı, her mevzuatın neyi düzenlediğini karşısına yazmaktadır. Bu çalışmada özel eğitim alanının temel dayanaklarından biri olan 5378 sayılı Kanun'un karşısına ne yazılmalıdır?",o:["Özel öğretim kurumlarını","Engelli bireylerin haklarına ilişkin çerçeveyi","Mesleki eğitim sistemini","İlköğretim ve eğitim düzenini","Öğretmenlik mesleğini"],c:1,w:"<b>5378 sayılı Kanun</b> engelli bireylerin haklarına ilişkin çerçeveyi kurar. 573 sayılı KHK özel eğitim hizmetlerinin temel esaslarını, Özel Eğitim Hizmetleri Yönetmeliği ise tanılama, yerleştirme ve BEP süreçlerini düzenler.",b:"Dayanak: Modül 11 — Özel Eğitim Mevzuatı"},
+ {s:"Okulda destek eğitim odası açılmış; rehberlik servisi hangi öğrencilerin aynı saatte alınabileceğini planlamaktadır. Odanın amacı birebire yakın yoğunlukta destek verebilmek olduğundan grup büyüklüğünün üst sınırı belirleyicidir. Bir grupta en fazla kaç öğrenci bulunabilir?",o:["8","10","2","3","5"],c:3,w:"Destek eğitim odasında grup büyüklüğü üst sınırı <b>3 öğrencidir</b>; amaç birebire yakın yoğunlukta destek verebilmektir. Grup büyüdükçe bireyselleştirme imkânı kaybolur ve oda sıradan bir sınıfa dönüşür.",b:"Dayanak: Modül 11 — Destek Eğitim Odası"},
+ {s:"Yeni atanan bir müdür yardımcısı, hangi işlemi hangi sistem üzerinden yürüteceğini öğrenmeye çalışmaktadır. Öğretmen ve yöneticilerin özlük bilgileri, norm kadro işlemleri ve kurumsal girişleri için kullanacağı sistem hangisidir?",o:["e-Okul","MEBBİS","e-Kurs","MEBİ","e-Ambar"],c:1,w:"Personel, özlük ve norm kadro işlemleri <b>MEBBİS</b> üzerinden yürür. e-Okul öğrenci kayıt ve yerleştirme, e-Kurs destekleme ve yetiştirme kursu planlaması, MEBİ tam öğrenme platformu, e-Ambar ise pansiyon deposu içindir.",b:"Dayanak: Modül 11 — Bilgi Sistemleri"},
+ {s:"Bir ilçede bağımsız anaokulu açılması planlanmakta; müdürlük gerekli asgari öğrenci sayısını ve öğrenci başına düşmesi gereken alanı hesaplamaktadır. Bu düzenlemeye göre bağımsız anaokulu açılabilmesi için gereken asgari öğrenci sayısı kaçtır?",o:["20","25","30","10","15"],c:0,w:"Bağımsız anaokulu için asgari öğrenci sayısı <b>20</b>'dir. Aynı düzenlemede öğrenci başına düşmesi gereken alan 2,40 m² olarak belirlenmiştir — ikisi birlikte sorulan sayısal ayrıntılardandır.",b:"Dayanak: Modül 11 — Kritik Sayılar"},
+ {s:"Bir okulda kaynaştırma öğrencilerine yönelik uygulamalar tartışılırken bir öğretmen «herkese aynı şeyi verirsek adil olur» demiştir. Müdür, kapsayıcı eğitimin bu anlayışla bağdaşmadığını anlatmaktadır. Buna göre kapsayıcı eğitim anlayışıyla ilgili hangisi <b>söylenemez</b>?",o:["Kapsayıcılık özel eğitimi dışlar","Erişim, katılım ve aidiyet birlikte gözetilir","Sistem öğrenciye göre esner","Farklılıklar doğal bir gerçeklik sayılır","Öğrenciye eşit değil, ihtiyacına uygun destek verilir"],c:0,w:"Kapsayıcılık özel eğitimi <b>dışlamaz</b>; onun bilgi ve deneyimini genel eğitime taşır. Altın kural şudur: eşitlik değil hakkaniyet, aynı uygulama değil ihtiyaca uygun destek — ve esneyen öğrenci değil sistemdir.",b:"Dayanak: Modül 11 — Kapsayıcı Eğitim"}]
 },
 m3:{
 ozet:`
@@ -2036,7 +2099,9 @@ harita:{
     {k:"Entelektüel uyarım",v:"varsayım sorgulatma"},
     {k:"Bireysel destek",v:"koçluk-mentorluk"},
     {k:"İdealleştirilmiş etki",v:"etik rol model"}]}
- ]},
+ ,
+   {t:"Kültür ↔ İklim",kids:[{k:"Kültür",v:"değer ve sayıltıya dayanır, yıllar alır"},{k:"İklim",v:"güncel algıdır, görece hızlı değişir"},{k:"Pencere benzetmesi",v:"iklim kültüre açılan pencere"},{k:"Ölçme farkı",v:"iklim anketle, kültür gözlem ve derinlemesine incelemeyle"}]},
+   {t:"Kültürü Değiştirmenin Zorluğu",kids:[{k:"En zor durum",v:"köklü + güçlü kültür"},{k:"Asıl engel",v:"davranış değiştirmenin güçlüğü"},{k:"İşe yaramayan yol",v:"tek seferlik genelge veya duyuru"},{k:"İşe yarayan yol",v:"ödül tercihleri, ritüel, liderin modelliği"},{k:"Güçlü kültürün riski",v:"aidiyet üretir ama direnç de üretir"},{k:"Schein'in iki sorunu",v:"dışsal uyum ve içsel bütünleşme"}]}]},
 tablo:`
 <div class="blk">
   <h3>Tablo 1 — Kültür vs İklim</h3>
@@ -2065,7 +2130,19 @@ tablo:`
     <tr><td>Deneysel</td><td>Küçük <b>pilot</b> → başarı yayılır; öğrenme destekli</td></tr>
     <tr><td>Örgüt/personel</td><td>Ekip; <b>işe alım-eğitim-performans-ödül</b> yeni kültüre göre</td></tr>
   </table></div>
-</div>`,
+</div>
+<div class="blk">
+  <h3>Tablo 4 — Kültürü Yönetmede İşe Yarayan / Yaramayan</h3>
+  <div class="twrap"><table>
+    <tr><th>Araç</th><th>Neden</th><th>Etkisi</th></tr>
+    <tr><td>Neyi ödüllendirdiğin</td><td>Değerin <b>fiilen</b> ne olduğunu gösterir</td><td>Yüksek</td></tr>
+    <tr><td>Ritüel ve tören</td><td>Değeri görünür ve tekrarlanır kılar</td><td>Yüksek</td></tr>
+    <tr><td>Liderin kendi davranışı</td><td>Söz-eylem tutarlılığı model olur</td><td>Yüksek</td></tr>
+    <tr><td>Fiziksel çevre</td><td>Mekân değerleri sessizce anlatır</td><td>Orta</td></tr>
+    <tr><td>Tek seferlik genelge</td><td>Davranışı değil yalnızca metni değiştirir</td><td><b>Yok denecek kadar az</b></td></tr>
+  </table></div>
+</div>
+`,
 match:[
  {name:"Klinik Aşama → İş",pairs:[
    ["1. Bilgi toplama","Değer ve normların incelenmesi"],
@@ -2152,7 +2229,16 @@ quiz:[
 ,
  /* --- olumsuz kök (dizinin sonuna) --- */
  {s:"Bir okulda güçlü bir kurum kültürü bulunmaktadır. Hangisi bu güçlü kültürün doğal sonuçları arasında <b>sayılmaz</b>?",o:["İş gören devir hızının azalması","Dış çevredeki değişime her koşulda hızlı uyum sağlanması","Ortak davranış standartlarının yerleşmesi","Çalışanların kendilerinden beklenen davranışı net bilmesi","Örgütsel bağlılığın ve aidiyetin artması"],c:1,w:"Güçlü kültür <b>çift taraflı bir kılıçtır</b>: yanlış davranışları özendiriyorsa, değişimin hızlı olduğu ortamda dış çevreyle baş etme kapasitesini <i>azaltır</i>. «Her koşulda» gibi mutlaklık bildiren ifadeler bu tür sorularda çoğunlukla yanlış seçeneği işaret eder. Diğer dördü güçlü kültürün bilinen sonuçlarıdır.",b:"Dayanak: Modül 3 — Güçlü Kültürün Sonuçları ve Riski"}
-]
+,
+ {s:"Bir okulda yıllardır süren «öğretmenler odasında kıdemliye yer verilir» uygulaması hiçbir yerde yazılı değildir ama herkes buna uyar. Bu, kurum kültürünün hangi öğesidir?",o:["Sayıltı","Norm","Ritüel","Kahraman","Mit"],c:1,w:"Yazılı olmayan ama uyulan davranış beklentisi <b>normdur</b>. Sayıltı bilinç düzeyine çıkmayan temel varsayımdır; ritüel değerleri pekiştiren düzenli etkinliktir; kahraman değerleri kişileştiren rol modeldir; mit sorgulanmadan kabul edilen kurumsal hikâyedir.",b:"Dayanak: Modül 3 — Kültürün Öğeleri"},
+ {s:"Müdür, öğretmenlerin risk almaktan kaçındığını, yeni yöntem denemek yerine güvenli olanı sürdürdüğünü gözlemlemiştir. Bu durum kurum kültürünün hangi niteliğinin düşük olduğunu gösterir?",o:["İnsan odaklılık","Takım odaklılık","Ayrıntıya önem","Sonuç odaklılık","Yenilik ve risk alma"],c:4,w:"Üyelerin yeni yöntem denemeye teşvik edilme derecesi <b>yenilik ve risk alma</b> niteliğidir. Sonuç odaklılık süreçten çok çıktıya bakmak; insan odaklılık kararların üyelere etkisini gözetmek; takım odaklılık işi bireyden çok ekiple düzenlemektir.",b:"Dayanak: Modül 3 — Kültür Nitelikleri"},
+ {s:"Elli yıllık bir okula atanan yeni müdür, köklü gelenekleri ve güçlü kurum kültürünü koruyarak dijital dönüşüme geçmek istemektedir. Ancak öğretmenlerin çoğu «biz burada işleri hep böyle yaparız» diyerek yeni uygulamalara mesafeli durmaktadır. Bu bağlamda güçlü kültürle ilgili hangisi <b>yanlıştır</b>?",o:["Değişimi her zaman kolaylaştırır","Davranışlarda öngörülebilirlik sağlar","Üyeler arasında ortak anlam üretir","Aidiyet duygusunu güçlendirir","Değişime karşı direnç kaynağı olabilir"],c:0,w:"Güçlü kültür değişimi kolaylaştırmaz; çoğu zaman <b>zorlaştırır</b>. Kültür ne kadar köklü ve paylaşılmışsa, yerleşik kalıpları terk etmek o kadar güçtür. «Değişim en zor nerede?» sorusunun cevabı köklü ve güçlü kültürlü okuldur.",b:"Dayanak: Modül 3 — Kültür ve Değişim"},
+ {s:"Müdür, öğretmenlere okulun bugünkü sorunlarının nedenlerine dair bir rapor sunmuş ve önümüzdeki dönemde hangi gelişmelerin beklendiğini paylaşmıştır. Klinik stratejide bu hangi aşamadır?",o:["Teşhis","Tahmin","Reçete","Değerlendirme","Örgütsel bilgi toplama"],c:1,w:"Sorun belirlendikten sonra <b>geliştirme önerileri ve beklenen gidişat üretmek</b> tahmin aşamasıdır. Reçete'de uygulamalar planlanır, değerlendirmede etki izlenir. Sorun alanlarını saptamak teşhis, veri toplamak ise ilk aşamadır.",b:"Dayanak: Modül 3 — Klinik Strateji"},
+ {s:"Müdür, her dönem başında yeni öğretmenleri okulun kurucusunun hikâyesiyle tanıştıran bir tören düzenlemektedir. Bu uygulama hangi iki kültür öğesini birlikte kullanır?",o:["Ritüel ve kahraman","Mit ve norm","Sayıltı ve değer","Değer ve ritüel","Norm ve sayıltı"],c:0,w:"Düzenli olarak tekrarlanan tören <b>ritüel</b>, hikâyesi anlatılan kurucu ise değerleri kişileştiren <b>kahramandır</b>. Norm yazılı olmayan beklenti, sayıltı bilinçdışı varsayım, mit ise sorgulanmadan aktarılan hikâyedir.",b:"Dayanak: Modül 3 — Kültürün Öğeleri"},
+ {s:"Bir müdür öğretmenlere «bu işi neden yaptığımızı bir daha düşünelim» diyerek yıllardır sorgulanmayan uygulamaları tartışmaya açmıştır. Dönüşümcü liderliğin hangi bileşenidir?",o:["İdealleştirilmiş etki","Koşullu ödül","İlham verici motivasyon","Entelektüel uyarım","Bireysel destek"],c:3,w:"Yerleşik varsayımları sorgulatmak <b>entelektüel uyarımdır</b>. İlham verici motivasyon ortak vizyonla coşku yaratır; bireysel destek koçluk ve mentorluk sunar; idealleştirilmiş etki etik rol model olmaktır. Koşullu ödül dönüşümcü değil, etkileşimci liderliğin öğesidir.",b:"Dayanak: Modül 3 — Dönüşümsel Liderlik"},
+ {s:"Yeni atanan müdür, ilk ayda öğretmenlerin genel memnuniyetsizliğini kısa sürede tersine çevirebildiğini; ancak yıllardır süregelen «kıdemliye öncelik» anlayışını değiştiremediğini fark etmiştir. Bu gözlem ışığında okul kültürü ile okul iklimi arasındaki farkla ilgili hangisi <b>doğrudur</b>?",o:["İkisi de aynı olguyu adlandırır","Kültür yalnızca fiziksel çevreyle ilgilidir","İklim kültürden daha derin ve yavaş değişir","Kültür algılara, iklim değerlere dayanır","İklim kısa sürede değişebilirken kültür yıllar alır"],c:4,w:"İklim üyelerin <b>güncel algısıdır</b> ve göreli olarak hızlı değişir; kültür ise değer ve sayıltılara dayanır, yıllar içinde oluşur. Bu yüzden iklim «kültüre açılan pencere» sayılır: daha kolay gözlenir ama daha yüzeyseldir.",b:"Dayanak: Modül 3 — Kültür ve İklim"},
+ {s:"Bir müdür, okulun işbirliği kültürünü güçlendirmek için bir dizi adım planlamaktadır. Elindeki seçenekleri hangisinin gerçekten kültürü dönüştürebileceğine göre değerlendirmektedir. Buna göre hangisi kurum kültürünü yönetmede okul müdürünün kullanabileceği araçlardan biri <b>değildir</b>?",o:["Neyi ödüllendirdiğini seçmek","Törenlerle değerleri görünür kılmak","Kendi davranışıyla model olmak","Kültürü tek seferlik genelgeyle değiştirmek","Fiziksel çevreyi değerlerle uyumlulaştırmak"],c:3,w:"Kültür bir <b>genelgeyle değişmez</b>; ödüllendirme tercihleri, ritüeller, liderin kendi davranışı ve fiziksel çevre gibi araçlarla zaman içinde yönetilir. Kültür değiştirmedeki en büyük zorluk insanların davranışlarını değiştirmektir.",b:"Dayanak: Modül 3 — Kültürü Yönetme"},
+ {s:"Okulu ilk kez ziyaret eden bir müfettiş; girişteki başarı panolarını, koridorlardaki değer afişlerini, öğretmenlerin giyim biçimini ve teneffüs düzenini not almıştır. Müfettişin bu ilk turda gözlemlediği unsurlar kurum kültürünün hangi düzeyine örnektir?",o:["Gözlenebilir eserler","Bilinçdışı varsayımlar","Örgütsel normlar","Temel sayıltılar","Benimsenen değerler"],c:0,w:"Görülebilen, duyulabilen, ölçülebilen her şey kültürün <b>eserler (artefaktlar)</b> düzeyidir — buzdağının su üstünde kalan kısmı. Değerler hemen altındaki, sayıltılar ise en derindeki katmandır ve doğrudan gözlenemez.",b:"Dayanak: Modül 3 — Kültürün Katmanları"}]
 },
 m5:{
 ozet:`
@@ -2329,7 +2415,8 @@ harita:{
     {k:"Kural 2",v:"kavramsaldan üretirken bileşen eklenmez/çıkarılmaz"},
     {k:"Öğretmen yansıtmaları",v:"öz değerlendirme"}]}
  ,
-  {t:"Farklılaştırma",kids:[{k:"İçerik",v:"ne öğretilir"},{k:"Süreç",v:"nasıl öğrenilir"},{k:"Ürün",v:"nasıl gösterilir"},{k:"Öğrenme ortamı",v:"hangi düzen"}]}]},
+  {t:"Farklılaştırma",kids:[{k:"İçerik",v:"ne öğretilir"},{k:"Süreç",v:"nasıl öğrenilir"},{k:"Ürün",v:"nasıl gösterilir"},{k:"Öğrenme ortamı",v:"hangi düzen"}]},
+   {t:"Dört Bütünlük",kids:[{k:"Ontolojik",v:"ruh ve beden bütünlüğü"},{k:"Epistemolojik",v:"bilgi ve bilgelik birlikteliği"},{k:"Zamansal",v:"geçmişten geleceğe süreklilik"},{k:"Aksiyolojik olgunluk",v:"ahlaki bilinç ve estetik bakış"}]}]},
 tablo:`
 <div class="blk">
   <h3>Tablo 1 — Beceriler Çerçevesi (KAEOS)</h3>
@@ -2457,7 +2544,15 @@ quiz:[
   b:"Dayanak: Modül 5 — Farklılaştırılmış Öğretim"},
  /* --- olumsuz kök (dizinin sonuna) --- */
  {s:"Bir öğretmen, sosyal-duygusal öğrenme becerilerinin gelişimini izlemek istemektedir. Hangisi bu becerilerin izlenmesinde <b>uygun değildir</b>?",o:["Süreç boyunca biçimlendirici araçlarla izlemek","Öğrenciye gelişimine ilişkin geri bildirim vermek","Gözlem ve öz değerlendirme kayıtlarını birlikte kullanmak","Dönem sonu başarı notuna belirli bir ağırlıkla yansıtmak","Gelişimi öğrencinin kendi başlangıç noktasına göre değerlendirmek"],c:3,w:"Sosyal-duygusal beceriler <b>programlar arası bileşenlerdir</b>: not vermek için değil, gelişimi izlemek için vardır. Başarı notuna yansıtmak bu becerileri yaptırıma dönüştürür ve öğrenciyi kıyaslar. Doğru yol biçimlendirici izleme ve bireyin kendi gelişimine göre değerlendirmedir.",b:"Dayanak: Modül 5 — Programlar Arası Bileşenlerin İzlenmesi"}
-]
+,
+ {s:"Sınıfında okuma düzeyi birbirinden çok farklı öğrenciler bulunan bir öğretmen, aynı kazanım için bazı öğrencilere kısa ve görsel destekli metin, bazılarına ise ileri düzey kaynak vermiştir. Hedef değişmemiş, yalnızca öğrencinin karşılaştığı malzeme farklılaşmıştır. Bu uygulama farklılaştırmanın hangi boyutudur?",o:["Değerlendirme","İçerik","Süreç","Ürün","Öğrenme ortamı"],c:1,w:"Öğrencinin <b>neyi öğreneceği</b> ve hangi kaynakla karşılaşacağı içerik boyutudur. Süreç öğrenme etkinliğinin nasıl yürütüldüğü, ürün öğrencinin bilgisini nasıl gösterdiği, öğrenme ortamı ise sınıfın fiziksel ve sosyal düzenidir.",b:"Dayanak: Modül 5 — Farklılaştırılmış Öğretim"},
+ {s:"Bir öğrenci çevre kirliliğini tanımlayabiliyor ama günlük yaşamında bu bilgiyle bağlantılı bir davranış geliştirmemiştir. TYMM'nin beceri düzeylerine göre hangi düzeyde kalmıştır?",o:["Değerlendirme","Farkındalık","İşlevsellik","Eylemsellik","Uygulama"],c:1,w:"Kavramı tanımak ve duyarlılık geliştirmek <b>farkındalık</b> düzeyidir. İşlevsellik bütüncül ilişkiyi fark etmeyi, eylemsellik ise edinilenle harekete geçmeyi gerektirir — öğrencinin ulaşamadığı düzey budur.",b:"Dayanak: Modül 5 — FİE Düzeyleri"},
+ {s:"Öğretmen derse başlarken öğrencilerin konuyla ilgili neleri bildiğini ve nelere ilgi duyduğunu belirlemek için kısa bir uygulama yapmıştır. Bu, öğrenme-öğretme yaşantısının hangi öğesidir?",o:["Zenginleştirme","Destekleme","Temel kabuller","Ön değerlendirme","Köprü kurma"],c:3,w:"İlgi ve ihtiyaç belirlemeye dönük giriş uygulaması <b>ön değerlendirmedir</b>. Temel kabuller öğrencinin getirdiği varsayılan ön bilgidir; köprü kurma eski-yeni bilgi bağını kurar; zenginleştirme ileri düzey görev sunar; destekleme zaman ve tekrar uyarlaması yapar.",b:"Dayanak: Modül 5 — Yaşantı Öğeleri"},
+ {s:"Bir zümre toplantısında öğretmenler, Türkiye Yüzyılı Maarif Modeli'nin dayandığı bütünlük anlayışlarını listelemeye çalışmaktadır. Listeye yazdıkları başlıklardan birinin modelin çerçevesinde yer almadığı fark edilmiştir. Buna göre hangisi bu bütünlük anlayışlarından biri <b>değildir</b>?",o:["Ekonomik bütünlük","Ontolojik bütünlük","Epistemolojik bütünlük","Zamansal bütünlük","Aksiyolojik olgunluk"],c:0,w:"Model dört bütünlük üzerinden kurulur: <b>ontolojik</b> (ruh-beden), <b>epistemolojik</b> (bilgi-bilgelik), <b>zamansal</b> (geçmişten geleceğe) ve <b>aksiyolojik olgunluk</b> (ahlaki bilinç ve estetik bakış). Ekonomik bütünlük bu çerçevenin bir öğesi değildir.",b:"Dayanak: Modül 5 — TYMM Bütünlük Anlayışı"},
+ {s:"Müdür, öğretmenlere «kazanımı okumak yeterli değil, o kazanımın hangi beceriyi ve hangi değeri beslediğini de görmelisiniz» demiştir. Bu vurgu hangi yeterlikle ilgilidir?",o:["Öğretim programı okuryazarlığı","Dijital okuryazarlık","Veri okuryazarlığı","Finansal okuryazarlık","Ölçme okuryazarlığı"],c:0,w:"Programı yalnızca kazanım listesi olarak değil; beceri, değer ve eğilimlerle bütünlüklü biçimde okuyabilmek <b>öğretim programı okuryazarlığıdır</b>. Ölçme okuryazarlığı değerlendirme araçlarıyla, veri okuryazarlığı ise sonuçların yorumlanmasıyla ilgilidir.",b:"Dayanak: Modül 5 — Program Okuryazarlığı"},
+ {s:"Sınıfta bir öğrenci konuyu diğerlerinden çok önce kavramış ve sıkılmaya başlamıştır. Öğretmen, öğrenciyi beklemeye bırakmak yerine ona aynı konunun ileri düzey ve derinleştirilmiş bir görevini vermiştir. Bu uygulama öğrenme-öğretme yaşantısının hangi öğesidir?",o:["Ön değerlendirme","Temel kabuller","Destekleme","Zenginleştirme","Köprü kurma"],c:3,w:"İleri düzeyde derinleştirilmiş görev sunmak <b>zenginleştirmedir</b>. Destekleme tersine, zorlanan öğrenciye ek zaman ve tekrar sağlar. İkisi aynı yaşantının iki yönüdür: biri potansiyeli açar, diğeri engeli kaldırır.",b:"Dayanak: Modül 5 — Yaşantı Öğeleri"},
+ {s:"Bir öğretmen ünite sonunda öğrencilerine, öğrendiklerini poster, sözlü sunum veya kısa video biçiminde ortaya koyabileceklerini söylemiştir. Ulaşılacak kazanım herkes için aynıdır; değişen yalnızca öğrencinin bilgisini gösterme biçimidir. Bu uygulama farklılaştırmanın hangi boyutudur?",o:["Kazanım","İçerik","Süreç","Ürün","Öğrenme ortamı"],c:3,w:"Öğrencinin bilgisini <b>hangi biçimde ortaya koyacağı</b> ürün boyutudur. Kazanım farklılaşmaz — herkes aynı hedefe ulaşır, değişen yalnızca ona giden yol ve onu gösterme biçimidir.",b:"Dayanak: Modül 5 — Farklılaştırılmış Öğretim"},
+ {s:"Bir okulda değerler eğitiminin yalnızca haftada bir saatlik etkinliğe sıkıştırıldığı, diğer derslerde ve okul yaşantısında karşılık bulmadığı görülmüştür. Müdür bu yaklaşımı modelle karşılaştırmaktadır. Buna göre Maarif Modeli'nde erdem-değer-eylem çerçevesiyle ilgili hangisi <b>yanlıştır</b>?",o:["Değerler eyleme dönüşmedikçe eksik kalır","Erdem değerlerin bütünleşmiş hâlidir","Değerler yalnızca ayrı bir ders olarak öğretilir","Değerler programların ruhunda yer alır","Okul yaşantısının tamamı değer aktarır"],c:2,w:"Değerler <b>ayrı bir derse hapsedilmez</b>; programların ruhuna işlenir ve okul yaşantısının bütününde aktarılır. Çerçevenin özü değerin bilgi düzeyinde kalmayıp erdeme ve oradan eyleme dönüşmesidir.",b:"Dayanak: Modül 5 — Erdem-Değer-Eylem"}]
 },
 m6:{
 ozet:`
@@ -2622,7 +2717,8 @@ harita:{
     {k:"Maliyetlendirme",v:"tahmini maliyet ↔ kaynak uyumu"},
     {k:"Kaynak yetersizse",v:"ucuz strateji / zaman / kapsam / önceliklendirme"},
     {k:"Veriye dayalı karar",v:"e-Okul, MEBBİS · dinamik, esnek"}]}
- ]},
+ ,
+   {t:"Veriye Dayalı Karar",kids:[{k:"Tek ölçüm tuzağı",v:"veriye dayalı değil, veriye indirgenmiş karar"},{k:"Geri besleme",v:"izleme sonucu planı günceller"}]}]},
 tablo:`
 <div class="blk">
   <h3>Tablo 1 — 5 Performans Göstergesi (GÇSKV)</h3>
@@ -2651,7 +2747,19 @@ tablo:`
     <tr><td>Başkan</td><td><b>Okul müdürü</b></td><td><b>Kuruldan olmayan</b> md.yrd.</td></tr>
     <tr><td>Üyeler</td><td>Md.yrd.+öğretmen+OAB başkanı+yön.kur. (<b>5 kişi</b>)</td><td>Öğretmenler + gönüllü veliler</td></tr>
   </table></div>
-</div>`,
+</div>
+<div class="blk">
+  <h3>Tablo 4 — Beş Gösterge Türü</h3>
+  <div class="twrap"><table>
+    <tr><th>Tür</th><th>Ölçtüğü</th><th>Okul örneği</th></tr>
+    <tr><td><b>Girdi</b></td><td>Kullanılan beşerî-mali-fiziki kaynak</td><td>Öğretmen başına hizmet içi eğitim saati</td></tr>
+    <tr><td><b>Çıktı</b></td><td>Sunulan hizmet miktarı</td><td>Açılan kurs sayısı</td></tr>
+    <tr><td><b>Sonuç</b></td><td>Ortaya çıkan etki</td><td>Kursa katılanların başarı artışı</td></tr>
+    <tr><td><b>Kalite</b></td><td>Yararlanıcı memnuniyeti</td><td>Veli memnuniyet oranı</td></tr>
+    <tr><td><b>Verimlilik</b></td><td>Çıktı ÷ girdi</td><td>Kurs saati başına maliyet</td></tr>
+  </table></div>
+</div>
+`,
 match:[
  {name:"Gösterge → Ölçtüğü",pairs:[
    ["Girdi","Beşerî-mali-fiziki kaynak"],
@@ -2738,7 +2846,16 @@ quiz:[
 ,
  /* --- olumsuz kök (dizinin sonuna) --- */
  {s:"Bir okul yöneticisi izleme ve değerlendirme sürecini kurmaktadır. Hangisi bu sürecin sistematik işlemesi için gerekenlerden biri <b>değildir</b>?",o:["Kapasite ihtiyacını tespit edip iyileştirme tedbiri almak","Karar alıcılara doğru ve tutarlı veri sağlamak","Ayrıntılı bir izleme takvimi belirlemek","Hedefleri nesnel ve ölçülebilir göstergelerle ilişkilendirmek","Hedeflere ilişkin sorumlulukları süreç sonunda karara bağlamak"],c:4,w:"Sorumluluklar <b>en başta</b> netleşir. Süreç sonuna bırakılırsa izleme, düzeltme fırsatı veren bir mekanizma olmaktan çıkıp <i>hesap sorma</i> işlemine dönüşür. Diğer dördü sistematik izlemenin tanımlı gerekleridir.",b:"Dayanak: Modül 6 — İzleme ve Değerlendirme Tasarımı"}
-]
+,
+ {s:"Okul stratejik plan ekibi, ilçedeki nüfus hareketini, yeni yapılan konut alanlarını ve velilerin ekonomik profilindeki değişimi incelemiştir. Bu çalışma durum analizinin hangi bölümüdür?",o:["Dış çevre analizi","GZFT analizi","Paydaş analizi","Maliyetlendirme","Kurum içi analiz"],c:0,w:"Nüfus, demografi, ekonomik ve sosyokültürel koşullar okulun <b>kontrolü dışındaki</b> etkenlerdir ve PESTLE ile incelenen dış çevre analizine girer. Kurum içi analiz insan kaynağı, kültür, teknoloji ve fiziki kaynakları değerlendirir.",b:"Dayanak: Modül 6 — Dış Çevre Analizi"},
+ {s:"Stratejik planını hazırlayan bir okul, izleyeceği göstergeleri türlerine göre sınıflandırmaktadır. Listedeki «öğretmen başına düşen hizmet içi eğitim saati» göstergesinin hangi türe girdiği tartışılmaktadır. Bu gösterge hangi türdendir?",o:["Çıktı göstergesi","Sonuç göstergesi","Kalite göstergesi","Verimlilik göstergesi","Girdi göstergesi"],c:4,w:"Kullanılan beşerî, mali ve fiziki kaynağı ölçen göstergeler <b>girdi</b> göstergesidir. Çıktı sunulan hizmet miktarını, sonuç ortaya çıkan etkiyi, kalite yararlanıcı memnuniyetini, verimlilik ise çıktının girdiye oranını ölçer.",b:"Dayanak: Modül 6 — Performans Göstergeleri"},
+ {s:"Stratejik plan ekibi, okulun mevcut durumunu ortaya koyan analizleri tamamlamış ve şimdi kurumun beş yıl sonra nerede olmak istediğini, misyon, vizyon ve temel değerlerini yazmaya başlamıştır. Ekibin bu çalışması «Nereye ulaşmak istiyoruz?» sorusuna karşılık gelir ve hangi aşamadır?",o:["Durum Analizi","Geleceğe Bakış","Strateji ve Faaliyetler","İzleme ve Değerlendirme","Maliyetlendirme"],c:1,w:"Dört soru şu sırayı izler: «Neredeyiz?» durum analizi, «<b>Nereye ulaşmak istiyoruz?</b>» geleceğe bakış (misyon, vizyon, temel değerler), «Nasıl ulaşırız?» strateji ve faaliyetler, «Nasıl izler-ölçeriz?» izleme ve değerlendirme.",b:"Dayanak: Modül 6 — Planın Omurgası"},
+ {s:"Stratejik planın strateji geliştirme bölümünü yazan müdür, plana şu ifadeyi eklemiştir: «Okulumuzda 2026 sonuna kadar okuma kültürü etkinliklerine katılan öğrenci oranını %40'tan %70'e çıkarmak.» İfadenin ölçülebilir ve süreli oluşu dikkat çekmektedir. Bu ifade plan terminolojisinde nedir?",o:["Vizyon","Amaç","Hedef","Temel değer","Misyon"],c:2,w:"Ölçülebilir, süreli ve somut çıktı ifadesi <b>hedeftir</b>. Amaç daha genel ve kavramsal bir sonuç ifadesidir; misyon varlık nedenini, vizyon ulaşılmak istenen gelecek düzeyini, temel değerler ise yol gösterici ilkeleri anlatır.",b:"Dayanak: Modül 6 — Amaç ve Hedef"},
+ {s:"Bir okul, stratejik planı için yalnızca öğretmenlerine anket uygulamış; veli, muhtar ve ilçe millî eğitim müdürlüğünün görüşünü almamıştır. Plan tamamlandığında dış paydaşların süreci sahiplenmediği görülmüştür. Bu deneyim ışığında paydaş analiziyle ilgili hangisi <b>yanlıştır</b>?",o:["Anket, mülakat ve atölye ile yapılabilir","Yalnızca iç paydaşların görüşü alınır","Planın sahiplenilmesini artırır","Sonuçlarına planda yer verilir","Katılımcılığı sağlamanın en önemli aracıdır"],c:1,w:"Paydaş analizi <b>iç ve dış paydaşların tamamını</b> kapsar; veliler, il/ilçe millî eğitim müdürlükleri, valilik, muhtarlar ve sivil toplum kuruluşları dış paydaş olarak sürece dâhil edilir. Yalnızca içeriye bakmak analizin amacını boşa çıkarır.",b:"Dayanak: Modül 6 — Paydaş Analizi"},
+ {s:"Okul, güçlü yönü olarak deneyimli öğretmen kadrosunu, tehdit olarak da bölgedeki göç kaynaklı öğrenci devingenliğini belirlemiştir. Bu iki bilgi hangi analizde bir araya getirilir?",o:["Maliyetlendirme","İzleme raporu","PESTLE","GZFT","Paydaş analizi"],c:3,w:"Kurum içi analizden gelen güçlü/zayıf yönler ile dış çevre analizinden gelen fırsat/tehditler <b>GZFT</b> tablosunda birleştirilir. PESTLE yalnızca dış çevreyi tarar ve GZFT'nin fırsat-tehdit bölümüne zemin hazırlar.",b:"Dayanak: Modül 6 — GZFT Analizi"},
+ {s:"Bir müdür, okulun matematik başarısını artırmak için tek bir deneme sınavının sonucuna bakarak öğretmen görevlendirmesini değiştirmiştir. Sonraki dönemde beklenen iyileşme görülmemiştir. Bu örnek üzerinden bakıldığında, hangisi veriye dayalı karar almanın gereklerinden biri <b>sayılmaz</b>?",o:["Göstergelerin düzenli izlenmesi","Verinin yorumlanabilir hâle getirilmesi","Kararın tek bir sınav sonucuna dayandırılması","Paydaş görüşünün sürece katılması","Sonuçların iyileştirme döngüsüne bağlanması"],c:2,w:"Tek bir ölçüme dayanmak veriye dayalı karar değil, <b>veriye indirgenmiş karardır</b>. Sağlıklı süreç birden çok göstergeyi düzenli izler, veriyi yorumlanabilir kılar, paydaş görüşüyle destekler ve sonucu sürekli iyileştirmeye bağlar.",b:"Dayanak: Modül 6 — Veriye Dayalı Karar"},
+ {s:"Stratejik plan ekibi, planın «Geleceğe Bakış» bölümünü yazarken iki ifadeyi karıştırmaktadır: biri okulun bugün niçin var olduğunu, diğeri gelecekte ulaşmak istediği düzeyi anlatmaktadır. Okulun varlık nedenini, kime hangi hizmeti niçin sunduğunu anlatan ifade hangisidir?",o:["Amaç","Strateji","Gösterge","Vizyon","Misyon"],c:4,w:"«Ne» ve «niçin» sorularının cevabı, yani kurumun varlık nedeni <b>misyondur</b>. Vizyon ise gelecekte ulaşılmak istenen düzeyi tanımlar. Karıştırma: misyon bugünü, vizyon yarını anlatır.",b:"Dayanak: Modül 6 — Misyon ve Vizyon"},
+ {s:"Beş yıllık stratejik planını hazırlayan bir okul, izleme çalışmasını plan döneminin sonuna bırakmış; dönem bittiğinde birçok hedefin çoktan sapmış olduğunu ve düzeltme fırsatının kaçtığını görmüştür. Buna göre stratejik planın izleme ve değerlendirme aşamasıyla ilgili hangisi <b>doğrudur</b>?",o:["Yalnızca mali göstergelere bakılır","Belirlenen dönemlerde yapılır ve plana geri besleme sağlar","Yalnızca üst kurumun talebiyle yapılır","Hedef değişmediği sürece gerekmez","Plan dönemi bittikten sonra tek seferde yapılır"],c:1,w:"İzleme <b>dönemsel olarak</b> yürütülür ve sonuçları planı güncellemek için geri besleme üretir. Sonda yapılan tek seferlik değerlendirme, sapmaları düzeltme fırsatını tümüyle kaçırır.",b:"Dayanak: Modül 6 — İzleme ve Değerlendirme"}]
 },
 m7:{
 ozet:`
@@ -2887,7 +3004,10 @@ harita:{
     {k:"Öğrenen kurum",v:"sürekli mesleki gelişim"},
     {k:"Esnek uyarlama",v:"bağlamsal"},
     {k:"Reform başarısı",v:"sahiplenme + yorum + öğrenme"}]}
- ]},
+ ,
+   {t:"Direncin İki Düzeyi",kids:[{k:"Bireysel · yetersizlik",v:"yeni beklenti karşısında kendini yetersiz görme"},{k:"Bireysel · değersizleşme",v:"mevcut uzmanlığın işe yaramaz olacağı kaygısı"},{k:"Örgütsel · durağan kültür",v:"yerleşik iletişim kalıpları ve alışkanlıklar"},{k:"Örgütsel · reform hafızası",v:"yarım kalmış geçmiş girişimler"},{k:"Bürokratik yoğunluk",v:"örgütsel direncin bir başka kaynağı"}]},
+   {t:"Yeni Yönelimler",kids:[{k:"Hazır oluş değerlendirmesi",v:"değişim öncesi kurumsal kapasite ölçümü"},{k:"Öğrenen kurum",v:"deneyiminden sistemli ders çıkaran okul"},{k:"Bağlamsal uyarlama",v:"merkezî politikayı okulun koşullarına uydurma"},{k:"Veri temelli yönetim",v:"kararı ölçümle destekleme"},{k:"Sürekli mesleki gelişim",v:"değişimin insan tarafını besleme"}]},
+   {t:"Yenilik ↔ Değişim",kids:[{k:"Yenilikçilik",v:"değişimin YÖNÜNÜ belirler — ne değişmeli"},{k:"Değişim yönetimi",v:"değişimin YÖNTEMİNİ belirler — nasıl yürür"},{k:"İlişkisi",v:"ayrık değil, bütüncül"}]}]},
 tablo:`
 <div class="blk">
   <h3>Tablo 1 — Üç Eksen</h3>
@@ -2914,7 +3034,19 @@ tablo:`
     <tr><td>Öğretmenlik Mesleği Kanunu</td><td>İnsan kaynağı</td></tr>
     <tr><td>Millî Eğitim Akademisi</td><td>Yönetici yetiştirme</td></tr>
   </table></div>
-</div>`,
+</div>
+<div class="blk">
+  <h3>Tablo 4 — Direnç: Bireysel mi Örgütsel mi?</h3>
+  <div class="twrap"><table>
+    <tr><th>Belirti</th><th>Düzey</th><th>Ne işe yarar</th></tr>
+    <tr><td>"Bunu beceremem"</td><td>Bireysel — yetersizlik</td><td>Eğitim ve birebir destek</td></tr>
+    <tr><td>"Bildiğim işe yaramaz olacak"</td><td>Bireysel — değersizleşme</td><td>Mevcut birikimi yeni role bağlama</td></tr>
+    <tr><td>"Biz burada işleri hep böyle yaparız"</td><td>Örgütsel — durağan kültür</td><td>Kültür araçları, ritüel, model olma</td></tr>
+    <tr><td>"Bu da yarım kalır"</td><td>Örgütsel — reform hafızası</td><td>Küçük ve tamamlanan ilk adım</td></tr>
+    <tr><td>"Kimse bize söylemedi"</td><td>Bireysel — belirsizlik</td><td>Düzenli, çift yönlü bilgilendirme</td></tr>
+  </table></div>
+</div>
+`,
 match:[
  {name:"Eksen → Cevap",pairs:[
    ["Yenilikçilik","Değişim hangi yöne? (kapasite)"],
@@ -3002,7 +3134,16 @@ quiz:[
 ,
  /* --- olumsuz kök (dizinin sonuna) --- */
  {s:"Bir okulda yeni bir uygulamaya geçilirken öğretmenlerden direnç gelmiştir. Hangisi yöneticinin bu durumda sergilemesi beklenen davranışlardan biri <b>değildir</b>?",o:["Paydaşları sürece erken aşamada dâhil etmek","Direnci kurumun destek ihtiyacını gösteren bir işaret olarak okumak","Değişimin gerekçesini ve beklenen faydayı açıkça anlatmak","Kurumun hazır oluş düzeyini değerlendirip destek mekanizması kurmak","Direnç gösterenleri sürecin dışında bırakıp uygulamayı hızlandırmak"],c:4,w:"Direnç gösterenleri <b>dışarıda bırakmak</b> direnci ortadan kaldırmaz, derinleştirir ve değişimi kurumun bir kısmına hapseder. Direnç doğal bir olgudur ve <i>hangi alanlarda hazırlık ile desteğe ihtiyaç duyulduğunu gösteren bir geri bildirim kaynağıdır</i>. Etkili değişim erken paydaş katılımı ve güçlü iletişimle yürür.",b:"Dayanak: Modül 7 — Değişime Direncin Yönetimi"}
-]
+,
+ {s:"Bir okulda öğretmenler yeni ölçme yazılımına «zaten mevcut sistemi biliyorduk, şimdi baştan öğreneceğiz» diyerek tepki göstermiştir. Bu direncin kaynağı hangisidir?",o:["Mevcut uzmanlığın değersizleşmesi kaygısı","İletişim eksikliği","Rol değişimi kaygısı","Örgüt kültürünün durağanlığı","Belirsizlik"],c:0,w:"«Bildiğim işe yaramaz olacak» kaygısı, bireysel düzeyde <b>mevcut uzmanlığın değersizleşmesi</b> direncidir. Belirsizlik ne olacağını bilememe, iletişim eksikliği bilgilendirilmeme, rol kaygısı ise yeni görev tanımına ilişkindir.",b:"Dayanak: Modül 7 — Değişime Direnç"},
+ {s:"Müdür, yeni uygulamayı başlatmadan önce okulun teknik altyapısını, öğretmenlerin dijital yeterliğini ve geçmiş değişim deneyimlerini incelemiştir. Bu çalışma nedir?",o:["Performans değerlendirme","İhtiyaç raporu","Hazır oluş değerlendirmesi","Paydaş analizi","Risk analizi"],c:2,w:"Değişim öncesi kurumsal kapasitenin ölçülmesi <b>hazır oluş değerlendirmesidir</b>. Etkili değişim yönetimi yalnızca yeni uygulamayı duyurmakla değil, hazır oluşu ölçüp destek mekanizmalarını buna göre kurmakla mümkündür.",b:"Dayanak: Modül 7 — Değişim Yönetimi"},
+ {s:"Bir okulda yeni bir ölçme yaklaşımı benimsenmiş; ancak sürecin nasıl planlanacağı, öğretmenlere nasıl anlatılacağı ve nasıl sürdürüleceği düşünülmediği için uygulama birkaç ay içinde sönümlenmiştir. Bu örnek üzerinden eğitimde yenilikçilik ile değişim yönetimi arasındaki ilişkiyle ilgili hangisi <b>doğrudur</b>?",o:["Yenilikçilik yöntemi, değişim yönetimi yönü belirler","Yenilikçilik yönü, değişim yönetimi yöntemi belirler","İkisi birbirinden bağımsız süreçlerdir","Yenilikçilik yalnızca teknolojiyle ilgilidir","Değişim yönetimi yalnızca üst yönetimin işidir"],c:1,w:"Yenilik <b>neyin değişmesi gerektiğini</b> ortaya koyar, yani yönü belirler; değişim yönetimi bunun nasıl planlanacağını, anlatılacağını ve sürdürüleceğini açıklar, yani yöntemi belirler. İkisi ayrık değil, bütüncül bir ilişki içindedir.",b:"Dayanak: Modül 7 — Kavramsal Çerçeve"},
+ {s:"Bir okulda geçmiş yıllarda başlatılıp yarıda bırakılmış üç ayrı proje bulunmaktadır. Müdür yeni bir gelişim girişimi duyurduğunda öğretmenlerin ortak tepkisi «bu da yarım kalır» olmuştur; kimse kişisel olarak yetersiz hissettiğini söylememektedir. Bu direnç hangi düzeydedir?",o:["Politik düzey","Bireysel düzey","Örgütsel düzey","Bireylerarası düzey","Sistem düzeyi"],c:2,w:"Geçmişte başarısız olmuş reform deneyimleri kurumun ortak hafızasına yerleşir ve <b>örgütsel</b> düzeyde direnç üretir. Bireysel direnç yetersizlik hissi ve uzmanlık kaygısı gibi kişisel kaynaklardan doğar.",b:"Dayanak: Modül 7 — Direncin Düzeyleri"},
+ {s:"Bir okul, sınıflarına akıllı tahta kurdurduktan sonra «yenilikçi okul» olduğunu düşünmüş; ancak öğretim yöntemleri, roller ve beklentiler değişmediği için öğrenme süreçlerinde bir farklılık oluşmamıştır. Bu duruma bakarak, hangisi eğitimde yenilikçilikle ilgili <b>söylenemez</b>?",o:["Rollerin yeniden değerlendirilmesini gerektirebilir","Okul kültürüyle ilişkilendirilmelidir","Paydaşlarca anlaşılması gerekir","Politika belgeleriyle uyum içinde yürütülmelidir","Yalnızca yeni araç edinmek anlamına gelir"],c:4,w:"Yenilikçilik <b>yeni bir araç ya da uygulama önermekten ibaret değildir</b>; çoğu zaman mevcut işleyişin, rollerin, önceliklerin ve beklentilerin yeniden değerlendirilmesini gerektirir. Yeniliğin kurumsal yaşama nüfuz etmesi kültürle ilişkilendirilmesine bağlıdır.",b:"Dayanak: Modül 7 — Yenilikçilik"},
+ {s:"Merkezî olarak duyurulan bir okuma programı, günde iki saat servis yolculuğu yapan öğrencilerin bulunduğu kırsal bir okulda olduğu gibi uygulanamamaktadır. Müdür programın hedefini korumuş ama etkinlik saatlerini ve süresini okulun ulaşım koşullarına göre yeniden düzenlemiştir. Bu yaklaşım hangisidir?",o:["Veri temelli yönetim","Sürekli mesleki gelişim","Standartlaşma","Öğrenen kurum","Bağlamsal uyarlama"],c:4,w:"Merkezî politikayı okulun kendi koşullarına uyarlamak <b>bağlamsal uyarlamadır</b>. Öğrenen kurum deneyiminden sistemli ders çıkaran okulu; veri temelli yönetim kararların ölçümle desteklenmesini anlatır.",b:"Dayanak: Modül 7 — Yeni Yönelimler"},
+ {s:"Bir okulda her dönem sonunda yürütülen uygulamaların neyin işe yarayıp yaramadığı toplantıda değerlendirilmekte, sonuçlar yazılı olarak kayda geçirilmekte ve bir sonraki dönemin planı bu kayıtlara dayandırılmaktadır. Bu işleyiş hangi yaklaşımın karşılığıdır?",o:["Hazır oluş değerlendirmesi","Kıyaslama","Denetim","Bağlamsal uyarlama","Öğrenen kurum"],c:4,w:"Deneyimini sistemli biçimde kayda geçirip bir sonraki döngüye taşıyan kurum <b>öğrenen kurumdur</b>. Hazır oluş değerlendirmesi değişim öncesinde yapılan tek seferlik bir ölçümdür; burada anlatılan ise sürekli bir döngüdür.",b:"Dayanak: Modül 7 — Öğrenen Kurum"},
+ {s:"Bir okul, merkezî bir politika belgesindeki hedefleri stratejik planına aynen kopyalamış; ancak okulun kırsal konumu ve öğrenci profili gözetilmediği için hedefler sahada karşılık bulmamıştır. Bu deneyim ışığında Bakanlık politikalarına uyumla ilgili hangisi <b>yanlıştır</b>?",o:["Politika belgeleri okulun çerçevesini çizer","Uyum yalnızca mevzuata harfiyen uymaktır","Okulun yerel koşulları gözetilmelidir","Stratejik plan politika hedefleriyle ilişkilendirilir","Politika hedefleri sahada karşılık bulmalıdır"],c:1,w:"Uyum <b>yalnızca mevzuata harfiyen uymak değildir</b>; politika hedeflerinin okulun kendi koşullarında anlamlı karşılık bulmasını gerektirir. Aksi hâlde belge düzeyinde uyum, sahada karşılıksız kalır.",b:"Dayanak: Modül 7 — Politika Uyumu"},
+ {s:"Müdür, değişim sürecinde öğretmenlere neyin, niçin ve hangi takvimle değişeceğini düzenli olarak anlatmakta ve soruları toplamaktadır. Bu, hangi direnç kaynağını doğrudan azaltır?",o:["Artan iş yükü","İletişim eksikliği ve belirsizlik","Yetersizlik hissi","Rol değişimi kaygısı","Bütçe kısıtı"],c:1,w:"Düzenli, açık ve çift yönlü bilgilendirme <b>belirsizlik ve iletişim eksikliği</b> kaynaklı direnci doğrudan hedefler. Yetersizlik hissi eğitim ve destekle, iş yükü kaygısı ise kaynak ve takvim düzenlemesiyle azalır.",b:"Dayanak: Modül 7 — Direnci Yönetme"}]
 },
 m8:{
 ozet:`
@@ -3307,7 +3448,10 @@ quiz:[
   b:"Dayanak: Modül 8 — Bilgi Yönetim Sistemleri"},
  /* --- olumsuz kök (dizinin sonuna) --- */
  {s:"Bir okulda harcama süreci yürütülmektedir. Hangisi gerçekleştirme görevlisinin görevleri arasında <b>yer almaz</b>?",o:["Teslim alma işlemlerinin belgelendirilmesi","Ödeme için gerekli belgelerin hazırlanması","Harcama talimatının verilmesi ve onaylanması","Envanter ve muayene kayıtlarının düzenlenmesi","İşin yaptırılması ve mal/hizmetin teslim alınması"],c:2,w:"<b>Harcama talimatını vermek ve onaylamak harcama yetkilisinin</b> işidir. Rolleri ayır: harcama yetkilisi talimatı verir, gerçekleştirme görevlisi işi fiilen yaptırıp belgelendirir ve ödeme belgelerini hazırlar, muhasebe yetkilisi ödemeyi yapar ve kaydeder.",b:"Dayanak: Modül 8 — Harcama Sürecinde Görev ve Yetkiler"}
-]
+,
+ {s:"Okul müdürü, ihalesi tamamlanan kırtasiye malzemesinin teslim alınması sürecinde bir personeli görevlendirmiştir. Bu personel malzemeyi teslim almış, şartnameye uygunluğunu kontrol etmiş ve durumu tutanakla belgeleyerek ödeme için gerekli evrakı hazırlamıştır. Bu personelin mali süreçteki adı nedir?",o:["Muhasebe yetkilisi","Harcama birimi","Ödenek amiri","Harcama yetkilisi","Gerçekleştirme görevlisi"],c:4,w:"Malı teslim alan ve ödeme için gerekli belgeleri hazırlayan <b>gerçekleştirme görevlisidir</b>. Harcama yetkilisi ödeme emrini imzalar; muhasebe yetkilisi ödemeyi ve kaydı yapar; harcama birimi ise ödenek tahsis edilen en alt birimdir.",b:"Dayanak: Modül 8 — Harcama Süreci"},
+ {s:"Okulun kantin kira geliri ile bir hayırseverin bilgisayar laboratuvarı için yaptığı bağış aynı ay içinde okula ulaşmıştır. Müdür, her iki kalemin de mevzuata uygun biçimde kayda geçirilmesini ve ilçe millî eğitim müdürlüğünce izlenebilmesini istemektedir. Bu işlemler hangi sistem üzerinden yürütülür?",o:["EKAP","MEBBİS","TEFBİS","KBS","HYS"],c:2,w:"Okulun gelir ve gider kalemleri — okul aile birliği gelirleri, bağışlar, kantin kirası — <b>TEFBİS</b> üzerinden kaydedilir. EKAP ihale ve satın alma, MEBBİS personel ve özlük, KBS maaş ve muhasebe, HYS/MYS ise harcama-ödeme sürecine ilişkindir.",b:"Dayanak: Modül 8 — Bilgi Yönetim Sistemleri"},
+ {s:"Bir okul müdürü, mali işlerden sorumlu müdür yardımcısıyla birlikte yıl sonu işlemlerini gözden geçirmekte ve bütçe kurallarını maddeler hâlinde not almaktadır. Notlarındaki maddelerden biri mevzuata aykırıdır. Buna göre kamu mali yönetiminde hangisi <b>yanlıştır</b>?",o:["Kullanılmayan ödenek yıl sonunda iptal edilir","Ödenekler tahsis edildikleri amaç için kullanılır","Mali yıl bir takvim yılıdır","Kamu zararında zaman aşımı iki yıldır","Bütçe gelir-gider tahmini içeren bir belgedir"],c:3,w:"Kamu zararında zaman aşımı <b>iki değil ON yıldır</b>. Karıştırma: emanet hesabındaki tutarlar için talep süresi izleyen beşinci yılın sonudur. Diğer ifadeler 5018 sayılı Kanun'un temel kurallarıdır.",b:"Dayanak: Modül 8 — Hukuki Güvenceler"}]
 },
 m9:{
 ozet:`
@@ -3612,7 +3756,11 @@ quiz:[
 ,
  /* --- olumsuz kök (dizinin sonuna) --- */
  {s:"Bir okul müdürü hakkında hem adli hem disiplin süreci gündeme gelmiştir. Bu durumla ilgili hangisi <b>yanlıştır</b>?",o:["Adli ceza uygulanması disiplin hükümlerinin uygulanmasına engel değildir","İki süreç birbirinden bağımsız olarak yürüyebilir","Disiplin soruşturması idari makamlarca yürütülür","Adli ceza verilmişse ayrıca disiplin cezası uygulanamaz","Disiplin cezası verilmesi adli süreci ortadan kaldırmaz"],c:3,w:"Adli ve disiplin süreçleri <b>birbirinden bağımsız</b> yürür; biri diğerinin yerine geçmez ve birini uygulamak diğerine engel olmaz. Aynı fiil hem suç hem disiplin ihlali oluşturabilir ve ayrı ayrı değerlendirilir.",b:"Dayanak: Modül 9 — Adli ve Disiplin Sorumluluğunun Ayrımı"}
-]
+,
+ {s:"Okul müdürü, bir işlemi yaparken dayandığı yönetmelik hükmünün ilgili kanunun açık hükmüyle çeliştiğini fark etmiştir. Yönetmelik daha yeni tarihlidir. Müdür bu durumda nasıl hareket etmelidir?",o:["Genelgeyle çözülür","Yönetmelik daha yeni tarihliyse uygulanır","Kanun hükmü esas alınır","İdare hangisini uygun görürse onu uygular","Her ikisi birlikte uygulanır"],c:2,w:"Normlar hiyerarşisinde her alt norm üsttekine <b>aykırı olamaz</b>: Anayasa → Kanun → CB Kararnamesi/Kararı → Yönetmelik → Yönerge/Genelge. Tarih değil, sıra belirleyicidir; yönetmelik kanuna aykırı olamaz.",b:"Dayanak: Modül 9 — Normlar Hiyerarşisi"},
+ {s:"Okulda yıl sonu depo sayımında bir miktar malzemenin eksik olduğu, kaydı bulunmasına rağmen fiilen mevcut olmadığı tespit edilmiştir. Bu durum kamu kaynağında bir azalmaya yol açmıştır. Söz konusu eksiklik, ilgili yöneticinin hangi sorumluluğunu doğurur?",o:["Siyasi sorumluluk","İdari sorumluluk","Mali sorumluluk","Cezai sorumluluk","Disiplin sorumluluğu"],c:2,w:"Kamu kaynağında oluşan azalma yani <b>kamu zararı mali sorumluluk</b> doğurur. İdari sorumluluk disiplin sürecini, cezai sorumluluk adli süreci işletir. Bir olay birden çok sorumluluk türü doğurabilir; cezai süreç disiplinle paralel yürür.",b:"Dayanak: Modül 9 — Sorumluluk Türleri"},
+ {s:"Yönetici adayı bir öğretmen, çalışırken kanun numaralarını birbirine karıştırdığını fark etmiş ve numaraları düzenlediği kanunun adıyla eşleştirerek not çıkarmaya karar vermiştir. Bu notta amaç, ilke ve genel yapıyı düzenleyen Millî Eğitim Temel Kanunu'nun karşısına hangi numara yazılmalıdır?",o:["1739","5580","3308","7528","222"],c:0,w:"Millî Eğitim Temel Kanunu <b>1739</b> sayılıdır; amaç, ilke ve genel yapıyı düzenler. Karıştırma: 222 İlköğretim ve Eğitim, 5580 Özel Öğretim Kurumları, 3308 Mesleki Eğitim, 7528 Öğretmenlik Mesleği Kanunu'dur.",b:"Dayanak: Modül 9 — Temel Kanunlar"},
+ {s:"Bir okulda aynı olay hakkında hem disiplin soruşturması başlatılmış hem de adli süreç işlemektedir. Müdür, iki sürecin birbiriyle ilişkisini ve kullanılan kavramları netleştirmek istemektedir. Buna göre soruşturma sürecindeki kavramlarla ilgili hangisi <b>yanlıştır</b>?",o:["Savunma hakkı disiplin sürecinin zorunlu aşamasıdır","İfade adli makam önünde alınır","Sorgu şüpheli sıfatıyla yapılan bir işlemdir","Muhakkik disiplin soruşturmasını yürütür","Disiplin ve cezai süreç birbirinin sonucunu bekler"],c:4,w:"Disiplin ve cezai süreçler <b>paralel yürür</b>; biri diğerinin sonuçlanmasını beklemez ve birinden çıkan sonuç ötekini kendiliğinden bağlamaz. Bu, sınavda en sık kurulan tuzaklardan biridir.",b:"Dayanak: Modül 9 — Soruşturma Kavramları"}]
 },
 m12:{
 ozet:`
@@ -3775,7 +3923,9 @@ harita:{
     {k:"Ahilik",v:"usta-çırak ilişkisi"},
     {k:"Vakıf sistemi",v:"toplumsal dayanışma"},
     {k:"Külliye modeli",v:"bütünleşik hizmet"}]}
- ]},
+ ,
+   {t:"Paydaş Analizi Araçları",kids:[{k:"Anket",v:"geniş kitleden ölçülebilir veri"},{k:"Mülakat",v:"derinlemesine bireysel görüş"},{k:"Atölye çalışması",v:"ortak akıl ve önceliklendirme"},{k:"Matris kullanımı",v:"paydaşlar matrisle belirlenir, planda yer alır"}]},
+   {t:"Dış Paydaşın Rolü",kids:[{k:"İl/ilçe MEM",v:"yönlendirme, denetim, kaynak tahsisi"},{k:"Valilik",v:"yerel yönetsel onay ve koordinasyon"},{k:"Sivil toplum kuruluşu",v:"proje, gönüllülük, sosyal destek"}]}]},
 tablo:`
 <div class="blk">
   <h3>Tablo 1 — İç vs Dış Paydaş</h3>
@@ -3805,7 +3955,19 @@ tablo:`
     <tr><td>İletişim kopukluğu</td><td>Şeffaflık</td></tr>
     <tr><td>Güven eksikliği</td><td>Emanet bilinci</td></tr>
   </table></div>
-</div>`,
+</div>
+<div class="blk">
+  <h3>Tablo 4 — Görüş Alma Yolları</h3>
+  <div class="twrap"><table>
+    <tr><th>Yol</th><th>Ne verir</th><th>Sınırı</th></tr>
+    <tr><td><b>Anket</b></td><td>Geniş kitleden ölçülebilir veri</td><td>Nedenini açıklamaz</td></tr>
+    <tr><td><b>Mülakat</b></td><td>Derinlemesine bireysel görüş</td><td>Az sayıda kişiye ulaşır</td></tr>
+    <tr><td><b>Atölye</b></td><td>Ortak akıl ve önceliklendirme</td><td>Baskın sesler öne çıkabilir</td></tr>
+    <tr><td><b>Toplantı</b></td><td>Hızlı geri bildirim</td><td>Kayıt tutulmazsa uçar</td></tr>
+    <tr><td>Tek yönlü duyuru</td><td><b>Görüş almaz</b>, yalnızca bilgi verir</td><td>Katılım sayılmaz</td></tr>
+  </table></div>
+</div>
+`,
 match:[
  {name:"Paydaş → İç/Dış",pairs:[
    ["Öğretmen","İç paydaş · öğretimi doğrudan yürütür"],
@@ -3893,7 +4055,16 @@ quiz:[
 ,
  /* --- olumsuz kök (dizinin sonuna) --- */
  {s:"Bir okulda paydaşların rol ve sorumlulukları tanımlanmaktadır. Hangisi <b>doğru bir eşleştirme değildir</b>?",o:["Öğretmenler — uygulayıcı ve iş birliği","Yöneticiler — liderlik ve koordinasyon","Veliler — okulun mali kaynaklarını sağlama","Devlet kurumları — politika belirleme ve denetim","Öğrenciler — öğrenme süreci ve geri bildirim"],c:2,w:"Velilerin rolü <b>destek, iş birliği ve eğitim sürecine katılımdır</b>. Mali kaynak sağlama velinin sorumluluğu olarak tanımlanamaz; bu devletin ve yerel yönetimlerin görevidir. Aksi hâlde okul-veli ilişkisi maddi katkı beklentisine indirgenir.",b:"Dayanak: Modül 12 — Paydaş Rolleri ve Sorumlulukları"}
-]
+,
+ {s:"Okul müdürü, okuma kültürünü güçlendirmek için mahalle muhtarı ve bir sivil toplum kuruluşuyla ortak bir proje yürütmektedir. Planlamada bu iki tarafın paydaş sınıflamasındaki yerini doğru belirlemek istemektedir. Bu iki taraf paydaş sınıflamasında nerededir?",o:["İkisi de iç paydaş","İkisi de dış paydaş","Muhtar iç, STK dış paydaş","Muhtar dış, STK iç paydaş","İkisi de paydaş sayılmaz"],c:1,w:"Okulun bir parçası olmayan ama faaliyetlerinden dolaylı etkilenen taraflar <b>dış paydaştır</b>; muhtar ve sivil toplum kuruluşu bu gruptadır. İç paydaş müdür, müdür yardımcıları, öğretmenler, öğrenciler, destek personeli ve okul aile birliği üyeleridir.",b:"Dayanak: Modül 12 — Paydaş Sınıflaması"},
+ {s:"Okulun ders saatleri düzeninde köklü bir değişiklik yapılacaktır. Müdür kararı tek başına almak yerine zümre başkanlarını, öğrenci temsilcisini ve okul aile birliğini toplayıp görüşlerini almış, itirazları dinledikten sonra kararı olgunlaştırmıştır. Bu uygulama hangi geleneksel kavramla karşılanır?",o:["Hisbe","Ahilik","Şûra","Vakıf","Emanet"],c:2,w:"İstişare ve ortak akıl geleneği <b>şûradır</b>. Ahilik usta-çırak ilişkisiyle mesleki ve ahlaki eğitimi bütünleştiren yapıdır; emanet bilinci sorumluluğu ortak iyiyle taşımayı anlatır.",b:"Dayanak: Modül 12 — Katılımın Kökleri"},
+ {s:"Bir müdür, okulda katılımcı yönetimi güçlendirmek için önce önündeki engelleri listelemiş, sonra her engelin karşısına bir çözüm yazmıştır. Listeye yazdığı maddelerden biri aslında engel değil çözümdür. Buna göre hangisi katılımcı yönetimin önündeki engellerden biri <b>değildir</b>?",o:["Şeffaf bilgi paylaşımı","Çıkar çatışması","Katı hiyerarşik yapı","İletişim kopukluğu","Güven eksikliği"],c:0,w:"Şeffaf bilgi paylaşımı engel değil, iletişim kopukluğunun <b>çözümüdür</b>. Engeller ve karşılıkları: hiyerarşiye karşı istişare, kopukluğa karşı şeffaflık, güven eksikliğine karşı emanet bilinci, çıkar çatışmasına karşı ortak iyi anlayışı.",b:"Dayanak: Modül 12 — Engeller ve Çözümler"},
+ {s:"Bir müdür, kararlarını duyurmadan önce öğretmenlere danışmakta, gelen itirazları dinlemekte ve kararı verirken gerekçesini açıkça paylaşmaktadır. Kararı kendisi almakta, ancak süreci kapalı tutmamaktadır. Bu liderlik anlayışı hangisine yakındır?",o:["Serbest bırakıcı liderlik","İşlemsel liderlik","Karizmatik liderlik","Otokratik liderlik","Hizmetkâr liderlik"],c:4,w:"Dinleyen, rehberlik eden ve kararını gerekçelendiren yaklaşım <b>hizmetkâr liderliktir</b>. Serbest bırakıcı liderlik müdahaleden kaçınır — burada anlatılan ise etkin ama katılımcı bir yönetimdir.",b:"Dayanak: Modül 12 — Liderlik Yaklaşımları"},
+ {s:"Stratejik plan ekibi paydaş listesini çıkarırken tartışmaya girmiş; bazı üyeler yalnızca okulda görev yapanların, bazıları ise okula maddi katkı sunanların paydaş sayılması gerektiğini savunmuştur. Buna göre paydaş kavramının tanımıyla ilgili hangisi <b>doğrudur</b>?",o:["Yalnızca maddi katkı sunanlardır","Yalnızca okulda görev yapanları kapsar","Okulun amacını etkileyen veya ondan etkilenen tüm taraflardır","Yalnızca velileri ifade eder","Yalnızca üst kurumları kapsar"],c:2,w:"Paydaş, okulun ürün ve hizmetleriyle ilgisi olan, ondan doğrudan ya da dolaylı, olumlu ya da olumsuz etkilenen veya okulu <b>etkileyen tüm taraflardır</b>. Tanım maddi katkıya ya da kurum içinde olmaya bağlı değildir.",b:"Dayanak: Modül 12 — Paydaş Tanımı"},
+ {s:"Bir okulda alınan kararlar panoya asılarak duyurulmakta, ancak gerekçesi ve hangi süreçle alındığı paylaşılmamaktadır. Öğretmenler «bize sorulmuyor, sadece bildiriliyor» demektedir. Bu tablo öncelikle hangi engeli gösterir?",o:["Mevzuat engeli","Fiziksel altyapı","Çıkar çatışması","İletişim kopukluğu","Bütçe yetersizliği"],c:3,w:"Karar duyuruluyor ama gerekçesi ve süreci paylaşılmıyorsa sorun <b>iletişim kopukluğudur</b>; çözümü şeffaflıktır. Çıkar çatışması tarafların hedeflerinin uyuşmamasıyla, mevzuat engeli ise yetki sınırlarıyla ilgilidir.",b:"Dayanak: Modül 12 — Engeller ve Çözümler"},
+ {s:"Stratejik plan ekibi, okul aile birliği üyelerini paydaş listesinde nereye yazacağını tartışmaktadır. Bir üye «üyeleri veli olduğuna göre dış paydaştır» derken, bir diğeri birliğin okulun bir organı olduğunu savunmaktadır. Buna göre okul aile birliğinin paydaş sınıflamasındaki yeriyle ilgili hangisi <b>doğrudur</b>?",o:["Paydaş sayılmaz, yalnızca mali bir organdır","Duruma göre iç ya da dış sayılır","Yalnızca bağış topladığında paydaş olur","Dış paydaştır, çünkü üyeleri velilerdir","İç paydaştır, çünkü okulun bir parçası ve karar süreçlerinin tarafıdır"],c:4,w:"Okul aile birliği üyeleri <b>iç paydaş</b> olarak sayılır; birlik okulun bir parçasıdır ve faaliyetleri ilerletme ya da yavaşlatma etkisi taşır. Veli ise birey olarak dış paydaştır — ayrım kişide değil, yapıdadır.",b:"Dayanak: Modül 12 — Paydaş Sınıflaması"},
+ {s:"Okulun kantin gelirlerinin nasıl kullanılacağı tartışılırken müdür şunu söylemiştir: «Bu görev bize emanet edilmiştir; kaynakları kendi malımız gibi değil, korumakla yükümlü olduğumuz bir emanet gibi kullanmalıyız.» Bu vurgu hangi kavramın karşılığıdır?",o:["Liyakat","Verimlilik","Hesap verebilirlik","Emanet bilinci","Şeffaflık"],c:3,w:"Sorumluluğu ortak iyiyle taşıma ve kaynağı korunması gereken bir yükümlülük olarak görme <b>emanet bilincidir</b>. Hesap verebilirlik sonuçların denetlenebilirliğine, şeffaflık bilginin açıklığına ilişkindir; emanet bilinci bunların ahlaki zeminidir.",b:"Dayanak: Modül 12 — Emanet Bilinci"},
+ {s:"Bir okul, stratejik plan için paydaş görüşü toplama yöntemlerini belirlemektedir. Listelenen yöntemlerden biri aslında görüş almaz, yalnızca bilgi verir. Buna göre hangisi paydaş görüşü almanın yollarından biri <b>sayılmaz</b>?",o:["Mülakat","Atölye çalışması","Toplantı","Tek yönlü duyuru","Anket uygulaması"],c:3,w:"Tek yönlü duyuru bilgi <b>verir</b> ama görüş <b>almaz</b>; paydaş analizinin gereği çift yönlü bir süreçtir. Anket geniş kitleden ölçülebilir veri, mülakat derinlemesine görüş, atölye ise ortak akıl ve önceliklendirme üretir.",b:"Dayanak: Modül 12 — Paydaş Analizi"}]
 },
 m15:{
 ozet:`
@@ -4061,7 +4232,9 @@ harita:{
     {k:"Singapur",v:"liyakat, karakter ↔ Kutadgu Bilig, Enderun"},
     {k:"Sentez",v:"evrenseli taklit değil, kültürle dönüştür"}]}
  ,
-  {t:"Düşünür-Eser",kids:[{k:"Farabi",v:"El-Medinetü'l-Fâzıla"},{k:"Nizâmülmülk",v:"Siyasetnâme · Selçuklu"},{k:"Yusuf Has Hâcib",v:"Kutadgu Bilig"},{k:"Nurettin Topçu",v:"Türkiye'nin Maarif Davası"}]}]},
+  {t:"Düşünür-Eser",kids:[{k:"Farabi",v:"El-Medinetü'l-Fâzıla"},{k:"Nizâmülmülk",v:"Siyasetnâme · Selçuklu"},{k:"Yusuf Has Hâcib",v:"Kutadgu Bilig"},{k:"Nurettin Topçu",v:"Türkiye'nin Maarif Davası"}]},
+   {t:"İsim-Eser Ayrımı",kids:[{k:"Farabi",v:"El-Medinetü'l-Fâzıla — erdemli yönetici"},{k:"Nizamülmülk",v:"Siyasetnâme — liyakatle görevlendirme"},{k:"Yusuf Has Hâcib",v:"Kutadgu Bilig — yönetme sanatı"},{k:"Ahmed Yesevi",v:"Divan-ı Hikmet — nefis terbiyesi"},{k:"Nurettin Topçu",v:"Türkiye'nin Maarif Davası"},{k:"İsmayıl H. Baltacıoğlu",v:"İçtimaî Mektep"},{k:"Mümtaz Turhan",v:"Kültür Değişmeleri — sentez, çözülme değil"}]},
+   {t:"Adalet Kavramı",kids:[{k:"Klasik tanım",v:"her şeyi yerli yerine koymak"},{k:"Karıştırma",v:"mutlak eşitlik değil, hakkaniyet"}]}]},
 tablo:`
 <div class="blk">
   <h3>Tablo 1 — Eser → Yazar</h3>
@@ -4189,7 +4362,15 @@ quiz:[
   b:"Dayanak: Modül 15 — Türk-İslam Yönetim Düşüncesi"},
  /* --- olumsuz kök (dizinin sonuna) --- */
  {s:"Öğrenci disiplin sürecini onarıcı adalet anlayışıyla yürüten bir yönetici hangisini <b>tercih etmez</b>?",o:["Rehberlik servisiyle koordineli çalışmayı","Öğrenciyle doğrudan görüşüp yaşadığı süreci anlamayı","Aileyle iletişim kurup krizin etkilerini azaltmayı","Öğrenciyi okul yaşamının dışında tutarak konuyu kapatmayı","Öğrenciye sorumluluk vererek kuruma yeniden bağlanmasını sağlamayı"],c:3,w:"Onarıcı adaletin amacı <b>cezalandırma değil, ıslah ve ilişkilerin yeniden inşasıdır</b>; öğrenciyi okul yaşamının dışında tutmak dışlayıcı bir yaklaşımdır ve bu amacın tam karşıtıdır. Yöneticiden beklenen tutum sükûnet, feraset ve adalettir.",b:"Dayanak: Modül 15 — Onarıcı Adalet ve Erdemli Yönetici"}
-]
+,
+ {s:"Bir okulda düzenlenen meslek etiği seminerinde, yöneticinin yalnızca bilgili değil aynı zamanda erdemli olması gerektiği; bilginin erdemle birleşmediğinde toplum için yarar üretmeyeceği anlatılmıştır. Bu görüşü «Erdemli Şehir» tasavvuruyla temellendiren düşünür kimdir?",o:["Nizamülmülk","Farabi","Gazali","Yusuf Has Hâcib","Ahmed Yesevi"],c:1,w:"<b>Farabi</b>, El-Medinetü'l-Fâzıla'da erdemli yönetici tasavvurunu ortaya koyar. Nizamülmülk Siyasetnâme'de liyakatle görevlendirmeyi, Yusuf Has Hâcib Kutadgu Bilig'de yönetme sanatını, Gazali söz-davranış tutarlılığını öne çıkarır.",b:"Dayanak: Modül 15 — Düşünür ve Eser"},
+ {s:"Bir okulda müdür yardımcılığı görevi boşalmıştır. Müdür, kendisine yakın olan adayı değil, görevin gerektirdiği yetkinliğe sahip olan öğretmeni önermiştir. Bu tutum Türk-İslam yönetim geleneğinde hangi düşünürün temel vurgusuyla örtüşür?",o:["İbn-i Sînâ","Mümtaz Turhan","Farabi","Nizamülmülk","Yunus Emre"],c:3,w:"Liyakatle görevlendirme <b>Nizamülmülk'ün</b> Siyasetnâme'deki temel vurgusudur. Farabi erdemli yönetici tasavvurunu, İbn-i Sînâ bireysel farklılığın gözetilmesini, Yunus Emre sevgi ve hoşgörü dilini öne çıkarır.",b:"Dayanak: Modül 15 — Düşünür ve Katkı"},
+ {s:"Bir hizmet içi eğitimde, yönetimi yalnızca verimlilik ve çıktı üzerinden okuyan anlayış ile yönetimi bir sorumluluk ve yükümlülük olarak kavrayan anlayış karşılaştırılmaktadır. Buna göre Batı merkezli yönetim anlayışı ile Türk-İslam yönetim geleneği arasındaki farkla ilgili hangisi <b>doğrudur</b>?",o:["Batı anlayışı liyakati reddeder","Türk-İslam geleneği insanı yalnızca kaynak olarak görür","Batı anlayışı erdemi merkeze alır","Türk-İslam geleneğinde yönetim emanet olarak kavranır","İkisi arasında anlamlı bir fark yoktur"],c:3,w:"Türk-İslam geleneğinde yönetim bir ayrıcalık değil <b>emanettir</b>; sorumluluk ahlaki bir yükümlülük olarak kavranır. Batı merkezli anlayışın eleştirilen yanı ise insanı ve erdemi araçsallaştırma eğilimidir.",b:"Dayanak: Modül 15 — İki Anlayış"},
+ {s:"Bir okulda düzenlenen kültür seminerinde, modernleşmenin kültürel çözülme anlamına gelmediği; yerel kültürle çağdaş yönetim anlayışının dengeli biçimde bütünleştirilebileceği anlatılmıştır. Bu görüşü savunan ve «Kültür Değişmeleri» adlı eseri yazan düşünür kimdir?",o:["Nurettin Topçu","İsmayıl Hakkı Baltacıoğlu","Mümtaz Turhan","Ziya Gökalp","Hilmi Ziya Ülken"],c:2,w:"<b>Mümtaz Turhan</b> ve eseri Kültür Değişmeleri. Karıştırma: «İçtimaî Mektep» İsmayıl Hakkı Baltacıoğlu'nun, «Türkiye'nin Maarif Davası» Nurettin Topçu'nundur — bu üçlü sınavda sıkça birbirinin yerine konur.",b:"Dayanak: Modül 15 — İsim-Eser Eşleştirmesi"},
+ {s:"Bir okulda müdür, öğretmenlerden beklediği dakikliği kendisi de titizlikle uygulamakta; söylediği ilkelerle davranışı arasında fark olmamasına özen göstermektedir. Öğretmenler bu tutarlılığı örnek almaktadır. Bu vurgu hangi düşünürle ilişkilendirilir?",o:["Yusuf Has Hâcib","Ahmed Yesevi","Gazali","Farabi","Nizamülmülk"],c:2,w:"Söz ile davranış arasındaki tutarlılık <b>Gazali'nin</b> temel vurgusudur. Yesevi nefis terbiyesi ve hikmet geleneğiyle, Yunus Emre sevgi diliyle, Ahilik ise «eline, beline, diline sahip ol» ilkesiyle anılır.",b:"Dayanak: Modül 15 — Düşünür ve Katkı"},
+ {s:"Yönetici adayları, Değer Temelli Erdemli Liderlik Modeli'nin (DTELM) boyutlarını ve her boyutun hangi kaynaklara dayandığını çalışmaktadır. Listeye yazdıkları boyutlardan biri modele ait değildir. Buna göre hangisi DTELM'in boyutlarından biri <b>değildir</b>?",o:["Ahlaki boyut","İlişkisel boyut","Vizyoner boyut","Finansal boyut","Estetik boyut"],c:3,w:"Model üç boyutludur: <b>ahlaki</b> (Gazali, Yesevi — nefis terbiyesi), <b>ilişkisel</b> (Ahilik, Yunus Emre) ve <b>vizyoner</b> (Orhun Yazıtları, Kutadgu Bilig, Siyasetnâme). Finansal boyut bu çerçevenin öğesi değildir; estetik bakış ise ayrı bir DTELM boyutu değil, TYMM'nin aksiyolojik olgunluk başlığında geçer.",b:"Dayanak: Modül 15 — DTELM"},
+ {s:"Bir okulda öğrenci yönlendirme kararlarında yapay zekâ destekli bir çözümleme aracı kullanılmaya başlanmıştır. Müdür, aracın etik sınırlarını yazılı hâle getirmek istemektedir. Buna göre yapay zekâ kullanımında eğitim yöneticisinin gözetmesi gereken ilkelerle ilgili hangisi <b>yanlıştır</b>?",o:["Sistem karar verdiyse sorumluluk sisteme geçer","Ayrımcılık üretmediği denetlenmelidir","Kararın gerekçesi açıklanabilir olmalıdır","Sorumluluk insanda kalmalıdır","Veriye erişim sınırlı ve amaca bağlı olmalıdır"],c:0,w:"Yapay zekâ bir araçtır; <b>sorumluluk hiçbir koşulda insandan sisteme geçmez</b>. Etik çerçevenin üç dayanağı açıklanabilirlik, insanda kalan sorumluluk ve amaca bağlı sınırlı veri erişimidir.",b:"Dayanak: Modül 15 — Yapay Zekâ Etiği"},
+ {s:"Bir okulda sınırlı sayıdaki destek dersi kontenjanının nasıl dağıtılacağı tartışılmaktadır. Bir öğretmen «adalet herkese aynı şeyi vermektir» derken, müdür klasik gelenekteki adalet anlayışına dikkat çekmiştir. Erdemli yönetici anlayışında «adalet» kavramının karşılığı hangisidir?",o:["Herkese aynı şeyi vermek","Herkese hak ettiğini, konumuna uygun olanı vermek","Çoğunluğun istediğini yapmak","Kuralı istisnasız uygulamak","En hızlı çözümü seçmek"],c:1,w:"Klasik gelenekte adalet «her şeyi yerli yerine koymak», yani <b>herkese hak ettiğini vermektir</b> — mutlak eşitlik değil. Bu, kapsayıcı eğitimdeki «eşitlik değil hakkaniyet» ilkesiyle aynı ayrımı taşır.",b:"Dayanak: Modül 15 — Adalet Kavramı"}]
 },
 m2:{
 ozet:`
@@ -4348,7 +4529,8 @@ harita:{
     {k:"Eleştiri 1",v:"performans/çıktı odağına kayma riski"},
     {k:"Eleştiri 2",v:"öğretmen özerkliğini sınırlama"}]}
  ,
-  {t:"Müfredat Uyumu",kids:[{k:"Yatay uyum",v:"aynı düzey şubeler arası"},{k:"Dikey uyum",v:"üst sınıfa hazırlık"}]}]},
+  {t:"Müfredat Uyumu",kids:[{k:"Yatay uyum",v:"aynı düzey şubeler arası"},{k:"Dikey uyum",v:"üst sınıfa hazırlık"}]},
+   {t:"Kaynak & Bulgular",kids:[{k:"Hallinger & Murphy (1985)",v:"üç boyutlu ilk öğretim liderliği modeli"},{k:"Spillane (2005)",v:"liderliğin paylaşılması gerektiği savı"}]}]},
 tablo:`
 <div class="blk">
   <h3>Tablo 1 — Hallinger & Murphy 3 Boyut</h3>
@@ -4458,7 +4640,10 @@ quiz:[
   b:"Dayanak: Modül 2 — Müfredat Koordinasyonu"},
  /* --- olumsuz kök (dizinin sonuna) --- */
  {s:"Okul müdürü, öğretmenlerin sınıf içi uygulamalarını izleyip gelişim odaklı geri bildirim veren bir sistem kurmak istemektedir. Hangisi bu sistemin güven temelli işlemesine katkı sağlayan uygulamalardan biri <b>değildir</b>?",o:["Ziyaret takviminin öğretmenlerle birlikte belirlenmesi","Gözlem sonuçlarının performans değerlendirmesine girdi yapılması","Güçlü yönlerin de kayda geçirilmesi","Ziyaretin amacının önceden ve açıkça paylaşılması","Geri bildirimin bireysel ve somut verilmesi"],c:1,w:"Gözlem sonucunun <b>performans değerlendirmesine girdi yapılması</b>, ziyareti gelişim aracı olmaktan çıkarıp denetime dönüştürür; öğretmen savunmaya geçer ve güven ortamı çöker. Diğer dördü güveni besler: amacın şeffaflığı, bireysel ve somut geri bildirim, takvimin birlikte belirlenmesi, güçlü yönlerin de görülmesi.",b:"Dayanak: Modül 2 — Güven Temelli Mesleki Gelişim İklimi"}
-]
+,
+ {s:"Müdür, zümre toplantısında öğretmenlerden ders planlarını paylaşmalarını istemiş, sınıf ziyaretlerinden sonra her öğretmenle birebir görüşüp somut geri bildirim vermiş ve ay sonunda öğrenci başarı verilerini zümreyle birlikte yorumlamıştır. Bu davranışlar öğretim liderliğinin hangi boyutunu doğrudan gösterir?",o:["Olumlu öğrenme iklimi kurma","Kaynakları dağıtma","Dış paydaşlarla ilişki kurma","Okul misyonunu tanımlama","Öğretim programını yönetme"],c:4,w:"Plan paylaşımı, sınıf ziyareti ve veriyle izleme birlikte <b>öğretim programının yönetimi</b> boyutudur. Misyon tanımlama okulun amacını belirlemekle; olumlu iklim ise zamanın korunması ve teşvikle ilgilidir. Kaynak dağıtımı ve dış paydaş ilişkisi bu modelin üç boyutu arasında yer almaz.",b:"Dayanak: Modül 2 — Hallinger ve Murphy Modeli"},
+ {s:"Bir müdür, öğretmenlerin değişime katılma isteğini artırmak için ortak vizyon toplantıları düzenlemiş ve güven ortamı kurmuştur; başka bir müdür ise doğrudan ders içi uygulamaları izleyip yöntem önermiştir. İkinci müdürün odaklandığı değişim düzeyi hangisidir?",o:["Sembolik değişim","İkinci derece değişim","Birinci derece değişim","Yapısal değişim","Kültürel değişim"],c:2,w:"Öğretim uygulamasını <b>doğrudan</b> biçimlendirmek birinci derece değişimdir ve öğretim liderliğiyle ilişkilendirilir. Katılım koşullarını, güveni ve ortak vizyonu hazırlamak ikinci derece değişimdir ve dönüşümcü liderliğin alanıdır. İkisi karşıt değil, birbirini tamamlayan yaklaşımlardır.",b:"Dayanak: Modül 2 — Değişim Dereceleri"},
+ {s:"Bir müdür, yurt dışında incelediği bir okulun öğretim liderliği uygulamalarını kendi okuluna olduğu gibi taşımış; ancak öğretmen tepkisi ve okul kültürü nedeniyle beklediği sonucu alamamıştır. Bu deneyim ışığında, öğretim liderliğinin ülkeden ülkeye farklılaşmasıyla ilgili hangisi <b>söylenemez</b>?",o:["Liderliğe atfedilen roller kültüre göre değişebilir","Kültürel özellikler liderliğin içeriğini belirler","Aynı uygulama her bağlamda aynı sonucu verir","Ulusal koşullar öğrenme çıktısıyla ilişkiyi değiştirir","Uluslararası birikim yerel bağlamda yeniden yorumlanmalıdır"],c:2,w:"Araştırmalar tam tersini gösteriyor: öğretim liderliği ile öğrenci başarısı arasındaki ilişki <b>ülkeler arasında ve ülke içinde farklılaşır</b>. Bu, uluslararası birikimi değersizleştirmez; her ülkenin kendi sistemi ve okul yönetimi geleneği içinde yeniden yorumlanmasını gerektirir.",b:"Dayanak: Modül 2 — Kültürel Bağlam"}]
 },
 m4:{
 ozet:`
@@ -7064,14 +7249,22 @@ quiz:[
   b:"Dayanak: Modül 20 — Siber Güvenlik Kültürü"},
  /* --- olumsuz kök (dizinin sonuna) --- */
  {s:"Bir okulda ikiz dönüşüm hedefleri planlanmaktadır. Hangisi ikiz dönüşüm yaklaşımıyla <b>bağdaşan</b> tercihlerden biri <b>değildir</b>?",o:["Enerji tasarrufu hedefini dijital dönüşüm hedefiyle aynı planda ele almak","Sıfır atık uygulamalarını dijital belge kullanımıyla desteklemek","Dijital altyapı yatırımını enerji verimliliği ölçütüyle birlikte değerlendirmek","Çevre çalışmalarını yalnızca öğrenci kulüplerinin sorumluluğuna bırakmak","Yeşil ve dijital hedefleri tek bir izleme çerçevesinde takip etmek"],c:3,w:"Çevre çalışmalarını <b>öğrenci kulüplerine devretmek</b>, dönüşümü kurumsal bir yönetim işi olmaktan çıkarır. İkiz dönüşümün tanımı gereği dijital ve yeşil süreçler <i>birlikte ve birbirini besleyecek biçimde</i> yönetilir; ikisini de yönetmesi beklenen kişi okul yöneticisidir.",b:"Dayanak: Modül 20 — İkiz Dönüşümün Bütünleşik Yönetimi"}
-]
+,
+ {s:"Okulda öğrenci verilerinin hangi amaçla toplanacağı, ne kadar saklanacağı ve ne zaman silineceği yazılı bir düzene bağlanmaktadır. Bu düzeni belirleyen ve uygulanmasından hesap verecek olan taraf netleştirilmelidir. Okul müdürü bu süreçten kişisel verilerin korunması mevzuatı bakımından hangi sıfatla sorumludur?",o:["İrtibat kişisi","Veri denetçisi","Veri işleyen","Veri sorumlusu","Veri koruma görevlisi"],c:3,w:"Okul yöneticisi <b>veri sorumlusudur</b>; verinin işlenme amacını ve yöntemini belirleyen taraf odur. Veri işleyen, sorumlunun adına işleme yapan taraftır. Bu ayrım sorumluluğun kimde olduğunu belirlediği için sınavda sorulur.",b:"Dayanak: Modül 20 — KVKK"},
+ {s:"Okulun sunucusunda yıllar içinde biriken, hangi amaçla toplandığı bilinmeyen ve hiç kullanılmayan öğrenci kayıtları bulunmuştur. Bu kayıtlar hem gereksiz bir risk hem de gereksiz bir maliyet üretmektedir. Bu tür veriler için kullanılan kavram hangisidir?",o:["Büyük veri","Üstveri","Dijital ikiz","Açık veri","Karanlık veri"],c:4,w:"Amaçsızca biriken ve kullanılmayan veri yığını <b>karanlık veridir</b>; hem gereksiz risk hem gereksiz maliyet üretir. Erişim ilkesi de bunu tamamlar: izin verilmedikçe erişim yasaktır.",b:"Dayanak: Modül 20 — Veri Yönetimi"},
+ {s:"Bir okul, hem dijital altyapısını yenilemeyi hem de enerji ve atık yönetimini iyileştirmeyi tek bir plan altında birleştirmiştir. Müdür bu yaklaşımın adını ve bileşenlerini öğretmenlere anlatacaktır. Buna göre hangisi ikiz dönüşümün iki ayağını doğru tanımlar?",o:["Dijitalleşme ve yeşil geçiş","Yeşil geçiş ve özelleştirme","Dijitalleşme ve standartlaşma","Yeşil geçiş ve kalite güvencesi","Dijitalleşme ve merkezîleşme"],c:0,w:"İkiz dönüşüm <b>dijitalleşme</b> ile <b>yeşil geçişin</b> birlikte ele alınmasıdır. Kavram Avrupa Birliği politika söyleminde doğmuş, Türkiye'de 2053 Net Sıfır Hedefi ve On İkinci Kalkınma Planı'yla ulusal karşılık bulmuştur.",b:"Dayanak: Modül 20 — İkiz Dönüşüm"},
+ {s:"Bir okul, sürdürülebilirlik eğitimini müfredata yaymak için bir yetkinlik çerçevesi aramaktadır. Aranan çerçeve sürdürülebilirlik yetkinliğini değerleri benimseme, karmaşıklığı kavrama, geleceği tasarlama ve harekete geçme olmak üzere dört alanda ele almaktadır. Bu çerçeve hangisidir?",o:["GreenComp","DigCompEdu","EntreComp","LifeComp","DigComp"],c:0,w:"<b>GreenComp</b> sürdürülebilirlik yetkinliğini dört alanda ele alır: değerleri benimsemek, karmaşıklığı kavramak, geleceği tasarlamak ve harekete geçmek. DigComp ve DigCompEdu dijital yetkinlik çerçeveleridir.",b:"Dayanak: Modül 20 — Yetkinlik Çerçeveleri"},
+ {s:"Bir okul, çevre bilincini yalnızca bir derse sıkıştırmak yerine; bina ve bahçe düzenini, ders programını ve mahalleyle ilişkisini aynı anda ele alan bütüncül bir plan kurmuştur. Okulun fiziksel çevresini, müfredatını ve toplumla ilişkisini birlikte ele alan bu yaklaşım hangisidir?",o:["Bütünsel Okul Yaklaşımı","Eko-Okullar Programı","Dijital İkiz Atölyesi","Sıfır Atık Projesi","Yeşil Mutabakat"],c:0,w:"<b>Bütünsel Okul Yaklaşımı (WSA)</b> üç hattı birlikte yürütür: fiziksel çevre, müfredat ve toplum. Eko-Okullar ve Sıfır Atık bu yaklaşımın uygulama örnekleridir; yaklaşımın kendisi değildir.",b:"Dayanak: Modül 20 — WSA"},
+ {s:"Bir okulda öğretmenlerin dijital araçları teknik olarak kullanabildiği ama derse pedagojik olarak bütünleştiremediği görülmüştür. Müdür, öğretmenlerin mesleki gelişimi için tasarlanmış ulusal platforma yönlendirme yapacaktır. Bu platform hangisidir?",o:["MEBİ","D3","MEB-KİT","EBA","ÖBA"],c:4,w:"<b>ÖBA</b> (Öğretmen Bilişim Ağı) öğretmenlerin mesleki ve dijital pedagojik gelişimine yöneliktir. EBA öğrenmenin sürekliliğini, D3 teknoloji odaklı öğrenme senaryolarını, MEB-KİT kodlama ve sensör uygulamalarını hedefler.",b:"Dayanak: Modül 20 — Dijital Ekosistem"},
+ {s:"Bir okulda güçlü bir güvenlik duvarı ve güncel yazılımlar bulunmasına rağmen bir veri sızıntısı yaşanmıştır. İncelemede sızıntının ortak kullanılan bir şifre ve tıklanan bir bağlantı üzerinden gerçekleştiği anlaşılmıştır. Okulda siber güvenlik ihlallerinin en yaygın kaynağı hangisidir?",o:["Yazılım açığı","İnsan hatası","Elektrik kesintisi","Ağ altyapısı","Donanım arızası"],c:1,w:"İhlallerin ana kaynağı <b>insan hatasıdır</b> — ortak şifre kullanımı, oltalama bağlantısına tıklama, cihazı açık bırakma. Bu yüzden teknik önlem tek başına yetmez; farkındalık eğitimi güvenliğin ayrılmaz parçasıdır.",b:"Dayanak: Modül 20 — Siber Güvenlik"},
+ {s:"Bir okul, ikiz dönüşüm planını hazırlarken izleyeceği adımları sıralamaktadır. Listedeki maddelerden biri, dönüşümün okul düzeyinde sahiplenilmesi ilkesiyle çelişmektedir. Buna göre hangisi okul temelli ikiz dönüşüm planlamasının adımlarından biri <b>değildir</b>?",o:["Ölçülebilir hedef belirleme","İzleme mekanizması kurma","Tüm kararların merkezden beklenmesi","Aile ve topluluk katılımını sağlama","Mevcut durumun analizi"],c:2,w:"Dönüşüm okul düzeyinde <b>planlanır ve sahiplenilir</b>; her kararı merkezden beklemek yaklaşımın kendisiyle çelişir. Süreç durum analiziyle başlar, ölçülebilir hedefle sürer, dijital izleme mekanizmasıyla desteklenir ve okul dışına taşar.",b:"Dayanak: Modül 20 — Okul Temelli Planlama"}]
 }
 };
 
 /* ================= STATE / STORAGE ================= */
 const SKEY="meb-yonetici-defter-v1";
 const DAY=86400000;
-let state={cards:{},quiz:{},match:{},theme:"light",srs:{},wrongQ:{},examDate:null,exam:{best:-1,att:0},full:{best:-1,att:0},streak:{n:0,last:null},daily:{date:null,n:0},badges:{},goal:15,pastR:{},kademe:null,srsV:0,qStat:{}};
+let state={cards:{},quiz:{},match:{},theme:"light",srs:{},wrongQ:{},examDate:null,exam:{best:-1,att:0},full:{best:-1,att:0},streak:{n:0,last:null},daily:{date:null,n:0},badges:{},goal:15,pastR:{},kademe:null,srsV:0,qStat:{},puanlar:{tam:[],karma:[]}};
 const hasStore=typeof window!=="undefined"&&window.storage;
 
 /* ---- KATMANLI DEPOLAMA ----
@@ -7114,14 +7307,14 @@ async function loadState(){
       const p=JSON.parse(raw);
       state={cards:p.cards||{},quiz:p.quiz||{},match:p.match||{},theme:p.theme3||"light",
              srs:p.srs||{},wrongQ:p.wrongQ||{},examDate:p.examDate||null,exam:p.exam||{best:-1,att:0},full:p.full||{best:-1,att:0},
-             streak:p.streak||{n:0,last:null},daily:p.daily||{date:null,n:0},badges:p.badges||{},goal:p.goal||15,pastR:p.pastR||{},kademe:p.kademe||null,srsV:p.srsV||0,qStat:p.qStat||{}};
+             streak:p.streak||{n:0,last:null},daily:p.daily||{date:null,n:0},badges:p.badges||{},goal:p.goal||15,pastR:p.pastR||{},kademe:p.kademe||null,srsV:p.srsV||0,qStat:p.qStat||{},puanlar:p.puanlar||{tam:[],karma:[]}};
     }
   }catch(e){/* ilk kullanım veya kayıt yok */}
 }
 function snapshot(){
   return JSON.stringify({cards:state.cards,quiz:state.quiz,match:state.match,
     theme3:state.theme,srs:state.srs,wrongQ:state.wrongQ,examDate:state.examDate,exam:state.exam,full:state.full,
-    streak:state.streak,daily:state.daily,badges:state.badges,goal:state.goal,pastR:state.pastR,kademe:state.kademe,srsV:state.srsV,qStat:state.qStat});
+    streak:state.streak,daily:state.daily,badges:state.badges,goal:state.goal,pastR:state.pastR,kademe:state.kademe,srsV:state.srsV,qStat:state.qStat,puanlar:state.puanlar});
 }
 /* Yazma temposu: her tıklamada değil, 900 ms sessizlikten sonra tek yazma */
 let saveTimer=null,noticeShown=false;
@@ -7332,13 +7525,47 @@ function pastAccuracy(id){
   if(!all.length)return null;
   return all.filter(q=>r[q.k]===1).length/all.length;
 }
+/* Modülün GERÇEK isabet oranı: üç bankanın da denenmiş sorularının tüm geçmişi.
+   pastAccuracy yalnızca son sonuca ve iki bankaya bakıyordu; bu, aynı soruyu üç
+   kez yanlış yapıp dördüncüde bilmekle ilk seferde bilmeyi ayırt eder. */
+function modIsabet(id){
+  const st=state.qStat||{};
+  let n=0,ok=0;
+  const bak=k=>{const e=st[k];if(!e||!e.n)return;n+=e.n;ok+=e.ok;};
+  (CONTENT[id]&&CONTENT[id].quiz||[]).forEach((_,i)=>bak(id+":"+i));
+  PAST.concat(HIZLI).forEach(q=>{if(q.m===id)bak(q.k);});
+  return n?{oran:ok/n,deneme:n}:null;
+}
+/* Hazırlık = kart + modül sınavı + eşleştirme + isabet.
+   İsabet ÇİFT ağırlık taşır: yoksa modülü baştan sona okuyup kartları çevirmek
+   soruları yanlış yaparken bile %100 "hazır" gösteriyordu. Artık 10 soruyu
+   sıfır isabetle çözen biri en fazla (1+1+1+0+0)/5 = %60 görünür. */
 function moduleReadiness(id){
   const p=modProgress(id);if(!p)return 0;
   const c=p.total?p.learned/p.total:0,q=(p.best<0?0:(p.qTotal?p.best/p.qTotal:0)),mm=p.mTotal?p.mDone/p.mTotal:0;
   const parts=[c,q,mm];
-  const pa=pastAccuracy(id);
-  if(pa!==null)parts.push(pa);
+  const is=modIsabet(id);
+  if(is)parts.push(is.oran,is.oran);
+  else{const pa=pastAccuracy(id);if(pa!==null)parts.push(pa);}
   return parts.reduce((a,b)=>a+b,0)/parts.length;
+}
+/* Deneme puan geçmişi. Önceden yalnızca {best,att} tutuluyordu; gelişip
+   gelişmediğini görmenin hiçbir yolu yoktu. Son 40 kayıt saklanır. */
+const PUAN_GECMIS_N=40;
+function puanKaydet(tur,puan){
+  if(!state.puanlar)state.puanlar={tam:[],karma:[]};
+  if(!state.puanlar[tur])state.puanlar[tur]=[];
+  state.puanlar[tur].push({t:Date.now(),p:Math.round(puan*10)/10});
+  if(state.puanlar[tur].length>PUAN_GECMIS_N)state.puanlar[tur].shift();
+}
+/* Eğilim: son üçün ortalaması ile ondan öncekilerin ortalaması arasındaki fark.
+   Tek denemeye bakmak gürültülü — bir kötü deneme "geriliyorsun" demez. */
+function puanEgilim(tur){
+  const l=(state.puanlar&&state.puanlar[tur])||[];
+  if(l.length<4)return null;
+  const son=l.slice(-3),onceki=l.slice(0,-3);
+  const ort=a=>a.reduce((x,y)=>x+y.p,0)/a.length;
+  return ort(son)-ort(onceki);
 }
 function examDaysLeft(){
   if(!state.examDate)return null;
@@ -7373,6 +7600,64 @@ function renderPlan(){
     sub+'</div>'+items+'</div>';
   el.querySelectorAll('.plan-item').forEach(b=>b.addEventListener('click',()=>openModule(b.dataset.mid)));
 }
+/* ================= SON TEKRAR TURU =================
+   20 modülün "Son Tekrar Posteri" tek tek modül ekranında duruyordu; hepsini
+   arka arkaya gezecek bir yer yoktu. Sınav sabahının doğal aracı: her poster
+   ~2 dakika, tur yaklaşık 40 dakika. İçerik yeniden kullanılır, yazılmaz. */
+let tur=null;
+function turListesi(){return MODULES.filter(m=>m.ready&&CONTENT[m.id]&&CONTENT[m.id].poster);}
+function startTur(i){
+  const l=turListesi();
+  if(!l.length)return;
+  tur={i:Math.max(0,Math.min(i||0,l.length-1))};
+  renderTur();show("#scr-tur");window.scrollTo(0,0);
+}
+function renderTur(){
+  const l=turListesi(),m=l[tur.i];
+  $("#turBaslik").textContent="Modül "+m.no+" · "+(tur.i+1)+"/"+l.length;
+  $("#turBody").innerHTML=CONTENT[m.id].poster;
+  $("#turFill").style.width=((tur.i+1)/l.length*100)+"%";
+  const once=$("#turOnce"),sonra=$("#turSonra");
+  once.disabled=tur.i===0;
+  sonra.textContent=tur.i===l.length-1?"Turu bitir ✓":"Sonraki →";
+}
+function turGit(d){
+  const l=turListesi();
+  if(tur.i+d>=l.length){renderHome();show("#scr-home");setTab("study");return;}
+  tur.i=Math.max(0,tur.i+d);
+  renderTur();window.scrollTo(0,0);
+}
+/* Deneme eğrisi. Küçük bir SVG çizgi — kütüphane yok, tek dosya kuralı bozulmaz.
+   Baraj çizgisi (60) referans olarak çizilir; asıl soru "barajın üstünde miyim". */
+function renderTrend(){
+  const el=$("#trendBox");if(!el)return;
+  const tam=(state.puanlar&&state.puanlar.tam)||[];
+  if(tam.length<2){
+    el.innerHTML='<div class="tr-bos">Tam Deneme puanların burada eğri olarak birikir. '+
+      (tam.length?'Bir deneme daha çöz, eğilim görünsün.':'Henüz deneme çözmedin.')+'</div>';
+    return;
+  }
+  const W=300,H=96,P=6;
+  const p=tam.map(x=>x.p);
+  const enAz=Math.min(...p,50),enCok=Math.max(...p,70);
+  const x=i=>P+i*(W-2*P)/(p.length-1);
+  const y=v=>H-P-(v-enAz)/(enCok-enAz||1)*(H-2*P);
+  const cizgi=p.map((v,i)=>(i?"L":"M")+x(i).toFixed(1)+" "+y(v).toFixed(1)).join(" ");
+  const eg=puanEgilim("tam"), son=p[p.length-1], enIyi=Math.max(...p);
+  const okText=eg===null?"":(eg>=1?"↑ yükseliyor":eg<=-1?"↓ geriliyor":"→ yatay");
+  const okCls=eg===null?"":(eg>=1?"up":eg<=-1?"down":"flat");
+  el.innerHTML=
+    '<div class="tr-head"><b>'+son+'</b><span>son puan</span>'+
+      (okText?'<i class="tr-ok '+okCls+'">'+okText+'</i>':'')+'</div>'+
+    '<svg class="tr-svg" viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="none" role="img" '+
+      'aria-label="'+p.length+' denemenin puan eğrisi, son puan '+son+'">'+
+      (enAz<=60&&enCok>=60?'<line class="tr-baraj" x1="'+P+'" x2="'+(W-P)+'" y1="'+y(60).toFixed(1)+'" y2="'+y(60).toFixed(1)+'"/>':'')+
+      '<path class="tr-line" d="'+cizgi+'"/>'+
+      p.map((v,i)=>'<circle class="tr-dot'+(v>=60?" pass":"")+'" cx="'+x(i).toFixed(1)+'" cy="'+y(v).toFixed(1)+'" r="2.6"/>').join("")+
+    '</svg>'+
+    '<div class="tr-foot"><span>'+p.length+' deneme</span><span>en iyi '+enIyi+'</span>'+
+      (enAz<=60&&enCok>=60?'<span class="tr-bl">— baraj 60</span>':'')+'</div>';
+}
 function renderRadar(){
   const g=$("#radarGrid");if(!g)return;g.innerHTML="";
   MODULES.forEach(m=>{
@@ -7381,7 +7666,9 @@ function renderRadar(){
     if(pc>=.67)cls="r3";else if(pc>=.34)cls="r2";else if(pc>0)cls="r1";
     const cell=document.createElement("button");
     cell.className="rcell "+cls;cell.textContent=m.no;
-    cell.title=m.title+" · %"+Math.round(pc*100);
+    const is=modIsabet(m.id);
+    cell.title=m.title+" · hazırlık %"+Math.round(pc*100)+
+      (is?" · isabet %"+Math.round(is.oran*100)+" ("+is.deneme+" deneme)":" · henüz soru çözülmedi");
     if(m.ready)cell.addEventListener("click",()=>openModule(m.id));
     g.appendChild(cell);
   });
@@ -7710,7 +7997,7 @@ function doImport(file){
       if(!confirm("Yedekteki ilerleme yüklenecek ve mevcut ilerlemenin yerine geçecek. Devam edilsin mi?"))return;
       state={cards:p.cards||{},quiz:p.quiz||{},match:p.match||{},theme:p.theme3||state.theme,
         srs:p.srs||{},wrongQ:p.wrongQ||{},examDate:p.examDate||null,exam:p.exam||{best:-1,att:0},full:p.full||{best:-1,att:0},
-        streak:p.streak||{n:0,last:null},daily:p.daily||{date:null,n:0},badges:p.badges||{},goal:p.goal||15,pastR:p.pastR||{},kademe:p.kademe||null,srsV:p.srsV||0,qStat:p.qStat||{}};
+        streak:p.streak||{n:0,last:null},daily:p.daily||{date:null,n:0},badges:p.badges||{},goal:p.goal||15,pastR:p.pastR||{},kademe:p.kademe||null,srsV:p.srsV||0,qStat:p.qStat||{},puanlar:p.puanlar||{tam:[],karma:[]}};
       srsMigrate();applyTheme();flushSave();renderHome();
       alert("Yedek yüklendi ✓");
     }catch(e){alert("Bu dosya okunamadı. Geçerli bir yedek dosyası (.json) seçtiğinden emin ol.");}
@@ -7823,6 +8110,9 @@ function renderHome(){
 }
 $("#actReview").addEventListener("click",()=>{startReview();});
 $("#actWrong").addEventListener("click",()=>{renderWrongHome();show("#scr-wrong");});
+$("#turBtn").addEventListener("click",()=>startTur(0));
+$("#turOnce").addEventListener("click",()=>turGit(-1));
+$("#turSonra").addEventListener("click",()=>turGit(1));
 $("#actExam").addEventListener("click",()=>{startExam();});
 $("#actFull").addEventListener("click",()=>{startFull();});
 $("#actHizli").addEventListener("click",()=>{startPast(shuffle(hizliPool().slice()).slice(0,20),"Hızlı Bilgi");show("#scr-past");});
@@ -7844,7 +8134,7 @@ $("#resetBtn").addEventListener("click",async()=>{
     setTimeout(()=>{resetArmed=false;b.textContent="İlerlemeyi sıfırla";b.classList.remove("arm");},3500);return;}
   const th=state.theme,ed=state.examDate,g=state.goal;
   state={cards:{},quiz:{},match:{},theme:th,srs:{},wrongQ:{},examDate:ed,exam:{best:-1,att:0},full:{best:-1,att:0},
-    streak:{n:0,last:null},daily:{date:null,n:0},badges:{},goal:g,pastR:{},kademe:state.kademe,srsV:2,qStat:{}};
+    streak:{n:0,last:null},daily:{date:null,n:0},badges:{},goal:g,pastR:{},kademe:state.kademe,srsV:2,qStat:{},puanlar:{tam:[],karma:[]}};
   await flushSave();
   resetArmed=false;b.textContent="İlerlemeyi sıfırla";b.classList.remove("arm");
   renderHome();
@@ -8455,6 +8745,7 @@ function renderExam(){
     const n=ex.list.length;
     const isNew=ex.score>state.exam.best;
     state.exam={best:Math.max(state.exam.best,ex.score),att:state.exam.att+1};
+    puanKaydet("karma",ex.score/n*100);
     saveState();
     const exPass=ex.score/n>=0.6;
     body.innerHTML=`<div class="blk q-done">
@@ -8590,6 +8881,7 @@ function finishFull(timedOut){
   const pass=pt>=60;
   const isNew=pt>(state.full?state.full.best:-1);
   state.full={best:Math.max(state.full?state.full.best:-1,pt),att:(state.full?state.full.att:0)+1};
+  puanKaydet("tam",pt);
   flushSave();
   const rows=MODULES.filter(m=>byMod[m.id]).map(m=>{
     const d=byMod[m.id],r=d.c/d.t;
@@ -8722,7 +9014,7 @@ function setTab(name){
   if(hero) hero.classList.toggle("compact", name!=="home");
   const st=$("#secTitle");
   if(st){ st.textContent=TAB_TITLE[name]||""; st.hidden=(name==="home"); }
-  if(name==="progress"){ renderRadar(); renderBadges(); }
+  if(name==="progress"){ renderTrend(); renderRadar(); renderBadges(); }
   if(name==="exam"){
     renderExamStats(); renderBlueprint();
     /* Sayı elle yazılmasın: kademe seçiliyse havuz daralır, etiket ona göre güncellenir */
@@ -8730,6 +9022,10 @@ function setTab(name){
     if(hs){const n=hizliPool().length;hs.textContent=n+" kısa soru"+(state.kademe?" · kademene göre":"");}
   }
   if(name==="home"){ renderStatline(); renderPlan(); }
+  if(name==="study"){
+    const ts=$("#turSub");
+    if(ts){const n=turListesi().length;ts.textContent=n+" poster · ~"+(n*2)+" dk";}
+  }
   window.scrollTo(0,0);
 }
 document.querySelectorAll("#tabbar button").forEach(b=>{

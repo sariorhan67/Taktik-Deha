@@ -38,13 +38,16 @@ sistem yazı tipine düşer).
 - ⚖️ **Karşılaştırma tabloları karşılıklı renkli** — sınavın en sevdiği tuzak
   biçimi «X mi Y mi» (Vizyon↔Misyon, BEP↔FEP, İşitme↔Dinleme). Bu tablolarda iki
   taraf zıt renk alır, ölçüt sütunu nötr kalır.
-- 🧠 Zihin haritası
-- 📊 Karşılaştırma tablosu
+- 🧠 Zihin haritası — **756 yaprak**, her modülde sınavda getirdiği soru sayısının
+  en az on katı
+- 📊 Karşılaştırma tablosu — **79 tablo**, her modülde ağırlığı kadar (asgari 3)
 - 🔗 Eşleştirme alıştırması — **361 çift**, her modülde sınavda getirdiği soru
   sayısının en az beş katı
 - 🃏 Kartlar (aralıklı tekrar / SRS) — **191 kart**, her modülde sınavda getirdiği
   soru sayısının en az üç katı
-- 🎯 Vaka soruları (optik formlu mini sınav)
+- 🎯 Vaka soruları — **309 soru**, her modülde sınavda getirdiği soru sayısının
+  en az beş katı. Deneme havuzunun asıl kaynağı burasıdır: Tam Deneme her modülden
+  ağırlığı kadar soru çeker, bu yüzden ince banka aynı sorunun tekrarı demektir.
 
 **📄 Çıkmış Sorular (25 Temmuz 2026 e-Sınavı):**
 - MEB Yönetici Yetiştirme Program Sonu Değerlendirme e-Sınavının **195 gerçek sorusu**
@@ -104,8 +107,15 @@ hiç soru yoktu. Her sorunun çözüm açıklaması vardır.
   Hızlı Bilgi bankasından, kalanı vaka bankasından çekilir. **Olumsuz kök** oranı da
   gözetilir: gerçek sınavın %31'i «hangisi … değildir?» biçimindedir ve bu ayrı bir
   beceridir — en iyi seçeneği bulmak yerine beş seçeneğin de doğruluğunu yoklamayı
-  gerektirir. Her deneme farklı bir bileşim taşır; havuz 389 soruya çıktığı için aynı
+  gerektirir. Her deneme farklı bir bileşim taşır; havuz 470 soruya çıktığı için aynı
   soru daha seyrek tekrarlanır.
+- 📈 **Deneme Eğrin** (İlerleme sekmesinde) — her Tam Deneme puanı kaydedilir ve
+  eğri olarak çizilir; baraj çizgisi (60) referans, baraj üstü denemeler ayrı
+  renkte. Önceden yalnızca *en iyi* puan tutuluyordu, yani 40 → 52 → 61 → 66 diye
+  ilerlediysen bunu görmenin hiçbir yolu yoktu. Eğilim son üçün ortalamasına
+  bakar — tek kötü deneme "geriliyorsun" demez.
+- 🎓 **Son Tekrar Turu** (Modüller sekmesinde) — 20 modülün son tekrar posteri
+  arka arkaya, ~40 dakikalık tek akış. Sınav sabahı için.
 - 📅 Sınav tarihi geri sayımı, genel ilerleme çubuğu
 
 **Bu sürümde eklenenler:**
@@ -115,7 +125,11 @@ hiç soru yoktu. Her sorunun çözüm açıklaması vardır.
 - 🎯 **Günün hedefi** — günlük kart hedefi ve ilerleme halkası
 - 🏅 **Rozetler** — 10 kilometre taşı rozeti (kazanınca bildirim)
 - 🗺️ **Hazırlık Radarı** — 20 modülün hazırlık durumunu tek bakışta gösteren ısı haritası
-  (başlanmadı · zayıf · orta · hazır); dokununca modülü açar
+  (başlanmadı · zayıf · orta · hazır); dokununca modülü açar. Hazırlık artık
+  **gerçek isabeti** de sayar (çift ağırlıkla): modülü baştan sona okuyup kartları
+  çevirmek, soruları yanlış yaparken %100 «hazır» göstermez — 10 soruyu sıfır
+  isabetle çözen biri en fazla %60 görünür. Hiç soru çözmemiş olmak ceza değildir;
+  cezalandırılan yanlış bilmek, veri yokluğu değil.
 - 💾 **Yedekle / Geri Yükle** — ilerlemeyi `.json` olarak dışa aktar, başka cihaza taşı
 - ☾ Karanlık / aydınlık tema
 
@@ -145,7 +159,7 @@ gibidir: 1. Oturum 10.00 Müdür · 2. Oturum 13.00 Müdür Yrd. (Temel Eğitim)
 ## Testler
 
 ```bash
-node tests/run.mjs        # 183 kontrol · ~140 sn
+node tests/run.mjs        # 209 kontrol · ~155 sn
 node tests/run.mjs srs    # ad parçasıyla süz
 ```
 
