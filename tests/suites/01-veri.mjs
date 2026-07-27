@@ -119,6 +119,36 @@ export default async function ({ browser, rec }) {
   rec.chk(d.kartBozuk === 0 && d.kartYinelenen === 0,
     `Kartlarda boş alan veya yinelenen soru yok (boş ${d.kartBozuk}, yinelenen ${d.kartYinelenen})`);
 
+  /* Zihin haritası ve karşılaştırma tabloları da ağırlığı izlemeli. Bunlar drill
+     değil kavrayış aracıdır, bu yüzden taban korelasyondan önce gelir: hafif
+     modüldeki bolluk zarar değil, ağır modüldeki incelik zarardır. */
+  const gorsel = await page.evaluate(() => MODULES.reduce((a, m) => {
+    const h = (CONTENT[m.id] && CONTENT[m.id].harita) || {};
+    a[+m.no] = {
+      yaprak: (h.branches || []).reduce((n, b) => n + (b.kids || []).length, 0),
+      dal: (h.branches || []).length,
+      bosYaprak: (h.branches || []).reduce((n, b) => n +
+        (b.kids || []).filter(k => !k.k || !k.v || !String(k.k).trim() || !String(k.v).trim()).length, 0),
+      tablo: (((CONTENT[m.id] || {}).tablo || "").match(/<table/g) || []).length,
+      tabloKapanis: (((CONTENT[m.id] || {}).tablo || "").match(/<\/table>/g) || []).length,
+    };
+    return a;
+  }, {}));
+  const eksikHarita = Object.entries(RESMI_DAGILIM)
+    .map(([no, w]) => ({ no, hedef: w * 10, var: gorsel[no].yaprak })).filter(x => x.var < x.hedef);
+  rec.chk(eksikHarita.length === 0,
+    `Her modülde ağırlığının en az 10 katı zihin haritası yaprağı var (toplam ${Object.values(gorsel).reduce((a, x) => a + x.yaprak, 0)})${eksikHarita.length ? " — eksik: " + eksikHarita.map(x => `M${x.no}(${x.var}/${x.hedef})`).join(" ") : ""}`);
+  const eksikTablo = Object.entries(RESMI_DAGILIM)
+    .map(([no, w]) => ({ no, hedef: Math.max(3, w), var: gorsel[no].tablo })).filter(x => x.var < x.hedef);
+  rec.chk(eksikTablo.length === 0,
+    `Her modülde en az ağırlığı kadar (asgari 3) karşılaştırma tablosu var (toplam ${Object.values(gorsel).reduce((a, x) => a + x.tablo, 0)})${eksikTablo.length ? " — eksik: " + eksikTablo.map(x => `M${x.no}(${x.var}/${x.hedef})`).join(" ") : ""}`);
+  const bozukHarita = Object.entries(gorsel).filter(([, x]) => x.bosYaprak || x.dal < 5);
+  rec.chk(bozukHarita.length === 0,
+    `Haritalarda boş yaprak yok ve her modülde en az 5 dal var${bozukHarita.length ? " — " + bozukHarita.map(([no]) => "M" + no).join(" ") : ""}`);
+  const acikTablo = Object.entries(gorsel).filter(([, x]) => x.tablo !== x.tabloKapanis);
+  rec.chk(acikTablo.length === 0,
+    `Tablo etiketleri kapatılmış${acikTablo.length ? " — " + acikTablo.map(([no]) => "M" + no).join(" ") : ""}`);
+
   /* Olumsuz kök derinliği: deneme havuzu bunları tercihen çektiği için her modülde
      birkaç tane bulunmalı, yoksa aynı soru neredeyse her denemede tekrarlanır. */
   const olm = await page.evaluate(() => {

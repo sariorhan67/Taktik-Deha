@@ -38,8 +38,9 @@ sistem yazı tipine düşer).
 - ⚖️ **Karşılaştırma tabloları karşılıklı renkli** — sınavın en sevdiği tuzak
   biçimi «X mi Y mi» (Vizyon↔Misyon, BEP↔FEP, İşitme↔Dinleme). Bu tablolarda iki
   taraf zıt renk alır, ölçüt sütunu nötr kalır.
-- 🧠 Zihin haritası
-- 📊 Karşılaştırma tablosu
+- 🧠 Zihin haritası — **756 yaprak**, her modülde sınavda getirdiği soru sayısının
+  en az on katı
+- 📊 Karşılaştırma tablosu — **79 tablo**, her modülde ağırlığı kadar (asgari 3)
 - 🔗 Eşleştirme alıştırması — **361 çift**, her modülde sınavda getirdiği soru
   sayısının en az beş katı
 - 🃏 Kartlar (aralıklı tekrar / SRS) — **191 kart**, her modülde sınavda getirdiği
@@ -158,7 +159,7 @@ gibidir: 1. Oturum 10.00 Müdür · 2. Oturum 13.00 Müdür Yrd. (Temel Eğitim)
 ## Testler
 
 ```bash
-node tests/run.mjs        # 205 kontrol · ~155 sn
+node tests/run.mjs        # 209 kontrol · ~155 sn
 node tests/run.mjs srs    # ad parçasıyla süz
 ```
 

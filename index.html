@@ -1782,7 +1782,9 @@ harita:{
     {k:"e-Ambar",v:"pansiyon depo"},
     {k:"Kurumsal",v:"MEBBİS · TEFBİS · KBS · MYS-HYS · EKAP"}]}
  ,
-  {t:"Kademeye Özel",kids:[{k:"Kurum açma",v:"20 öğrenci · 2,40 m² · Bakanlığa tahsisli"},{k:"Okul konutu",v:"köyde parasız · şehirde aynı okul personeli"},{k:"MÖZEM",v:"ortaöğretim · mesleki · sektör iş birliği"},{k:"Uygulama evi",v:"1+0 · bağımsız yaşam becerisi"},{k:"Destek eğitim odası",v:"BEP birimi · en fazla 3 öğrenci"},{k:"Yardımcı teknoloji",v:"FM/DM · indüksiyon = işitme"}]}]},
+  {t:"Kademeye Özel",kids:[{k:"Kurum açma",v:"20 öğrenci · 2,40 m² · Bakanlığa tahsisli"},{k:"Okul konutu",v:"köyde parasız · şehirde aynı okul personeli"},{k:"MÖZEM",v:"ortaöğretim · mesleki · sektör iş birliği"},{k:"Uygulama evi",v:"1+0 · bağımsız yaşam becerisi"},{k:"Destek eğitim odası",v:"BEP birimi · en fazla 3 öğrenci"},{k:"Yardımcı teknoloji",v:"FM/DM · indüksiyon = işitme"}]},
+   {t:"Özel Eğitim Mevzuatı",kids:[{k:"5378 sayılı Kanun",v:"engelli bireylerin haklarına ilişkin çerçeve"},{k:"573 sayılı KHK",v:"özel eğitim hizmetlerinin temel esasları"},{k:"Özel Eğitim Hiz. Yönetmeliği",v:"tanılama, yerleştirme, BEP süreçleri"},{k:"Anayasal dayanak",v:"eğitim hakkı ve fırsat eşitliği"}]},
+   {t:"Destek Yapıları",kids:[{k:"Destek eğitim odası",v:"kaynaştırma öğrencisine birebir/küçük grup · en çok 3"},{k:"BİLSEM",v:"özel yetenekli öğrenci · tanılama 1-2-3. sınıf"},{k:"MÖZEM",v:"ortaöğretim düzeyinde mesleki özel eğitim"},{k:"Özel eğitim uygulama evi",v:"bağımsız yaşam becerisi · 1+0 format"},{k:"Özel Eğitim Materyal Platformu",v:"öğretim materyaline ortak erişim"},{k:"İki kere farklılık",v:"yetenek ile güçlük birbirini maskeler"}]}]},
 tablo:`
 <div class="blk">
   <h3>Tablo A — Okul Türü → Kabul Yolu</h3>
@@ -2097,7 +2099,9 @@ harita:{
     {k:"Entelektüel uyarım",v:"varsayım sorgulatma"},
     {k:"Bireysel destek",v:"koçluk-mentorluk"},
     {k:"İdealleştirilmiş etki",v:"etik rol model"}]}
- ]},
+ ,
+   {t:"Kültür ↔ İklim",kids:[{k:"Kültür",v:"değer ve sayıltıya dayanır, yıllar alır"},{k:"İklim",v:"güncel algıdır, görece hızlı değişir"},{k:"Pencere benzetmesi",v:"iklim kültüre açılan pencere"},{k:"Ölçme farkı",v:"iklim anketle, kültür gözlem ve derinlemesine incelemeyle"}]},
+   {t:"Kültürü Değiştirmenin Zorluğu",kids:[{k:"En zor durum",v:"köklü + güçlü kültür"},{k:"Asıl engel",v:"davranış değiştirmenin güçlüğü"},{k:"İşe yaramayan yol",v:"tek seferlik genelge veya duyuru"},{k:"İşe yarayan yol",v:"ödül tercihleri, ritüel, liderin modelliği"},{k:"Güçlü kültürün riski",v:"aidiyet üretir ama direnç de üretir"},{k:"Schein'in iki sorunu",v:"dışsal uyum ve içsel bütünleşme"}]}]},
 tablo:`
 <div class="blk">
   <h3>Tablo 1 — Kültür vs İklim</h3>
@@ -2126,7 +2130,19 @@ tablo:`
     <tr><td>Deneysel</td><td>Küçük <b>pilot</b> → başarı yayılır; öğrenme destekli</td></tr>
     <tr><td>Örgüt/personel</td><td>Ekip; <b>işe alım-eğitim-performans-ödül</b> yeni kültüre göre</td></tr>
   </table></div>
-</div>`,
+</div>
+<div class="blk">
+  <h3>Tablo 4 — Kültürü Yönetmede İşe Yarayan / Yaramayan</h3>
+  <div class="twrap"><table>
+    <tr><th>Araç</th><th>Neden</th><th>Etkisi</th></tr>
+    <tr><td>Neyi ödüllendirdiğin</td><td>Değerin <b>fiilen</b> ne olduğunu gösterir</td><td>Yüksek</td></tr>
+    <tr><td>Ritüel ve tören</td><td>Değeri görünür ve tekrarlanır kılar</td><td>Yüksek</td></tr>
+    <tr><td>Liderin kendi davranışı</td><td>Söz-eylem tutarlılığı model olur</td><td>Yüksek</td></tr>
+    <tr><td>Fiziksel çevre</td><td>Mekân değerleri sessizce anlatır</td><td>Orta</td></tr>
+    <tr><td>Tek seferlik genelge</td><td>Davranışı değil yalnızca metni değiştirir</td><td><b>Yok denecek kadar az</b></td></tr>
+  </table></div>
+</div>
+`,
 match:[
  {name:"Klinik Aşama → İş",pairs:[
    ["1. Bilgi toplama","Değer ve normların incelenmesi"],
@@ -2399,7 +2415,8 @@ harita:{
     {k:"Kural 2",v:"kavramsaldan üretirken bileşen eklenmez/çıkarılmaz"},
     {k:"Öğretmen yansıtmaları",v:"öz değerlendirme"}]}
  ,
-  {t:"Farklılaştırma",kids:[{k:"İçerik",v:"ne öğretilir"},{k:"Süreç",v:"nasıl öğrenilir"},{k:"Ürün",v:"nasıl gösterilir"},{k:"Öğrenme ortamı",v:"hangi düzen"}]}]},
+  {t:"Farklılaştırma",kids:[{k:"İçerik",v:"ne öğretilir"},{k:"Süreç",v:"nasıl öğrenilir"},{k:"Ürün",v:"nasıl gösterilir"},{k:"Öğrenme ortamı",v:"hangi düzen"}]},
+   {t:"Dört Bütünlük",kids:[{k:"Ontolojik",v:"ruh ve beden bütünlüğü"},{k:"Epistemolojik",v:"bilgi ve bilgelik birlikteliği"},{k:"Zamansal",v:"geçmişten geleceğe süreklilik"},{k:"Aksiyolojik olgunluk",v:"ahlaki bilinç ve estetik bakış"}]}]},
 tablo:`
 <div class="blk">
   <h3>Tablo 1 — Beceriler Çerçevesi (KAEOS)</h3>
@@ -2700,7 +2717,8 @@ harita:{
     {k:"Maliyetlendirme",v:"tahmini maliyet ↔ kaynak uyumu"},
     {k:"Kaynak yetersizse",v:"ucuz strateji / zaman / kapsam / önceliklendirme"},
     {k:"Veriye dayalı karar",v:"e-Okul, MEBBİS · dinamik, esnek"}]}
- ]},
+ ,
+   {t:"Veriye Dayalı Karar",kids:[{k:"Tek ölçüm tuzağı",v:"veriye dayalı değil, veriye indirgenmiş karar"},{k:"Geri besleme",v:"izleme sonucu planı günceller"}]}]},
 tablo:`
 <div class="blk">
   <h3>Tablo 1 — 5 Performans Göstergesi (GÇSKV)</h3>
@@ -2729,7 +2747,19 @@ tablo:`
     <tr><td>Başkan</td><td><b>Okul müdürü</b></td><td><b>Kuruldan olmayan</b> md.yrd.</td></tr>
     <tr><td>Üyeler</td><td>Md.yrd.+öğretmen+OAB başkanı+yön.kur. (<b>5 kişi</b>)</td><td>Öğretmenler + gönüllü veliler</td></tr>
   </table></div>
-</div>`,
+</div>
+<div class="blk">
+  <h3>Tablo 4 — Beş Gösterge Türü</h3>
+  <div class="twrap"><table>
+    <tr><th>Tür</th><th>Ölçtüğü</th><th>Okul örneği</th></tr>
+    <tr><td><b>Girdi</b></td><td>Kullanılan beşerî-mali-fiziki kaynak</td><td>Öğretmen başına hizmet içi eğitim saati</td></tr>
+    <tr><td><b>Çıktı</b></td><td>Sunulan hizmet miktarı</td><td>Açılan kurs sayısı</td></tr>
+    <tr><td><b>Sonuç</b></td><td>Ortaya çıkan etki</td><td>Kursa katılanların başarı artışı</td></tr>
+    <tr><td><b>Kalite</b></td><td>Yararlanıcı memnuniyeti</td><td>Veli memnuniyet oranı</td></tr>
+    <tr><td><b>Verimlilik</b></td><td>Çıktı ÷ girdi</td><td>Kurs saati başına maliyet</td></tr>
+  </table></div>
+</div>
+`,
 match:[
  {name:"Gösterge → Ölçtüğü",pairs:[
    ["Girdi","Beşerî-mali-fiziki kaynak"],
@@ -2974,7 +3004,10 @@ harita:{
     {k:"Öğrenen kurum",v:"sürekli mesleki gelişim"},
     {k:"Esnek uyarlama",v:"bağlamsal"},
     {k:"Reform başarısı",v:"sahiplenme + yorum + öğrenme"}]}
- ]},
+ ,
+   {t:"Direncin İki Düzeyi",kids:[{k:"Bireysel · yetersizlik",v:"yeni beklenti karşısında kendini yetersiz görme"},{k:"Bireysel · değersizleşme",v:"mevcut uzmanlığın işe yaramaz olacağı kaygısı"},{k:"Örgütsel · durağan kültür",v:"yerleşik iletişim kalıpları ve alışkanlıklar"},{k:"Örgütsel · reform hafızası",v:"yarım kalmış geçmiş girişimler"},{k:"Bürokratik yoğunluk",v:"örgütsel direncin bir başka kaynağı"}]},
+   {t:"Yeni Yönelimler",kids:[{k:"Hazır oluş değerlendirmesi",v:"değişim öncesi kurumsal kapasite ölçümü"},{k:"Öğrenen kurum",v:"deneyiminden sistemli ders çıkaran okul"},{k:"Bağlamsal uyarlama",v:"merkezî politikayı okulun koşullarına uydurma"},{k:"Veri temelli yönetim",v:"kararı ölçümle destekleme"},{k:"Sürekli mesleki gelişim",v:"değişimin insan tarafını besleme"}]},
+   {t:"Yenilik ↔ Değişim",kids:[{k:"Yenilikçilik",v:"değişimin YÖNÜNÜ belirler — ne değişmeli"},{k:"Değişim yönetimi",v:"değişimin YÖNTEMİNİ belirler — nasıl yürür"},{k:"İlişkisi",v:"ayrık değil, bütüncül"}]}]},
 tablo:`
 <div class="blk">
   <h3>Tablo 1 — Üç Eksen</h3>
@@ -3001,7 +3034,19 @@ tablo:`
     <tr><td>Öğretmenlik Mesleği Kanunu</td><td>İnsan kaynağı</td></tr>
     <tr><td>Millî Eğitim Akademisi</td><td>Yönetici yetiştirme</td></tr>
   </table></div>
-</div>`,
+</div>
+<div class="blk">
+  <h3>Tablo 4 — Direnç: Bireysel mi Örgütsel mi?</h3>
+  <div class="twrap"><table>
+    <tr><th>Belirti</th><th>Düzey</th><th>Ne işe yarar</th></tr>
+    <tr><td>"Bunu beceremem"</td><td>Bireysel — yetersizlik</td><td>Eğitim ve birebir destek</td></tr>
+    <tr><td>"Bildiğim işe yaramaz olacak"</td><td>Bireysel — değersizleşme</td><td>Mevcut birikimi yeni role bağlama</td></tr>
+    <tr><td>"Biz burada işleri hep böyle yaparız"</td><td>Örgütsel — durağan kültür</td><td>Kültür araçları, ritüel, model olma</td></tr>
+    <tr><td>"Bu da yarım kalır"</td><td>Örgütsel — reform hafızası</td><td>Küçük ve tamamlanan ilk adım</td></tr>
+    <tr><td>"Kimse bize söylemedi"</td><td>Bireysel — belirsizlik</td><td>Düzenli, çift yönlü bilgilendirme</td></tr>
+  </table></div>
+</div>
+`,
 match:[
  {name:"Eksen → Cevap",pairs:[
    ["Yenilikçilik","Değişim hangi yöne? (kapasite)"],
@@ -3878,7 +3923,9 @@ harita:{
     {k:"Ahilik",v:"usta-çırak ilişkisi"},
     {k:"Vakıf sistemi",v:"toplumsal dayanışma"},
     {k:"Külliye modeli",v:"bütünleşik hizmet"}]}
- ]},
+ ,
+   {t:"Paydaş Analizi Araçları",kids:[{k:"Anket",v:"geniş kitleden ölçülebilir veri"},{k:"Mülakat",v:"derinlemesine bireysel görüş"},{k:"Atölye çalışması",v:"ortak akıl ve önceliklendirme"},{k:"Matris kullanımı",v:"paydaşlar matrisle belirlenir, planda yer alır"}]},
+   {t:"Dış Paydaşın Rolü",kids:[{k:"İl/ilçe MEM",v:"yönlendirme, denetim, kaynak tahsisi"},{k:"Valilik",v:"yerel yönetsel onay ve koordinasyon"},{k:"Sivil toplum kuruluşu",v:"proje, gönüllülük, sosyal destek"}]}]},
 tablo:`
 <div class="blk">
   <h3>Tablo 1 — İç vs Dış Paydaş</h3>
@@ -3908,7 +3955,19 @@ tablo:`
     <tr><td>İletişim kopukluğu</td><td>Şeffaflık</td></tr>
     <tr><td>Güven eksikliği</td><td>Emanet bilinci</td></tr>
   </table></div>
-</div>`,
+</div>
+<div class="blk">
+  <h3>Tablo 4 — Görüş Alma Yolları</h3>
+  <div class="twrap"><table>
+    <tr><th>Yol</th><th>Ne verir</th><th>Sınırı</th></tr>
+    <tr><td><b>Anket</b></td><td>Geniş kitleden ölçülebilir veri</td><td>Nedenini açıklamaz</td></tr>
+    <tr><td><b>Mülakat</b></td><td>Derinlemesine bireysel görüş</td><td>Az sayıda kişiye ulaşır</td></tr>
+    <tr><td><b>Atölye</b></td><td>Ortak akıl ve önceliklendirme</td><td>Baskın sesler öne çıkabilir</td></tr>
+    <tr><td><b>Toplantı</b></td><td>Hızlı geri bildirim</td><td>Kayıt tutulmazsa uçar</td></tr>
+    <tr><td>Tek yönlü duyuru</td><td><b>Görüş almaz</b>, yalnızca bilgi verir</td><td>Katılım sayılmaz</td></tr>
+  </table></div>
+</div>
+`,
 match:[
  {name:"Paydaş → İç/Dış",pairs:[
    ["Öğretmen","İç paydaş · öğretimi doğrudan yürütür"],
@@ -4173,7 +4232,9 @@ harita:{
     {k:"Singapur",v:"liyakat, karakter ↔ Kutadgu Bilig, Enderun"},
     {k:"Sentez",v:"evrenseli taklit değil, kültürle dönüştür"}]}
  ,
-  {t:"Düşünür-Eser",kids:[{k:"Farabi",v:"El-Medinetü'l-Fâzıla"},{k:"Nizâmülmülk",v:"Siyasetnâme · Selçuklu"},{k:"Yusuf Has Hâcib",v:"Kutadgu Bilig"},{k:"Nurettin Topçu",v:"Türkiye'nin Maarif Davası"}]}]},
+  {t:"Düşünür-Eser",kids:[{k:"Farabi",v:"El-Medinetü'l-Fâzıla"},{k:"Nizâmülmülk",v:"Siyasetnâme · Selçuklu"},{k:"Yusuf Has Hâcib",v:"Kutadgu Bilig"},{k:"Nurettin Topçu",v:"Türkiye'nin Maarif Davası"}]},
+   {t:"İsim-Eser Ayrımı",kids:[{k:"Farabi",v:"El-Medinetü'l-Fâzıla — erdemli yönetici"},{k:"Nizamülmülk",v:"Siyasetnâme — liyakatle görevlendirme"},{k:"Yusuf Has Hâcib",v:"Kutadgu Bilig — yönetme sanatı"},{k:"Ahmed Yesevi",v:"Divan-ı Hikmet — nefis terbiyesi"},{k:"Nurettin Topçu",v:"Türkiye'nin Maarif Davası"},{k:"İsmayıl H. Baltacıoğlu",v:"İçtimaî Mektep"},{k:"Mümtaz Turhan",v:"Kültür Değişmeleri — sentez, çözülme değil"}]},
+   {t:"Adalet Kavramı",kids:[{k:"Klasik tanım",v:"her şeyi yerli yerine koymak"},{k:"Karıştırma",v:"mutlak eşitlik değil, hakkaniyet"}]}]},
 tablo:`
 <div class="blk">
   <h3>Tablo 1 — Eser → Yazar</h3>
@@ -4468,7 +4529,8 @@ harita:{
     {k:"Eleştiri 1",v:"performans/çıktı odağına kayma riski"},
     {k:"Eleştiri 2",v:"öğretmen özerkliğini sınırlama"}]}
  ,
-  {t:"Müfredat Uyumu",kids:[{k:"Yatay uyum",v:"aynı düzey şubeler arası"},{k:"Dikey uyum",v:"üst sınıfa hazırlık"}]}]},
+  {t:"Müfredat Uyumu",kids:[{k:"Yatay uyum",v:"aynı düzey şubeler arası"},{k:"Dikey uyum",v:"üst sınıfa hazırlık"}]},
+   {t:"Kaynak & Bulgular",kids:[{k:"Hallinger & Murphy (1985)",v:"üç boyutlu ilk öğretim liderliği modeli"},{k:"Spillane (2005)",v:"liderliğin paylaşılması gerektiği savı"}]}]},
 tablo:`
 <div class="blk">
   <h3>Tablo 1 — Hallinger & Murphy 3 Boyut</h3>
