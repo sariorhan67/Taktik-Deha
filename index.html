@@ -15,7 +15,12 @@
 <meta name="apple-mobile-web-app-title" content="Çalışma Defteri">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<!-- Yazı tipi stil dosyası render'ı BLOKLAMAMALI. Ölçüm: bloklayan biçimde
+     yavaş bağlantıda ilk boyama 12,8 sn, ağ hiç yokken 0,2 sn idi — yani yavaş
+     bağlantı bağlantısızlıktan kötüydü. media="print" ile indirilir ama uygulanmaz;
+     yüklenince media="all" olur. JS kapalıysa <noscript> devreye girer. -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"></noscript>
 <style>
 :root{
   --bg:#F9FBFA;
@@ -173,7 +178,10 @@ button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-r
 
 /* ============ SUBSCREEN HEAD ============ */
 .mhead{padding:24px 0 16px;display:flex;gap:14px;align-items:flex-start}
-.back{font-family:var(--mono);font-size:var(--fs-2);font-weight:600;color:var(--accent-ink);padding:4px 10px 4px 0;flex-shrink:0;margin-top:4px}
+/* Dokunma hedefi: görünen boyut aynı, tıklanabilir alan 44px. Negatif margin
+   ile büyütülen alan yerleşimi kaydırmaz. Ölçümde 17×22 idi — WCAG 2.5.8'in
+   AA düzeyindeki 24×24 asgarisinin bile altında, üstelik yedi alt ekranda. */
+.back{font-family:var(--mono);font-size:var(--fs-2);font-weight:600;color:var(--accent-ink);flex-shrink:0;display:inline-flex;align-items:center;justify-content:flex-start;min-width:44px;min-height:44px;padding:0 10px 0 0;margin:-11px 0 -11px -6px;padding-left:6px}
 .mhead h1{font-family:var(--serif);font-weight:600;font-size:var(--fs-6);line-height:1.25;letter-spacing:-.01em}
 .mhead .eyebrow{display:block;margin-bottom:4px}
 .tabs{position:sticky;top:0;z-index:20;display:flex;gap:2px;background:var(--bg);padding:8px 0 0;border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:none}

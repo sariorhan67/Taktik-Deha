@@ -91,5 +91,34 @@ export default async function ({ browser, rec }) {
     }
   }
 
+  /* Alt ekranlar — buraya kadar yalnızca dört ana sekme taranıyordu ve
+     alt ekranların birincil gezinme düğmesi olan «geri» 17×22 pikselde
+     kalmıştı: WCAG 2.5.8'in AA düzeyindeki 24×24 asgarisinin bile altında. */
+  const altEkran = await page.evaluate(() => {
+    const kucuk = [], yok = [];
+    const ekranlar = ["scr-mod", "scr-review", "scr-wrong", "scr-tur",
+                      "scr-exam", "scr-full", "scr-past"];
+    const onceki = [...document.querySelectorAll(".screen.active")].map(x => x.id);
+    ekranlar.forEach(id => {
+      const s = document.getElementById(id);
+      if (!s) { yok.push(id); return; }
+      document.querySelectorAll(".screen").forEach(x => x.classList.remove("active"));
+      s.classList.add("active");
+      s.querySelectorAll("button, a[href]").forEach(el => {
+        const r = el.getBoundingClientRect();
+        if (!r.width || !r.height) return;
+        if (r.width < 40 || r.height < 40)
+          kucuk.push(`${id} "${(el.textContent.trim() || el.className).slice(0, 18)}" ${Math.round(r.width)}×${Math.round(r.height)}`);
+      });
+    });
+    document.querySelectorAll(".screen").forEach(x => x.classList.remove("active"));
+    onceki.forEach(id => document.getElementById(id).classList.add("active"));
+    return { kucuk: [...new Set(kucuk)], yok, n: ekranlar.length };
+  });
+  rec.chk(altEkran.yok.length === 0,
+    `Taranan alt ekranların hepsi var (${altEkran.n})`);
+  rec.chk(altEkran.kucuk.length === 0,
+    `Alt ekranlarda dokunma hedefleri en az 40px${altEkran.kucuk.length ? " → " + altEkran.kucuk.join(", ") : ""}`);
+
   await page.context().close();
 }

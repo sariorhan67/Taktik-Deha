@@ -5,7 +5,7 @@ tek dosyalık, tamamen çevrimdışı çalışan bir çalışma defteri uygulama
 
 Tüm uygulama tek bir `index.html` dosyasındadır — **API, sunucu, derleme veya `npm install`
 gerektirmez**. İnternet olmadan da çalışır (yalnızca yazı tipleri çevrimiçi yüklenir; yoksa
-sistem yazı tipine düşer).
+sistem yazı tipine düşer ve açılış hızı değişmez).
 
 ## Özellikler
 
@@ -84,7 +84,7 @@ hiç soru yoktu. Her sorunun çözüm açıklaması vardır.
 - 📕 **Yanlış Defteri** — yanlış sorular ve zorlanılan kartlar otomatik birikir
 - 🎯 **Seni Zorlayanlar** (Yanlış Defteri'nde) — defterin ileri hâli. Defter "şu an
   yanlış duran" soruyu tutar; bu ise **her sorunun tüm geçmişine** bakar: kaç kez
-  görüldü, kaçı doğru, kaç kez arka arkaya bilindi. Üç bankanın **584 sorusundan**
+  görüldü, kaçı doğru, kaç kez arka arkaya bilindi. Üç bankanın **665 sorusundan**
   seni en çok zorlayan 20'sini çeker. Sık yanlışladığın öne çıkar, arka arkaya doğru
   bildiğin geri plana düşer ama **hiç silinmez**; hiç görmediğin soru "kolay" değil
   "bilinmiyor" sayılır. Tek denemelik gözlem beş denemelik kadar güvenilir sayılmaz
@@ -159,7 +159,7 @@ gibidir: 1. Oturum 10.00 Müdür · 2. Oturum 13.00 Müdür Yrd. (Temel Eğitim)
 ## Testler
 
 ```bash
-node tests/run.mjs        # 209 kontrol · ~155 sn
+node tests/run.mjs        # 222 kontrol · ~30 sn
 node tests/run.mjs srs    # ad parçasıyla süz
 ```
 
@@ -197,6 +197,14 @@ repo **Settings → Pages** kısmında görünür.
 
 > İlk yayında Pages kapalıysa ve iş akışı otomatik etkinleştiremezse: **Settings → Pages →
 > Build and deployment → Source: GitHub Actions** seçip iş akışını yeniden çalıştırmak yeterlidir.
+
+**Açılış hızı ve çevrimdışı dayanıklılık:** yazı tipi stil dosyası render'ı
+**bloklamaz**. Önceden bloklayan biçimdeydi ve ölçümde yavaş bağlantıda ilk ekran
+**12,8 saniyede**, internet hiç yokken **0,2 saniyede** geliyordu — yani yavaş
+bağlantı bağlantısızlıktan kötüydü. Şimdi ikisi de ~0,2 saniye. Service worker da
+HTML'de ağı süresiz beklemiyor: ağ ile önbellek **2 saniyelik yarışa** girer, ağ
+gecikirse uygulama önbellekten anında açılır ve güncelleme arka planda iner.
+Yazı tipleri artık önbelleğe alınır.
 
 Uygulama bir **PWA**'dır (`manifest.webmanifest` + `sw.js`). Yayınlanan adresi telefonda
 tarayıcıda açıp **"Ana ekrana ekle"** dediğinizde uygulama gibi kurulur, açılışta tam ekran
